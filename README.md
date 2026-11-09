@@ -1,6 +1,6 @@
 <div align="center">
 
-# 途见 · TravelMind
+# TravelMind
 
 **LangGraph 单图多角色编排 · 高德核验候选池 · 分层约束审核闭环 · 可复现评测体系**
 
@@ -10,7 +10,7 @@
 
 </div>
 
-![途见首页](docs/images/home.png)
+![TravelMind 首页](docs/images/home.png)
 
 ## 项目简介
 

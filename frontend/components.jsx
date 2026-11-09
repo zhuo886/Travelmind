@@ -76,7 +76,7 @@ function DayMap({ mapPoints, dayKey }) {
 
   return (
     <div className="map-canvas">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" key={dayKey}>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" key={dayKey}>
         <g stroke="var(--line-2)" strokeWidth=".25">
           {[15, 30, 45, 60, 75, 90].map((v) => (
             <React.Fragment key={v}>

@@ -155,8 +155,7 @@ function App() {
     <React.Fragment>
       <header className="hd">
         <div className="hd-brand" onClick={() => go("plan")}>
-          <span className="hd-wordmark"><span className="hd-mark" />途见</span>
-          <span className="hd-sub">TravelMind</span>
+          <span className="hd-wordmark"><span className="hd-mark" />TravelMind</span>
         </div>
 
         <nav className="hd-nav">

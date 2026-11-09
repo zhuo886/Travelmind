@@ -74,7 +74,7 @@ function AuthModal({ onSuccess, onClose, reason }) {
     <div className="tm-scrim" onClick={(e) => e.target === e.currentTarget && onClose && onClose()}>
       <div className="tm-sheet">
         <button className="tm-close" onClick={onClose} aria-label="关闭">✕</button>
-        <div className="tm-sheet-title">途见</div>
+        <div className="tm-sheet-title">TravelMind</div>
         {reason && <div className="tm-sheet-sub">{reason}</div>}
         <div className="tm-tabs">
           <button className={`tm-tab ${tab === "login" ? "active" : ""}`} onClick={() => { setTab("login"); setErr(""); }}>登录</button>
