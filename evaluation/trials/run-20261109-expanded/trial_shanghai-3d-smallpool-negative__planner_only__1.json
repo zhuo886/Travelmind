@@ -1,0 +1,173 @@
+{
+  "trial_id": "6d2b610a4bcc49a8b9fc4823c9a6cd25",
+  "case_id": "shanghai-3d-smallpool-negative",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 87.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "894612b014c4d024",
+      "spot_names": [
+        "上海城隍庙",
+        "上海欢乐谷",
+        "上海迪士尼度假区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 87.0,
+  "warnings": [
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "上海城隍庙",
+    "上海欢乐谷",
+    "上海迪士尼度假区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海城隍庙",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "上海欢乐谷",
+          "period": "morning",
+          "start": "09:40",
+          "end": "12:40"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "上海迪士尼度假区",
+          "period": "morning",
+          "start": "09:39",
+          "end": "13:39"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "上海城隍庙",
+    "上海欢乐谷",
+    "上海迪士尼度假区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海城隍庙",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "上海欢乐谷",
+          "period": "morning",
+          "start": "09:40",
+          "end": "12:40"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "上海迪士尼度假区",
+          "period": "morning",
+          "start": "09:39",
+          "end": "13:39"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 3
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 34.556,
+  "node_latency_ms": {
+    "planner": 34471.659,
+    "snapshot_gate": 0.343
+  },
+  "input_tokens_est": 1423,
+  "output_tokens_est": 761,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 87.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 3
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "total_trials": 27,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 27,
+    "value": 0.0
+  },
+  "effective_trials": 27,
+  "outcome_counts": {
+    "HARD_FAIL": 2,
+    "PARTIAL": 3,
+    "SUCCESS": 2,
+    "SUCCESS_WITH_WARNINGS": 20
+  },
+  "label_counts": {
+    "HARD_FAIL": 2,
+    "MATCH": 14,
+    "MISMATCH": 11
+  },
+  "fdr": {
+    "num": 22,
+    "den": 27,
+    "value": 0.8148
+  },
+  "pdr": {
+    "num": 3,
+    "den": 27,
+    "value": 0.1111
+  },
+  "omr": {
+    "num": 14,
+    "den": 27,
+    "value": 0.5185
+  },
+  "hpr": {
+    "num": 25,
+    "den": 27,
+    "value": 0.9259
+  },
+  "fpr": {
+    "num": 22,
+    "den": 27,
+    "value": 0.8148
+  },
+  "oor": {
+    "outside": 2,
+    "references": 144,
+    "value": 0.0139
+  },
+  "msr": {
+    "num": 14,
+    "den": 18,
+    "value": 0.7778
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 3,
+    "den": 3,
+    "value": 1.0
+  },
+  "rounds": {
+    "mean": 0.444,
+    "snapshot_count_mean": 1.444
+  },
+  "soft_score": {
+    "mean": 82.69,
+    "n": 27
+  },
+  "latency_s": {
+    "n": 27,
+    "median": 181.118,
+    "min": 35.4,
+    "max": 532.568,
+    "p95": 422.592,
+    "p95_note": null
+  },
+  "usage": {
+    "input_tokens_est_mean": 6691.1,
+    "output_tokens_est_mean": 1928.3,
+    "llm_calls_mean": 2.93
+  },
+  "by_case": {
+    "nanjing-3d-sunny-history": {
+      "trials": 9,
+      "generated": 9,
+      "hard_pass": 9,
+      "match": 8,
+      "hpr": {
+        "num": 9,
+        "den": 9,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 8,
+        "den": 9,
+        "value": 0.8889
+      },
+      "median_latency_s": 141.094,
+      "soft_score_mean": 92.11,
+      "input_tokens_est_mean": 5635.8,
+      "llm_calls_mean": 2.67
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "trials": 9,
+      "generated": 9,
+      "hard_pass": 8,
+      "match": 0,
+      "hpr": {
+        "num": 8,
+        "den": 9,
+        "value": 0.8889
+      },
+      "omr": {
+        "num": 0,
+        "den": 9,
+        "value": 0.0
+      },
+      "median_latency_s": 246.571,
+      "soft_score_mean": 66.17,
+      "input_tokens_est_mean": 7580.8,
+      "llm_calls_mean": 3.0
+    },
+    "shanghai-1d-sunny-nightlife": {
+      "trials": 9,
+      "generated": 9,
+      "hard_pass": 8,
+      "match": 6,
+      "hpr": {
+        "num": 8,
+        "den": 9,
+        "value": 0.8889
+      },
+      "omr": {
+        "num": 6,
+        "den": 9,
+        "value": 0.6667
+      },
+      "median_latency_s": 185.824,
+      "soft_score_mean": 89.78,
+      "input_tokens_est_mean": 6856.7,
+      "llm_calls_mean": 3.11
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 9,
+      "generated": 9,
+      "hard_pass": 7,
+      "match": 2,
+      "hpr": {
+        "num": 7,
+        "den": 9,
+        "value": 0.7778
+      },
+      "omr": {
+        "num": 2,
+        "den": 9,
+        "value": 0.2222
+      },
+      "median_latency_s": 69.366,
+      "soft_score_mean": 76.17,
+      "input_tokens_est_mean": 2281.0,
+      "llm_calls_mean": 1.0
+    },
+    "planner_reviewer": {
+      "trials": 9,
+      "generated": 9,
+      "hard_pass": 9,
+      "match": 6,
+      "hpr": {
+        "num": 9,
+        "den": 9,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 6,
+        "den": 9,
+        "value": 0.6667
+      },
+      "median_latency_s": 246.571,
+      "soft_score_mean": 83.67,
+      "input_tokens_est_mean": 9749.3,
+      "llm_calls_mean": 3.78
+    },
+    "planner_reviewer_time_check": {
+      "trials": 9,
+      "generated": 9,
+      "hard_pass": 9,
+      "match": 6,
+      "hpr": {
+        "num": 9,
+        "den": 9,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 6,
+        "den": 9,
+        "value": 0.6667
+      },
+      "median_latency_s": 198.679,
+      "soft_score_mean": 88.22,
+      "input_tokens_est_mean": 8042.9,
+      "llm_calls_mean": 4.0
+    }
+  },
+  "pass_at_k": {
+    "nanjing-3d-sunny-history": {
+      "k": 9,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "k": 9,
+      "outcome_pass_at_k": false,
+      "outcome_pass_pow_k": false
+    },
+    "shanghai-1d-sunny-nightlife": {
+      "k": 9,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 2,
+    "den": 3,
+    "value": 0.6667
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 0,
+    "den": 3,
+    "value": 0.0
+  }
+}

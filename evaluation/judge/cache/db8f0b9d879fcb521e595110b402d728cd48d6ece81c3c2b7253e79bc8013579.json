@@ -1,0 +1,61 @@
+{
+  "key": "db8f0b9d879fcb521e595110b402d728cd48d6ece81c3c2b7253e79bc8013579",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "8517ce792c2a253445f2799e9b02cbea7c5f99be72c22842aa6f89551a0231a8",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "天涯海角游览区",
+      "椰梦长廊",
+      "天涯小镇"
+    ],
+    "pacing": [
+      "天涯海角游览区",
+      "椰梦长廊",
+      "天涯小镇"
+    ],
+    "geographic_coherence": [
+      "天涯海角游览区",
+      "椰梦长廊",
+      "天涯小镇"
+    ],
+    "time_realism": [
+      "天涯海角游览区",
+      "椰梦长廊",
+      "天涯小镇"
+    ],
+    "completeness": [
+      "天涯海角游览区",
+      "椰梦长廊",
+      "天涯小镇"
+    ],
+    "diversity_and_dining": [
+      "天涯海角游览区",
+      "椰梦长廊",
+      "天涯小镇"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

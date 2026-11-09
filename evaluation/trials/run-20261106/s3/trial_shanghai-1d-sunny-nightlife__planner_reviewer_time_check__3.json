@@ -1,0 +1,57 @@
+{
+  "trial_id": "e8c8c4298b844c63849af6294a48cb2a",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "time_check_round": 1,
+  "snapshot_count": 2,
+  "soft_score": 87.0,
+  "oor": {
+    "outside": 0,
+    "total": 2
+  },
+  "must_visit_expected": [
+    "上海海洋水族馆"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 185.824,
+  "node_latency_ms": {
+    "planner": 93695.777,
+    "snapshot_gate": 1.918,
+    "reviewer": 64660.56,
+    "snapshot_reviewer": 1.92,
+    "time_check": 27251.48,
+    "snapshot_time_check": 0.546
+  },
+  "input_tokens_est": 10025,
+  "output_tokens_est": 2019,
+  "llm_calls": 5,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

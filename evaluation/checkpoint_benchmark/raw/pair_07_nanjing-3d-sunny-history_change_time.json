@@ -1,0 +1,185 @@
+{
+  "case_id": "nanjing-3d-sunny-history",
+  "edit_type": "change_time",
+  "instruction": "第1天第一个景点改到10:00以后开始，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 74.427,
+    "input_tokens": 2108,
+    "output_tokens": 1274,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "玄武湖景区",
+      "古鸡鸣寺",
+      "总统府",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙",
+      "南京长江大桥",
+      "江豚落日音乐广场"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "玄武湖景区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "古鸡鸣寺",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          },
+          {
+            "name": "总统府",
+            "period": "evening",
+            "start_time": "17:00",
+            "end_time": "19:00"
+          }
+        ],
+        "theme": "玄武湖历史古迹一日游"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "中国科举博物馆(江南贡院)",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "南京夫子庙",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "秦淮历史文化探索"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "南京长江大桥",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "江豚落日音乐广场",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "长江风光游览"
+      }
+    ],
+    "warnings": [
+      "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突",
+      "Day1 景点数量偏多",
+      "【用户修改意见】第1天第一个景点改到10:00以后开始，其他安排尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 64.635,
+    "input_tokens": 2402,
+    "output_tokens": 842,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "玄武湖景区",
+      "总统府",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙",
+      "南京牛首山文化旅游区",
+      "南京长江大桥"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "玄武湖景区",
+            "period": "morning",
+            "start_time": "10:30",
+            "end_time": "13:00"
+          },
+          {
+            "name": "总统府",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "南京历史核心景区"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "中国科举博物馆(江南贡院)",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "南京夫子庙",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "科举文化与秦淮风光"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "南京牛首山文化旅游区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "南京长江大桥",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "自然风光与现代工程"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】第1天第一个景点改到10:00以后开始，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.8333,
+    "B": 1.0
+  }
+}

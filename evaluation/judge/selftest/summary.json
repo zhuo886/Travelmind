@@ -1,0 +1,42 @@
+{
+  "provider": "stub",
+  "model": "glm-4.5-flash",
+  "targets": 9,
+  "scored": 9,
+  "skipped": 0,
+  "coverage": 1.0,
+  "overall_mean": 81.5,
+  "dimension_mean": {
+    "preference_fit": 4.0,
+    "pacing": 4.5,
+    "geographic_coherence": 4.0,
+    "time_realism": 4.0,
+    "completeness": 5.0,
+    "diversity_and_dining": 3.0
+  },
+  "kappa_mean": 0.8,
+  "kappa_pooled": 0.8,
+  "judge_calls": 18,
+  "replayed_calls": 0,
+  "judge_tokens_est": 0,
+  "cache_hits": 0,
+  "errors": [],
+  "low_score": [],
+  "low_score_threshold": 60.0,
+  "flag_counts": {
+    "other": 18
+  },
+  "by_case": {
+    "lijiang-5d-sunny-slowpace": 81.5,
+    "nanjing-3d-sunny-history": 81.5,
+    "shanghai-1d-sunny-nightlife": 81.5
+  },
+  "generated_at": "2026-11-07T09:25:48.499424+00:00",
+  "k": 2,
+  "calibration": {
+    "n": 0,
+    "mae": null,
+    "spearman": null,
+    "band_agreement": null
+  }
+}

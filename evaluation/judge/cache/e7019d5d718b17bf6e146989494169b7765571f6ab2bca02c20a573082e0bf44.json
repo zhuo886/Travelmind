@@ -1,0 +1,36 @@
+{
+  "key": "e7019d5d718b17bf6e146989494169b7765571f6ab2bca02c20a573082e0bf44",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "656278e26cff98d479b623ec2371868b9810953402e3633493fc3a3ee80ba091",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 5,
+    "completeness": 4,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {},
+  "flags": [
+    "evidence_missing",
+    "geographic_inefficiency",
+    "limited_diversity"
+  ],
+  "overall_comment": "The itinerary well matches user preferences for historical sites and museums with a relaxed pace. All attractions start at 10:00 respecting the \"don't like to wake up early\" preference, and each day has only 2 attractions as requested. Geographic grouping is good for Days 1-2 but Day 3 might be less optimal. Time allocation is realistic with 2-hour blocks and breaks.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 739,
+    "output_tokens": 303,
+    "total_tokens": 1042,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 89264.55,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

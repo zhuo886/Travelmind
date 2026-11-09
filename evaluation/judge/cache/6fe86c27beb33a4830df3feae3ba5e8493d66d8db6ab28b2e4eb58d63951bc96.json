@@ -1,0 +1,39 @@
+{
+  "key": "6fe86c27beb33a4830df3feae3ba5e8493d66d8db6ab28b2e4eb58d63951bc96",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "9ab09ea9553e49d39f9e32ddb1775b222a66ccd09fce479e8464660f3d29f283",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 5,
+    "geographic_coherence": 3,
+    "time_realism": 5,
+    "completeness": 5,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "部分符合用户对历史古迹和博物馆的偏好，但包含了一些非历史类景点",
+    "pacing": "节奏非常规律，每天只有2个景点，符合慢节奏要求",
+    "geographic_coherence": "部分景点相对集中，但有些景点距离较远",
+    "time_realism": "时间安排合理，符合不喜欢早起的偏好",
+    "completeness": "提供了必要的行程信息，符合scope要求",
+    "diversity_and_dining": "景点类型多样，但缺少餐饮安排"
+  },
+  "flags": [],
+  "overall_comment": "整体行程安排合理，符合用户慢节奏和景点数量的要求，但在历史古迹偏好契合度上有提升空间。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 742,
+    "output_tokens": 230,
+    "total_tokens": 972,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 48439.906,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

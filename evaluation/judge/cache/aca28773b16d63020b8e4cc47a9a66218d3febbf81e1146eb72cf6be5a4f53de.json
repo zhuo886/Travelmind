@@ -1,0 +1,61 @@
+{
+  "key": "aca28773b16d63020b8e4cc47a9a66218d3febbf81e1146eb72cf6be5a4f53de",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "74cd1ce62302dde0998304d18cff0a5af7962968592dc3c626ee372eca622d15",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "上海城隍庙",
+      "上海豫园",
+      "上海失恋博物馆"
+    ],
+    "pacing": [
+      "上海城隍庙",
+      "上海豫园",
+      "上海失恋博物馆"
+    ],
+    "geographic_coherence": [
+      "上海城隍庙",
+      "上海豫园",
+      "上海失恋博物馆"
+    ],
+    "time_realism": [
+      "上海城隍庙",
+      "上海豫园",
+      "上海失恋博物馆"
+    ],
+    "completeness": [
+      "上海城隍庙",
+      "上海豫园",
+      "上海失恋博物馆"
+    ],
+    "diversity_and_dining": [
+      "上海城隍庙",
+      "上海豫园",
+      "上海失恋博物馆"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

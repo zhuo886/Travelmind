@@ -1,0 +1,44 @@
+{
+  "key": "449e69150ecbad1791400ed750289a463f09da51732101fa80f2fba72bd64dad",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "2b5d8e5056d7d49c698715169426be4db0687456dc30fb36796a5c0066561e6b",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 5,
+    "completeness": 3,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Good alignment with historical/museum preferences - Day 1 perfectly matches with Confucius Temple and Imperial Examination Museum, Day 2 partially matches with Sun Yat-sen Mausoleum, Day 3 partially matches with Jiming Temple",
+    "pacing": "Appropriate for slow travel preference - each day has exactly 2 attractions with 2-2.5 hours each, starting at 10:00 to accommodate dislike of early mornings",
+    "geographic_coherence": "Good geographic grouping within days - Day 1 attractions in Fuzimiao area, Day 2 in Purple Mountain area, minimizing travel time",
+    "time_realism": "Practical timing with 10:00 start times, 2-2.5 hours per attraction, and good weather conditions for all days",
+    "completeness": "Basic structure provided with specific attraction names and time slots, but lacks transportation details, meal times, addresses, and opening hours",
+    "diversity_and_dining": "Good diversity in attraction types (temples, museums, scenic areas, squares) but completely lacks dining considerations and meal planning"
+  },
+  "flags": [
+    "no_dining_planning",
+    "missing_transportation_details",
+    "missing_practical_information",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary shows good alignment with historical preferences and appropriate pacing, but lacks practical details for execution and completely omits dining planning.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 601,
+    "output_tokens": 723,
+    "total_tokens": 1324,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 53048.302,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

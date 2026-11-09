@@ -1,0 +1,345 @@
+{
+  "trial_id": "5f4f06f0ea384312b45960a329310e1a",
+  "case_id": "lijiang-3d-allrain-history",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch"
+  ],
+  "first_draft_l0": [],
+  "first_draft_l1": [
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch"
+  ],
+  "first_draft_soft_score": 69.14,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 2,
+  "review_round": 3,
+  "reviewer_calls": 3,
+  "time_check_round": 1,
+  "snapshot_count": 3,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch"
+      ],
+      "defect_count": 2,
+      "soft_score": 69.14,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "123178c24d0b78c2",
+      "spot_names": [
+        "丽江古城",
+        "丽江古城-狮子山(狮山路)",
+        "狮子山万古楼景区",
+        "白沙古镇",
+        "丽江千古情景区",
+        "束河古镇",
+        "丽江玉水寨风景区"
+      ],
+      "is_delivered": true
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "duplicate_poi",
+        "duplicate_poi",
+        "duplicate_poi",
+        "opening_time_conflict",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch"
+      ],
+      "defect_count": 6,
+      "soft_score": 67.62,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "f39512df7b3699c3",
+      "spot_names": [
+        "丽江千古情景区",
+        "丽江古城",
+        "大研花巷",
+        "白沙古镇",
+        "丽江千古情景区",
+        "丽江千古情景区",
+        "丽江古城",
+        "大研花巷"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [],
+      "l1_codes": [
+        "duplicate_poi",
+        "duplicate_poi",
+        "duplicate_poi",
+        "opening_time_conflict",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch"
+      ],
+      "defect_count": 6,
+      "soft_score": 67.62,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "f39512df7b3699c3",
+      "spot_names": [
+        "丽江千古情景区",
+        "丽江古城",
+        "大研花巷",
+        "白沙古镇",
+        "丽江千古情景区",
+        "丽江千古情景区",
+        "丽江古城",
+        "大研花巷"
+      ],
+      "is_delivered": false
+    }
+  ],
+  "soft_score": 69.14,
+  "warnings": [
+    "Day1 为恶劣天气，仍安排了 3 个室外景点（丽江古城、丽江古城-狮子山(狮山路)、狮子山万古楼景区），请替换为室内或调整顺序",
+    "Day3 为恶劣天气，仍安排了 2 个室外景点（束河古镇、丽江玉水寨风景区），请替换为室内或调整顺序",
+    "雨天期间，Day1和Day3的行程中有多个室外景点，建议调整为室内景点以避开雨天影响",
+    "Day1和Day3需替换雨天室外景点为室内景点，如丽江千古情景区。"
+  ],
+  "route_names": [
+    "丽江古城",
+    "丽江古城-狮子山(狮山路)",
+    "狮子山万古楼景区",
+    "白沙古镇",
+    "丽江千古情景区",
+    "束河古镇",
+    "丽江玉水寨风景区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "丽江古城",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江古城-狮子山(狮山路)",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "狮子山万古楼景区",
+          "period": "afternoon",
+          "start": "15:30",
+          "end": "17:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "白沙古镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江千古情景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "束河古镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江玉水寨风景区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "丽江古城",
+    "丽江古城-狮子山(狮山路)",
+    "狮子山万古楼景区",
+    "白沙古镇",
+    "丽江千古情景区",
+    "束河古镇",
+    "丽江玉水寨风景区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "丽江古城",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江古城-狮子山(狮山路)",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "狮子山万古楼景区",
+          "period": "afternoon",
+          "start": "15:30",
+          "end": "17:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "白沙古镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江千古情景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "束河古镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江玉水寨风景区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 7
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 197.614,
+  "node_latency_ms": {
+    "planner": 108361.949,
+    "snapshot_gate": 5.295,
+    "reviewer": 63672.215,
+    "snapshot_reviewer": 7.051,
+    "time_check": 24567.948,
+    "snapshot_time_check": 2.546
+  },
+  "input_tokens_est": 17527,
+  "output_tokens_est": 3072,
+  "llm_calls": 7,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 69.14,
+  "draft_oor": {
+    "outside": 0,
+    "total": 7
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 1,
+      "date": "2026-09-15",
+      "limit": 0,
+      "outdoor_count": 3,
+      "outdoor_spots": [
+        "丽江古城",
+        "丽江古城-狮子山(狮山路)",
+        "狮子山万古楼景区"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 2,
+      "date": "2026-09-16",
+      "limit": 0,
+      "outdoor_count": 1,
+      "outdoor_spots": [
+        "白沙古镇"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 3,
+      "date": "2026-09-17",
+      "limit": 0,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "束河古镇",
+        "丽江玉水寨风景区"
+      ]
+    }
+  ],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

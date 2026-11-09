@@ -1,0 +1,39 @@
+{
+  "key": "ffd5524fc4af1f4d2560f83f4285d54c751687a63b3ec105c41bfffd26ccd2e9",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "3326bff4ab073274d268ef10a4e086205a64935e32d78e9e919a36ab1808c207",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 5,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 4,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Day 1和2的历史古迹和博物馆符合偏好，但Day 3的现代景点不太符合",
+    "pacing": "每天只有2个景点，10:00开始，符合慢节奏要求",
+    "geographic_coherence": "三天景点相对集中，但可能存在跨区域移动",
+    "time_realism": "时间安排合理，符合用户不喜欢早起的偏好",
+    "completeness": "提供了具体的时间安排和景点选择",
+    "diversity_and_dining": "景点类型有一定多样性，但主要集中在历史古迹"
+  },
+  "flags": [],
+  "overall_comment": "行程整体符合用户慢节奏、少景点的偏好，前两天的历史古迹和博物馆选择很好，但第三天的现代景点与用户偏好不太匹配。节奏安排合理，时间现实性强。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 742,
+    "output_tokens": 248,
+    "total_tokens": 990,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 48098.127,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

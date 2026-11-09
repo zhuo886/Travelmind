@@ -1,0 +1,117 @@
+{
+  "trial_id": "d5ead9c716924d10b39105ac404720c8",
+  "case_id": "nanjing-3d-tighthours-negative",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 1,
+  "snapshot_count": 1,
+  "soft_score": 100.0,
+  "warnings": [],
+  "route_names": [
+    "古鸡鸣寺",
+    "中山陵景区",
+    "江苏江宁汤山方山国家地质公园博物馆",
+    "南京欢乐谷",
+    "不老村",
+    "水墨大埝旅游区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "古鸡鸣寺",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "中山陵景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "江苏江宁汤山方山国家地质公园博物馆",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京欢乐谷",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "不老村",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "水墨大埝旅游区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "must_avoid_ok": null,
+  "latency_s": 288.944,
+  "node_latency_ms": {
+    "planner": 185979.702,
+    "snapshot_gate": 1.279,
+    "reviewer": 55651.581,
+    "snapshot_reviewer": 2.573,
+    "time_check": 47181.52,
+    "snapshot_time_check": 1.238
+  },
+  "input_tokens_est": 3587,
+  "output_tokens_est": 1819,
+  "llm_calls": 3,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS",
+  "benchmark_label": "WRONG_ACCEPT",
+  "expected_outcome_match": false
+}

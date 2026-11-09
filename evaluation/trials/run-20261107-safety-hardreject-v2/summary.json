@@ -1,0 +1,305 @@
+{
+  "total_trials": 6,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0
+  },
+  "effective_trials": 6,
+  "denominator_basis": "delivered_plan",
+  "outcome_counts": {
+    "CORRECT_REJECT": 6
+  },
+  "label_counts": {
+    "MATCH": 6
+  },
+  "fdr": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0
+  },
+  "pdr": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0
+  },
+  "omr": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "hpr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "fpr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "oor": {
+    "outside": 0,
+    "references": 0,
+    "value": null
+  },
+  "msr": {
+    "num": 0,
+    "den": 3,
+    "value": 0.0
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 1,
+    "den": 2,
+    "value": 0.5
+  },
+  "rounds": {
+    "mean": 0.333,
+    "snapshot_count_mean": 1.333
+  },
+  "soft_score": {
+    "mean": null,
+    "n": 0
+  },
+  "latency_s": {
+    "n": 6,
+    "median": 63.06,
+    "min": 28.966,
+    "max": 203.614,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "node_latency_ms": {
+    "planner": {
+      "n": 6,
+      "median": 31624.121,
+      "max": 101553.7
+    },
+    "snapshot_gate": {
+      "n": 6,
+      "median": 0.993,
+      "max": 2.1
+    },
+    "reviewer": {
+      "n": 4,
+      "median": 43427.188,
+      "max": 95960.0
+    },
+    "snapshot_reviewer": {
+      "n": 4,
+      "median": 0.808,
+      "max": 1.8
+    },
+    "time_check": {
+      "n": 2,
+      "median": 19159.653,
+      "max": 27410.9
+    },
+    "snapshot_time_check": {
+      "n": 2,
+      "median": 0.333,
+      "max": 0.5
+    }
+  },
+  "tool_calls": {
+    "candidate_api_calls_mean": 0.0,
+    "route_leg_count_mean": 0.0
+  },
+  "usage": {
+    "input_tokens_est_mean": 2840.7,
+    "output_tokens_est_mean": 871.8,
+    "llm_calls_mean": 2.67
+  },
+  "by_case": {
+    "sanya-1d-indooronly-empty-pool-negative": {
+      "trials": 3,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 3,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 58.927,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 1883.3,
+      "output_tokens_est_mean": 427.7,
+      "total_tokens_est_mean": 2311.0,
+      "llm_calls_mean": 2.0
+    },
+    "shanghai-1d-twohour-three-must-negative": {
+      "trials": 3,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 3,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 161.111,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 3798.0,
+      "output_tokens_est_mean": 1316.0,
+      "total_tokens_est_mean": 5114.0,
+      "llm_calls_mean": 3.33
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 2,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 2,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 30.343,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 1063.5,
+      "output_tokens_est_mean": 283.0,
+      "total_tokens_est_mean": 1346.5,
+      "llm_calls_mean": 1.0
+    },
+    "planner_reviewer": {
+      "trials": 2,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 2,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 110.019,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 3458.5,
+      "output_tokens_est_mean": 1133.0,
+      "total_tokens_est_mean": 4591.5,
+      "llm_calls_mean": 3.0
+    },
+    "planner_reviewer_time_check": {
+      "trials": 2,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 2,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 135.404,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 4000.0,
+      "output_tokens_est_mean": 1199.5,
+      "total_tokens_est_mean": 5199.5,
+      "llm_calls_mean": 4.0
+    }
+  },
+  "safety": {
+    "infeasible_trials": 6,
+    "correct_reject": 6,
+    "partial": 0,
+    "hard_fail": 0,
+    "wrong_accept": 0,
+    "srr": {
+      "num": 6,
+      "den": 6,
+      "value": 1.0
+    },
+    "war": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "unsafe_delivery_rate": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "partial_delivery_rate": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "non_reject_delivery_rate": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "feasible_trials": 0,
+    "over_reject": 0,
+    "orr": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "infeasible_outcomes": {
+      "CORRECT_REJECT": 6
+    },
+    "by_code": {
+      "candidate_pool_preference_conflict": 3,
+      "missing_must_visit": 1,
+      "physical_time_deadlock": 2,
+      "route_structure": 3
+    }
+  },
+  "expectations": null,
+  "judge": null,
+  "pass_at_k_by_case_mode": {},
+  "pass_at_k": {
+    "sanya-1d-indooronly-empty-pool-negative": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "shanghai-1d-twohour-three-must-negative": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  }
+}

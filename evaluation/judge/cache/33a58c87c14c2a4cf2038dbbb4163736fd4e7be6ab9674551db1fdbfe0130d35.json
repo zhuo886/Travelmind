@@ -1,0 +1,41 @@
+{
+  "key": "33a58c87c14c2a4cf2038dbbb4163736fd4e7be6ab9674551db1fdbfe0130d35",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "3732a145c804b5f9b178761cb5ff972c7c0ad9b52373b808cfa3b5c9d27a91cf",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Strong alignment with historical and natural landscape preferences; accommodates 'don't like early starts' habit with all activities starting at 10:00",
+    "pacing": "Reasonable 2-3 hour activity blocks with appropriate breaks between morning and afternoon sessions",
+    "geographic_coherence": "Activities grouped by day suggest some geographic coherence, but travel time between locations not specified",
+    "time_realism": "Realistic start times but missing travel time estimates between locations",
+    "completeness": "Lacks transportation details, meal planning, and accommodation information",
+    "diversity_and_dining": "Good variety of activity types but no explicit dining planning included"
+  },
+  "flags": [
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary matches the user's preferences for historical sites and natural landscapes, with appropriate pacing that accommodates the dislike of early starts. However, it lacks completeness in terms of transportation, meals, and accommodation details.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 597,
+    "output_tokens": 560,
+    "total_tokens": 1157,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 49579.095,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

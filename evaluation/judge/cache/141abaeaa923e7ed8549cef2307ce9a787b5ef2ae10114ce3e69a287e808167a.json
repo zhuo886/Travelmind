@@ -1,0 +1,45 @@
+{
+  "key": "141abaeaa923e7ed8549cef2307ce9a787b5ef2ae10114ce3e69a287e808167a",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "3732a145c804b5f9b178761cb5ff972c7c0ad9b52373b808cfa3b5c9d27a91cf",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Itinerary includes historical sites (古鸡鸣寺, 中山陵景区) and natural landscapes (江苏江宁汤山方山国家地质公园博物馆, 不老村, 水墨大埝旅游区) that match user preferences, but 南京欢乐谷 (amusement park) doesn't align with stated preferences.",
+    "pacing": "Each day has morning (10:00-12:00) and afternoon (14:00-16:30/17:00/16:00) sessions with reasonable 2-hour breaks, providing balanced rhythm without being too rushed or empty.",
+    "geographic_coherence": "Day 1 locations (古鸡鸣寺, 中山陵景区) are logically grouped in urban area, but other days may involve significant travel time between locations not accounted for in schedule.",
+    "time_realism": "Start times at 10:00 and 14:00 respect '不喜欢早起' preference, and timing for attractions appears realistic, but no travel time between locations is considered.",
+    "completeness": "Lacks essential practical information including transportation between locations, accommodation details, meal planning, entrance fees, and booking requirements.",
+    "diversity_and_dining": "Mix of historical and natural attractions provides some diversity, but no dining options or meal breaks are included in the itinerary."
+  },
+  "flags": [
+    "missing_transportation",
+    "missing_accommodation",
+    "missing_meal_planning",
+    "preference_mismatch",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary covers preferred historical and natural attractions with reasonable pacing and timing that respects the late start preference, but lacks practical details for execution and includes one attraction (Happy Valley) that doesn't match stated preferences.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 597,
+    "output_tokens": 822,
+    "total_tokens": 1419,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 46768.408,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

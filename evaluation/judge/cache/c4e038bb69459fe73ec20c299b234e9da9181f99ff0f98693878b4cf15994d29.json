@@ -1,0 +1,44 @@
+{
+  "key": "c4e038bb69459fe73ec20c299b234e9da9181f99ff0f98693878b4cf15994d29",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "bb5bb30598770784f0e99111ea4b384becd30a68b3cb8c397a274bef861ecfda",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "部分景点符合用户对历史古迹和博物馆的偏好，如中国科举博物馆、古鸡鸣寺、南京夫子庙，但玄武湖景区、南京长江大桥和江豚落日音乐广场不太符合偏好。",
+    "pacing": "每天只有2个景点，符合用户'每天景点别太多'的要求；每天10:00开始，符合不喜欢早起的习惯；景点之间有2小时间隔，节奏较慢。",
+    "geographic_coherence": "每天的景点地理位置都比较相近，没有明显的地理折返。",
+    "time_realism": "时间安排基本合理，但缺乏对通勤时间和景点开放时间的考虑。",
+    "completeness": "路线信息不够完整，缺乏交通、餐饮、住宿等必要信息，无法直接执行。",
+    "diversity_and_dining": "景点类型比较单一，缺乏多样性；没有考虑餐饮和休息安排。"
+  },
+  "flags": [
+    "部分景点不符合历史古迹偏好",
+    "缺乏交通和开放时间信息",
+    "缺乏餐饮和休息安排",
+    "evidence_missing"
+  ],
+  "overall_comment": "路线基本符合用户慢节奏和景点数量的要求，但在景点类型选择、信息完整性和体验多样性方面有待改进。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 603,
+    "output_tokens": 313,
+    "total_tokens": 916,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 62577.238,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

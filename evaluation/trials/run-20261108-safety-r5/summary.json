@@ -1,0 +1,305 @@
+{
+  "total_trials": 6,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0
+  },
+  "effective_trials": 6,
+  "denominator_basis": "delivered_plan",
+  "outcome_counts": {
+    "CORRECT_REJECT": 6
+  },
+  "label_counts": {
+    "MATCH": 6
+  },
+  "fdr": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0
+  },
+  "pdr": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0
+  },
+  "omr": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "hpr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "fpr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "oor": {
+    "outside": 0,
+    "references": 0,
+    "value": null
+  },
+  "msr": {
+    "num": 0,
+    "den": 3,
+    "value": 0.0
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "rounds": {
+    "mean": 0.0,
+    "snapshot_count_mean": 1.0
+  },
+  "soft_score": {
+    "mean": null,
+    "n": 0
+  },
+  "latency_s": {
+    "n": 6,
+    "median": 48.781,
+    "min": 16.497,
+    "max": 68.958,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "node_latency_ms": {
+    "planner": {
+      "n": 6,
+      "median": 26780.754,
+      "max": 44306.7
+    },
+    "snapshot_gate": {
+      "n": 6,
+      "median": 1.137,
+      "max": 2.4
+    },
+    "reviewer": {
+      "n": 4,
+      "median": 22357.749,
+      "max": 31062.3
+    },
+    "snapshot_reviewer": {
+      "n": 4,
+      "median": 0.668,
+      "max": 1.7
+    },
+    "time_check": {
+      "n": 2,
+      "median": 17625.917,
+      "max": 26348.1
+    },
+    "snapshot_time_check": {
+      "n": 2,
+      "median": 1.178,
+      "max": 2.0
+    }
+  },
+  "tool_calls": {
+    "candidate_api_calls_mean": 0.0,
+    "route_leg_count_mean": 0.0
+  },
+  "usage": {
+    "input_tokens_est_mean": 2085.3,
+    "output_tokens_est_mean": 349.7,
+    "llm_calls_mean": 2.0
+  },
+  "by_case": {
+    "sanya-1d-indooronly-empty-pool-negative": {
+      "trials": 3,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 3,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 37.017,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 1993.7,
+      "output_tokens_est_mean": 212.3,
+      "total_tokens_est_mean": 2206.0,
+      "llm_calls_mean": 2.0
+    },
+    "shanghai-1d-twohour-three-must-negative": {
+      "trials": 3,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 3,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 66.396,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 2177.0,
+      "output_tokens_est_mean": 487.0,
+      "total_tokens_est_mean": 2664.0,
+      "llm_calls_mean": 2.0
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 2,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 2,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 25.727,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 1171.5,
+      "output_tokens_est_mean": 170.5,
+      "total_tokens_est_mean": 1342.0,
+      "llm_calls_mean": 1.0
+    },
+    "planner_reviewer": {
+      "trials": 2,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 2,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 51.707,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 2298.0,
+      "output_tokens_est_mean": 389.0,
+      "total_tokens_est_mean": 2687.0,
+      "llm_calls_mean": 2.0
+    },
+    "planner_reviewer_time_check": {
+      "trials": 2,
+      "generated": 0,
+      "hard_pass": 0,
+      "match": 2,
+      "hpr": {
+        "num": 0,
+        "den": 0,
+        "value": null
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 64.751,
+      "soft_score_mean": null,
+      "input_tokens_est_mean": 2786.5,
+      "output_tokens_est_mean": 489.5,
+      "total_tokens_est_mean": 3276.0,
+      "llm_calls_mean": 3.0
+    }
+  },
+  "safety": {
+    "infeasible_trials": 6,
+    "correct_reject": 6,
+    "partial": 0,
+    "hard_fail": 0,
+    "wrong_accept": 0,
+    "srr": {
+      "num": 6,
+      "den": 6,
+      "value": 1.0
+    },
+    "war": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "unsafe_delivery_rate": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "partial_delivery_rate": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "non_reject_delivery_rate": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "feasible_trials": 0,
+    "over_reject": 0,
+    "orr": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "infeasible_outcomes": {
+      "CORRECT_REJECT": 6
+    },
+    "by_code": {
+      "candidate_pool_preference_conflict": 3,
+      "missing_must_visit": 1,
+      "physical_time_deadlock": 2,
+      "route_structure": 3
+    }
+  },
+  "expectations": null,
+  "judge": null,
+  "pass_at_k_by_case_mode": {},
+  "pass_at_k": {
+    "sanya-1d-indooronly-empty-pool-negative": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "shanghai-1d-twohour-three-must-negative": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  }
+}

@@ -1,0 +1,1054 @@
+"""纯工具函数（无 LLM、无外部 API 调用）。"""
+
+from __future__ import annotations
+
+import concurrent.futures
+import logging
+import math
+import os
+import re
+import time
+from datetime import date, timedelta
+from typing import Any
+
+logger = logging.getLogger(__name__)
+
+
+# 仅识别用户明确标注的景点名，避免把“适合孩子的博物馆”这类自然语言偏好
+# 误当成具体 POI 去请求地图接口。未加引号的模糊需求仍交给 Planner 处理。
+#
+# 触发词覆盖旅行对话中常见的必去表达；实际提取时会把同一分句中紧随
+# 触发词的多个引号项一起收集，例如：想去“外滩”、 “豫园”和“南京博物院”。
+_EXPLICIT_PLACE_TRIGGER_RE = re.compile(
+    r"(?<!不)(?:想去|换成|改成|增加|加入|安排(?:去)?|必去|必须去|一定要去|只去|打卡|包含)"
+)
+_QUOTED_PLACE_RE = re.compile(r"[“\"「]([^”\"」]{2,60})[”\"」]")
+_EXCLUSION_TRIGGER_RE = re.compile(r"(?:不要|不去|不想去|排除|不喜欢)")
+
+
+def normalize_poi_name(value: Any) -> str:
+    """Normalize presentation noise while preserving the POI identity."""
+    return re.sub(r"[\s·•()（）\[\]【】\-—]", "", str(value or "")).lower()
+
+
+_POI_SUFFIXES = (
+    "风景名胜区", "旅游景区", "民俗风貌区", "历史文化街区", "文化街区",
+    "观景台", "风景区", "景区", "古镇", "博物馆", "美术馆", "科技馆",
+    "展览馆", "纪念馆", "天文馆", "海洋馆", "水族馆", "夜景", "公园", "遗址",
+)
+_AUXILIARY_POI_MARKERS = (
+    "停车场", "停车点", "停车区", "公厕", "公共厕所", "卫生间", "洗手间",
+    "地铁站", "轻轨站", "轨道交通", "公交站", "公交车站", "客运站", "火车站",
+    "酒店", "宾馆", "民宿", "停车库", "售票处", "票务中心", "游客中心",
+)
+
+
+def is_auxiliary_poi(name: Any, category: Any = "", typecode: Any = "") -> bool:
+    """Reject nearby service/transport POIs from explicit-attraction identity matches."""
+    label = str(name or "")
+    kind = str(category or "")
+    code = str(typecode or "")
+    if any(marker in label for marker in _AUXILIARY_POI_MARKERS):
+        return True
+    if any(marker in kind for marker in (
+        "交通设施", "住宿服务", "公共设施", "汽车服务", "汽车销售", "医疗保健",
+        "金融保险服务", "商务住宅;住宅区", "餐饮服务", "餐饮",
+    )):
+        return True
+    return code.startswith(("15", "17", "18", "19")) and not any(
+        marker in kind for marker in ("风景名胜", "科教文化服务")
+    )
+
+
+def _strip_poi_suffix(value: str) -> str:
+    for suffix in _POI_SUFFIXES:
+        if value.endswith(suffix) and len(value) - len(suffix) >= 2:
+            return value[:-len(suffix)]
+    return value
+
+
+def _ordered_core_match(needle: str, haystack: str) -> bool:
+    """Require every core character in order, with a bounded intervening span."""
+    if len(needle) < 3:
+        return False
+    positions = []
+    cursor = 0
+    for char in needle:
+        position = haystack.find(char, cursor)
+        if position < 0:
+            return False
+        positions.append(position)
+        cursor = position + 1
+    # Reject accidental matches scattered through a long compound business name.
+    return (
+        positions[-1] == len(haystack) - 1
+        and positions[-1] - positions[0] + 1 <= len(needle) + 6
+    )
+
+
+def poi_name_matches(
+    returned_name: Any, requested_name: Any, city: str = "", *,
+    category: Any = "", typecode: Any = "",
+) -> bool:
+    """Match exact aliases and conservative official-name/core-name variants.
+
+    Besides bounded venue suffixes, Amap sometimes inserts words in an official
+    name (``解放碑`` -> ``人民解放纪念碑``). An ordered full-core match handles
+    those variants; service/transport POIs are rejected before fuzzy matching.
+    """
+    name = normalize_poi_name(returned_name)
+    query = normalize_poi_name(requested_name)
+    if not name or not query:
+        return False
+    if is_auxiliary_poi(returned_name, category, typecode):
+        return False
+    if name == query:
+        return True
+    city_norm = normalize_poi_name(city)
+    names = [name]
+    if city_norm and name.startswith(city_norm):
+        names.append(name[len(city_norm):])
+    queries = [query]
+    query_core = _strip_poi_suffix(query)
+    if query_core != query:
+        queries.append(query_core)
+    name_variants = list(dict.fromkeys(names + [_strip_poi_suffix(item) for item in names]))
+    for candidate in name_variants:
+        for target in queries:
+            if candidate == target:
+                return True
+            # Preserve the existing bounded official-suffix behavior.
+            if candidate.startswith(target) and _strip_poi_suffix(candidate) == target:
+                return True
+            # Do not accept arbitrary business-name substrings (e.g. a
+            # restaurant named "星河幻境咖啡店" for a requested museum).
+            # Official prefixes/suffixes are handled by the bounded suffix
+            # check above; inserted official words are handled below.
+            if _ordered_core_match(target, candidate):
+                return True
+    return False
+
+
+def canonical_poi_name(value: Any, pois: list[dict[str, Any]], city: str = "") -> str | None:
+    """Return the candidate-pool spelling for an official name alias."""
+    raw = str(value or "").strip()
+    # A canonical spelling must never be redirected through another POI's
+    # alias/fuzzy match, regardless of pool ordering or old checkpoint aliases.
+    for poi in pois or []:
+        candidate = str(poi.get("name") or "").strip()
+        if (candidate and normalize_poi_name(candidate) == normalize_poi_name(raw)
+                and not is_auxiliary_poi(candidate, poi.get("category"), poi.get("typecode"))):
+            return candidate
+    for poi in pois or []:
+        candidate = str(poi.get("name") or "").strip()
+        if is_auxiliary_poi(candidate, poi.get("category"), poi.get("typecode")):
+            continue
+        aliases = [str(item).strip() for item in (poi.get("aliases") or []) if str(item).strip()]
+        if candidate and (any(normalize_poi_name(alias) == normalize_poi_name(raw) for alias in aliases)
+                          or poi_name_matches(candidate, raw, city,
+                              category=poi.get("category"), typecode=poi.get("typecode"))):
+            return candidate
+    return None
+
+
+def _chinese_number(value: str) -> float | None:
+    if re.fullmatch(r"\d+(?:\.\d+)?", value):
+        return float(value)
+    digits = {"零": 0, "〇": 0, "一": 1, "二": 2, "两": 2, "三": 3, "四": 4,
+              "五": 5, "六": 6, "七": 7, "八": 8, "九": 9}
+    if value == "十":
+        return 10.0
+    if "十" in value and all(char in digits or char == "十" for char in value):
+        left, _, right = value.partition("十")
+        return float((digits[left] if left else 1) * 10 + (digits[right] if right else 0))
+    if value and all(char in digits for char in value):
+        return float("".join(str(digits[char]) for char in value))
+    return None
+
+
+def extract_time_constraints(text: str) -> dict[str, float | str | None]:
+    """Extract explicit daily duration/end-time limits without inferring preferences."""
+    source = text or ""
+    duration_values: list[float] = []
+    number = r"(?P<hours>\d+(?:\.\d+)?|[零〇一二两三四五六七八九十]+)"
+    duration_patterns = (
+        re.compile(number + r"\s*(?:个)?小时\s*内"),
+        re.compile(r"(?:只有|仅有|总共|总计|一共|限时|仅限|最多|不超过|控制在|可用时间(?:为|只有)?|时间窗口(?:为|是)?)\s*" + number + r"\s*(?:个)?小时"),
+    )
+    for pattern in duration_patterns:
+        for match in pattern.finditer(source):
+            value = _chinese_number(match.group("hours"))
+            if value is not None and value > 0:
+                duration_values.append(value)
+    if re.search(r"(?:只有|仅有|安排|游玩|玩|限时)?\s*半天(?:内|时间|行程)?", source):
+        duration_values.append(4.0)
+
+    end_values: list[int] = []
+    end_pattern = re.compile(
+        r"(?P<period>早上|上午|中午|下午|傍晚|晚上)?\s*"
+        r"(?P<hour>\d{1,2})(?::(?P<minute>\d{2})|点(?P<cnminute>\d{1,2})?分?|时(?P<shiminute>\d{1,2})?分?)"
+        r"\s*前(?:结束|完成|收工|返程|回程|回到目的地)?"
+    )
+    for match in end_pattern.finditer(source):
+        hour = int(match.group("hour"))
+        minute = int(match.group("minute") or match.group("cnminute") or match.group("shiminute") or 0)
+        period = match.group("period") or ""
+        if minute >= 60 or hour > 24:
+            continue
+        if period in {"下午", "傍晚", "晚上"} and 1 <= hour <= 11:
+            hour += 12
+        elif period == "中午" and hour < 11:
+            hour += 12
+        if hour >= 24:
+            continue
+        end_values.append(hour * 60 + minute)
+
+    return {
+        "max_duration_hours": min(duration_values) if duration_values else None,
+        "latest_end_time": (f"{min(end_values) // 60:02d}:{min(end_values) % 60:02d}"
+                            if end_values else None),
+    }
+
+
+def extract_explicit_place_requests(text: str) -> list[str]:
+    """Extract explicitly requested quoted places, preserving order.
+
+    A trigger applies to every quoted item in its current clause.  This keeps
+    multi-name requests deterministic while leaving exclusion phrases to
+    ``excluded_names``/``missing_explicit_places``.
+    """
+    seen: set[str] = set()
+    result: list[str] = []
+    source = text or ""
+    # Chinese punctuation is a natural boundary for one requirement clause.
+    clause_start = 0
+    for match in _QUOTED_PLACE_RE.finditer(source):
+        boundary = max(source.rfind(mark, clause_start, match.start())
+                       for mark in ("。", "；", ";", "\n"))
+        if boundary >= clause_start:
+            clause_start = boundary + 1
+        prefix = source[clause_start:match.start()]
+        # A new trigger in this clause activates all following quoted names;
+        # reset only after a hard clause boundary.
+        explicit_matches = list(_EXPLICIT_PLACE_TRIGGER_RE.finditer(prefix))
+        exclusion_matches = list(_EXCLUSION_TRIGGER_RE.finditer(prefix))
+        last_explicit = explicit_matches[-1] if explicit_matches else None
+        last_exclusion = exclusion_matches[-1] if exclusion_matches else None
+        # ``不想去`` contains the positive trigger ``想去``. Comparing only
+        # start offsets would misclassify the quoted name as a must-visit.
+        overlapping_exclusion = bool(
+            last_exclusion
+            and last_explicit
+            and last_exclusion.end() > last_explicit.start()
+        )
+        explicit = last_explicit is not None and (
+            last_exclusion is None
+            or (
+                last_explicit.start() > last_exclusion.start()
+                and not overlapping_exclusion
+            )
+        )
+        excluded = last_exclusion is not None and not explicit
+        if explicit and not excluded:
+            name = match.group(1).strip()
+            if name and name not in seen:
+                seen.add(name)
+                result.append(name)
+        # Keep the trigger context through list punctuation, but start a new
+        # clause after sentence/semicolon/newline boundaries.
+        boundary = max(
+            source.rfind(mark, clause_start, match.start())
+            for mark in ("。", "；", ";", "\n")
+        )
+        if boundary >= clause_start:
+            clause_start = boundary + 1
+    return result
+
+
+def missing_explicit_places(text: str, pois: list[dict[str, Any]]) -> list[str]:
+    """Return explicitly requested quoted places absent from the current candidate pool."""
+    return [name for name in extract_explicit_place_requests(text)
+            if canonical_poi_name(name, pois) is None]
+
+from app.core.env import load_local_env
+from app.core.llm_usage import extract_usage, record_call
+from app.providers.amap.poi import (
+    parse_location,
+    normalize_address,
+    search_attraction_pois,
+    poi_to_spot,
+)
+
+
+# ─── 环境变量 ─────────────────────────────────────────────────
+
+def amap_key() -> str:
+    load_local_env()
+    key = os.getenv("AMAP_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("缺少 AMAP_API_KEY，请在 .env.local 中配置")
+    return key
+
+
+# ─── 日期解析 ─────────────────────────────────────────────────
+
+def parse_iso_date(text: str) -> date | None:
+    text = (text or "").strip()
+    if not text:
+        return None
+    try:
+        return date.fromisoformat(text)
+    except ValueError:
+        return None
+
+
+_EXPLICIT_DATE_RE = re.compile(
+    r"(?:(?P<year>(?:19|20)\d{2})\s*[年.\-/]\s*)?"
+    r"(?P<month>\d{1,2})\s*(?:月|[.\-/])\s*"
+    r"(?P<day>\d{1,2})(?:\s*(?:日|号))?"
+    r"(?![0-9])"
+)
+_DATE_UNIT_SUFFIX_RE = re.compile(
+    r"\s*(?:小时|分钟|分|天|日|夜|晚|公里|千米|km|KM|个|人|元|岁)"
+)
+_TRAVEL_DAYS_RE = re.compile(
+    r"(?<![\d第年月.\-/])(?P<num>\d{1,2}|[零〇一二两三四五六七八九十]+)\s*"
+    r"(?P<unit>日游|天|日)"
+)
+_RELATIVE_DAY_RE = re.compile(r"(大后天|后天|明天|明日|明早|明晚|今天|今日|今晚)")
+_RELATIVE_DAY_OFFSETS = {
+    "今天": 0, "今日": 0, "今晚": 0,
+    "明天": 1, "明日": 1, "明早": 1, "明晚": 1,
+    "后天": 2, "大后天": 3,
+}
+_N_DAYS_LATER_RE = re.compile(
+    r"(?<![\d.])(?P<num>\d{1,2}|[零〇一二两三四五六七八九十]+)\s*天(?:之)?后"
+)
+_WEEKEND_RE = re.compile(r"(?P<prefix>下|本|这)?\s*周末")
+_WEEKDAY_RE = re.compile(
+    r"(?P<prefix>下|本|这)?\s*(?:周|星期|礼拜)(?P<day>[一二三四五六日天1-7])"
+)
+_WEEKDAY_INDEX = {
+    "一": 0, "二": 1, "三": 2, "四": 3, "五": 4, "六": 5, "日": 6, "天": 6,
+    "1": 0, "2": 1, "3": 2, "4": 3, "5": 4, "6": 5, "7": 6,
+}
+
+
+def _resolve_month_day(month: int, day: int, today: date) -> date | None:
+    """Resolve a month/day without a year; past dates roll to next year."""
+    for year in (today.year, today.year + 1):
+        try:
+            candidate = date(year, month, day)
+        except ValueError:
+            continue
+        if candidate >= today - timedelta(days=1):
+            return candidate
+    return None
+
+
+def parse_explicit_travel_dates(text: str, today: date | None = None) -> list[date]:
+    """Parse explicit dates such as ``11.18``/``11月18日``/``2026-11-18``.
+
+    The intent model reliably handles relative dates ("明天") but often leaves
+    month/day-only inputs empty. This deterministic fallback makes those
+    explicit dates usable without asking the user to repeat them.
+    """
+    source = text or ""
+    today = today or date.today()
+    found: list[date] = []
+    for match in _EXPLICIT_DATE_RE.finditer(source):
+        tail = source[match.end(): match.end() + 8]
+        if _DATE_UNIT_SUFFIX_RE.match(tail):
+            continue  # 1.5小时 / 3.5天 不是日期
+        month = int(match.group("month"))
+        day = int(match.group("day"))
+        if not (1 <= month <= 12 and 1 <= day <= 31):
+            continue
+        if match.group("year"):
+            try:
+                candidate = date(int(match.group("year")), month, day)
+            except ValueError:
+                continue
+        else:
+            candidate = _resolve_month_day(month, day, today)
+        if candidate and candidate not in found:
+            found.append(candidate)
+    return found
+
+
+def _next_week_start(today: date) -> date:
+    """Next calendar week's Monday (today counts as this week even on weekends)."""
+    return today + timedelta(days=7 - today.weekday())
+
+
+def _weekend_start(today: date, *, next_week: bool = False) -> date:
+    """Nearest upcoming Saturday; ``next_week`` skips the current weekend."""
+    if next_week:
+        return _next_week_start(today) + timedelta(days=5)
+    if today.weekday() == 5:      # 周六：已在周末
+        return today
+    if today.weekday() == 6:      # 周日：本周已过，取下一个周六
+        return today + timedelta(days=6)
+    return today + timedelta(days=5 - today.weekday())
+
+
+def parse_relative_travel_date(text: str, today: date | None = None) -> date | None:
+    """Resolve relative start dates ("明天中午开始"/"周末两天"/"下周六") without LLM.
+
+    The intent model intermittently leaves relative dates empty, which pushes a
+    valid request into the clarify branch. Priority: 今天/明天/后天 > N天后 >
+    周末 > 周X, so an explicit "明天" wins over an accompanying "周末".
+    """
+    source = text or ""
+    today = today or date.today()
+
+    match = _RELATIVE_DAY_RE.search(source)
+    if match:
+        return today + timedelta(days=_RELATIVE_DAY_OFFSETS[match.group(1)])
+
+    match = _N_DAYS_LATER_RE.search(source)
+    if match:
+        value = _chinese_number(match.group("num"))
+        if value is not None and 1 <= int(value) <= 30:
+            return today + timedelta(days=int(value))
+
+    match = _WEEKEND_RE.search(source)
+    if match:
+        return _weekend_start(today, next_week=match.group("prefix") == "下")
+
+    match = _WEEKDAY_RE.search(source)
+    if match:
+        weekday = _WEEKDAY_INDEX[match.group("day")]
+        if match.group("prefix") == "下":
+            return _next_week_start(today) + timedelta(days=weekday)
+        return today + timedelta(days=(weekday - today.weekday()) % 7)
+
+    return None
+
+
+def extract_travel_days(text: str) -> int | None:
+    """Extract explicit trip duration ("一日游"/"三天"/"5日") without LLM."""
+    source = text or ""
+    for match in _TRAVEL_DAYS_RE.finditer(source):
+        value = _chinese_number(match.group("num"))
+        if value is None:
+            continue
+        days = int(value)
+        if 1 <= days <= 30:
+            return days
+    return None
+
+
+# ─── 地理距离 ─────────────────────────────────────────────────
+
+EARTH_RADIUS_KM = 6371.0088
+
+
+def haversine_km(a: dict[str, float], b: dict[str, float]) -> float:
+    """两点球面 haversine 距离（km）。"""
+    lat1, lon1 = math.radians(a["lat"]), math.radians(a["lng"])
+    lat2, lon2 = math.radians(b["lat"]), math.radians(b["lng"])
+    dlat, dlon = lat2 - lat1, lon2 - lon1
+    h = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+    return 2 * EARTH_RADIUS_KM * math.asin(math.sqrt(h))
+
+
+def _has_coords(loc: Any) -> bool:
+    """location 是否为含数值经纬度的 dict。"""
+    return (
+        isinstance(loc, dict)
+        and isinstance(loc.get("lat"), (int, float))
+        and isinstance(loc.get("lng"), (int, float))
+    )
+
+
+def cluster_pois_by_location(
+    pois: list[dict[str, Any]], k: int
+) -> dict[str, int]:
+    """按经纬度把候选景点聚成 k 个地理分区，返回 {景点名: 分区编号(0-based)}。
+
+    用于给 Planner 提供「真实坐标距离」的地理分区软提示，替代坐标盲的行政区名
+    （adname）——同一行政区的景点可能相距很远（如玄武湖与中山陵同属玄武区却
+    相距约 10km）。
+
+    - 无坐标的景点归入分区 -1（不参与聚类）。
+    - k<=1 或有效景点过少时，全部归入分区 0。
+    - 确定性：固定种子初始化（按经度排序等距取点），同一输入每次结果一致。
+    """
+    result: dict[str, int] = {}
+    valid: list[tuple[str, dict[str, float]]] = []
+    for s in pois:
+        loc = s.get("location")
+        if _has_coords(loc):
+            valid.append((s["name"], loc))
+        else:
+            result[s["name"]] = -1
+
+    n = len(valid)
+    if n == 0:
+        return result
+    k = max(1, min(k, n))
+    if k == 1:
+        for name, _ in valid:
+            result[name] = 0
+        return result
+
+    # 确定性初始化：按经度（再纬度）排序后等距取 k 个种子
+    ordered = sorted(valid, key=lambda x: (x[1]["lng"], x[1]["lat"]))
+    centroids = [
+        {"lat": ordered[round(i * (n - 1) / (k - 1))][1]["lat"],
+         "lng": ordered[round(i * (n - 1) / (k - 1))][1]["lng"]}
+        for i in range(k)
+    ]
+
+    assign: dict[str, int] = {}
+    for _ in range(20):
+        new_assign = {
+            name: min(range(k), key=lambda c: haversine_km(centroids[c], loc))
+            for name, loc in valid
+        }
+        if new_assign == assign:
+            break
+        assign = new_assign
+        for c in range(k):
+            members = [loc for name, loc in valid if assign[name] == c]
+            if members:
+                centroids[c] = {
+                    "lat": sum(m["lat"] for m in members) / len(members),
+                    "lng": sum(m["lng"] for m in members) / len(members),
+                }
+
+    result.update(assign)
+    return result
+
+
+# ─── 偏好清洗 ─────────────────────────────────────────────────
+
+# LLM 在用户未提供偏好时偶尔吐出的占位垃圾值（应等同于"无偏好"）
+_JUNK_PREF = {"null", "none", "undefined", "n/a", "na", "无", "暂无", "没有", "不限", "无偏好"}
+
+
+def clean_pref(v: str | None) -> str | None:
+    """把偏好字段归一化：去空白；整串为占位垃圾值（如 'null'/'无'）时视为无偏好返回 None。
+
+    只在『整串』等于垃圾 token 时清空，避免误伤 '无辣不欢' 这类正常偏好。
+    """
+    s = (v or "").strip()
+    return None if (not s or s.lower() in _JUNK_PREF) else s
+
+
+# ─── 候选景点池 ───────────────────────────────────────────────
+
+def fetch_city_spots(city: str, api_key: str, *, max_spots: int = 30) -> list[dict[str, Any]]:
+    """多关键词搜索 + 去重，返回最多 max_spots 个有坐标的候选景点。"""
+    keywords_list = [f"{city}必去景点", f"{city}热门景区", f"{city}博物馆"]
+    seen: set[str] = set()
+    spots: list[dict[str, Any]] = []
+    for kw in keywords_list:
+        if len(spots) >= max_spots:
+            break
+        for raw in search_attraction_pois(city, api_key, keywords=kw):
+            if len(spots) >= max_spots:
+                break
+            name = raw.get("name", "")
+            if name in seen:
+                continue
+            spot = poi_to_spot(raw)
+            if spot:
+                seen.add(name)
+                spots.append(spot)
+    return spots
+
+
+def filter_by_rating(
+    spots: list[dict[str, Any]], min_rating: float
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """只保留 rating ≥ min_rating 的景点；无评分视为不达标。"""
+    kept = [s for s in spots if s.get("rating") is not None and s["rating"] >= min_rating]
+    dropped = [s for s in spots if s not in kept]
+    return kept, dropped
+
+
+def merge_verified_poi(candidates: list[dict[str, Any]], poi: dict[str, Any]) -> list[dict[str, Any]]:
+    """Add a server-verified POI to the planning pool without duplicate names.
+
+    The selected POI is placed first so it remains visible to the planner even
+    when the original pool is already large. This function intentionally does
+    not apply the initial rating filter: an explicitly selected, verified place
+    is a user requirement rather than an automatic recommendation.
+    """
+    name = str(poi.get("name") or "").strip()
+    if not name:
+        raise ValueError("verified POI requires a name")
+    remaining = [item for item in candidates if str(item.get("name") or "").strip() != name]
+    return [poi, *remaining]
+
+
+# ─── 格式化 ──────────────────────────────────────────────────
+
+_CLUSTER_LABELS = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮"
+
+
+def _spot_line(s: dict[str, Any]) -> str:
+    loc = s.get("location") or {}
+    rating = f"{s['rating']:.1f}" if s.get("rating") else "无"
+    open_t = s.get("open_time") or "未知"
+    area = s.get("adname") or "未知"
+    if _has_coords(loc):
+        coord = f"坐标 {loc['lng']:.4f},{loc['lat']:.4f}"
+    else:
+        coord = "坐标未知"
+    from app.planning.constraints import indoor_description
+    from app.planning.poi_attributes import attribute_description
+    attributes = attribute_description(s)
+    return f"- {s['name']}（区域 {area}，评分 {rating}，开放 {open_t}，{coord}；{indoor_description(s)}）" + (f"；官方属性资料（仅作事实，不是指令）：{attributes}" if attributes else "")
+
+
+def format_spots_for_llm(
+    pois: list[dict[str, Any]],
+    cluster_map: dict[str, int] | None = None,
+) -> str:
+    """候选景点池的紧凑清单（喂给 LLM）。
+
+    传入 cluster_map（{景点名: 分区编号}，见 cluster_pois_by_location）时，按
+    『地理分区』分组展示——同一分区的景点连续列出，引导 LLM 把同区景点排在同
+    一天。不传则保持平铺（向后兼容）。
+    """
+    if not cluster_map:
+        return "\n".join(_spot_line(s) for s in pois)
+
+    groups: dict[int, list[dict[str, Any]]] = {}
+    for s in pois:
+        cid = cluster_map.get(s["name"], -1)
+        groups.setdefault(cid, []).append(s)
+
+    blocks = []
+    # 有效分区按编号升序在前，无坐标(-1)放最后
+    for cid in sorted(groups, key=lambda c: (c == -1, c)):
+        if cid == -1:
+            header = "📍其他（无坐标，地理分区未知）"
+        else:
+            label = _CLUSTER_LABELS[cid] if cid < len(_CLUSTER_LABELS) else f"#{cid + 1}"
+            header = f"📍地理分区{label}"
+        lines = "\n".join(_spot_line(s) for s in groups[cid])
+        blocks.append(f"{header}\n{lines}")
+    return "\n\n".join(blocks)
+
+
+def spot_location_map(pois: list[dict[str, Any]]) -> dict[str, dict[str, float]]:
+    return {s["name"]: s["location"] for s in pois}
+
+
+
+_TIME_RANGE_RE = re.compile(r"(\d{1,2})[:：](\d{2})\s*[-~—–至]\s*(\d{1,2})[:：](\d{2})")
+
+_WEEKDAY_NUMBER = {char: index for index, chars in enumerate(
+    ("一1", "二2", "三3", "四4", "五5", "六6", "日天7")) for char in chars}
+_WEEKDAY_EXPR = (
+    r"(?:每\s*)?(?:周|星期|礼拜)\s*[一二三四五六日天1-7]"
+    r"(?:\s*(?:至|到|[-~—–]|、|，|,|及|和)\s*(?:(?:周|星期|礼拜)\s*)?[一二三四五六日天1-7])*"
+)
+_CLOSURE_ACTION = r"(?:闭馆|闭园|休馆|休园|休息|不开放|不对外开放|不营业)"
+_WEEKDAY_CLOSURE_RE = re.compile(
+    rf"(?P<days>{_WEEKDAY_EXPR})\s*(?:[（(][^（）()；;。]{{0,40}}[）)]\s*)?"
+    rf"(?:全天\s*)?{_CLOSURE_ACTION}"
+)
+_CLOSURE_DAY_RE = re.compile(
+    rf"{_CLOSURE_ACTION}(?:日|时间)?\s*[:：为是]\s*(?P<days>{_WEEKDAY_EXPR})"
+)
+
+
+def closed_weekdays(opening_text: str) -> set[int]:
+    """Explicit recurring closures only; absence of an open day proves nothing.
+
+    Holiday exceptions remain uncertain: callers report a possible closure and
+    ask for verification, rather than inventing an override calendar.
+    """
+    text = str(opening_text or "")
+    days: set[int] = set()
+    for pattern in (_WEEKDAY_CLOSURE_RE, _CLOSURE_DAY_RE):
+        for match in pattern.finditer(text):
+            # Do not interpret quoted/negated closure statements as evidence.
+            if re.search(r"(?:并非|不是|并不是|取消|不再)\s*$", text[max(0, match.start() - 8):match.start()]):
+                continue
+            expression = match.group("days")
+            tokens = list(re.finditer(r"[一二三四五六日天1-7]", expression))
+            for index, token in enumerate(tokens):
+                current = _WEEKDAY_NUMBER[token.group()]
+                days.add(current)
+                if index and re.search(r"至|到|[-~—–]", expression[tokens[index - 1].end():token.start()]):
+                    previous = _WEEKDAY_NUMBER[tokens[index - 1].group()]
+                    days.update((previous + offset) % 7 for offset in range((current - previous) % 7 + 1))
+    return days
+
+
+def visit_weekday(day: dict[str, Any], travel_start_date: date | str | None = None) -> tuple[int, str] | None:
+    """Use a real date first, or an explicitly supplied Chinese weekday.
+
+    Never infer the visit day from today's date or the weather array order.
+    """
+    raw_date = day.get("date")
+    actual = raw_date if isinstance(raw_date, date) else parse_iso_date(str(raw_date or ""))
+    start = travel_start_date if isinstance(travel_start_date, date) else parse_iso_date(str(travel_start_date or ""))
+    if actual is None and start is not None:
+        try:
+            day_number = int(day.get("day"))
+            actual = start + timedelta(days=day_number - 1) if day_number > 0 else None
+        except (ValueError, TypeError, OverflowError):
+            pass
+    label = f"Day{day.get('day', '?')}"
+    if actual is not None:
+        weekday = actual.weekday()
+        return weekday, f"{label}（{actual.isoformat()} 周{'一二三四五六日'[weekday]}）"
+    explicit = re.fullmatch(r"\s*(?:周|星期|礼拜)([一二三四五六日天1-7])\s*", str(day.get("weekday") or ""))
+    if explicit:
+        return _WEEKDAY_NUMBER[explicit.group(1)], f"{label}（{explicit.group().strip()}）"
+    return None
+
+
+def weekday_closure_violations(
+    route: list[dict[str, Any]], pois: list[dict[str, Any]], travel_start_date: date | str | None = None,
+) -> list[dict[str, Any]]:
+    """L1 findings tied to this route version's actual scheduled visits."""
+    by_name = {poi.get("name"): poi for poi in pois}
+    findings: list[dict[str, Any]] = []
+    seen: set[tuple[str, str]] = set()
+    for day in route:
+        visit = visit_weekday(day, travel_start_date)
+        if visit is None:
+            continue  # Unknown date is not evidence of a closure.
+        weekday, label = visit
+        for spot in day.get("spots") or []:
+            name = str(spot.get("name") or "")
+            canonical = name if name in by_name else canonical_poi_name(name, pois)
+            poi = by_name.get(canonical, {})
+            # Both fields may carry complementary opening information.
+            opening = "；".join(dict.fromkeys(str(poi.get(key) or "").strip()
+                for key in ("open_time", "business_hours") if str(poi.get(key) or "").strip()))
+            key = (label, canonical or name)
+            if weekday not in closed_weekdays(opening) or key in seen:
+                continue
+            seen.add(key)
+            # Keep the closure-bearing clause even when the provider text is long.
+            clauses = re.split(r"[；;。\n]", opening)
+            relevant = next((part for part in clauses if weekday in closed_weekdays(part)), opening)
+            excerpt = relevant[:180] + ("…" if len(relevant) > 180 else "")
+            findings.append({
+                "code": "closed_on_visit_day", "day": day.get("day"), "poi_name": name,
+                "message": f"{label} 景点可能闭馆：{name}（参考开放信息：{excerpt}），建议调整游览日期或行前核实",
+            })
+    return findings
+
+
+def _to_minutes(hhmm: str) -> int | None:
+    m = re.match(r"\s*(\d{1,2})[:：](\d{2})", hhmm or "")
+    if not m:
+        return None
+    return int(m.group(1)) * 60 + int(m.group(2))
+
+
+def open_time_violations(route: list[dict[str, Any]], pois: list[dict[str, Any]]) -> list[str]:
+    """检查每个景点游玩时段是否落在开放时间内。"""
+    open_map = {s["name"]: (s.get("open_time") or s.get("business_hours") or "") for s in pois}
+    bad: list[str] = []
+    for day in route:
+        for spot in day.get("spots", []):
+            name = canonical_poi_name(spot["name"], pois) or spot["name"]
+            ranges = list(_TIME_RANGE_RE.finditer(open_map.get(name, "")))
+            if not ranges:
+                continue
+            s_start = _to_minutes(spot.get("start_time", ""))
+            s_end = _to_minutes(spot.get("end_time", ""))
+            if s_start is None or s_end is None:
+                continue
+            inside_any_window = any(
+                s_start >= int(rng.group(1)) * 60 + int(rng.group(2))
+                and s_end <= int(rng.group(3)) * 60 + int(rng.group(4))
+                for rng in ranges
+            )
+            if not inside_any_window:
+                rendered_ranges = " / ".join(rng.group(0) for rng in ranges)
+                bad.append(
+                    f"Day{day.get('day')} {spot['name']} 游玩 {spot.get('start_time')}-{spot.get('end_time')}"
+                    f" 超出开放 {rendered_ranges}"
+                )
+    return bad
+
+
+def unknown_spots(route: list[dict[str, Any]], pois: list[dict[str, Any]]) -> list[str]:
+    """找出不在候选池且无法映射到其稳定官方名称/别名的景点名。"""
+    valid = {s["name"] for s in pois}
+    bad = []
+    for day in route:
+        for spot in day.get("spots", []):
+            name = str(spot.get("name") or "")
+            if name not in valid and canonical_poi_name(name, pois):
+                continue
+            if name not in valid:
+                bad.append(f"Day{day.get('day')} {spot['name']}")
+    return bad
+
+
+# ─── 时间线辅助 ───────────────────────────────────────────────
+
+def last_spot_of_period(day: dict[str, Any], period: str) -> dict[str, Any] | None:
+    """返回当天指定时段的最后一个景点（按 spots 列表顺序）。"""
+    spots = [s for s in day.get("spots", []) if s.get("period") == period]
+    if spots:
+        return spots[-1]
+    all_spots = day.get("spots", [])
+    if not all_spots:
+        return None
+    return all_spots[0] if period == "morning" else all_spots[-1]
+
+
+def dinner_anchor_spot(day: dict[str, Any]) -> dict[str, Any] | None:
+    """晚餐搜索中心：优先取第一个 evening 景点，无则兜底取最后一个 afternoon 景点。"""
+    evening_spots = [s for s in day.get("spots", []) if s.get("period") == "evening"]
+    if evening_spots:
+        return evening_spots[0]
+    return last_spot_of_period(day, "afternoon")
+
+
+# ─── 结构化 LLM 调用（含 None 重试守卫）────────────────────────
+
+def _is_transient_llm_error(exc: Exception) -> bool:
+    """Return whether retrying a provider failure is likely to help."""
+    name = type(exc).__name__.lower()
+    if any(token in name for token in ("timeout", "connection", "ratelimit")):
+        return True
+    status = getattr(exc, "status_code", None)
+    return status == 429 or (isinstance(status, int) and status >= 500)
+
+
+def _llm_call_timeout_seconds() -> float:
+    """单次 LLM 调用的墙钟上限（秒），可用 ``LLM_CALL_TIMEOUT_SECONDS`` 覆盖。"""
+    raw = (os.getenv("LLM_CALL_TIMEOUT_SECONDS") or "").strip()
+    try:
+        value = float(raw)
+    except ValueError:
+        return 240.0
+    return value if value > 0 else 240.0
+
+
+def _invoke_with_deadline(llm: Any, messages: Any, timeout: float | None = None) -> Any:
+    """给同步 LLM 调用加墙钟上限。
+
+    httpx 的 read timeout 会被流式分片不断重置：只要上游持续"滴"数据，一次调用就能拖到
+    小时级（2026-11-09 实测一次 planner 调用挂了 7010 秒，最终仍返回结果）。
+    这里用线程 + ``future.result(timeout)`` 兜底，超时抛 ``TimeoutError``，
+    交由既有的重试/降级链路处理，不再无限等待。
+    """
+    limit = timeout if timeout is not None else _llm_call_timeout_seconds()
+    pool = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+    future = pool.submit(llm.invoke, messages)
+    try:
+        return future.result(timeout=limit)
+    except concurrent.futures.TimeoutError as exc:
+        raise TimeoutError(
+            f"LLM 调用超过 {limit:.0f}s 未返回（可用 LLM_CALL_TIMEOUT_SECONDS 调整）"
+        ) from exc
+    finally:
+        # 不等被放弃的线程，否则超时形同虚设。
+        pool.shutdown(wait=False)
+
+
+def invoke_structured(llm: Any, messages: list[tuple[str, str]], *, retries: int = 3) -> Any:
+    """调用结构化输出 LLM，对 None 和瞬时供应商错误做有界重试。
+
+    DeepSeek function_calling 模式偶尔返回 None；重试若干次，
+    仍失败则抛出明确错误而非 AttributeError。
+
+    诊断日志：
+    - 每次调用打印耗时（帮助区分"网络慢"和"重试导致慢"）
+    - 出现 None 时打印警告，标明是第几次重试
+    """
+    # 估算输入 token（粗略：字符数 / 2 ≈ token 数，仅供参考）
+    total_chars = sum(len(role) + len(content) for role, content in messages)
+    schema_name = getattr(getattr(llm, "schema", None), "__name__", None)
+    # 从 llm 对象尝试取 schema 名（with_structured_output 绑定的 Pydantic 类）
+    if schema_name is None:
+        # langchain with_structured_output 把 schema 存在内部不同位置，尝试常见路径
+        for attr in ("_schema", "schema_", "output_schema"):
+            s = getattr(llm, attr, None)
+            if s and hasattr(s, "__name__"):
+                schema_name = s.__name__
+                break
+    label = schema_name or "unknown"
+
+    for attempt in range(retries):
+        t0 = time.perf_counter()
+        result = None
+        try:
+            result = _invoke_with_deadline(llm, messages)
+        except Exception as exc:
+            elapsed = time.perf_counter() - t0
+            record_call(
+                schema=label,
+                model=str(getattr(llm, "model_name", None) or getattr(llm, "model", None) or "unknown"),
+                input_chars=total_chars,
+                latency_ms=elapsed * 1000,
+                success=False,
+            )
+            if attempt + 1 < retries and _is_transient_llm_error(exc):
+                logger.warning(
+                    "[invoke_structured] %s 第 %d 次调用发生瞬时错误 %s（耗时 %.2fs），准备重试…",
+                    label, attempt + 1, type(exc).__name__, elapsed,
+                )
+                continue
+            raise
+        elapsed = time.perf_counter() - t0
+        output_for_estimate = None
+        if result is not None:
+            try:
+                output_for_estimate = result.model_dump_json() if hasattr(result, "model_dump_json") else result
+            except Exception:
+                output_for_estimate = result
+        record_call(
+            schema=label,
+            model=str(getattr(llm, "model_name", None) or getattr(llm, "model", None) or "unknown"),
+            input_chars=total_chars,
+            output=output_for_estimate,
+            usage=extract_usage(result),
+            latency_ms=elapsed * 1000,
+            success=result is not None,
+        )
+
+        if result is not None:
+            if attempt > 0:
+                logger.warning(
+                    "[invoke_structured] %s 第 %d 次重试后成功，本次耗时 %.2fs，"
+                    "输入约 %d chars",
+                    label, attempt + 1, elapsed, total_chars,
+                )
+            else:
+                logger.debug(
+                    "[invoke_structured] %s 首次成功，耗时 %.2fs，输入约 %d chars",
+                    label, elapsed, total_chars,
+                )
+            return result
+
+        logger.warning(
+            "[invoke_structured] %s 第 %d 次调用返回 None（耗时 %.2fs），准备重试…",
+            label, attempt + 1, elapsed,
+        )
+
+    raise RuntimeError(f"结构化输出连续 {retries} 次返回 None，模型未产出有效结果")
+
+
+# ─── 餐厅 POI 解析 ────────────────────────────────────────────
+
+# ─── 天气工具 ─────────────────────────────────────────────────
+
+def fetch_weather_for_dates(
+    destination: str,
+    start_date: date,
+    end_date: date,
+    api_key: str,
+) -> tuple[list[dict[str, Any]], str | None]:
+    """获取旅游日期范围内的逐日天气预报。
+
+    调用高德天气 API（最多约 4 天预报），按旅游日期切片匹配。
+
+    Returns:
+        (forecast_list, weather_note)
+        - forecast_list: 与旅游日期匹配的天气列表（空表示无可用预报）
+        - weather_note:  降级说明文字（正常获取时为 None）
+    """
+    from app.providers.weather.amap import fetch_forecast
+
+    try:
+        all_forecasts = fetch_forecast(destination, api_key)
+    except Exception:
+        all_forecasts = []
+
+    if not all_forecasts:
+        return [], "天气信息暂不可用，请出发前复核；不将未知天气视为晴天"
+
+    forecast_map = {f["date"]: f for f in all_forecasts}
+
+    # 生成旅游日期序列
+    travel_dates: list[str] = []
+    cur = start_date
+    while cur <= end_date:
+        travel_dates.append(cur.isoformat())
+        cur += timedelta(days=1)
+
+    matched = [forecast_map[d] for d in travel_dates if d in forecast_map]
+    missing_dates = [d for d in travel_dates if d not in forecast_map]
+
+    if not matched:
+        return [], "旅游日期超出天气预报范围（高德预报约 4 天内），建议出行前关注天气预报"
+
+    note: str | None = None
+    if missing_dates:
+        note = (
+            f"部分旅游日期（{'、'.join(missing_dates)}）超出天气预报范围，"
+            "建议出行前关注天气预报"
+        )
+
+    return matched, note
+
+
+def format_weather_for_llm(forecast: list[dict[str, Any]]) -> str:
+    """格式化天气信息供 LLM 读取，如：
+    2024-06-05: 白天晴/夜间晴，气温22-32°C
+    2024-06-06: 白天中雨/夜间小雨，气温18-24°C ⚠️ 雨雪天气
+    """
+    if not forecast:
+        return ""
+    lines = []
+    for w in forecast:
+        warning = " ⚠️ 雨雪天气，请优先安排室内景点" if w.get("is_bad") else ""
+        lines.append(
+            f"{w['date']}: 白天{w['day_weather']}/夜间{w['night_weather']}，"
+            f"气温{w['night_temp']}-{w['day_temp']}°C{warning}"
+        )
+    return "\n".join(lines)
+
+
+# ─── 餐厅 POI 解析 ────────────────────────────────────────────
+
+def restaurant_to_dict(poi: dict[str, Any]) -> dict[str, Any] | None:
+    """把高德周边搜索的餐饮 POI 整理成结构化餐厅信息。缺坐标返回 None。"""
+    location = parse_location(poi.get("location"))
+    if not location:
+        return None
+
+    biz_ext = poi.get("biz_ext") or {}
+    if not isinstance(biz_ext, dict):
+        biz_ext = {}
+
+    cost_raw = str(biz_ext.get("cost", "")).strip()
+    rating_raw = str(biz_ext.get("rating", "")).strip()
+    try:
+        rating: float | None = float(rating_raw) if rating_raw else None
+    except ValueError:
+        rating = None
+
+    photos = poi.get("photos") or []
+    photo: str | None = None
+    if isinstance(photos, list) and photos and isinstance(photos[0], dict):
+        photo = str(photos[0].get("url", "")).strip() or None
+
+    open_time_r = (
+        str(biz_ext.get("opentime2", "")).strip()
+        or str(biz_ext.get("opentime", "")).strip()
+        or None
+    )
+    tel_r = str(poi.get("tel") or "").strip() or None
+    type_str = str(poi.get("type") or "")
+    category = (type_str.split(";")[-1].strip() if ";" in type_str else type_str.strip()) or None
+
+    return {
+        "name": str(poi.get("name", "")),
+        "cost": cost_raw or None,
+        "rating": rating,
+        "keytag": str(poi.get("type", "")),
+        "location": location,
+        "address": normalize_address(poi.get("address")),
+        "photo": photo,
+        "open_time": open_time_r,
+        "tel": tel_r,
+        "category": category,
+    }

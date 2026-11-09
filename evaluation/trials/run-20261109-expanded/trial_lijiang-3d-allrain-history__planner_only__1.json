@@ -1,0 +1,305 @@
+{
+  "trial_id": "a7834671f9d74a6f9ab80e93c2cf8d17",
+  "case_id": "lijiang-3d-allrain-history",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "opening_time_conflict"
+  ],
+  "first_draft_l0": [],
+  "first_draft_l1": [
+    "opening_time_conflict"
+  ],
+  "first_draft_soft_score": 58.67,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [
+        "opening_time_conflict"
+      ],
+      "defect_count": 1,
+      "soft_score": 58.67,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "4507961183034d88",
+      "spot_names": [
+        "丽江古城",
+        "丽江古城-狮子山(狮山路)",
+        "狮子山万古楼景区",
+        "丽江千古情景区",
+        "白沙古镇",
+        "丽江玉水寨风景区",
+        "束河古镇",
+        "丽江之眼观景台",
+        "大研花巷"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 58.67,
+  "warnings": [
+    "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突"
+  ],
+  "route_names": [
+    "丽江古城",
+    "丽江古城-狮子山(狮山路)",
+    "狮子山万古楼景区",
+    "丽江千古情景区",
+    "白沙古镇",
+    "丽江玉水寨风景区",
+    "束河古镇",
+    "丽江之眼观景台",
+    "大研花巷"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "丽江古城",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江古城-狮子山(狮山路)",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "狮子山万古楼景区",
+          "period": "evening",
+          "start": "16:00",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "丽江千古情景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "白沙古镇",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "丽江玉水寨风景区",
+          "period": "evening",
+          "start": "16:00",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "束河古镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江之眼观景台",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "大研花巷",
+          "period": "evening",
+          "start": "16:00",
+          "end": "18:00"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "丽江古城",
+    "丽江古城-狮子山(狮山路)",
+    "狮子山万古楼景区",
+    "丽江千古情景区",
+    "白沙古镇",
+    "丽江玉水寨风景区",
+    "束河古镇",
+    "丽江之眼观景台",
+    "大研花巷"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "丽江古城",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江古城-狮子山(狮山路)",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "狮子山万古楼景区",
+          "period": "evening",
+          "start": "16:00",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "丽江千古情景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "白沙古镇",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "丽江玉水寨风景区",
+          "period": "evening",
+          "start": "16:00",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "束河古镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "丽江之眼观景台",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "大研花巷",
+          "period": "evening",
+          "start": "16:00",
+          "end": "18:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 50.372,
+  "node_latency_ms": {
+    "planner": 50277.386,
+    "snapshot_gate": 1.264
+  },
+  "input_tokens_est": 2400,
+  "output_tokens_est": 1186,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 58.67,
+  "draft_oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 1,
+      "date": "2026-09-15",
+      "limit": 0,
+      "outdoor_count": 3,
+      "outdoor_spots": [
+        "丽江古城",
+        "丽江古城-狮子山(狮山路)",
+        "狮子山万古楼景区"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 2,
+      "date": "2026-09-16",
+      "limit": 0,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "白沙古镇",
+        "丽江玉水寨风景区"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 3,
+      "date": "2026-09-17",
+      "limit": 0,
+      "outdoor_count": 3,
+      "outdoor_spots": [
+        "束河古镇",
+        "丽江之眼观景台",
+        "大研花巷"
+      ]
+    }
+  ],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

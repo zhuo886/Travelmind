@@ -1,0 +1,69 @@
+{
+  "key": "91bbc9c86d414eb09eaf844127ce4060a571f12b5b9ba1b7dfc4977f6bb43a67",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "1faf178e68fca9cc0cd81fadf0f30d34454dbe9706588f219f50b53cd207dc35",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 5,
+    "geographic_coherence": 3,
+    "time_realism": 5,
+    "completeness": 3,
+    "diversity_and_dining": 4
+  },
+  "evidence": {
+    "preference_fit": [
+      "Day1: 玄武湖景区、古鸡鸣寺",
+      "Day2: 中国科举博物馆、南京夫子庙",
+      "Day3: 南京牛首山文化旅游区、南京长江大桥"
+    ],
+    "pacing": [
+      "每天2个景点，上午下午各一个，符合'每天景点别太多'的偏好",
+      "开始时间均为10:00，符合'不喜欢早起'的偏好"
+    ],
+    "geographic_coherence": [
+      "Day1: 玄武湖和鸡鸣寺地理位置较近",
+      "Day2: 科举博物馆和夫子庙地理位置较近",
+      "Day3: 牛首山和长江大桥地理位置较远，存在折返"
+    ],
+    "time_realism": [
+      "每个景点安排2-3小时，时间分配合理",
+      "景点开放时间未提供，但安排时间符合常规参观时长"
+    ],
+    "completeness": [
+      "提供了景点名称和时间安排",
+      "缺少交通方式和餐饮信息，但scope中已声明不需要评价"
+    ],
+    "diversity_and_dining": [
+      "景点类型多样：湖泊、寺庙、博物馆、文化区、山景、大桥",
+      "scope.meals=false，不评价餐饮安排"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "路线主要包含历史古迹和博物馆，符合用户偏好；每天景点数量适中，符合慢节奏需求",
+    "pacing": "每天安排2个景点，上午下午各一个，时间分配合理，符合用户不喜欢早起和慢节奏的偏好",
+    "geographic_coherence": "前两天的景点地理位置较近，但第三天的牛首山和长江大桥距离较远，存在地理折返",
+    "time_realism": "每个景点安排2-3小时，时间分配合理，符合常规参观时长",
+    "completeness": "提供了景点名称和时间安排，但缺少交通方式和餐饮信息",
+    "diversity_and_dining": "景点类型多样，包括自然景观、历史古迹、文化场所等，体验丰富"
+  },
+  "flags": [
+    "missing_dining",
+    "missing_transport"
+  ],
+  "overall_comment": "路线基本符合用户偏好，景点选择合理，时间安排适中，但地理连贯性有待提高",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 743,
+    "output_tokens": 502,
+    "total_tokens": 1245,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 42942.61,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

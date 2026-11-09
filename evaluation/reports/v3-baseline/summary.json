@@ -1,0 +1,586 @@
+{
+  "total_trials": 81,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 81,
+    "value": 0.0
+  },
+  "effective_trials": 81,
+  "denominator_basis": "plan_generated",
+  "outcome_counts": {
+    "HARD_FAIL": 3,
+    "PARTIAL": 12,
+    "SUCCESS": 12,
+    "SUCCESS_WITH_WARNINGS": 54
+  },
+  "label_counts": {
+    "HARD_FAIL": 3,
+    "MATCH": 46,
+    "MISMATCH": 28,
+    "WRONG_ACCEPT": 4
+  },
+  "fdr": {
+    "num": 66,
+    "den": 81,
+    "value": 0.8148
+  },
+  "pdr": {
+    "num": 12,
+    "den": 81,
+    "value": 0.1481
+  },
+  "omr": {
+    "num": 46,
+    "den": 81,
+    "value": 0.5679
+  },
+  "hpr": {
+    "num": 78,
+    "den": 81,
+    "value": 0.963
+  },
+  "fpr": {
+    "num": 72,
+    "den": 81,
+    "value": 0.8889
+  },
+  "oor": {
+    "outside": 3,
+    "references": 505,
+    "value": 0.0059
+  },
+  "msr": {
+    "num": 33,
+    "den": 39,
+    "value": 0.8462
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "rounds": {
+    "mean": 0.506,
+    "snapshot_count_mean": 1.506
+  },
+  "soft_score": {
+    "mean": 83.66,
+    "n": 81
+  },
+  "latency_s": {
+    "n": 81,
+    "median": 205.585,
+    "min": 35.4,
+    "max": 600.287,
+    "p95": 476.449,
+    "p95_note": null
+  },
+  "node_latency_ms": {
+    "planner": {
+      "n": 81,
+      "median": 94064.247,
+      "max": 321544.3
+    },
+    "snapshot_gate": {
+      "n": 81,
+      "median": 2.903,
+      "max": 19.7
+    },
+    "reviewer": {
+      "n": 54,
+      "median": 91567.428,
+      "max": 303865.5
+    },
+    "snapshot_reviewer": {
+      "n": 54,
+      "median": 3.3,
+      "max": 24.9
+    },
+    "time_check": {
+      "n": 27,
+      "median": 61565.839,
+      "max": 267439.7
+    },
+    "snapshot_time_check": {
+      "n": 27,
+      "median": 1.591,
+      "max": 6.2
+    }
+  },
+  "tool_calls": {
+    "candidate_api_calls_mean": 0.0,
+    "route_leg_count_mean": 0.0
+  },
+  "usage": {
+    "input_tokens_est_mean": 7033.5,
+    "output_tokens_est_mean": 2133.2,
+    "llm_calls_mean": 3.2
+  },
+  "by_case": {
+    "nanjing-3d-sunny-history": {
+      "trials": 18,
+      "generated": 18,
+      "hard_pass": 18,
+      "match": 16,
+      "hpr": {
+        "num": 18,
+        "den": 18,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 16,
+        "den": 18,
+        "value": 0.8889
+      },
+      "median_latency_s": 189.899,
+      "soft_score_mean": 92.33,
+      "input_tokens_est_mean": 6063.1,
+      "output_tokens_est_mean": 1980.8,
+      "total_tokens_est_mean": 8043.9,
+      "llm_calls_mean": 2.83
+    },
+    "nanjing-3d-tighthours-negative": {
+      "trials": 9,
+      "generated": 9,
+      "hard_pass": 9,
+      "match": 0,
+      "hpr": {
+        "num": 9,
+        "den": 9,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 9,
+        "value": 0.0
+      },
+      "median_latency_s": 158.966,
+      "soft_score_mean": 92.44,
+      "input_tokens_est_mean": 3012.4,
+      "output_tokens_est_mean": 1477.3,
+      "total_tokens_est_mean": 4489.8,
+      "llm_calls_mean": 2.33
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "trials": 18,
+      "generated": 18,
+      "hard_pass": 17,
+      "match": 2,
+      "hpr": {
+        "num": 17,
+        "den": 18,
+        "value": 0.9444
+      },
+      "omr": {
+        "num": 2,
+        "den": 18,
+        "value": 0.1111
+      },
+      "median_latency_s": 260.275,
+      "soft_score_mean": 64.36,
+      "input_tokens_est_mean": 8844.8,
+      "output_tokens_est_mean": 2671.3,
+      "total_tokens_est_mean": 11516.1,
+      "llm_calls_mean": 3.39
+    },
+    "jingdezhen-3d-sunny-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 293.558,
+      "soft_score_mean": 94.67,
+      "input_tokens_est_mean": 4702.0,
+      "output_tokens_est_mean": 1549.3,
+      "total_tokens_est_mean": 6251.3,
+      "llm_calls_mean": 3.0
+    },
+    "lijiang-3d-allrain-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 206.27,
+      "soft_score_mean": 63.95,
+      "input_tokens_est_mean": 4293.0,
+      "output_tokens_est_mean": 1763.3,
+      "total_tokens_est_mean": 6056.3,
+      "llm_calls_mean": 2.0
+    },
+    "lijiang-5d-sunny-slowpace": {
+      "trials": 6,
+      "generated": 6,
+      "hard_pass": 6,
+      "match": 4,
+      "hpr": {
+        "num": 6,
+        "den": 6,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 4,
+        "den": 6,
+        "value": 0.6667
+      },
+      "median_latency_s": 242.923,
+      "soft_score_mean": 92.33,
+      "input_tokens_est_mean": 6742.5,
+      "output_tokens_est_mean": 2503.7,
+      "total_tokens_est_mean": 9246.2,
+      "llm_calls_mean": 2.83
+    },
+    "nanjing-3d-singlerain-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 2,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 3,
+        "value": 0.6667
+      },
+      "median_latency_s": 223.338,
+      "soft_score_mean": 81.17,
+      "input_tokens_est_mean": 11250.3,
+      "output_tokens_est_mean": 3223.3,
+      "total_tokens_est_mean": 14473.7,
+      "llm_calls_mean": 4.67
+    },
+    "shanghai-1d-sunny-nightlife": {
+      "trials": 15,
+      "generated": 15,
+      "hard_pass": 13,
+      "match": 11,
+      "hpr": {
+        "num": 13,
+        "den": 15,
+        "value": 0.8667
+      },
+      "omr": {
+        "num": 11,
+        "den": 15,
+        "value": 0.7333
+      },
+      "median_latency_s": 185.824,
+      "soft_score_mean": 90.67,
+      "input_tokens_est_mean": 8191.4,
+      "output_tokens_est_mean": 1516.9,
+      "total_tokens_est_mean": 9708.3,
+      "llm_calls_mean": 3.6
+    },
+    "shanghai-3d-beyond-forecast": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 2,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 3,
+        "value": 0.6667
+      },
+      "median_latency_s": 169.876,
+      "soft_score_mean": 84.0,
+      "input_tokens_est_mean": 6141.0,
+      "output_tokens_est_mean": 1853.3,
+      "total_tokens_est_mean": 7994.3,
+      "llm_calls_mean": 2.67
+    },
+    "shanghai-3d-smallpool-negative": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 426.427,
+      "soft_score_mean": 79.67,
+      "input_tokens_est_mean": 10590.7,
+      "output_tokens_est_mean": 4271.0,
+      "total_tokens_est_mean": 14861.7,
+      "llm_calls_mean": 6.0
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 27,
+      "generated": 27,
+      "hard_pass": 24,
+      "match": 10,
+      "hpr": {
+        "num": 24,
+        "den": 27,
+        "value": 0.8889
+      },
+      "omr": {
+        "num": 10,
+        "den": 27,
+        "value": 0.3704
+      },
+      "median_latency_s": 72.863,
+      "soft_score_mean": 77.52,
+      "input_tokens_est_mean": 2387.3,
+      "output_tokens_est_mean": 1190.7,
+      "total_tokens_est_mean": 3578.1,
+      "llm_calls_mean": 1.15
+    },
+    "planner_reviewer": {
+      "trials": 27,
+      "generated": 27,
+      "hard_pass": 27,
+      "match": 18,
+      "hpr": {
+        "num": 27,
+        "den": 27,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 18,
+        "den": 27,
+        "value": 0.6667
+      },
+      "median_latency_s": 249.565,
+      "soft_score_mean": 85.81,
+      "input_tokens_est_mean": 9639.4,
+      "output_tokens_est_mean": 2493.8,
+      "total_tokens_est_mean": 12133.3,
+      "llm_calls_mean": 3.93
+    },
+    "planner_reviewer_time_check": {
+      "trials": 27,
+      "generated": 27,
+      "hard_pass": 27,
+      "match": 18,
+      "hpr": {
+        "num": 27,
+        "den": 27,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 18,
+        "den": 27,
+        "value": 0.6667
+      },
+      "median_latency_s": 255.022,
+      "soft_score_mean": 87.65,
+      "input_tokens_est_mean": 9073.6,
+      "output_tokens_est_mean": 2715.1,
+      "total_tokens_est_mean": 11788.7,
+      "llm_calls_mean": 4.52
+    }
+  },
+  "safety": null,
+  "expectations": null,
+  "judge": null,
+  "pass_at_k_by_case_mode": {
+    "nanjing-3d-sunny-history__planner_only": {
+      "k": 6,
+      "match": 4,
+      "pass_at_k": true,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "nanjing-3d-sunny-history__planner_reviewer": {
+      "k": 6,
+      "match": 6,
+      "pass_at_k": true,
+      "pass_pow_k": true,
+      "hpr_pass_at_k": true
+    },
+    "nanjing-3d-sunny-history__planner_reviewer_time_check": {
+      "k": 6,
+      "match": 6,
+      "pass_at_k": true,
+      "pass_pow_k": true,
+      "hpr_pass_at_k": true
+    },
+    "nanjing-3d-tighthours-negative__planner_only": {
+      "k": 3,
+      "match": 0,
+      "pass_at_k": false,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "nanjing-3d-tighthours-negative__planner_reviewer": {
+      "k": 3,
+      "match": 0,
+      "pass_at_k": false,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "nanjing-3d-tighthours-negative__planner_reviewer_time_check": {
+      "k": 3,
+      "match": 0,
+      "pass_at_k": false,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "sanya-3d-allrain-outdoor-negative__planner_only": {
+      "k": 6,
+      "match": 2,
+      "pass_at_k": true,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "sanya-3d-allrain-outdoor-negative__planner_reviewer": {
+      "k": 6,
+      "match": 0,
+      "pass_at_k": false,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "sanya-3d-allrain-outdoor-negative__planner_reviewer_time_check": {
+      "k": 6,
+      "match": 0,
+      "pass_at_k": false,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "lijiang-5d-sunny-slowpace__planner_only": {
+      "k": 2,
+      "match": 0,
+      "pass_at_k": false,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "lijiang-5d-sunny-slowpace__planner_reviewer": {
+      "k": 2,
+      "match": 2,
+      "pass_at_k": true,
+      "pass_pow_k": true,
+      "hpr_pass_at_k": true
+    },
+    "lijiang-5d-sunny-slowpace__planner_reviewer_time_check": {
+      "k": 2,
+      "match": 2,
+      "pass_at_k": true,
+      "pass_pow_k": true,
+      "hpr_pass_at_k": true
+    },
+    "shanghai-1d-sunny-nightlife__planner_only": {
+      "k": 5,
+      "match": 1,
+      "pass_at_k": true,
+      "pass_pow_k": false,
+      "hpr_pass_at_k": true
+    },
+    "shanghai-1d-sunny-nightlife__planner_reviewer": {
+      "k": 5,
+      "match": 5,
+      "pass_at_k": true,
+      "pass_pow_k": true,
+      "hpr_pass_at_k": true
+    },
+    "shanghai-1d-sunny-nightlife__planner_reviewer_time_check": {
+      "k": 5,
+      "match": 5,
+      "pass_at_k": true,
+      "pass_pow_k": true,
+      "hpr_pass_at_k": true
+    }
+  },
+  "pass_at_k": {
+    "nanjing-3d-sunny-history": {
+      "k": 18,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "nanjing-3d-tighthours-negative": {
+      "k": 9,
+      "outcome_pass_at_k": false,
+      "outcome_pass_pow_k": false
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "k": 18,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "jingdezhen-3d-sunny-history": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "lijiang-3d-allrain-history": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "lijiang-5d-sunny-slowpace": {
+      "k": 6,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "nanjing-3d-singlerain-history": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "shanghai-1d-sunny-nightlife": {
+      "k": 15,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "shanghai-3d-beyond-forecast": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "shanghai-3d-smallpool-negative": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 9,
+    "den": 10,
+    "value": 0.9
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 3,
+    "den": 10,
+    "value": 0.3
+  }
+}

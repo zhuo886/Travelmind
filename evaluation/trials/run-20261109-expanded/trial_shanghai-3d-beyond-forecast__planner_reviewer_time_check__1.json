@@ -1,0 +1,242 @@
+{
+  "trial_id": "6bde918b5f514967b13567f630583173",
+  "case_id": "shanghai-3d-beyond-forecast",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 92.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 1,
+  "time_check_round": 1,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 92.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 1,
+      "rework_requested": true,
+      "route_signature": "31c4274bf788977e",
+      "spot_names": [
+        "上海城隍庙",
+        "上海豫园",
+        "上海失恋博物馆",
+        "上海植物园",
+        "上海动物园",
+        "上海海洋水族馆",
+        "上海野生动物园"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 92.0,
+  "warnings": [
+    "【开放时间修正（第1轮）】仅修正以下时段冲突，其余安排保持不变：\n- Day3 上海野生动物园：安排在 11月17日 游览，但景点仅在 9月1日至9月30日 开放",
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "上海城隍庙",
+    "上海豫园",
+    "上海失恋博物馆",
+    "上海植物园",
+    "上海动物园",
+    "上海海洋水族馆",
+    "上海野生动物园"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海城隍庙",
+          "period": "morning",
+          "start": "09:03",
+          "end": "11:03"
+        },
+        {
+          "name": "上海豫园",
+          "period": "afternoon",
+          "start": "11:33",
+          "end": "13:33"
+        },
+        {
+          "name": "上海失恋博物馆",
+          "period": "evening",
+          "start": "14:03",
+          "end": "16:03"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "上海植物园",
+          "period": "morning",
+          "start": "09:07",
+          "end": "11:37"
+        },
+        {
+          "name": "上海动物园",
+          "period": "afternoon",
+          "start": "12:07",
+          "end": "15:07"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "morning",
+          "start": "09:07",
+          "end": "11:37"
+        },
+        {
+          "name": "上海野生动物园",
+          "period": "afternoon",
+          "start": "12:07",
+          "end": "17:07"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "上海城隍庙",
+    "上海豫园",
+    "上海失恋博物馆",
+    "上海植物园",
+    "上海动物园",
+    "上海海洋水族馆",
+    "上海野生动物园"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海城隍庙",
+          "period": "morning",
+          "start": "09:03",
+          "end": "11:03"
+        },
+        {
+          "name": "上海豫园",
+          "period": "afternoon",
+          "start": "11:33",
+          "end": "13:33"
+        },
+        {
+          "name": "上海失恋博物馆",
+          "period": "evening",
+          "start": "14:03",
+          "end": "16:03"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "上海植物园",
+          "period": "morning",
+          "start": "09:07",
+          "end": "11:37"
+        },
+        {
+          "name": "上海动物园",
+          "period": "afternoon",
+          "start": "12:07",
+          "end": "15:07"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "morning",
+          "start": "09:07",
+          "end": "11:37"
+        },
+        {
+          "name": "上海野生动物园",
+          "period": "afternoon",
+          "start": "12:07",
+          "end": "17:07"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 7
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 115.883,
+  "node_latency_ms": {
+    "planner": 46847.769,
+    "snapshot_gate": 2.673,
+    "reviewer": 21335.823,
+    "snapshot_reviewer": 2.205,
+    "time_check": 46632.166,
+    "snapshot_time_check": 2.115
+  },
+  "input_tokens_est": 5873,
+  "output_tokens_est": 1719,
+  "llm_calls": 3,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 92.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 7
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

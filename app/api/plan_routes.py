@@ -1,0 +1,825 @@
+"""规划相关的辅助路由（confirm_modification、optimize_day 等）。"""
+
+from __future__ import annotations
+
+import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from itertools import permutations
+
+from fastapi import APIRouter, Header, HTTPException, Request
+from fastapi.responses import StreamingResponse
+
+from app.core.agent_runs import agent_runs, observe_agent_events
+from app.core.auth import decode_token
+from app.core.cache import POI_TTL, get_cached, poi_cache_key, set_cached
+from app.core.database import get_conn
+from app.core.memory import (
+    delete_pending_modification,
+    extract_and_update_preferences,
+    load_itinerary,
+    load_pending_modification,
+    save_itinerary,
+    update_plan_json,
+)
+from app.planning.graph import run_confirm_stream
+from app.planning.helpers import amap_key, restaurant_to_dict
+from app.planning.nodes import _build_day_budget
+from app.providers.amap.poi import (
+    ATTRACTION_TYPE,
+    normalize_address,
+    poi_to_spot,
+    search_around_pois,
+    search_city_pois,
+)
+from app.providers.amap.direction import plan_route_distance
+from pydantic import BaseModel
+
+router = APIRouter()
+
+
+# ─── 路线优化（暴力枚举最短路径）────────────────────────────
+
+
+def _location_key(spot: dict) -> tuple[str, float, float] | None:
+    loc = spot.get("location")
+    if not _valid_location(loc):
+        return None
+    return (
+        str(spot.get("name") or ""),
+        round(float(loc["lng"]), 6),
+        round(float(loc["lat"]), 6),
+    )
+
+
+def _road_distance_matrix(spots: list[dict], api_key: str) -> dict[tuple[tuple, tuple], float]:
+    """并发获取有向驾车距离矩阵；失败的边不写入，调用方不得用直线距离补齐。"""
+    unique = {_location_key(spot): spot for spot in spots if _location_key(spot) is not None}
+    jobs = [
+        (a_key, b_key, a["location"], b["location"])
+        for a_key, a in unique.items()
+        for b_key, b in unique.items()
+        if a_key != b_key
+    ]
+
+    def fetch(job):
+        a_key, b_key, origin, destination = job
+        try:
+            result = plan_route_distance(origin, destination, api_key, mode="drive")
+        except Exception:  # external route failure is represented by an absent matrix edge
+            result = None
+        return a_key, b_key, result
+
+    matrix: dict[tuple[tuple, tuple], float] = {}
+    if not jobs:
+        return matrix
+    with ThreadPoolExecutor(max_workers=min(8, len(jobs)), thread_name_prefix="route-matrix") as pool:
+        for future in as_completed([pool.submit(fetch, job) for job in jobs]):
+            a_key, b_key, result = future.result()
+            if result and result.get("distance_km") is not None:
+                matrix[(a_key, b_key)] = float(result["distance_km"])
+    return matrix
+
+
+def _path_km(spots: list[dict], matrix: dict[tuple[tuple, tuple], float]) -> float | None:
+    """按有向道路距离矩阵计算路线；任一边未核验则整条路线不可比较。"""
+    total = 0.0
+    for i in range(len(spots) - 1):
+        edge = (_location_key(spots[i]), _location_key(spots[i + 1]))
+        if None in edge or edge not in matrix:
+            return None
+        total += matrix[edge]
+    return total
+
+
+def _optimize_day_timeline(timeline: list[dict], api_key: str) -> tuple[list[dict], float, float]:
+    """
+    对单天 timeline 做路线优化：
+    - 并发获取高德有向驾车距离矩阵，再枚举 daytime attractions 的全排列
+    - 路程目标只计算景点（daytime + evening）之间的距离，meals 不参与路程评分
+      → 原始排列是候选项之一，保证 best_km ≤ original_km，不会越优化越差
+    - meals 保持原始相对位置（排在第几个 daytime 景点之后），在最终 timeline 中插回
+    - 重算 dist_from_prev_km
+    返回 (optimized_timeline, original_km, optimized_km)
+    """
+    daytime = [t for t in timeline if t["type"] == "attraction" and t.get("period") != "evening"]
+    evening = [t for t in timeline if t["type"] == "attraction" and t.get("period") == "evening"]
+    lunch   = next((t for t in timeline if t["type"] == "lunch"), None)
+    dinner  = next((t for t in timeline if t["type"] == "dinner"), None)
+
+    # 景点不足两个，无需枚举
+    route_spots = daytime + evening
+    matrix = _road_distance_matrix(route_spots, api_key)
+    original_km = _path_km(route_spots, matrix)
+    if original_km is None:
+        raise RuntimeError("道路距离不完整，无法可靠比较路线顺序")
+    if len(daytime) < 2:
+        result = [dict(item) for item in timeline]
+        _recalc_dists(result, api_key=api_key)
+        return result, original_km, original_km
+
+    # ── 记录午/晚餐在原始 timeline 中的相对位置 ─────────────────
+    # lunch_after = 在它之前已出现的 daytime 景点数（0 = 排在第 1 个景点之前）
+    lunch_after = dinner_after = len(daytime)   # 默认：排在所有 daytime 景点之后
+    daytime_seen = 0
+    for item in timeline:
+        if item["type"] == "attraction" and item.get("period") != "evening":
+            daytime_seen += 1
+        elif item["type"] == "lunch" and lunch_after == len(daytime):
+            lunch_after = daytime_seen
+        elif item["type"] == "dinner" and dinner_after == len(daytime):
+            dinner_after = daytime_seen
+
+    def build_sequence(perm: list[dict]) -> list[dict]:
+        """按原始相对位置插入 lunch/dinner，构建完整序列（含 evening）。"""
+        seq: list[dict] = []
+        lunch_inserted = dinner_inserted = False
+
+        # 餐厅排在第 1 个景点之前（*_after == 0）
+        if lunch and lunch_after == 0:
+            seq.append(lunch)
+            lunch_inserted = True
+        if dinner and dinner_after == 0:
+            seq.append(dinner)
+            dinner_inserted = True
+
+        for i, spot in enumerate(perm):
+            seq.append(spot)
+            if lunch and not lunch_inserted and i + 1 == lunch_after:
+                seq.append(lunch)
+                lunch_inserted = True
+            if dinner and not dinner_inserted and i + 1 == dinner_after:
+                seq.append(dinner)
+                dinner_inserted = True
+
+        seq.extend(evening)
+
+        # 未插入的餐厅补到末尾
+        if lunch and not lunch_inserted:
+            seq.append(lunch)
+        if dinner and not dinner_inserted:
+            seq.append(dinner)
+
+        return seq
+
+    # 暴力枚举 daytime 全排列，只用景点序列评估路程
+    # 原始排列也在候选内，故 best_km ≤ original_km 恒成立
+    best_perm = list(daytime)
+    best_km   = original_km
+    for perm in permutations(daytime):
+        km = _path_km(list(perm) + evening, matrix)
+        if km is not None and km < best_km - 1e-9:
+            best_km = km
+            best_perm = list(perm)
+
+    # 按最优排列构建结果 timeline（各项做浅拷贝）
+    result: list[dict] = [dict(item) for item in build_sequence(best_perm)]
+    # 住宿锚点（每天起点）不能被优化弄丢：原时间轴头部的 hotel 条目原样保留
+    anchors = [dict(item) for item in timeline if item.get("type") == "hotel"]
+    if anchors:
+        result = anchors + [item for item in result if item.get("type") != "hotel"]
+
+    # ── 重算 dist_from_prev_km ──────────────────────────────────
+    _recalc_dists(result, api_key=api_key)
+
+    # ── 按位置交换时段：原 daytime 第 i 个时段赋给优化后第 i 个 daytime 景点 ──
+    # evening 景点和 meals 保留原始时间不动
+    time_slots = [
+        {"start_time": t.get("start_time"), "end_time": t.get("end_time"), "period": t.get("period")}
+        for t in timeline
+        if t["type"] == "attraction" and t.get("period") != "evening"
+    ]
+    slot_idx = 0
+    for item in result:
+        if item["type"] == "attraction" and item.get("period") != "evening":
+            if slot_idx < len(time_slots):
+                item["start_time"] = time_slots[slot_idx]["start_time"]
+                item["end_time"]   = time_slots[slot_idx]["end_time"]
+                item["period"]     = time_slots[slot_idx]["period"]
+                slot_idx += 1
+
+    return result, original_km, best_km
+
+
+class OptimizeDayRequest(BaseModel):
+    plan_id: str
+    day: int   # 1-based，第几天
+
+
+@router.post("/api/plan/optimize_day")
+def optimize_day(req: OptimizeDayRequest, authorization: str | None = Header(default=None)):
+    """对行程中某一天的景点顺序做暴力枚举最优化（最短路程），evening 景点固定末位。"""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="需要登录")
+    user_id = decode_token(authorization[7:])
+    if not user_id:
+        raise HTTPException(status_code=401, detail="token 无效或已过期")
+
+    with get_conn() as conn:
+        # 校验所有权
+        row = conn.execute(
+            "SELECT user_id FROM itineraries WHERE id=?", (req.plan_id,)
+        ).fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="行程不存在")
+        if row["user_id"] != user_id:
+            raise HTTPException(status_code=403, detail="无权访问")
+
+        data = load_itinerary(req.plan_id, conn)
+
+    plan = data["plan"]
+    days = plan.get("days", [])
+
+    # 找对应天（day 字段 1-based）
+    day_obj = next((d for d in days if d.get("day") == req.day), None)
+    if not day_obj:
+        raise HTTPException(status_code=400, detail=f"第 {req.day} 天不存在")
+
+    timeline = day_obj.get("timeline", [])
+    try:
+        optimized_timeline, original_km, optimized_km = _optimize_day_timeline(timeline, amap_key())
+    except RuntimeError as exc:
+        raise HTTPException(status_code=503, detail=f"道路路线暂不可用：{exc}") from exc
+
+    # 原地更新 plan 并写回 DB
+    day_obj["timeline"] = optimized_timeline
+    day_obj["budget"] = _build_day_budget(optimized_timeline)
+    _refresh_budget_summary(plan)
+    with get_conn() as conn:
+        ok = update_plan_json(req.plan_id, user_id, plan, conn)
+    if not ok:
+        raise HTTPException(status_code=500, detail="保存失败")
+
+    return {
+        "optimized_day": day_obj,
+        "original_km":   round(original_km, 2),
+        "optimized_km":  round(optimized_km, 2),
+        "improved":      optimized_km < original_km - 0.05,
+    }
+
+
+class RevertDayRequest(BaseModel):
+    plan_id: str
+    day: int            # 1-based
+    original_timeline: list[dict]
+
+
+@router.post("/api/plan/revert_day")
+def revert_day(req: RevertDayRequest, authorization: str | None = Header(default=None)):
+    """将某天路线回退到优化前的顺序（前端传入原始 timeline）。"""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="需要登录")
+    user_id = decode_token(authorization[7:])
+    if not user_id:
+        raise HTTPException(status_code=401, detail="token 无效或已过期")
+
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT user_id FROM itineraries WHERE id=?", (req.plan_id,)
+        ).fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="行程不存在")
+        if row["user_id"] != user_id:
+            raise HTTPException(status_code=403, detail="无权访问")
+
+        data = load_itinerary(req.plan_id, conn)
+
+    plan = data["plan"]
+    day_obj = next((d for d in plan.get("days", []) if d.get("day") == req.day), None)
+    if not day_obj:
+        raise HTTPException(status_code=400, detail=f"第 {req.day} 天不存在")
+
+    _recalc_dists(req.original_timeline)
+    day_obj["timeline"] = req.original_timeline
+    day_obj["budget"] = _build_day_budget(req.original_timeline)
+    _refresh_budget_summary(plan)
+    with get_conn() as conn:
+        ok = update_plan_json(req.plan_id, user_id, plan, conn)
+    if not ok:
+        raise HTTPException(status_code=500, detail="保存失败")
+
+    return {"reverted_day": day_obj}
+
+
+def _get_user_id(request: Request) -> str | None:
+    auth = request.headers.get("Authorization", "")
+    if not auth.startswith("Bearer "):
+        return None
+    return decode_token(auth[7:])
+
+
+class ConfirmModificationRequest(BaseModel):
+    pending_id: str
+    parent_plan_id: str | None = None
+
+
+@router.post("/api/plan/confirm_modification")
+async def confirm_modification(req: ConfirmModificationRequest, request: Request):
+    """用户确认有顾虑的修改意见后，续跑 meal_search → finalize 并返回 SSE。"""
+    user_id = _get_user_id(request)
+    if not user_id:
+        from fastapi import HTTPException
+        raise HTTPException(status_code=401, detail="需要登录")
+
+    # 加载 pending 状态
+    with get_conn() as conn:
+        pending = load_pending_modification(req.pending_id, conn)
+
+    if not pending or pending["user_id"] != user_id:
+        from fastapi import HTTPException
+        raise HTTPException(status_code=404, detail="修改状态不存在或已过期")
+
+    pending_state = pending["state"]
+    confirm_stream = run_confirm_stream
+    saved_plan_id: list[str] = []
+    parent_plan_id = req.parent_plan_id
+
+    def memory_writer(final_plan: dict, state) -> None:
+        planner_checkpoint = {
+            "route": state.route,
+            "pois":  state.pois,
+            "planner_reviewer_dialogue": state.planner_reviewer_dialogue,
+            "destination": str(state.destination or ""),
+            "travel_start_date": str(state.travel_start_date or ""),
+            "travel_end_date":   str(state.travel_end_date or ""),
+            "days": state.days,
+            "attraction_preference": state.attraction_preference,
+            "food_preference":       state.food_preference,
+            "habit_preference":      state.habit_preference,
+            "max_walking_km":        state.max_walking_km,
+            "rain_indoor_priority":  state.rain_indoor_priority,
+            "weather_forecast": state.weather_forecast,
+            "weather_note":     state.weather_note,
+            "route_distance_legs": state.route_distance_legs,
+            "route_distance_mode": state.route_distance_mode,
+            "route_distance_note": state.route_distance_note,
+            "route_risk_flags": state.route_risk_flags,
+            "route_risk_score": state.route_risk_score,
+            "review_required": state.review_required,
+            "time_check_required": state.time_check_required,
+            "review_skipped": state.review_skipped,
+            "max_per_day":      state.max_per_day,
+            "max_per_day_strict": state.max_per_day_strict,
+            "effective_max_per_day": state.effective_max_per_day,
+            "max_review_rounds": state.max_review_rounds,
+            "max_time_check_rounds": state.max_time_check_rounds,
+            "model_name": state.model_name,
+            "rewritten_query": state.rewritten_query,
+            "profile_hint": state.profile_hint,
+            "semantic_memory_status": state.semantic_memory_status,
+            "main_meal_candidates": state.main_meal_candidates,
+            "main_meal_status": state.main_meal_status,
+            "meal_duration_min": state.meal_duration_min,
+            "meal_slots": state.meal_slots,
+            "memory_session_id": state.memory_session_id,
+            "repair_feedback": state.repair_feedback,
+            "candidate_pool_status": state.candidate_pool_status,
+            "candidate_missing_coverage": state.candidate_missing_coverage,
+            "candidate_coverage": state.candidate_coverage,
+            "candidate_active_gaps": state.candidate_active_gaps,
+            "candidate_tried_query_keys": state.candidate_tried_query_keys,
+            "candidate_force_named_non_tourism": state.candidate_force_named_non_tourism,
+            "candidate_search_round": state.candidate_search_round,
+            "candidate_api_calls": state.candidate_api_calls,
+            "candidate_search_trace": state.candidate_search_trace,
+            "relaxed_constraints": state.relaxed_constraints,
+            "route_history": state.route_history,
+            "warnings": state.warnings,
+            "failure_reasons": state.failure_reasons,
+            "score_info": state.score_info,
+            "query":            state.query,
+        }
+        with get_conn() as conn:
+            pid = save_itinerary(
+                user_id, final_plan, pending_state.get("query", ""),
+                conn,
+                parent_id=parent_plan_id,
+                planner_state=planner_checkpoint,
+            )
+            extract_and_update_preferences(user_id, final_plan, conn)
+            # 确认后删除 pending 记录
+            delete_pending_modification(req.pending_id, conn)
+        saved_plan_id.append(pid)
+
+    async def gen():
+        async for ev in confirm_stream(
+            pending_state,
+            memory_writer=memory_writer,
+        ):
+            if ev.get("type") == "result" and ev.get("success") and saved_plan_id:
+                ev["plan_id"] = saved_plan_id[0]
+            yield ev
+
+    run_id = agent_runs.start(
+        user_id, "confirm_modification", getattr(request.state, "request_id", None)
+    )
+
+    async def observed_sse():
+        async for event in observe_agent_events(gen(), run_id):
+            yield f"data: {json.dumps(event, ensure_ascii=False, default=str)}\n\n"
+
+    return StreamingResponse(
+        observed_sse(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "Connection": "keep-alive",
+            "X-Agent-Run-ID": run_id,
+        },
+    )
+
+
+# ─── 手动编辑：POI 搜索代理 ──────────────────────────────────
+
+
+@router.get("/api/poi/search")
+def poi_search(
+    city: str,
+    kw: str,
+    kind: str = "attraction",
+    authorization: str | None = Header(default=None),
+):
+    """手动换点/加点的搜索代理：高德 Key 不出服务端，结果走 Redis 缓存。"""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="需要登录")
+    if not decode_token(authorization[7:]):
+        raise HTTPException(status_code=401, detail="token 无效或已过期")
+    if kind not in ("attraction", "restaurant"):
+        raise HTTPException(status_code=400, detail="kind 须为 attraction 或 restaurant")
+
+    # 输入防御：清洗 city/kw 并检查长度
+    city = city.strip()
+    kw = kw.strip().replace("\n", "").replace("\r", "").replace("\x00", "")
+    if not city or not kw:
+        raise HTTPException(status_code=400, detail="city 和 kw 不能为空")
+    if len(city) > 50 or len(kw) > 100:
+        raise HTTPException(status_code=400, detail="搜索词过长")
+
+    cache_key = poi_cache_key(city, f"manual:{kind}:{kw}")
+    cached = get_cached(cache_key)
+    if cached is not None:
+        return {"results": cached}
+
+    types = ATTRACTION_TYPE if kind == "attraction" else "餐饮服务"
+    try:
+        raw = search_city_pois(city, amap_key(), keywords=kw, types=types, offset=8)
+    except RuntimeError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+
+    results: list[dict] = []
+    for poi in raw:
+        parsed = poi_to_spot(poi) if kind == "attraction" else restaurant_to_dict(poi)
+        if not parsed:
+            continue
+        if kind == "attraction":
+            # poi_to_spot 不含地址，搜索结果需要地址帮用户分辨同名地点
+            parsed["address"] = normalize_address(poi.get("address"))
+        results.append(parsed)
+
+    set_cached(cache_key, results, POI_TTL)
+    return {"results": results}
+
+
+# ─── 手动编辑：保存逐天 timeline ─────────────────────────────────
+
+
+def _valid_location(loc) -> bool:
+    """location 必须是含数值 lat/lng 的 dict，残缺对象不参与距离计算。"""
+    return (
+        isinstance(loc, dict)
+        and isinstance(loc.get("lat"), (int, float))
+        and isinstance(loc.get("lng"), (int, float))
+    )
+
+
+def _unavailable_travel_leg(from_name: str, to_name: str, mode: str) -> dict:
+    return {
+        "from": from_name,
+        "to": to_name,
+        "mode": "unavailable",
+        "mode_label": "路线待核验",
+        "distance_km": None,
+        "duration_min": None,
+        "estimated_cost": 0,
+        "instruction": f"{mode}道路路线暂不可用，请打开地图导航核验。",
+        "source": "unavailable",
+        "estimate": True,
+    }
+
+
+def _recalc_dists(timeline: list[dict], *, api_key: str | None = None, mode: str = "drive") -> None:
+    """并发重算相邻条目的真实道路距离，不信任前端值，也不回退成直线距离。"""
+    normalized_mode = "walk" if mode == "walk" else "drive"
+    try:
+        key = api_key or amap_key()
+    except RuntimeError:
+        key = None
+
+    jobs: list[tuple[int, dict, dict, str, str]] = []
+    for i, item in enumerate(timeline):
+        item.pop("dist_from_prev_km", None)
+        item.pop("travel_from_prev", None)
+        if i == 0:
+            continue
+        prev_loc = timeline[i - 1].get("location")
+        cur_loc = item.get("location")
+        if _valid_location(prev_loc) and _valid_location(cur_loc):
+            jobs.append((
+                i,
+                prev_loc,
+                cur_loc,
+                str(timeline[i - 1].get("name") or "上一站"),
+                str(item.get("name") or "下一站"),
+            ))
+
+    def fetch(job):
+        index, origin, destination, from_name, to_name = job
+        try:
+            result = plan_route_distance(origin, destination, key, mode=normalized_mode) if key else None
+        except Exception:
+            result = None
+        return index, from_name, to_name, result
+
+    if not jobs:
+        return
+    with ThreadPoolExecutor(max_workers=min(8, len(jobs)), thread_name_prefix="timeline-route") as pool:
+        resolved = [future.result() for future in as_completed([pool.submit(fetch, job) for job in jobs])]
+    for index, from_name, to_name, result in resolved:
+        if result and result.get("distance_km") is not None:
+            timeline[index]["dist_from_prev_km"] = float(result["distance_km"])
+            timeline[index]["travel_from_prev"] = {**result, "from": from_name, "to": to_name}
+        else:
+            timeline[index]["travel_from_prev"] = _unavailable_travel_leg(
+                from_name, to_name, "步行" if normalized_mode == "walk" else "驾车"
+            )
+
+
+def _refresh_budget_summary(plan: dict) -> None:
+    budgets = [d.get("budget") for d in plan.get("days", []) if isinstance(d.get("budget"), dict)]
+    plan["budget_summary"] = {
+        "currency": "CNY", "unit": "per_person",
+        "ticket_known": round(sum(b.get("ticket_known", 0) for b in budgets), 2),
+        "meal_known": round(sum(b.get("meal_known", 0) for b in budgets), 2),
+        "meal_estimated": round(sum(b.get("meal_estimated", 0) for b in budgets), 2),
+        "transport_estimated": round(sum(b.get("transport_estimated", 0) for b in budgets), 2),
+        "known_subtotal": round(sum(b.get("known_subtotal", 0) for b in budgets), 2),
+        "estimated_subtotal": round(sum(b.get("estimated_subtotal", b.get("known_subtotal", 0)) for b in budgets), 2),
+        "unknown_items": [item for b in budgets for item in b.get("unknown_items", [])],
+        "note": "按人估算；门票来自本次实时网页查询，餐饮缺价项会明确标记为估算。",
+    }
+
+
+class TimelineDayPayload(BaseModel):
+    day: int                  # 1-based
+    timeline: list[dict]
+
+
+class SaveTimelineRequest(BaseModel):
+    days: list[TimelineDayPayload]
+
+
+@router.put("/api/plan/{plan_id}/timeline")
+def save_timeline(
+    plan_id: str,
+    req: SaveTimelineRequest,
+    authorization: str | None = Header(default=None),
+):
+    """保存手动编辑后的逐天 timeline。只合并 timeline，不允许前端覆盖 plan 其他字段。"""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="需要登录")
+    user_id = decode_token(authorization[7:])
+    if not user_id:
+        raise HTTPException(status_code=401, detail="token 无效或已过期")
+
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT user_id FROM itineraries WHERE id=?", (plan_id,)
+        ).fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="行程不存在")
+        if row["user_id"] != user_id:
+            raise HTTPException(status_code=403, detail="无权访问")
+        data = load_itinerary(plan_id, conn)
+
+    plan = data["plan"]
+    day_by_no = {d.get("day"): d for d in plan.get("days", [])}
+    for payload in req.days:
+        day_obj = day_by_no.get(payload.day)
+        if not day_obj:
+            raise HTTPException(status_code=400, detail=f"第 {payload.day} 天不存在")
+        for item in payload.timeline:
+            if not isinstance(item, dict) or not item.get("type"):
+                raise HTTPException(status_code=422, detail="timeline 条目缺少 type")
+            if item["type"] == "attraction" and not item.get("name"):
+                raise HTTPException(status_code=422, detail="景点条目缺少 name")
+        _recalc_dists(payload.timeline)
+        # 住宿锚点是每天起点，编辑不能把它删掉：原时间轴有 hotel 时自动补回首位
+        original_timeline = day_obj.get("timeline", [])
+        anchors = [dict(item) for item in original_timeline if item.get("type") == "hotel"]
+        if anchors and not any(item.get("type") == "hotel" for item in payload.timeline):
+            payload.timeline = anchors + [dict(item) for item in payload.timeline]
+            _recalc_dists(payload.timeline)
+        day_obj["timeline"] = payload.timeline
+        day_obj["budget"] = _build_day_budget(payload.timeline)
+
+    _refresh_budget_summary(plan)
+
+    with get_conn() as conn:
+        ok = update_plan_json(plan_id, user_id, plan, conn)
+    if not ok:
+        raise HTTPException(status_code=500, detail="保存失败")
+
+    return {"plan": plan}
+
+
+# ─── 周边搜索 ────────────────────────────────────────────────────
+
+
+@router.get("/api/poi/nearby")
+def poi_nearby(
+    lat: float,
+    lng: float,
+    type: str,
+    radius: int = 1500,
+    authorization: str | None = Header(default=None),
+):
+    """周边 POI 搜索，按距离排序。type=风景名胜|餐饮服务，radius 最大 5000m。"""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="需要登录")
+    if not decode_token(authorization[7:]):
+        raise HTTPException(status_code=401, detail="token 无效或已过期")
+
+    type = type.strip()
+    if type not in ("风景名胜", "餐饮服务"):
+        raise HTTPException(status_code=400, detail="type 须为 风景名胜 或 餐饮服务")
+    if not (1 <= radius <= 5000):
+        raise HTTPException(status_code=400, detail="radius 须在 1–5000 之间")
+
+    try:
+        raw_pois = search_around_pois(
+            {"lat": lat, "lng": lng},
+            amap_key(),
+            types=type,
+            radius=radius,
+            offset=20,
+        )
+    except RuntimeError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+
+    results: list[dict] = []
+    for poi in raw_pois:
+        parsed = poi_to_spot(poi) if type == "风景名胜" else restaurant_to_dict(poi)
+        if not parsed:
+            continue
+        dist = poi.get("distance")
+        if dist is not None:
+            try:
+                parsed["distance"] = int(dist)
+            except (ValueError, TypeError):
+                pass
+        results.append(parsed)
+
+    results.sort(key=lambda x: x.get("distance", 999999))
+    return {"results": results}
+
+
+# ─── 行程元数据保存（hotel / notes / day_themes） ────────────────
+
+
+class MetadataRequest(BaseModel):
+    hotel: str | None = None
+    notes: str | None = None
+    day_themes: dict[str, str] | None = None
+
+
+@router.put("/api/plan/{plan_id}/metadata")
+def save_plan_metadata(
+    plan_id: str,
+    req: MetadataRequest,
+    authorization: str | None = Header(default=None),
+):
+    """保存 hotel / notes / day_themes（每天主题）到 final_plan JSON，不影响 timeline。"""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="需要登录")
+    user_id = decode_token(authorization[7:])
+    if not user_id:
+        raise HTTPException(status_code=401, detail="token 无效或已过期")
+
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT user_id FROM itineraries WHERE id=?", (plan_id,)
+        ).fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="行程不存在")
+        if row["user_id"] != user_id:
+            raise HTTPException(status_code=403, detail="无权访问")
+        data = load_itinerary(plan_id, conn)
+
+    plan = data["plan"]
+    if req.hotel is not None:
+        plan["hotel"] = req.hotel
+    if req.notes is not None:
+        plan["notes"] = req.notes
+    if req.day_themes:
+        day_map = {d.get("day"): d for d in plan.get("days", [])}
+        for day_no_str, theme in req.day_themes.items():
+            try:
+                day_no = int(day_no_str)
+            except ValueError:
+                continue
+            day_obj = day_map.get(day_no)
+            if day_obj is not None:
+                day_obj["theme"] = theme
+
+    with get_conn() as conn:
+        ok = update_plan_json(plan_id, user_id, plan, conn)
+    if not ok:
+        raise HTTPException(status_code=500, detail="保存失败")
+
+    return {"ok": True}
+
+
+# ─── 步行路线规划（高德 REST API → polyline 坐标列表） ──────────────
+
+
+@router.get("/api/route/walking")
+def route_walking(
+    origin_lng: float,
+    origin_lat: float,
+    dest_lng: float,
+    dest_lat: float,
+    authorization: str | None = Header(default=None),
+):
+    """调用高德步行路线 REST API，返回解码后的坐标数组供前端绘制。"""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="需要登录")
+    if not decode_token(authorization[7:]):
+        raise HTTPException(status_code=401, detail="token 无效或已过期")
+
+    import httpx
+    key = amap_key()
+    if not key:
+        raise HTTPException(status_code=503, detail="未配置 AMAP_API_KEY")
+
+    url = "https://restapi.amap.com/v3/direction/walking"
+    params = {
+        "key": key,
+        "origin": f"{origin_lng},{origin_lat}",
+        "destination": f"{dest_lng},{dest_lat}",
+        "output": "json",
+    }
+    try:
+        resp = httpx.get(url, params=params, timeout=8)
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"高德请求失败: {e}")
+
+    if data.get("status") != "1" or not data.get("route", {}).get("paths"):
+        raise HTTPException(status_code=502, detail="步行路线规划失败")
+
+    # 拼合所有 step 的 polyline，解码为 [[lng, lat], ...] 坐标列表
+    path = data["route"]["paths"][0]
+    coords: list[list[float]] = []
+    for step in path.get("steps", []):
+        for pair in step.get("polyline", "").split(";"):
+            parts = pair.strip().split(",")
+            if len(parts) == 2:
+                try:
+                    coords.append([float(parts[0]), float(parts[1])])
+                except ValueError:
+                    pass
+
+    return {"coords": coords, "distance": path.get("distance"), "duration": path.get("duration")}
+
+
+@router.get("/api/route/plan")
+def route_plan(
+    origin_lng: float,
+    origin_lat: float,
+    dest_lng: float,
+    dest_lat: float,
+    city: str,
+    mode: str = "drive",
+    from_name: str = "上一站",
+    to_name: str = "下一站",
+    authorization: str | None = Header(default=None),
+):
+    """返回高德实际步行或驾车道路方案；失败时明确标记未核验。"""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="需要登录")
+    if not decode_token(authorization[7:]):
+        raise HTTPException(status_code=401, detail="token 无效或已过期")
+    origin = {"lng": origin_lng, "lat": origin_lat}
+    destination = {"lng": dest_lng, "lat": dest_lat}
+    normalized_mode = mode.strip().lower()
+    if normalized_mode not in {"walk", "drive"}:
+        raise HTTPException(status_code=400, detail="mode 仅支持 walk 或 drive")
+    plan = plan_route_distance(origin, destination, amap_key(), mode=normalized_mode)
+    return {
+        **(plan or _unavailable_travel_leg(
+            from_name, to_name, "步行" if normalized_mode == "walk" else "驾车"
+        )),
+        "from": from_name,
+        "to": to_name,
+    }

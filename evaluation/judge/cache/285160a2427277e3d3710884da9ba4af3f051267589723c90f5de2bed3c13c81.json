@@ -1,0 +1,61 @@
+{
+  "key": "285160a2427277e3d3710884da9ba4af3f051267589723c90f5de2bed3c13c81",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "02cf4f19f34fe34abefc21c051fdee8fb40e99f564863d4d2754d337fd429445",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "玄武湖景区",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙"
+    ],
+    "pacing": [
+      "玄武湖景区",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙"
+    ],
+    "geographic_coherence": [
+      "玄武湖景区",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙"
+    ],
+    "time_realism": [
+      "玄武湖景区",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙"
+    ],
+    "completeness": [
+      "玄武湖景区",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙"
+    ],
+    "diversity_and_dining": [
+      "玄武湖景区",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

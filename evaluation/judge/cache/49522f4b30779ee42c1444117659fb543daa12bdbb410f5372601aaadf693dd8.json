@@ -1,0 +1,61 @@
+{
+  "key": "49522f4b30779ee42c1444117659fb543daa12bdbb410f5372601aaadf693dd8",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "63e6e53bb4e629c83377e29dc83716c93f67a4b34177361f817b640573a400f5",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "玄武湖景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)"
+    ],
+    "pacing": [
+      "玄武湖景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)"
+    ],
+    "geographic_coherence": [
+      "玄武湖景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)"
+    ],
+    "time_realism": [
+      "玄武湖景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)"
+    ],
+    "completeness": [
+      "玄武湖景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)"
+    ],
+    "diversity_and_dining": [
+      "玄武湖景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

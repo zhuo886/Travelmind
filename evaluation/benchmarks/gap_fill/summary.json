@@ -1,0 +1,1421 @@
+{
+  "benchmark": "gap_fill_ablation",
+  "kind": "offline_controlled_scenarios",
+  "scenarios": 28,
+  "rows": [
+    {
+      "scenario_id": "named-00",
+      "kind": "named",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:南京博物院"
+      ],
+      "gaps_after": [
+        "count",
+        "named:南京博物院"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 0,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": []
+    },
+    {
+      "scenario_id": "named-00",
+      "kind": "named",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:南京博物院"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [
+        "named:南京博物院"
+      ],
+      "introduced": [],
+      "pool_after": 1,
+      "api_calls": 1,
+      "rounds": 2,
+      "repeated_query_rejections": 1,
+      "pool_names": [
+        "南京博物院"
+      ]
+    },
+    {
+      "scenario_id": "named-01",
+      "kind": "named",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:上海美术馆"
+      ],
+      "gaps_after": [
+        "count",
+        "named:上海美术馆"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 1,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "上海种子景点0"
+      ]
+    },
+    {
+      "scenario_id": "named-01",
+      "kind": "named",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:上海美术馆"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [
+        "named:上海美术馆"
+      ],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 1,
+      "rounds": 2,
+      "repeated_query_rejections": 1,
+      "pool_names": [
+        "上海种子景点0",
+        "上海美术馆"
+      ]
+    },
+    {
+      "scenario_id": "named-02",
+      "kind": "named",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:丽江博物院"
+      ],
+      "gaps_after": [
+        "count",
+        "named:丽江博物院"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "named-02",
+      "kind": "named",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:丽江博物院"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [
+        "named:丽江博物院"
+      ],
+      "introduced": [],
+      "pool_after": 3,
+      "api_calls": 1,
+      "rounds": 2,
+      "repeated_query_rejections": 1,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1",
+        "丽江博物院"
+      ]
+    },
+    {
+      "scenario_id": "named-03",
+      "kind": "named",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:三亚美术馆"
+      ],
+      "gaps_after": [
+        "count",
+        "named:三亚美术馆"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 3,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "三亚种子景点0",
+        "三亚种子景点1",
+        "三亚种子景点2"
+      ]
+    },
+    {
+      "scenario_id": "named-03",
+      "kind": "named",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:三亚美术馆"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [
+        "named:三亚美术馆"
+      ],
+      "introduced": [],
+      "pool_after": 4,
+      "api_calls": 1,
+      "rounds": 2,
+      "repeated_query_rejections": 1,
+      "pool_names": [
+        "三亚种子景点0",
+        "三亚种子景点1",
+        "三亚种子景点2",
+        "三亚美术馆"
+      ]
+    },
+    {
+      "scenario_id": "named-04",
+      "kind": "named",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:南京博物院"
+      ],
+      "gaps_after": [
+        "count",
+        "named:南京博物院"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 0,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": []
+    },
+    {
+      "scenario_id": "named-04",
+      "kind": "named",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:南京博物院"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [
+        "named:南京博物院"
+      ],
+      "introduced": [],
+      "pool_after": 1,
+      "api_calls": 1,
+      "rounds": 2,
+      "repeated_query_rejections": 1,
+      "pool_names": [
+        "南京博物院"
+      ]
+    },
+    {
+      "scenario_id": "named-05",
+      "kind": "named",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:上海美术馆"
+      ],
+      "gaps_after": [
+        "count",
+        "named:上海美术馆"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 1,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "上海种子景点0"
+      ]
+    },
+    {
+      "scenario_id": "named-05",
+      "kind": "named",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:上海美术馆"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [
+        "named:上海美术馆"
+      ],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 1,
+      "rounds": 2,
+      "repeated_query_rejections": 1,
+      "pool_names": [
+        "上海种子景点0",
+        "上海美术馆"
+      ]
+    },
+    {
+      "scenario_id": "named-06",
+      "kind": "named",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:丽江博物院"
+      ],
+      "gaps_after": [
+        "count",
+        "named:丽江博物院"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "named-06",
+      "kind": "named",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "named:丽江博物院"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [
+        "named:丽江博物院"
+      ],
+      "introduced": [],
+      "pool_after": 3,
+      "api_calls": 1,
+      "rounds": 2,
+      "repeated_query_rejections": 1,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1",
+        "丽江博物院"
+      ]
+    },
+    {
+      "scenario_id": "indoor-00",
+      "kind": "indoor",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "南京室外种子0",
+        "南京室外种子1"
+      ]
+    },
+    {
+      "scenario_id": "indoor-00",
+      "kind": "indoor",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count",
+        "indoor"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "南京室外种子0",
+        "南京室外种子1",
+        "南京补充博物馆0",
+        "南京补充博物馆1",
+        "南京补充博物馆2",
+        "南京补充博物馆3",
+        "南京补充博物馆4",
+        "南京补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "indoor-01",
+      "kind": "indoor",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "上海室外种子0",
+        "上海室外种子1"
+      ]
+    },
+    {
+      "scenario_id": "indoor-01",
+      "kind": "indoor",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count",
+        "indoor"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "上海室外种子0",
+        "上海室外种子1",
+        "上海补充博物馆0",
+        "上海补充博物馆1",
+        "上海补充博物馆2",
+        "上海补充博物馆3",
+        "上海补充博物馆4",
+        "上海补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "indoor-02",
+      "kind": "indoor",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江室外种子0",
+        "丽江室外种子1"
+      ]
+    },
+    {
+      "scenario_id": "indoor-02",
+      "kind": "indoor",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count",
+        "indoor"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "丽江室外种子0",
+        "丽江室外种子1",
+        "丽江补充博物馆0",
+        "丽江补充博物馆1",
+        "丽江补充博物馆2",
+        "丽江补充博物馆3",
+        "丽江补充博物馆4",
+        "丽江补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "indoor-03",
+      "kind": "indoor",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "三亚室外种子0",
+        "三亚室外种子1"
+      ]
+    },
+    {
+      "scenario_id": "indoor-03",
+      "kind": "indoor",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count",
+        "indoor"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "三亚室外种子0",
+        "三亚室外种子1",
+        "三亚补充博物馆0",
+        "三亚补充博物馆1",
+        "三亚补充博物馆2",
+        "三亚补充博物馆3",
+        "三亚补充博物馆4",
+        "三亚补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "indoor-04",
+      "kind": "indoor",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "南京室外种子0",
+        "南京室外种子1"
+      ]
+    },
+    {
+      "scenario_id": "indoor-04",
+      "kind": "indoor",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count",
+        "indoor"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "南京室外种子0",
+        "南京室外种子1",
+        "南京补充博物馆0",
+        "南京补充博物馆1",
+        "南京补充博物馆2",
+        "南京补充博物馆3",
+        "南京补充博物馆4",
+        "南京补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "indoor-05",
+      "kind": "indoor",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "上海室外种子0",
+        "上海室外种子1"
+      ]
+    },
+    {
+      "scenario_id": "indoor-05",
+      "kind": "indoor",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count",
+        "indoor"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "上海室外种子0",
+        "上海室外种子1",
+        "上海补充博物馆0",
+        "上海补充博物馆1",
+        "上海补充博物馆2",
+        "上海补充博物馆3",
+        "上海补充博物馆4",
+        "上海补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "indoor-06",
+      "kind": "indoor",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江室外种子0",
+        "丽江室外种子1"
+      ]
+    },
+    {
+      "scenario_id": "indoor-06",
+      "kind": "indoor",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count",
+        "indoor"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "丽江室外种子0",
+        "丽江室外种子1",
+        "丽江补充博物馆0",
+        "丽江补充博物馆1",
+        "丽江补充博物馆2",
+        "丽江补充博物馆3",
+        "丽江补充博物馆4",
+        "丽江补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "count-00",
+      "kind": "count",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "南京种子景点0",
+        "南京种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "count-00",
+      "kind": "count",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "南京种子景点0",
+        "南京种子景点1",
+        "南京补充博物馆0",
+        "南京补充博物馆1",
+        "南京补充博物馆2",
+        "南京补充博物馆3",
+        "南京补充博物馆4",
+        "南京补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "count-01",
+      "kind": "count",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "上海种子景点0",
+        "上海种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "count-01",
+      "kind": "count",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "上海种子景点0",
+        "上海种子景点1",
+        "上海补充博物馆0",
+        "上海补充博物馆1",
+        "上海补充博物馆2",
+        "上海补充博物馆3",
+        "上海补充博物馆4",
+        "上海补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "count-02",
+      "kind": "count",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "count-02",
+      "kind": "count",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1",
+        "丽江补充博物馆0",
+        "丽江补充博物馆1",
+        "丽江补充博物馆2",
+        "丽江补充博物馆3",
+        "丽江补充博物馆4",
+        "丽江补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "count-03",
+      "kind": "count",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "三亚种子景点0",
+        "三亚种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "count-03",
+      "kind": "count",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "三亚种子景点0",
+        "三亚种子景点1",
+        "三亚补充博物馆0",
+        "三亚补充博物馆1",
+        "三亚补充博物馆2",
+        "三亚补充博物馆3",
+        "三亚补充博物馆4",
+        "三亚补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "count-04",
+      "kind": "count",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "南京种子景点0",
+        "南京种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "count-04",
+      "kind": "count",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "南京种子景点0",
+        "南京种子景点1",
+        "南京补充博物馆0",
+        "南京补充博物馆1",
+        "南京补充博物馆2",
+        "南京补充博物馆3",
+        "南京补充博物馆4",
+        "南京补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "count-05",
+      "kind": "count",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "上海种子景点0",
+        "上海种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "count-05",
+      "kind": "count",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "上海种子景点0",
+        "上海种子景点1",
+        "上海补充博物馆0",
+        "上海补充博物馆1",
+        "上海补充博物馆2",
+        "上海补充博物馆3",
+        "上海补充博物馆4",
+        "上海补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "count-06",
+      "kind": "count",
+      "arm": "seed_only",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [
+        "count"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "count-06",
+      "kind": "count",
+      "arm": "bounded_react",
+      "expected_fixable": true,
+      "gaps_before": [
+        "count"
+      ],
+      "gaps_after": [],
+      "fixed": [
+        "count"
+      ],
+      "introduced": [],
+      "pool_after": 8,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1",
+        "丽江补充博物馆0",
+        "丽江补充博物馆1",
+        "丽江补充博物馆2",
+        "丽江补充博物馆3",
+        "丽江补充博物馆4",
+        "丽江补充博物馆5"
+      ]
+    },
+    {
+      "scenario_id": "boundary-00",
+      "kind": "boundary",
+      "arm": "seed_only",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "named:南京不存在的测试景点"
+      ],
+      "gaps_after": [
+        "count",
+        "named:南京不存在的测试景点"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 0,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": []
+    },
+    {
+      "scenario_id": "boundary-00",
+      "kind": "boundary",
+      "arm": "bounded_react",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "named:南京不存在的测试景点"
+      ],
+      "gaps_after": [
+        "count",
+        "named:南京不存在的测试景点"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 0,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 0,
+      "pool_names": []
+    },
+    {
+      "scenario_id": "boundary-01",
+      "kind": "boundary",
+      "arm": "seed_only",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 1,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "上海种子景点0"
+      ]
+    },
+    {
+      "scenario_id": "boundary-01",
+      "kind": "boundary",
+      "arm": "bounded_react",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 1,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "上海种子景点0"
+      ]
+    },
+    {
+      "scenario_id": "boundary-02",
+      "kind": "boundary",
+      "arm": "seed_only",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "named:丽江不存在的测试景点"
+      ],
+      "gaps_after": [
+        "count",
+        "named:丽江不存在的测试景点"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "boundary-02",
+      "kind": "boundary",
+      "arm": "bounded_react",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "named:丽江不存在的测试景点"
+      ],
+      "gaps_after": [
+        "count",
+        "named:丽江不存在的测试景点"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "boundary-03",
+      "kind": "boundary",
+      "arm": "seed_only",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 3,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "三亚种子景点0",
+        "三亚种子景点1",
+        "三亚种子景点2"
+      ]
+    },
+    {
+      "scenario_id": "boundary-03",
+      "kind": "boundary",
+      "arm": "bounded_react",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 3,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "三亚种子景点0",
+        "三亚种子景点1",
+        "三亚种子景点2"
+      ]
+    },
+    {
+      "scenario_id": "boundary-04",
+      "kind": "boundary",
+      "arm": "seed_only",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "named:南京不存在的测试景点"
+      ],
+      "gaps_after": [
+        "count",
+        "named:南京不存在的测试景点"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 0,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": []
+    },
+    {
+      "scenario_id": "boundary-04",
+      "kind": "boundary",
+      "arm": "bounded_react",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "named:南京不存在的测试景点"
+      ],
+      "gaps_after": [
+        "count",
+        "named:南京不存在的测试景点"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 0,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 0,
+      "pool_names": []
+    },
+    {
+      "scenario_id": "boundary-05",
+      "kind": "boundary",
+      "arm": "seed_only",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 1,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "上海种子景点0"
+      ]
+    },
+    {
+      "scenario_id": "boundary-05",
+      "kind": "boundary",
+      "arm": "bounded_react",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "indoor"
+      ],
+      "gaps_after": [
+        "count",
+        "indoor"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 1,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 2,
+      "pool_names": [
+        "上海种子景点0"
+      ]
+    },
+    {
+      "scenario_id": "boundary-06",
+      "kind": "boundary",
+      "arm": "seed_only",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "named:丽江不存在的测试景点"
+      ],
+      "gaps_after": [
+        "count",
+        "named:丽江不存在的测试景点"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 0,
+      "rounds": 0,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1"
+      ]
+    },
+    {
+      "scenario_id": "boundary-06",
+      "kind": "boundary",
+      "arm": "bounded_react",
+      "expected_fixable": false,
+      "gaps_before": [
+        "count",
+        "named:丽江不存在的测试景点"
+      ],
+      "gaps_after": [
+        "count",
+        "named:丽江不存在的测试景点"
+      ],
+      "fixed": [],
+      "introduced": [],
+      "pool_after": 2,
+      "api_calls": 2,
+      "rounds": 2,
+      "repeated_query_rejections": 0,
+      "pool_names": [
+        "丽江种子景点0",
+        "丽江种子景点1"
+      ]
+    }
+  ],
+  "seed_only_fixable": {
+    "scenarios": 21,
+    "gaps": 35,
+    "fixed": 0,
+    "introduced": 0
+  },
+  "bounded_react_fixable": {
+    "scenarios": 21,
+    "gaps": 35,
+    "fixed": 28,
+    "introduced": 0
+  },
+  "bounded_react_boundary": {
+    "scenarios": 7,
+    "gaps": 14,
+    "fixed": 0,
+    "introduced": 0
+  },
+  "boundary_false_fix": 0,
+  "closure_rate": 0.8,
+  "seed_closure_rate": 0.0,
+  "budget_max_calls": 2,
+  "residual_by_kind": {
+    "count": 7
+  },
+  "note": "桩化检索：只测决策/预算/去重逻辑，不代表高德召回率"
+}

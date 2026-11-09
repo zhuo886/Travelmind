@@ -1,0 +1,221 @@
+{
+  "trial_id": "25306ca3442647c685ca898aaa2356be",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "opening_time_conflict"
+  ],
+  "first_draft_l0": [
+    "unknown_poi"
+  ],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 87.0,
+  "final_delivered_iteration": 4,
+  "planning_revision_rounds": 3,
+  "review_round": 4,
+  "reviewer_calls": 4,
+  "time_check_round": 0,
+  "snapshot_count": 4,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [
+        "unknown_poi"
+      ],
+      "l1_codes": [],
+      "defect_count": 1,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "091d4b65351a5ac4",
+      "spot_names": [
+        "上海海洋水族馆",
+        "外滩"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "opening_time_conflict"
+      ],
+      "defect_count": 1,
+      "soft_score": 92.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "f5529d05f8c78787",
+      "spot_names": [
+        "上海海洋水族馆",
+        "上海城隍庙",
+        "上海失恋博物馆"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [],
+      "l1_codes": [
+        "opening_time_conflict"
+      ],
+      "defect_count": 1,
+      "soft_score": 92.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "7774d506b4c006ce",
+      "spot_names": [
+        "上海海洋水族馆",
+        "上海城隍庙",
+        "上海失恋博物馆"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 4,
+      "l0_codes": [],
+      "l1_codes": [
+        "opening_time_conflict"
+      ],
+      "defect_count": 1,
+      "soft_score": 92.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "08ed931a31f20925",
+      "spot_names": [
+        "上海海洋水族馆",
+        "上海城隍庙",
+        "上海失恋博物馆"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 92.0,
+  "warnings": [
+    "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突"
+  ],
+  "route_names": [
+    "上海海洋水族馆",
+    "上海城隍庙",
+    "上海失恋博物馆"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "afternoon",
+          "start": "15:00",
+          "end": "17:30"
+        },
+        {
+          "name": "上海城隍庙",
+          "period": "evening",
+          "start": "18:00",
+          "end": "19:30"
+        },
+        {
+          "name": "上海失恋博物馆",
+          "period": "evening",
+          "start": "20:00",
+          "end": "21:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "上海海洋水族馆",
+    "上海城隍庙",
+    "上海失恋博物馆"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "afternoon",
+          "start": "15:00",
+          "end": "17:30"
+        },
+        {
+          "name": "上海城隍庙",
+          "period": "evening",
+          "start": "18:00",
+          "end": "19:30"
+        },
+        {
+          "name": "上海失恋博物馆",
+          "period": "evening",
+          "start": "20:00",
+          "end": "21:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 3
+  },
+  "must_visit_expected": [
+    "上海海洋水族馆"
+  ],
+  "must_visit_ok": true,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 183.537,
+  "node_latency_ms": {
+    "planner": 138191.685,
+    "snapshot_gate": 6.787,
+    "reviewer": 44245.071,
+    "snapshot_reviewer": 6.035
+  },
+  "input_tokens_est": 22806,
+  "output_tokens_est": 2025,
+  "llm_calls": 9,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 92.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 3
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

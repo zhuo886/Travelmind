@@ -1,0 +1,43 @@
+{
+  "trial_id": "2b742a8bfc144b939acab63d8c8136e8",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "none",
+  "nodes_entered": [],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": false,
+  "status": "FAILED",
+  "hard_pass": false,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": null,
+  "planning_revision_rounds": 0,
+  "review_round": 0,
+  "time_check_round": 0,
+  "snapshot_count": 0,
+  "soft_score": null,
+  "oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "must_visit_expected": [
+    "上海海洋水族馆"
+  ],
+  "must_visit_ok": false,
+  "must_avoid_ok": null,
+  "latency_s": 680.43,
+  "node_latency_ms": {},
+  "input_tokens_est": 30426,
+  "output_tokens_est": 639,
+  "llm_calls": 13,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": "infra",
+  "error": "OpenAIRateLimitError: Error code: 429 - 您的账户已达到速率限制，请您控制请求频率",
+  "actual_outcome": "INFRA_FAILURE",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

@@ -1,0 +1,61 @@
+{
+  "key": "e5056ddfd0124caa5f390d416723488f89c00c13fc465eb5eba2ebc47d15c723",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "7416bd153c3b549ea80d4d802e5da2ac1bf662401d16ba4a563cf3ffea275bc9",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "三亚南山文化旅游区",
+      "天涯海角游览区",
+      "三亚西岛海洋文化旅游区"
+    ],
+    "pacing": [
+      "三亚南山文化旅游区",
+      "天涯海角游览区",
+      "三亚西岛海洋文化旅游区"
+    ],
+    "geographic_coherence": [
+      "三亚南山文化旅游区",
+      "天涯海角游览区",
+      "三亚西岛海洋文化旅游区"
+    ],
+    "time_realism": [
+      "三亚南山文化旅游区",
+      "天涯海角游览区",
+      "三亚西岛海洋文化旅游区"
+    ],
+    "completeness": [
+      "三亚南山文化旅游区",
+      "天涯海角游览区",
+      "三亚西岛海洋文化旅游区"
+    ],
+    "diversity_and_dining": [
+      "三亚南山文化旅游区",
+      "天涯海角游览区",
+      "三亚西岛海洋文化旅游区"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

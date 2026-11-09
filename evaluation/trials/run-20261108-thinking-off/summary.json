@@ -1,0 +1,276 @@
+{
+  "total_trials": 3,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 3,
+    "value": 0.0
+  },
+  "effective_trials": 3,
+  "denominator_basis": "delivered_plan",
+  "outcome_counts": {
+    "PARTIAL": 3
+  },
+  "label_counts": {
+    "MISMATCH": 3
+  },
+  "fdr": {
+    "num": 0,
+    "den": 3,
+    "value": 0.0
+  },
+  "pdr": {
+    "num": 3,
+    "den": 3,
+    "value": 1.0
+  },
+  "omr": {
+    "num": 0,
+    "den": 3,
+    "value": 0.0
+  },
+  "hpr": {
+    "num": 3,
+    "den": 3,
+    "value": 1.0
+  },
+  "fpr": {
+    "num": 3,
+    "den": 3,
+    "value": 1.0
+  },
+  "oor": {
+    "outside": 0,
+    "references": 18,
+    "value": 0.0
+  },
+  "msr": {
+    "num": 3,
+    "den": 3,
+    "value": 1.0
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "rounds": {
+    "mean": 2.0,
+    "snapshot_count_mean": 3.0
+  },
+  "soft_score": {
+    "mean": 93.67,
+    "n": 3
+  },
+  "latency_s": {
+    "n": 3,
+    "median": 167.092,
+    "min": 43.541,
+    "max": 221.051,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "node_latency_ms": {
+    "planner": {
+      "n": 3,
+      "median": 122411.612,
+      "max": 156655.9
+    },
+    "snapshot_gate": {
+      "n": 3,
+      "median": 11.485,
+      "max": 11.7
+    },
+    "reviewer": {
+      "n": 2,
+      "median": 47632.89,
+      "max": 50755.2
+    },
+    "snapshot_reviewer": {
+      "n": 2,
+      "median": 10.834,
+      "max": 11.3
+    },
+    "time_check": {
+      "n": 1,
+      "median": 13419.109,
+      "max": 13419.1
+    },
+    "snapshot_time_check": {
+      "n": 1,
+      "median": 2.126,
+      "max": 2.1
+    }
+  },
+  "tool_calls": {
+    "candidate_api_calls_mean": 0.0,
+    "route_leg_count_mean": 0.0
+  },
+  "usage": {
+    "input_tokens_est_mean": 14326.0,
+    "output_tokens_est_mean": 3058.0,
+    "llm_calls_mean": 6.0
+  },
+  "by_case": {
+    "nanjing-3d-sunny-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 0,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 3,
+        "value": 0.0
+      },
+      "median_latency_s": 167.092,
+      "soft_score_mean": 93.67,
+      "input_tokens_est_mean": 14326.0,
+      "output_tokens_est_mean": 3058.0,
+      "total_tokens_est_mean": 17384.0,
+      "llm_calls_mean": 6.0
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 1,
+      "generated": 1,
+      "hard_pass": 1,
+      "match": 0,
+      "hpr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 1,
+        "value": 0.0
+      },
+      "median_latency_s": 43.541,
+      "soft_score_mean": 87.0,
+      "input_tokens_est_mean": 2170.0,
+      "output_tokens_est_mean": 1058.0,
+      "total_tokens_est_mean": 3228.0,
+      "llm_calls_mean": 1.0
+    },
+    "planner_reviewer": {
+      "trials": 1,
+      "generated": 1,
+      "hard_pass": 1,
+      "match": 0,
+      "hpr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 1,
+        "value": 0.0
+      },
+      "median_latency_s": 167.092,
+      "soft_score_mean": 97.0,
+      "input_tokens_est_mean": 20327.0,
+      "output_tokens_est_mean": 3520.0,
+      "total_tokens_est_mean": 23847.0,
+      "llm_calls_mean": 8.0
+    },
+    "planner_reviewer_time_check": {
+      "trials": 1,
+      "generated": 1,
+      "hard_pass": 1,
+      "match": 0,
+      "hpr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 1,
+        "value": 0.0
+      },
+      "median_latency_s": 221.051,
+      "soft_score_mean": 97.0,
+      "input_tokens_est_mean": 20481.0,
+      "output_tokens_est_mean": 4596.0,
+      "total_tokens_est_mean": 25077.0,
+      "llm_calls_mean": 9.0
+    }
+  },
+  "safety": {
+    "infeasible_trials": 0,
+    "correct_reject": 0,
+    "partial": 0,
+    "hard_fail": 0,
+    "wrong_accept": 0,
+    "srr": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "war": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "unsafe_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "partial_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "non_reject_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "feasible_trials": 3,
+    "over_reject": 0,
+    "orr": {
+      "num": 0,
+      "den": 3,
+      "value": 0.0
+    },
+    "infeasible_outcomes": {},
+    "by_code": {}
+  },
+  "expectations": {
+    "evaluated_trials": 3,
+    "violations": 0,
+    "trials_with_violations": 0,
+    "by_rule": {}
+  },
+  "judge": null,
+  "pass_at_k_by_case_mode": {},
+  "pass_at_k": {
+    "nanjing-3d-sunny-history": {
+      "k": 3,
+      "outcome_pass_at_k": false,
+      "outcome_pass_pow_k": false
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 0,
+    "den": 1,
+    "value": 0.0
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 0,
+    "den": 1,
+    "value": 0.0
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "trial_id": "429dafa4be364c9c8732de6fd2b460c4",
+  "case_id": "lijiang-5d-sunny-slowpace",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "soft_score": 100.0,
+  "warnings": [
+    "Day5虎跳峡与长江第一湾距离较远，建议预留充足的交通时间"
+  ],
+  "route_names": [
+    "束河古镇",
+    "白沙古镇",
+    "丽江古城",
+    "丽江古城-狮子山(狮山路)",
+    "丽江玉水寨风景区",
+    "中济海公园",
+    "玉龙雪山国家级风景名胜区",
+    "玉龙雪山国家级风景名胜区蓝月谷",
+    "丽江虎跳峡景区",
+    "长江第一湾"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "束河古镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "白沙古镇",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "丽江古城",
+          "period": "morning",
+          "start": "10:00",
+          "end": "13:00"
+        },
+        {
+          "name": "丽江古城-狮子山(狮山路)",
+          "period": "afternoon",
+          "start": "14:30",
+          "end": "17:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "丽江玉水寨风景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "中济海公园",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "spots": [
+        {
+          "name": "玉龙雪山国家级风景名胜区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "13:00"
+        },
+        {
+          "name": "玉龙雪山国家级风景名胜区蓝月谷",
+          "period": "afternoon",
+          "start": "14:30",
+          "end": "17:30"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "spots": [
+        {
+          "name": "丽江虎跳峡景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "13:00"
+        },
+        {
+          "name": "长江第一湾",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 10
+  },
+  "must_visit_expected": [
+    "束河古镇"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 249.565,
+  "node_latency_ms": {
+    "planner": 190415.123,
+    "snapshot_gate": 7.436,
+    "reviewer": 59053.402,
+    "snapshot_reviewer": 9.082
+  },
+  "input_tokens_est": 5217,
+  "output_tokens_est": 2120,
+  "llm_calls": 2,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

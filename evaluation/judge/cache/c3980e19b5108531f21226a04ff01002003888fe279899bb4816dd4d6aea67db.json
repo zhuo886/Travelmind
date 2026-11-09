@@ -1,0 +1,61 @@
+{
+  "key": "c3980e19b5108531f21226a04ff01002003888fe279899bb4816dd4d6aea67db",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "9fa97552b687c3a4f4a3e8961155cff1b5a644fe310324af74c445f38807ac05",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "三亚凤凰岭海誓山盟景区"
+    ],
+    "pacing": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "三亚凤凰岭海誓山盟景区"
+    ],
+    "geographic_coherence": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "三亚凤凰岭海誓山盟景区"
+    ],
+    "time_realism": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "三亚凤凰岭海誓山盟景区"
+    ],
+    "completeness": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "三亚凤凰岭海誓山盟景区"
+    ],
+    "diversity_and_dining": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "三亚凤凰岭海誓山盟景区"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

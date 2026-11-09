@@ -1,0 +1,1805 @@
+{
+  "version": "gap-fill-v1",
+  "scenarios": [
+    {
+      "id": "named-00",
+      "kind": "named",
+      "city": "南京",
+      "query": "南京1天游，一定要去“南京博物院”。",
+      "days": 1,
+      "seed": [],
+      "index": {
+        "南京博物院": [
+          {
+            "name": "南京博物院",
+            "location": "119.6,32.9",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "named-01",
+      "kind": "named",
+      "city": "上海",
+      "query": "上海1天游，一定要去“上海美术馆”。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "上海种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        }
+      ],
+      "index": {
+        "上海美术馆": [
+          {
+            "name": "上海美术馆",
+            "location": "119.61,32.91",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "named-02",
+      "kind": "named",
+      "city": "丽江",
+      "query": "丽江1天游，一定要去“丽江博物院”。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "丽江种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "丽江种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "丽江博物院": [
+          {
+            "name": "丽江博物院",
+            "location": "119.62,32.92",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "named-03",
+      "kind": "named",
+      "city": "三亚",
+      "query": "三亚1天游，一定要去“三亚美术馆”。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "三亚种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "三亚种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        },
+        {
+          "name": "三亚种子景点2",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.72,
+            "lat": 32.02
+          }
+        }
+      ],
+      "index": {
+        "三亚美术馆": [
+          {
+            "name": "三亚美术馆",
+            "location": "119.63,32.93",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "named-04",
+      "kind": "named",
+      "city": "南京",
+      "query": "南京1天游，一定要去“南京博物院”。",
+      "days": 1,
+      "seed": [],
+      "index": {
+        "南京博物院": [
+          {
+            "name": "南京博物院",
+            "location": "119.64,32.94",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "named-05",
+      "kind": "named",
+      "city": "上海",
+      "query": "上海1天游，一定要去“上海美术馆”。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "上海种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        }
+      ],
+      "index": {
+        "上海美术馆": [
+          {
+            "name": "上海美术馆",
+            "location": "119.65,32.95",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "named-06",
+      "kind": "named",
+      "city": "丽江",
+      "query": "丽江1天游，一定要去“丽江博物院”。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "丽江种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "丽江种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "丽江博物院": [
+          {
+            "name": "丽江博物院",
+            "location": "119.66,32.96",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "indoor-00",
+      "kind": "indoor",
+      "city": "南京",
+      "query": "南京1天游，只去室内景点。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "南京室外种子0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "南京室外种子1",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "南京补充博物馆0",
+            "location": "119.4,32.7",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆1",
+            "location": "119.41,32.71",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆2",
+            "location": "119.42,32.72",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆3",
+            "location": "119.43,32.73",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆4",
+            "location": "119.44,32.74",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆5",
+            "location": "119.45,32.75",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "indoor-01",
+      "kind": "indoor",
+      "city": "上海",
+      "query": "上海1天游，只去室内景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "上海室外种子0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "上海室外种子1",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "上海补充博物馆0",
+            "location": "119.46,32.76",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆1",
+            "location": "119.47,32.77",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆2",
+            "location": "119.48,32.78",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆3",
+            "location": "119.49,32.79",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆4",
+            "location": "119.5,32.8",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆5",
+            "location": "119.51,32.81",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "indoor-02",
+      "kind": "indoor",
+      "city": "丽江",
+      "query": "丽江1天游，只去室内景点。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "丽江室外种子0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "丽江室外种子1",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "丽江补充博物馆0",
+            "location": "119.52,32.82",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆1",
+            "location": "119.53,32.83",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆2",
+            "location": "119.54,32.84",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆3",
+            "location": "119.55,32.85",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆4",
+            "location": "119.56,32.86",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆5",
+            "location": "119.57,32.87",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "indoor-03",
+      "kind": "indoor",
+      "city": "三亚",
+      "query": "三亚1天游，只去室内景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "三亚室外种子0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "三亚室外种子1",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "三亚补充博物馆0",
+            "location": "119.58,32.88",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆1",
+            "location": "119.59,32.89",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆2",
+            "location": "119.6,32.9",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆3",
+            "location": "119.61,32.91",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆4",
+            "location": "119.62,32.92",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆5",
+            "location": "119.63,32.93",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "indoor-04",
+      "kind": "indoor",
+      "city": "南京",
+      "query": "南京1天游，只去室内景点。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "南京室外种子0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "南京室外种子1",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "南京补充博物馆0",
+            "location": "119.64,32.94",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆1",
+            "location": "119.65,32.95",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆2",
+            "location": "119.66,32.96",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆3",
+            "location": "119.67,32.97",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆4",
+            "location": "119.68,32.98",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆5",
+            "location": "119.69,32.99",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "indoor-05",
+      "kind": "indoor",
+      "city": "上海",
+      "query": "上海1天游，只去室内景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "上海室外种子0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "上海室外种子1",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "上海补充博物馆0",
+            "location": "119.7,33.0",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆1",
+            "location": "119.71,33.01",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆2",
+            "location": "119.72,33.02",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆3",
+            "location": "119.73,33.03",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆4",
+            "location": "119.74,33.04",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆5",
+            "location": "119.75,33.05",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "indoor-06",
+      "kind": "indoor",
+      "city": "丽江",
+      "query": "丽江1天游，只去室内景点。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "丽江室外种子0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "丽江室外种子1",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "丽江补充博物馆0",
+            "location": "119.76,33.06",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆1",
+            "location": "119.77,33.07",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆2",
+            "location": "119.78,33.08",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆3",
+            "location": "119.79,33.09",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆4",
+            "location": "119.8,33.1",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆5",
+            "location": "119.81,33.11",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "count-00",
+      "kind": "count",
+      "city": "南京",
+      "query": "南京1天游，想多看几个不同类型的景点。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "南京种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "南京种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "南京补充博物馆0",
+            "location": "119.2,32.5",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆1",
+            "location": "119.21,32.51",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆2",
+            "location": "119.22,32.52",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆3",
+            "location": "119.23,32.53",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆4",
+            "location": "119.24,32.54",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆5",
+            "location": "119.25,32.55",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "count-01",
+      "kind": "count",
+      "city": "上海",
+      "query": "上海2天游，想多看几个不同类型的景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "上海种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "上海种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "上海补充博物馆0",
+            "location": "119.26,32.56",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆1",
+            "location": "119.27,32.57",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆2",
+            "location": "119.28,32.58",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆3",
+            "location": "119.29,32.59",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆4",
+            "location": "119.3,32.6",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆5",
+            "location": "119.31,32.61",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "count-02",
+      "kind": "count",
+      "city": "丽江",
+      "query": "丽江1天游，想多看几个不同类型的景点。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "丽江种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "丽江种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "丽江补充博物馆0",
+            "location": "119.32,32.62",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆1",
+            "location": "119.33,32.63",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆2",
+            "location": "119.34,32.64",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆3",
+            "location": "119.35,32.65",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆4",
+            "location": "119.36,32.66",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆5",
+            "location": "119.37,32.67",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "count-03",
+      "kind": "count",
+      "city": "三亚",
+      "query": "三亚2天游，想多看几个不同类型的景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "三亚种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "三亚种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "三亚补充博物馆0",
+            "location": "119.38,32.68",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆1",
+            "location": "119.39,32.69",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆2",
+            "location": "119.4,32.7",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆3",
+            "location": "119.41,32.71",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆4",
+            "location": "119.42,32.72",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "三亚补充博物馆5",
+            "location": "119.43,32.73",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "count-04",
+      "kind": "count",
+      "city": "南京",
+      "query": "南京1天游，想多看几个不同类型的景点。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "南京种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "南京种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "南京补充博物馆0",
+            "location": "119.44,32.74",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆1",
+            "location": "119.45,32.75",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆2",
+            "location": "119.46,32.76",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆3",
+            "location": "119.47,32.77",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆4",
+            "location": "119.48,32.78",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "南京补充博物馆5",
+            "location": "119.49,32.79",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "count-05",
+      "kind": "count",
+      "city": "上海",
+      "query": "上海2天游，想多看几个不同类型的景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "上海种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "上海种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "上海补充博物馆0",
+            "location": "119.5,32.8",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆1",
+            "location": "119.51,32.81",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆2",
+            "location": "119.52,32.82",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆3",
+            "location": "119.53,32.83",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆4",
+            "location": "119.54,32.84",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "上海补充博物馆5",
+            "location": "119.55,32.85",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "count-06",
+      "kind": "count",
+      "city": "丽江",
+      "query": "丽江1天游，想多看几个不同类型的景点。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "丽江种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "丽江种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [
+          {
+            "name": "丽江补充博物馆0",
+            "location": "119.56,32.86",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆1",
+            "location": "119.57,32.87",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆2",
+            "location": "119.58,32.88",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆3",
+            "location": "119.59,32.89",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆4",
+            "location": "119.6,32.9",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          },
+          {
+            "name": "丽江补充博物馆5",
+            "location": "119.61,32.91",
+            "type": "科教文化服务;博物馆",
+            "typecode": "140100",
+            "adname": "玄武区",
+            "biz_ext": {
+              "rating": "4.7"
+            }
+          }
+        ]
+      },
+      "expected_fixable": true
+    },
+    {
+      "id": "boundary-00",
+      "kind": "boundary",
+      "city": "南京",
+      "query": "南京1天游，一定要去“南京不存在的测试景点”。",
+      "days": 1,
+      "seed": [],
+      "index": {
+        "南京不存在的测试景点": []
+      },
+      "expected_fixable": false
+    },
+    {
+      "id": "boundary-01",
+      "kind": "boundary",
+      "city": "上海",
+      "query": "上海1天游，只去室内景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "上海种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [],
+        "美术馆": []
+      },
+      "expected_fixable": false
+    },
+    {
+      "id": "boundary-02",
+      "kind": "boundary",
+      "city": "丽江",
+      "query": "丽江1天游，一定要去“丽江不存在的测试景点”。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "丽江种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "丽江种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "丽江不存在的测试景点": []
+      },
+      "expected_fixable": false
+    },
+    {
+      "id": "boundary-03",
+      "kind": "boundary",
+      "city": "三亚",
+      "query": "三亚1天游，只去室内景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "三亚种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "三亚种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        },
+        {
+          "name": "三亚种子景点2",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.72,
+            "lat": 32.02
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [],
+        "美术馆": []
+      },
+      "expected_fixable": false
+    },
+    {
+      "id": "boundary-04",
+      "kind": "boundary",
+      "city": "南京",
+      "query": "南京1天游，一定要去“南京不存在的测试景点”。",
+      "days": 1,
+      "seed": [],
+      "index": {
+        "南京不存在的测试景点": []
+      },
+      "expected_fixable": false
+    },
+    {
+      "id": "boundary-05",
+      "kind": "boundary",
+      "city": "上海",
+      "query": "上海1天游，只去室内景点。",
+      "days": 2,
+      "seed": [
+        {
+          "name": "上海种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        }
+      ],
+      "index": {
+        "博物馆": [],
+        "美术馆": []
+      },
+      "expected_fixable": false
+    },
+    {
+      "id": "boundary-06",
+      "kind": "boundary",
+      "city": "丽江",
+      "query": "丽江1天游，一定要去“丽江不存在的测试景点”。",
+      "days": 1,
+      "seed": [
+        {
+          "name": "丽江种子景点0",
+          "indoor": false,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "风景名胜",
+          "location": {
+            "lng": 118.7,
+            "lat": 32.0
+          }
+        },
+        {
+          "name": "丽江种子景点1",
+          "indoor": true,
+          "rating": 4.7,
+          "adname": "玄武区",
+          "category": "博物馆",
+          "location": {
+            "lng": 118.71,
+            "lat": 32.01
+          }
+        }
+      ],
+      "index": {
+        "丽江不存在的测试景点": []
+      },
+      "expected_fixable": false
+    }
+  ]
+}

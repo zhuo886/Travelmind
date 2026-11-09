@@ -1,0 +1,216 @@
+{
+  "total_trials": 1,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 1,
+    "value": 0.0
+  },
+  "effective_trials": 1,
+  "denominator_basis": "delivered_plan",
+  "outcome_counts": {
+    "SUCCESS": 1
+  },
+  "label_counts": {
+    "MATCH": 1
+  },
+  "fdr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "pdr": {
+    "num": 0,
+    "den": 1,
+    "value": 0.0
+  },
+  "omr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "hpr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "fpr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "oor": {
+    "outside": 0,
+    "references": 6,
+    "value": 0.0
+  },
+  "msr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "rounds": {
+    "mean": 0.0,
+    "snapshot_count_mean": 1.0
+  },
+  "soft_score": {
+    "mean": 97.0,
+    "n": 1
+  },
+  "latency_s": {
+    "n": 1,
+    "median": 238.92,
+    "min": 238.92,
+    "max": 238.92,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "node_latency_ms": {
+    "planner": {
+      "n": 1,
+      "median": 38283.423,
+      "max": 38283.4
+    },
+    "snapshot_gate": {
+      "n": 1,
+      "median": 4.19,
+      "max": 4.2
+    },
+    "reviewer": {
+      "n": 1,
+      "median": 5030.109,
+      "max": 5030.1
+    },
+    "snapshot_reviewer": {
+      "n": 1,
+      "median": 3.615,
+      "max": 3.6
+    }
+  },
+  "tool_calls": {
+    "candidate_api_calls_mean": 0.0,
+    "route_leg_count_mean": 0.0
+  },
+  "usage": {
+    "input_tokens_est_mean": 17574.0,
+    "output_tokens_est_mean": 1157.0,
+    "llm_calls_mean": 8.0
+  },
+  "by_case": {
+    "nanjing-3d-sunny-history": {
+      "trials": 1,
+      "generated": 1,
+      "hard_pass": 1,
+      "match": 1,
+      "hpr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "median_latency_s": 238.92,
+      "soft_score_mean": 97.0,
+      "input_tokens_est_mean": 17574.0,
+      "output_tokens_est_mean": 1157.0,
+      "total_tokens_est_mean": 18731.0,
+      "llm_calls_mean": 8.0
+    }
+  },
+  "by_mode": {
+    "planner_reviewer": {
+      "trials": 1,
+      "generated": 1,
+      "hard_pass": 1,
+      "match": 1,
+      "hpr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "median_latency_s": 238.92,
+      "soft_score_mean": 97.0,
+      "input_tokens_est_mean": 17574.0,
+      "output_tokens_est_mean": 1157.0,
+      "total_tokens_est_mean": 18731.0,
+      "llm_calls_mean": 8.0
+    }
+  },
+  "safety": {
+    "infeasible_trials": 0,
+    "correct_reject": 0,
+    "partial": 0,
+    "hard_fail": 0,
+    "wrong_accept": 0,
+    "srr": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "war": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "unsafe_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "partial_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "non_reject_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "feasible_trials": 1,
+    "over_reject": 0,
+    "orr": {
+      "num": 0,
+      "den": 1,
+      "value": 0.0
+    },
+    "infeasible_outcomes": {},
+    "by_code": {}
+  },
+  "expectations": {
+    "evaluated_trials": 1,
+    "violations": 0,
+    "trials_with_violations": 0,
+    "by_rule": {}
+  },
+  "judge": null,
+  "pass_at_k_by_case_mode": {},
+  "pass_at_k": {},
+  "outcome_pass_at_k_rate": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  }
+}

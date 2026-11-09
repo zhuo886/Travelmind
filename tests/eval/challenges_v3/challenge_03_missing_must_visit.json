@@ -1,0 +1,24 @@
+{
+  "id": "challenge-03-missing-must-visit",
+  "base_fixture": "nanjing-3d-sunny-history",
+  "injected_defect": "missing_must_visit",
+  "expected_verdict": "reject",
+  "expected_keywords": ["玄武湖", "点名", "必去", "未安排", "遗漏"],
+  "expected_defect_codes": ["missing_must_visit"],
+  "label_source": "deterministic_injection",
+  "route": [
+    {"day": 1, "spots": [
+      {"name": "中国科举博物馆(江南贡院)", "start_time": "10:00", "end_time": "12:00"},
+      {"name": "总统府", "start_time": "14:00", "end_time": "16:00"}
+    ]},
+    {"day": 2, "spots": [
+      {"name": "中山陵景区", "start_time": "10:00", "end_time": "12:30"},
+      {"name": "古鸡鸣寺", "start_time": "14:00", "end_time": "15:30"}
+    ]},
+    {"day": 3, "spots": [
+      {"name": "南京夫子庙", "start_time": "10:00", "end_time": "12:00"},
+      {"name": "莲花广场", "start_time": "14:00", "end_time": "15:00"}
+    ]}
+  ],
+  "note": "用户点名玄武湖景区，注入路线故意漏排；预期审核指出点名未安排。"
+}

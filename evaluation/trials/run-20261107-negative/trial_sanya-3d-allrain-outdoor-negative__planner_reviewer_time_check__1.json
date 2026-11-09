@@ -1,0 +1,144 @@
+{
+  "trial_id": "05b475300de9495bbd600a5e6efcb679",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "time_check_round": 1,
+  "snapshot_count": 2,
+  "soft_score": 57.0,
+  "warnings": [
+    "雨天户外活动体验较差，建议准备充足雨具并缩短每个景点停留时间",
+    "中雨天气下长时间户外活动可能影响游览体验，建议增加休息和用餐时间",
+    "建议携带防水背包和防滑鞋，确保雨天出行安全",
+    "天气合理性严重不达标：三天均为中雨天气，但所有安排的9个景点均为明确室外景点，违反了雨天户外活动体验的基本要求。建议：1）大幅减少每个景点的停留时间至15-20分钟；2）增加景区内用餐和休息时间，减少雨中暴露时间；3）考虑增加雨具准备预算；4）如可能，寻找有遮蔽的替代景点或室内活动。",
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "南山大小洞天旅游区",
+    "三亚南山文化旅游区",
+    "南山文化旅游区南山海上观音",
+    "天涯海角游览区",
+    "天涯小镇",
+    "三亚湾",
+    "亚龙湾海滩",
+    "亚龙湾国家旅游度假区",
+    "亚龙湾风景区-天下第一湾"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "南山大小洞天旅游区",
+          "period": "morning",
+          "start": "09:00",
+          "end": "09:30"
+        },
+        {
+          "name": "三亚南山文化旅游区",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "13:30"
+        },
+        {
+          "name": "南山文化旅游区南山海上观音",
+          "period": "evening",
+          "start": "16:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "天涯海角游览区",
+          "period": "morning",
+          "start": "09:00",
+          "end": "09:30"
+        },
+        {
+          "name": "天涯小镇",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "13:30"
+        },
+        {
+          "name": "三亚湾",
+          "period": "evening",
+          "start": "16:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "亚龙湾海滩",
+          "period": "morning",
+          "start": "09:00",
+          "end": "09:30"
+        },
+        {
+          "name": "亚龙湾国家旅游度假区",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "13:30"
+        },
+        {
+          "name": "亚龙湾风景区-天下第一湾",
+          "period": "evening",
+          "start": "16:00",
+          "end": "16:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "must_avoid_ok": null,
+  "latency_s": 527.128,
+  "node_latency_ms": {
+    "planner": 321544.33,
+    "snapshot_gate": 5.264,
+    "reviewer": 79133.208,
+    "snapshot_reviewer": 11.975,
+    "time_check": 126227.315,
+    "snapshot_time_check": 4.494
+  },
+  "input_tokens_est": 12542,
+  "output_tokens_est": 4248,
+  "llm_calls": 5,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

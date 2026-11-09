@@ -1,0 +1,267 @@
+"""高德地点搜索与 POI 解析。"""
+
+from __future__ import annotations
+
+import time
+import math
+import urllib.parse
+from typing import Any
+
+from app.core.cache import get_cached, set_cached, poi_cache_key, POI_TTL
+from app.core.http import http_get_json
+from app.providers.amap.client import (
+    AMAP_AROUND_SEARCH_URL,
+    AMAP_RATE_LIMIT_INFOS,
+    AMAP_TEXT_SEARCH_URL,
+    int_or_none,
+)
+
+ATTRACTION_TYPE = "风景名胜"
+
+INDOOR_TYPES = ("博物馆", "美术馆", "科技馆", "展览馆", "图书馆", "纪念馆", "天文馆",
+                "海洋馆", "水族馆", "室内游乐", "剧场", "音乐厅", "购物中心", "商场")
+OUTDOOR_NAMES = ("遗址公园", "森林公园", "广场", "露天", "户外", "外景")
+
+
+def type_indoor(poi):
+    category = str(poi.get("type") or poi.get("category") or "")
+    return not non_tourism_poi(poi) and any(v in category for v in INDOOR_TYPES) and not any(v in str(poi.get("name") or "") for v in OUTDOOR_NAMES)
+
+
+def non_tourism_poi(poi):
+    """Reject clear merchant categories, including obvious misclassified shops.
+
+    A museum about doors is not a door shop; name checks are deliberately narrow.
+    Applies to raw rows and normalized checkpoint candidates alike.
+    """
+    category = str(poi.get("type") or poi.get("category") or "")
+    name = str(poi.get("name") or "")
+    code = str(poi.get("typecode") or "")
+    blocked = any(v in category for v in ("家居建材", "公司企业", "汽车服务", "汽车销售", "医疗保健"))
+    blocked |= code.startswith(("010", "020", "090", "170"))
+    blocked |= "生活服务" in category and any(v in category for v in ("中介", "维修"))
+    blocked |= "博物馆" not in name and any(v in name for v in ("系统门窗", "建材经营", "汽车维修", "房产中介"))
+    return bool(blocked)
+
+
+# ─── 内部辅助 ────────────────────────────────────────────────
+
+def _text_search_raw(url: str) -> list[dict[str, Any]]:
+    """带限流重试的高德文本搜索原始执行，返回 pois 列表。"""
+    for attempt in range(4):
+        data = http_get_json(url)
+        if data.get("status") == "1":
+            pois = data.get("pois", [])
+            return pois if isinstance(pois, list) else []
+        info = str(data.get("info") or "未知错误")
+        if info not in AMAP_RATE_LIMIT_INFOS or attempt >= 3:
+            raise RuntimeError(f"高德搜索失败：{info}")
+        time.sleep(1.2 * (attempt + 1))
+    return []
+
+
+# ─── 周边搜索 ────────────────────────────────────────────────
+
+def search_around_pois(
+    location: dict[str, float],
+    api_key: str,
+    *,
+    types: str = "",
+    keyword: str = "",
+    radius: int = 1000,
+    offset: int = 6,
+    max_retries: int = 3,
+) -> list[dict[str, Any]]:
+    """调用高德周边搜索，围绕坐标查找餐饮、景点等 POI。
+    餐饮搜索传 types='餐饮服务'，按分类搜索覆盖所有餐馆；
+    有 types 时不发 keywords（两者语义不同，混用结果偏少）。
+    """
+    params = {
+        "key": api_key,
+        "location": f"{location['lng']},{location['lat']}",
+        "radius": str(radius),
+        "offset": str(offset),
+        "page": "1",
+        "extensions": "all",
+        "output": "json",
+    }
+    if types:
+        params["types"] = types
+    elif keyword:
+        params["keywords"] = keyword
+    url = f"{AMAP_AROUND_SEARCH_URL}?{urllib.parse.urlencode(params)}"
+    for attempt in range(max_retries + 1):
+        data = http_get_json(url)
+        if data.get("status") == "1":
+            pois = data.get("pois", [])
+            return pois if isinstance(pois, list) else []
+        info = str(data.get("info") or "未知错误")
+        if info not in AMAP_RATE_LIMIT_INFOS or attempt >= max_retries:
+            raise RuntimeError(f"高德周边搜索失败：{info}")
+        time.sleep(1.2 * (attempt + 1))
+    return []
+
+
+# ─── 景点关键字搜索 ──────────────────────────────────────────
+
+def search_attraction_pois(
+    city: str,
+    api_key: str,
+    *,
+    keywords: str = "景点",
+    offset: int = 25,
+    page: int = 1,
+) -> list[dict[str, Any]]:
+    """用高德关键字搜索 API 返回景点 POI 列表，类型固定为风景名胜。"""
+    # 缓存逻辑：仅缓存 page=1 的请求
+    cache_key = poi_cache_key(city, keywords) if page == 1 else None
+    if cache_key is not None:
+        cached = get_cached(cache_key)
+        if cached is not None:
+            return cached
+
+    params: dict[str, str] = {
+        "key": api_key,
+        "keywords": keywords,
+        "types": ATTRACTION_TYPE,
+        "city": city,
+        "citylimit": "true",
+        "offset": str(offset),
+        "page": str(page),
+        "extensions": "all",
+        "output": "json",
+    }
+    url = f"{AMAP_TEXT_SEARCH_URL}?{urllib.parse.urlencode(params)}"
+    pois = _text_search_raw(url)
+    if page == 1 and pois:
+        set_cached(cache_key, pois, POI_TTL)
+    return pois
+
+
+def search_city_pois(
+    city: str,
+    api_key: str,
+    *,
+    keywords: str,
+    types: str,
+    offset: int = 8,
+    request_budget: dict[str, int] | None = None,
+) -> list[dict[str, Any]]:
+    """通用城市关键字搜索（手动编辑换点用）：类型可指定（景点/餐饮），不做缓存（由调用方决定）。"""
+    params: dict[str, str] = {
+        "key": api_key,
+        "keywords": keywords,
+        "types": types,
+        "city": city,
+        "citylimit": "true",
+        "offset": str(offset),
+        "page": "1",
+        "extensions": "all",
+        "output": "json",
+    }
+    url = f"{AMAP_TEXT_SEARCH_URL}?{urllib.parse.urlencode(params)}"
+    if request_budget is None:
+        return _text_search_raw(url)
+    for attempt in range(2):
+        if request_budget["remaining"] <= 0:
+            raise RuntimeError("candidate_api_budget_exhausted")
+        request_budget["remaining"] -= 1
+        request_budget["used"] += 1
+        try:
+            data = http_get_json(url, attempts=1)
+            if data.get("status") == "1":
+                return data.get("pois") if isinstance(data.get("pois"), list) else []
+            if data.get("info") not in AMAP_RATE_LIMIT_INFOS:
+                raise ValueError("AMap rejected search")
+        except RuntimeError:
+            if attempt == 1:
+                raise
+        if attempt == 0 and request_budget["remaining"] > 0:
+            time.sleep(1.2)
+    raise RuntimeError("AMap candidate search failed")
+
+
+# ─── POI 解析 ────────────────────────────────────────────────
+
+def parse_location(value: Any) -> dict[str, float] | None:
+    """把高德 "lng,lat" 字符串解析成结构化坐标，失败返回 None。"""
+    if not isinstance(value, str) or "," not in value:
+        return None
+    lng_text, lat_text = value.split(",", 1)
+    try:
+        return {"lng": float(lng_text), "lat": float(lat_text)}
+    except ValueError:
+        return None
+
+
+def normalize_address(value: Any) -> str:
+    """把高德可能返回的字符串或数组地址统一成字符串。"""
+    if isinstance(value, list):
+        return " ".join(str(item) for item in value if item)
+    return str(value or "")
+
+
+def poi_to_spot(poi: dict[str, Any], *, allow_non_tourism: bool = False) -> dict[str, Any] | None:
+    """把高德景点 POI 原始字段整理成规划用结构。缺坐标返回 None。"""
+    if not isinstance(poi, dict) or (non_tourism_poi(poi) and not allow_non_tourism):
+        return None
+    loc_str = poi.get("location", "")
+    if not isinstance(loc_str, str) or "," not in loc_str:
+        return None
+    lng, lat = loc_str.split(",", 1)
+    try:
+        location = {"lng": float(lng), "lat": float(lat)}
+    except ValueError:
+        return None
+    if not all(math.isfinite(v) for v in location.values()) or not (-180 <= location["lng"] <= 180 and -90 <= location["lat"] <= 90):
+        return None
+
+    biz_ext = poi.get("biz_ext") or {}
+    rating_raw = biz_ext.get("rating", "") if isinstance(biz_ext, dict) else ""
+    try:
+        rating: float | None = float(rating_raw) if rating_raw else None
+    except ValueError:
+        rating = None
+
+    open_time: str | None = (
+        str(biz_ext["opentime2"]).strip() if isinstance(biz_ext, dict) and biz_ext.get("opentime2") else None
+    ) or (
+        str(biz_ext["opentime"]).strip() if isinstance(biz_ext, dict) and biz_ext.get("opentime") else None
+    ) or None
+
+    photos = poi.get("photos") or []
+    first_photo: str | None = None
+    if isinstance(photos, list) and photos and isinstance(photos[0], dict):
+        first_photo = str(photos[0].get("url", "")).strip() or None
+
+    cost_value = biz_ext.get("cost") if isinstance(biz_ext, dict) else None
+    cost_raw = str(cost_value).strip() if isinstance(cost_value, (str, int, float)) and not isinstance(cost_value, bool) else ""
+    if cost_raw.lower() in {"[]", "none", "null", "nan", "inf", "-inf"}:
+        cost_raw = ""
+    category = str(poi.get("type") or "") + str(poi.get("name") or "")
+    verified_indoor = type_indoor(poi)
+    indoor = None
+    if any(word in category for word in ("博物馆", "美术馆", "纪念馆", "展览馆", "科技馆", "图书馆")):
+        indoor = True
+    elif any(word in category for word in ("公园", "广场", "植物园", "风景区", "陵园")):
+        indoor = False
+
+    return {
+        "name": poi.get("name", ""),
+        "poi_id": str(poi.get("id") or "") or None,
+        "category": str(poi.get("type") or ""),
+        "typecode": str(poi.get("typecode") or ""),
+        "rating": rating,
+        "open_time": open_time,
+        "location": location,
+        "photo": first_photo,
+        "adname": str(poi.get("adname") or ""),
+        "address": normalize_address(poi.get("address", "")),
+        "tel": str(poi.get("tel") or "").strip() or None,
+        "cost": cost_raw or None,
+        "indoor": True if verified_indoor else None,
+        "indoor_hint": indoor,
+        "indoor_source": "amap_type_verified" if verified_indoor else "unknown",
+        "indoor_scope": "高德场馆分类所指的建筑内参观；不包括庭院、排队、通勤；非现场或全程避雨核验" if verified_indoor else None,
+        "indoor_hint_source": "amap_category_inference" if indoor is not None else "unknown",
+    }

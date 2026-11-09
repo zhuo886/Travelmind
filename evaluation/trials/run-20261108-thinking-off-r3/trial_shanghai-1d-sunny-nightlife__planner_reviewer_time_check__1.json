@@ -1,0 +1,216 @@
+{
+  "trial_id": "56c89d2d0220445c9b1c9d0472fc24a6",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "opening_time_conflict"
+  ],
+  "first_draft_l0": [
+    "unknown_poi"
+  ],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 87.0,
+  "final_delivered_iteration": 3,
+  "planning_revision_rounds": 3,
+  "review_round": 4,
+  "reviewer_calls": 4,
+  "time_check_round": 1,
+  "snapshot_count": 4,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [
+        "unknown_poi"
+      ],
+      "l1_codes": [],
+      "defect_count": 1,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "091d4b65351a5ac4",
+      "spot_names": [
+        "上海海洋水族馆",
+        "外滩"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "opening_time_conflict"
+      ],
+      "defect_count": 1,
+      "soft_score": 92.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "511497e96a168d2e",
+      "spot_names": [
+        "上海海洋水族馆",
+        "上海城隍庙",
+        "上海豫园"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [],
+      "l1_codes": [
+        "opening_time_conflict"
+      ],
+      "defect_count": 1,
+      "soft_score": 92.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "04fc6ceb85ac0bf2",
+      "spot_names": [
+        "上海海洋水族馆",
+        "上海城隍庙",
+        "上海豫园"
+      ],
+      "is_delivered": true
+    },
+    {
+      "iteration": 4,
+      "l0_codes": [],
+      "l1_codes": [
+        "opening_time_conflict"
+      ],
+      "defect_count": 1,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 1,
+      "rework_requested": true,
+      "route_signature": "f50c7b7dc69b68f2",
+      "spot_names": [
+        "上海海洋水族馆",
+        "上海城隍庙"
+      ],
+      "is_delivered": false
+    }
+  ],
+  "soft_score": 92.0,
+  "warnings": [
+    "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突"
+  ],
+  "route_names": [
+    "上海海洋水族馆",
+    "上海城隍庙",
+    "上海豫园"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        },
+        {
+          "name": "上海城隍庙",
+          "period": "evening",
+          "start": "18:30",
+          "end": "20:30"
+        },
+        {
+          "name": "上海豫园",
+          "period": "evening",
+          "start": "20:30",
+          "end": "22:00"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "上海海洋水族馆",
+    "上海城隍庙",
+    "上海豫园"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        },
+        {
+          "name": "上海城隍庙",
+          "period": "evening",
+          "start": "18:30",
+          "end": "20:30"
+        },
+        {
+          "name": "上海豫园",
+          "period": "evening",
+          "start": "20:30",
+          "end": "22:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 3
+  },
+  "must_visit_expected": [
+    "上海海洋水族馆"
+  ],
+  "must_visit_ok": true,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 127.226,
+  "node_latency_ms": {
+    "planner": 79107.565,
+    "snapshot_gate": 13.717,
+    "reviewer": 39284.652,
+    "snapshot_reviewer": 13.496,
+    "time_check": 8590.561,
+    "snapshot_time_check": 1.362
+  },
+  "input_tokens_est": 20863,
+  "output_tokens_est": 2259,
+  "llm_calls": 9,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 92.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 3
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

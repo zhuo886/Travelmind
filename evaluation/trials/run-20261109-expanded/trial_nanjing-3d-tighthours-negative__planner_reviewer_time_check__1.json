@@ -1,0 +1,224 @@
+{
+  "trial_id": "99ba73adc16d42eab7d5c42eb389c2aa",
+  "case_id": "nanjing-3d-tighthours-negative",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 97.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 1,
+  "time_check_round": 1,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 97.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "2fc7c63a79d6dba6",
+      "spot_names": [
+        "古鸡鸣寺",
+        "中山陵景区",
+        "不老村",
+        "水墨大埝旅游区",
+        "江苏江宁汤山方山国家地质公园博物馆",
+        "南京牛首山文化旅游区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 97.0,
+  "warnings": [],
+  "route_names": [
+    "古鸡鸣寺",
+    "中山陵景区",
+    "不老村",
+    "水墨大埝旅游区",
+    "江苏江宁汤山方山国家地质公园博物馆",
+    "南京牛首山文化旅游区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "古鸡鸣寺",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "中山陵景区",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "16:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "不老村",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "水墨大埝旅游区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "江苏江宁汤山方山国家地质公园博物馆",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "16:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "古鸡鸣寺",
+    "中山陵景区",
+    "不老村",
+    "水墨大埝旅游区",
+    "江苏江宁汤山方山国家地质公园博物馆",
+    "南京牛首山文化旅游区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "古鸡鸣寺",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "中山陵景区",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "16:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "不老村",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "水墨大埝旅游区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "江苏江宁汤山方山国家地质公园博物馆",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "16:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 71.446,
+  "node_latency_ms": {
+    "planner": 43361.224,
+    "snapshot_gate": 3.405,
+    "reviewer": 12731.335,
+    "snapshot_reviewer": 1.258,
+    "time_check": 14164.632,
+    "snapshot_time_check": 1.117
+  },
+  "input_tokens_est": 3671,
+  "output_tokens_est": 1504,
+  "llm_calls": 3,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 97.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "SUCCESS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

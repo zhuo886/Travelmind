@@ -1,0 +1,44 @@
+{
+  "key": "77ce5848a4c9aa84bdbec9218d4eee67232a22cd7688b06e47e7f27ba4b63f4c",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "2f915de6c5f99c3afc6f46360b1f839e77b9f9c0f035e62f2015bf9e9616bd5d",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 5,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "路线契合用户偏好，包含夜景和夜间游览（外滩19:00-21:30），符合下午出发的习惯",
+    "pacing": "下午3小时水族馆+晚间2.5小时外滩，节奏合理但17:00-19:00有2小时空档",
+    "geographic_coherence": "上海海洋水族馆和外滩地理位置相近，减少往返",
+    "time_realism": "时间安排符合实际，外滩夜景时段19:00-21:30合理",
+    "completeness": "缺少交通衔接、用餐安排、集合点等关键信息",
+    "diversity_and_dining": "仅2个景点，缺乏多样性，未安排餐饮时间"
+  },
+  "flags": [
+    "信息不完整",
+    "餐饮未安排",
+    "景点数量有限",
+    "evidence_missing"
+  ],
+  "overall_comment": "路线基本符合用户偏好，但信息完整性和体验多样性有待提升",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 386,
+    "output_tokens": 258,
+    "total_tokens": 644,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 31515.068,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

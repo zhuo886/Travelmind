@@ -1,0 +1,41 @@
+{
+  "key": "c765f195bdad978c7f20c6f689dcedc2cd722e45c6b5956d4750805dd649953b",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "cb636f2a0d1fdde7082a62a8f6ecc5f6c7d4796a4d11fbc7d718b0c1f2a38cad",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 5,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Matches timing preference for evening activities but missing the key Bund attraction specifically mentioned in preferences",
+    "pacing": "Reasonable time allocation for each attraction with adequate duration, not rushed",
+    "geographic_coherence": "For a single day itinerary with two attractions, the arrangement appears geographically sensible",
+    "time_realism": "Timing is realistic with appropriate gaps between activities and no scheduling conflicts",
+    "completeness": "All required route information is provided within the specified scope",
+    "diversity_and_dining": "Moderate diversity in attraction types, but limited to only two attractions total"
+  },
+  "flags": [
+    "preference_mismatch"
+  ],
+  "overall_comment": "The itinerary has good timing and reasonable pacing but misses the key Bund attraction that was specifically mentioned in the user's preferences for night views and urban light shows.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 527,
+    "output_tokens": 534,
+    "total_tokens": 1061,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 47420.275,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

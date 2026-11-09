@@ -1,0 +1,44 @@
+{
+  "key": "7a469974ccf318bf19da143488108192413d9e18dbecf7e6e898c509ee39b4bd",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "59e2d86d2768136e954031152c4d2dcce895c0a2a15b5482a722df7deaf62dbc",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 5,
+    "time_realism": 5,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "All attractions match user's preference for historical sites and natural landscapes. No early starts (all begin at 10:00) respects habit of not liking early mornings.",
+    "pacing": "Each day has well-structured morning and afternoon sessions with reasonable 1.5-hour gaps between activities.",
+    "geographic_coherence": "Activities are geographically grouped by day - Day 1 in urban Nanjing, Days 2-3 in Jiangning district, minimizing travel time.",
+    "time_realism": "All activities start at reasonable times (10:00, 13:30) with appropriate durations. Good weather conditions support the schedule.",
+    "completeness": "Missing transportation details between spots, meal arrangements, entrance fees, accommodation, and emergency information.",
+    "diversity_and_dining": "Good variety of attraction types (historical, natural, theme park) but lacks specific dining and rest planning."
+  },
+  "flags": [
+    "missing_transportation",
+    "missing_meal_planning",
+    "missing_accommodation_details",
+    "evidence_missing"
+  ],
+  "overall_comment": "Well-structured itinerary that matches user preferences and has good geographic grouping, but lacks essential practical details for execution.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 597,
+    "output_tokens": 639,
+    "total_tokens": 1236,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 47826.058,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

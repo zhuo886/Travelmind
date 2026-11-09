@@ -1,0 +1,41 @@
+{
+  "key": "e7a3f439e364df2d569e98f9800db4b7a356c4f7f90d250afcd6746170678b60",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "a58ddd7b0b7127cbf099b5b10104ea58951c5dbe279591675c548c982e78c43f",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 5,
+    "time_realism": 5,
+    "completeness": 4,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "The evening visit to The Bund (19:00-21:30) perfectly matches the user's preference for night views and urban light shows. However, the afternoon Shanghai Ocean Aquarium visit (14:00-17:00) doesn't align with the stated preference for evening tours.",
+    "pacing": "The itinerary has a reasonable 2-hour gap between attractions (17:00-19:00) allowing for travel time, with neither the 3-hour aquarium visit nor the 2.5-hour Bund visit feeling rushed.",
+    "geographic_coherence": "Both attractions are centrally located in Shanghai with minimal expected travel time between them, creating an efficient route.",
+    "time_realism": "The timing aligns perfectly with the user's habit of afternoon departure and preference for evening tours, with realistic durations for each attraction.",
+    "completeness": "The route provides specific start/end times for each attraction, though transportation details are omitted as per scope.",
+    "diversity_and_dining": "Good variety between indoor educational experience (aquarium) and outdoor scenic experience (Bund), though dining arrangements are not evaluated per scope."
+  },
+  "flags": [
+    "other"
+  ],
+  "overall_comment": "The itinerary effectively matches the user's preferences for evening urban sightseeing, with good geographic coherence and realistic timing. The afternoon aquarium visit provides a nice contrast to the evening Bund experience.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 525,
+    "output_tokens": 771,
+    "total_tokens": 1296,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 78472.027,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

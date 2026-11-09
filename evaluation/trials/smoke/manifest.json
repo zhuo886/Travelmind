@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-11-06T06:41:49.787625+00:00",
+  "model": "glm-4.5-flash",
+  "provider": "openai",
+  "modes": [
+    "planner_only"
+  ],
+  "cases": [
+    "shanghai-1d-sunny-nightlife"
+  ],
+  "k": 1,
+  "trials": 1
+}

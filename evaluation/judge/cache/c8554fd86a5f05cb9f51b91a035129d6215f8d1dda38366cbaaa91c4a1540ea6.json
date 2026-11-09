@@ -1,0 +1,44 @@
+{
+  "key": "c8554fd86a5f05cb9f51b91a035129d6215f8d1dda38366cbaaa91c4a1540ea6",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "cdb0f61b0c7a44d6a118c8014b55e0e85177264a30ea7f25545fa746ae0f5f3a",
+  "scores": {
+    "preference_fit": 2,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 1
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "时间安排符合'下午出发，喜欢夜间游览'的习惯，但景点选择与'夜景、外滩、都市光影'的偏好不符",
+    "pacing": "每天3小时的活动时长合理，30分钟转换时间适中",
+    "geographic_coherence": "上海海洋水族馆通常位于外滩附近，但失恋博物馆位置未知",
+    "time_realism": "14:00-17:00和17:30-20:30的时间安排合理，晴天天气有利于夜间活动",
+    "completeness": "提供了具体时间和景点，但缺少交通和餐饮信息",
+    "diversity_and_dining": "仅有两个室内景点，缺乏餐饮安排和体验多样性"
+  },
+  "flags": [
+    "景点偏好不匹配",
+    "缺乏餐饮安排",
+    "地理信息不完整",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程时间安排合理，但景点选择与用户夜景、外滩偏好不符，且缺乏餐饮和交通信息。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 389,
+    "output_tokens": 269,
+    "total_tokens": 658,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 48956.07,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

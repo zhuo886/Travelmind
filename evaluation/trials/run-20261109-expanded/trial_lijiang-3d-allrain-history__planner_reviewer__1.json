@@ -1,0 +1,257 @@
+{
+  "trial_id": "dcb9543d1f7a4ef2a25b2cf786e529e7",
+  "case_id": "lijiang-3d-allrain-history",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 84.5,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 1,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 84.5,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "8a9fb38ee57b47b4",
+      "spot_names": [
+        "丽江千古情景区",
+        "丽江古城",
+        "束河古镇",
+        "白沙古镇",
+        "丽江古城-狮子山(狮山路)",
+        "狮子山万古楼景区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 84.5,
+  "warnings": [
+    "雨天期间，Day2和Day3的室外景点可能影响体验，建议调整为室内活动",
+    "Day2和Day3应替换为室内景点，如丽江千古情景区和博物馆，避免雨天安排室外景点。",
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "丽江千古情景区",
+    "丽江古城",
+    "束河古镇",
+    "白沙古镇",
+    "丽江古城-狮子山(狮山路)",
+    "狮子山万古楼景区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "丽江千古情景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        },
+        {
+          "name": "丽江古城",
+          "period": "evening",
+          "start": "17:30",
+          "end": "20:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "束河古镇",
+          "period": "morning",
+          "start": "09:11",
+          "end": "12:11"
+        },
+        {
+          "name": "白沙古镇",
+          "period": "afternoon",
+          "start": "13:41",
+          "end": "16:41"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "丽江古城-狮子山(狮山路)",
+          "period": "morning",
+          "start": "09:00",
+          "end": "12:00"
+        },
+        {
+          "name": "狮子山万古楼景区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "16:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "丽江千古情景区",
+    "丽江古城",
+    "束河古镇",
+    "白沙古镇",
+    "丽江古城-狮子山(狮山路)",
+    "狮子山万古楼景区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "丽江千古情景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        },
+        {
+          "name": "丽江古城",
+          "period": "evening",
+          "start": "17:30",
+          "end": "20:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "束河古镇",
+          "period": "morning",
+          "start": "09:11",
+          "end": "12:11"
+        },
+        {
+          "name": "白沙古镇",
+          "period": "afternoon",
+          "start": "13:41",
+          "end": "16:41"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "丽江古城-狮子山(狮山路)",
+          "period": "morning",
+          "start": "09:00",
+          "end": "12:00"
+        },
+        {
+          "name": "狮子山万古楼景区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "16:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 49.954,
+  "node_latency_ms": {
+    "planner": 40455.106,
+    "snapshot_gate": 1.709,
+    "reviewer": 9199.859,
+    "snapshot_reviewer": 1.588
+  },
+  "input_tokens_est": 4974,
+  "output_tokens_est": 1158,
+  "llm_calls": 2,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 84.5,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 1,
+      "date": "2026-09-15",
+      "limit": 0,
+      "outdoor_count": 1,
+      "outdoor_spots": [
+        "丽江古城"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 2,
+      "date": "2026-09-16",
+      "limit": 0,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "束河古镇",
+        "白沙古镇"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 3,
+      "date": "2026-09-17",
+      "limit": 0,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "丽江古城-狮子山(狮山路)",
+        "狮子山万古楼景区"
+      ]
+    }
+  ],
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

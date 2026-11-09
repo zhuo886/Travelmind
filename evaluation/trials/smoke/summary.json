@@ -1,0 +1,108 @@
+{
+  "total_trials": 1,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 1,
+    "value": 0.0
+  },
+  "effective_trials": 1,
+  "outcome_counts": {
+    "PARTIAL": 1
+  },
+  "label_counts": {
+    "MISMATCH": 1
+  },
+  "fdr": {
+    "num": 0,
+    "den": 1,
+    "value": 0.0
+  },
+  "pdr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "omr": {
+    "num": 0,
+    "den": 1,
+    "value": 0.0
+  },
+  "hpr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "fpr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "oor": {
+    "outside": 0,
+    "references": 3,
+    "value": 0.0
+  },
+  "msr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "rounds": {
+    "mean": 0.0,
+    "snapshot_count_mean": 1.0
+  },
+  "soft_score": {
+    "mean": 82.0,
+    "n": 1
+  },
+  "latency_s": {
+    "n": 1,
+    "median": 44.828,
+    "min": 44.828,
+    "max": 44.828,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "usage": {
+    "input_tokens_est_mean": 2287.0,
+    "output_tokens_est_mean": 647.0,
+    "llm_calls_mean": 0.0
+  },
+  "by_case": {
+    "shanghai-1d-sunny-nightlife": {
+      "trials": 1,
+      "match": 0,
+      "hard_pass": 1,
+      "generated": 1
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 1,
+      "match": 0,
+      "hard_pass": 1,
+      "generated": 1
+    }
+  },
+  "pass_at_k": {},
+  "outcome_pass_at_k_rate": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  }
+}

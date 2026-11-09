@@ -1,0 +1,44 @@
+{
+  "key": "9081e479df94385c2abb95f8a3df1f3269995a37e8887b0209b307bd6cc4984f",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "df4e7fd9942b361818d33b6474a6bf587d759a64862f2fde930341c1d80198ff",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "大部分景点符合海滨自然偏好，但崖州古城偏文化历史",
+    "pacing": "每日3个景点时间安排合理，但雨天可能影响户外体验",
+    "geographic_coherence": "每日景点区域集中，减少折返",
+    "time_realism": "作息时间正常，但未考虑雨天应急预案",
+    "completeness": "缺乏交通、餐饮、住宿等必要信息",
+    "diversity_and_dining": "景点类型单一，未包含餐饮安排和休息时间"
+  },
+  "flags": [
+    "雨天影响",
+    "缺乏餐饮安排",
+    "景点类型单一",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程基本符合海滨自然偏好，地理安排合理，但雨天应急预案和餐饮安排不足，整体多样性有待提升。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 686,
+    "output_tokens": 237,
+    "total_tokens": 923,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 35144.807,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

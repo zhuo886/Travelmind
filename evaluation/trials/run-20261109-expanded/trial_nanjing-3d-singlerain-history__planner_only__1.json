@@ -1,0 +1,229 @@
+{
+  "trial_id": "bdaf789cdc93445da3ab60d25d6dd9bf",
+  "case_id": "nanjing-3d-singlerain-history",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 79.5,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 79.5,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "1d2c4af40b6e1aee",
+      "spot_names": [
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "总统府",
+        "古鸡鸣寺",
+        "江苏江宁汤山方山国家地质公园博物馆",
+        "南京牛首山文化旅游区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 79.5,
+  "warnings": [
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "总统府",
+    "古鸡鸣寺",
+    "江苏江宁汤山方山国家地质公园博物馆",
+    "南京牛首山文化旅游区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "12:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "总统府",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "14:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "江苏江宁汤山方山国家地质公园博物馆",
+          "period": "morning",
+          "start": "09:39",
+          "end": "11:39"
+        },
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "afternoon",
+          "start": "12:39",
+          "end": "15:09"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "总统府",
+    "古鸡鸣寺",
+    "江苏江宁汤山方山国家地质公园博物馆",
+    "南京牛首山文化旅游区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "12:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "总统府",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "14:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "江苏江宁汤山方山国家地质公园博物馆",
+          "period": "morning",
+          "start": "09:39",
+          "end": "11:39"
+        },
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "afternoon",
+          "start": "12:39",
+          "end": "15:09"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 46.457,
+  "node_latency_ms": {
+    "planner": 46362.488,
+    "snapshot_gate": 0.755
+  },
+  "input_tokens_est": 2169,
+  "output_tokens_est": 1004,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 79.5,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 2,
+      "date": "2026-08-11",
+      "limit": 0,
+      "outdoor_count": 1,
+      "outdoor_spots": [
+        "古鸡鸣寺"
+      ]
+    }
+  ],
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

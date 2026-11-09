@@ -1,0 +1,44 @@
+{
+  "key": "62111352c4e4d80a1ecd5941cd7f0e3dc8cd3daeee3baa300803bdcab25b5895",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "c2dbdf6b6ba14c3e7d116a67abbfc35a52640ad5137dd4164e8701ca73fb65d3",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 2,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程符合历史古迹和自然景观偏好，每天10:00开始符合不喜欢早起的习惯。但Day3的南京欢乐谷与历史古迹/自然景观偏好不太匹配。",
+    "pacing": "每天安排2个景点，上午10:00-12:30，下午13:30-16:30/18:00，节奏适中，间隔合理。",
+    "geographic_coherence": "景点分散在多个区域：江宁区（不老村、水墨大埝、汤山方山、欢乐谷）和市区（中山陵、鸡鸣寺），需要大量往返。",
+    "time_realism": "每天10:00开始符合偏好，每个景点2.5-3小时时间合理，但未考虑景点间的交通时间。",
+    "completeness": "缺少交通方式、餐饮安排、门票信息等关键细节，无法直接执行。",
+    "diversity_and_dining": "景点类型有一定多样性，但完全没有提及餐饮安排和休息时间。"
+  },
+  "flags": [
+    "缺少餐饮信息",
+    "地理分布分散",
+    "交通时间未考虑",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程基本符合偏好，但地理分布分散、信息不完整、缺乏餐饮安排是主要问题。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 597,
+    "output_tokens": 312,
+    "total_tokens": 909,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 32934.816,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

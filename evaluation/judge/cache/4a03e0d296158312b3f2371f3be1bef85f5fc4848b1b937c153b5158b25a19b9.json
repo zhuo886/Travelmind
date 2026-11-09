@@ -1,0 +1,44 @@
+{
+  "key": "4a03e0d296158312b3f2371f3be1bef85f5fc4848b1b937c153b5158b25a19b9",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "bb5bb30598770784f0e99111ea4b384becd30a68b3cb8c397a274bef861ecfda",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "路线较好契合用户偏好，每天10点开始符合'不喜欢早起'要求，每天仅2个景点符合'慢节奏、景点别太多'习惯。Day 2的中国科举博物馆和南京夫子庙是历史古迹，Day 1的玄武湖和鸡鸣寺也是历史景点，符合'历史古迹、博物馆'偏好。",
+    "pacing": "每天节奏合理，上午和下午各安排一个景点，每个景点游览2小时左右，时间间隔适中，没有赶场现象，符合慢节奏要求。",
+    "geographic_coherence": "缺乏具体地理位置信息，无法准确判断景点间的距离和路线合理性。如果景点分布合理，每天2个景点应该能减少折返；但如果景点分散，可能存在不必要的交通时间。",
+    "time_realism": "每天10点开始符合用户习惯，每个景点游览时间2-3小时较为合理。但缺乏景点开放时间和实际通勤时间信息，无法确认时间安排的现实性。",
+    "completeness": "路线基本信息完整，但缺乏具体地址、交通方式、门票价格、预约要求等实用信息，也没有餐饮安排，影响行程的可执行性。",
+    "diversity_and_dining": "景点类型相对单一，主要集中在历史古迹，缺乏文化体验、自然风光等多样性。完全没有餐饮安排和休息时间规划，没有体现南京特色美食体验。"
+  },
+  "flags": [
+    "缺乏地理信息",
+    "缺乏餐饮安排",
+    "缺乏实用信息",
+    "evidence_missing"
+  ],
+  "overall_comment": "路线基本符合用户偏好和节奏要求，但在信息完整性和体验多样性方面有明显不足。建议补充具体交通信息、开放时间、门票详情，并增加餐饮安排和更多样化的景点选择。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 603,
+    "output_tokens": 410,
+    "total_tokens": 1013,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 37413.62,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

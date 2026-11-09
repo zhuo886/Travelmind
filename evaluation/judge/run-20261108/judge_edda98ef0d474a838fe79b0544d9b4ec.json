@@ -1,0 +1,118 @@
+{
+  "trial_id": "edda98ef0d474a838fe79b0544d9b4ec",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 4,
+          "geographic_coherence": 3,
+          "time_realism": 3,
+          "completeness": 4,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 73.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "行程包含多个海滨自然景点（三亚湾、椰梦长廊、亚龙湾海滩、蜈支洲岛），符合用户'海滨自然'偏好，但第一天南山文化旅游区偏文化类，与偏好契合度稍低。",
+          "pacing": "每天安排3个景点，时间分配合理（上午2.5小时，下午2小时，晚上2小时），符合'正常作息'偏好，无过早或过晚安排。",
+          "geographic_coherence": "第一天南山区域景点集中，第二天三亚湾周边景点集中，但第三天蜈支洲岛需要单独乘船，存在地理折返。",
+          "time_realism": "时间安排合理，但连续3天中雨天气可能影响海滨活动体验，特别是蜈支洲岛这类户外景点。",
+          "completeness": "景点、时间、顺序信息完整，可直接执行，符合scope要求（不评价交通和餐饮）。",
+          "diversity_and_dining": "景点类型多样（文化、海滨、城市、岛屿），体验丰富，符合scope要求不评价餐饮安排。"
+        },
+        "flags": [
+          "bad_weather_all_days",
+          "missing_transport"
+        ],
+        "overall_comment": "整体行程安排合理，海滨自然景点丰富，符合用户偏好，但需注意连续雨天对户外活动的影响。",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 836,
+          "output_tokens": 331,
+          "total_tokens": 1167,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 58602.973,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 4,
+          "geographic_coherence": 4,
+          "time_realism": 3,
+          "completeness": 5,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 79.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "Day 2和3的海滨景点（三亚湾、椰梦长廊、亚龙湾海滩、蜈支洲岛）符合'海滨自然'偏好，但Day1的南山文化旅游区和海上观音更偏文化宗教，契合度较低",
+          "pacing": "每天3个景点，每个2.5-3小时，间隔2.5-3小时，节奏合理符合'正常作息'，但中雨天气可能影响户外体验",
+          "geographic_coherence": "Day1南山区域景点连贯，Day2三亚湾区域景点集中，Day3亚龙湾区域景点集中，地理顺序合理，但蜈支洲岛需单独乘船",
+          "time_realism": "时间安排10:00-18:30符合正常作息，但连续3天中雨天气可能影响户外活动可行性，蜈支洲岛需考虑轮渡时间",
+          "completeness": "路线信息完整，包含具体景点、时间段和顺序，在scope要求下信息可直接执行",
+          "diversity_and_dining": "景点类型多样（文化、宗教、海滨、城市、岛屿），体验丰富，因scope.meals=false不评价餐饮"
+        },
+        "flags": [
+          "bad_weather_all_days",
+          "missing_transport"
+        ],
+        "overall_comment": "整体路线合理，海滨景点占比高，但需注意连续中雨天气对户外活动的影响",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 836,
+          "output_tokens": 341,
+          "total_tokens": 1177,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 83741.313,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      }
+    ],
+    "overall_mean": 76.0,
+    "dimension_mean": {
+      "preference_fit": 4.0,
+      "pacing": 4.0,
+      "geographic_coherence": 3.5,
+      "time_realism": 3.0,
+      "completeness": 4.5,
+      "diversity_and_dining": 4.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 4,
+      "within_one": 6,
+      "exact_rate": 0.6667,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.333,
+      "quadratic_weighted_kappa": 0.5
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "bad_weather_all_days",
+      "missing_transport"
+    ],
+    "judge_calls": 0,
+    "replayed_calls": 2,
+    "judge_tokens_est": 2344,
+    "cache_hits": 2,
+    "errors": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "00d53a0fc02df2d4827f5ec846175f814fded2306592ab25e42abaf915205b5b",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": null,
+  "payload_hash": "3732a145c804b5f9b178761cb5ff972c7c0ad9b52373b808cfa3b5c9d27a91cf",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "部分契合用户偏好：Day1的古鸡鸣寺和中山陵符合历史古迹偏好，Day3的不老村和水墨大埝符合自然景观偏好，但Day2的南京欢乐谷是主题公园，与用户偏好不符",
+    "pacing": "节奏合理：每天安排2-3小时的活动，符合夏季旅游强度，且都从10:00开始，尊重用户不喜欢早起的习惯",
+    "geographic_coherence": "地理连贯性一般：Day1的两个景点都在南京东部，相对集中；但Day2的地质公园博物馆和欢乐谷可能距离较远，存在折返",
+    "time_realism": "时间安排现实：避开高温时段，从10:00开始，活动时长2-3小时合理，但未考虑景点间通勤时间",
+    "completeness": "信息不完整：缺少交通方式、门票信息、用餐安排等必要执行信息",
+    "diversity_and_dining": "体验多样性不足：缺乏餐饮安排，每天只有两个景点，体验深度有限"
+  },
+  "flags": [
+    "缺少餐饮安排",
+    "未考虑景点间交通时间",
+    "Day2主题公园与用户偏好不符",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程基本合理，但需补充餐饮安排和交通信息，并调整Day2以符合用户的历史古迹和自然景观偏好。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 597,
+    "output_tokens": 334,
+    "total_tokens": 931,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 40220.599,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

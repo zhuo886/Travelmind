@@ -1,0 +1,41 @@
+{
+  "key": "7742920c3bb602fd7c181e3322ab4866e357a8e0e50bba716c516f5aed9859c7",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "b5d2c448ec7737a90cdf29a2a37c1fd8a649528fbb28c9bda3aff4428df5136b",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Most spots align with '海滨自然' preference: 天涯海角游览区, 三亚湾, 亚龙湾海滩, 椰梦长廊, 后海村, 海棠河生态公园 all fit seaside/natural theme. 天涯小镇 and 崖州古城 are more urban/historical, reducing perfect fit.",
+    "pacing": "Reasonable 2-hour sessions with 2-hour breaks between periods, but moderate rain all days (Oct 15-17) significantly impacts outdoor activity enjoyment and may cause delays.",
+    "geographic_coherence": "Spots within each day appear geographically clustered: Day 1 (Tianxia Town→Tianya Bay→Yazhou Ancient City), Day 2 (Dream Corridor→Sanya Bay→Haiyue Square), Day 3 (Houhai Village→Yalong Bay→Haitang Park), suggesting minimal backtracking.",
+    "time_realism": "Normal作息 timing (9-11am, 1:30-3:30pm, 4:30-6:30pm) is realistic, but moderate rain may extend travel times between outdoor spots.",
+    "completeness": "Route provides complete structure with specific spots and times for all 3 days. Within scope constraints (meals=false, transport_legs=false), all necessary information is provided.",
+    "diversity_and_dining": "Good diversity: natural attractions (beaches, parks), urban areas (towns, squares), and historical elements (ancient city). Dining not evaluated per scope.meals=false."
+  },
+  "flags": [
+    "bad_weather_all_days"
+  ],
+  "overall_comment": "Strong itinerary matching seaside/natural preferences with good geographic coherence and completeness. Moderate rain throughout the trip is the main challenge that may affect enjoyment and timing.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 825,
+    "output_tokens": 786,
+    "total_tokens": 1611,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 58904.714,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

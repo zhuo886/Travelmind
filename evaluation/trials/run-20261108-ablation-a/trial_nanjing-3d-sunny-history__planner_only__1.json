@@ -1,0 +1,220 @@
+{
+  "trial_id": "9b73180037f1458687bac7a6fb3bcbbf",
+  "case_id": "nanjing-3d-sunny-history",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 87.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "fa04fa2139ea542e",
+      "spot_names": [
+        "玄武湖景区",
+        "古鸡鸣寺",
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "不老村",
+        "水墨大埝旅游区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 87.0,
+  "warnings": [
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "玄武湖景区",
+    "古鸡鸣寺",
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "不老村",
+    "水墨大埝旅游区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "不老村",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "水墨大埝旅游区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "玄武湖景区",
+    "古鸡鸣寺",
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "不老村",
+    "水墨大埝旅游区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "不老村",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "水墨大埝旅游区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [
+    "玄武湖景区"
+  ],
+  "must_visit_ok": true,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 148.85,
+  "node_latency_ms": {
+    "planner": 147729.479,
+    "snapshot_gate": 2.954
+  },
+  "input_tokens_est": 2170,
+  "output_tokens_est": 1017,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 87.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

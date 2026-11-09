@@ -1,0 +1,160 @@
+{
+  "trial_id": "5bd8d0902207442caa07ce9b2100f1ff",
+  "case_id": "lijiang-5d-sunny-slowpace",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "habit_constraint"
+  ],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "soft_score": 77.0,
+  "warnings": [
+    "Day2 景点数量偏多"
+  ],
+  "route_names": [
+    "束河古镇",
+    "白沙古镇",
+    "丽江古城",
+    "丽江古城-狮子山(狮山路)",
+    "狮子山万古楼景区",
+    "丽江拉市海湿地公园",
+    "丽江玉水寨风景区",
+    "玉龙雪山国家级风景名胜区",
+    "玉龙雪山国家级风景名胜区蓝月谷",
+    "丽江千古情景区",
+    "大研花巷"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "束河古镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "白沙古镇",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "丽江古城",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "丽江古城-狮子山(狮山路)",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        },
+        {
+          "name": "狮子山万古楼景区",
+          "period": "evening",
+          "start": "17:30",
+          "end": "19:00"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "丽江拉市海湿地公园",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "丽江玉水寨风景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "spots": [
+        {
+          "name": "玉龙雪山国家级风景名胜区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "13:00"
+        },
+        {
+          "name": "玉龙雪山国家级风景名胜区蓝月谷",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "spots": [
+        {
+          "name": "丽江千古情景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        },
+        {
+          "name": "大研花巷",
+          "period": "evening",
+          "start": "17:30",
+          "end": "19:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 11
+  },
+  "must_visit_expected": [
+    "束河古镇"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 99.647,
+  "node_latency_ms": {
+    "planner": 98551.843,
+    "snapshot_gate": 4.249
+  },
+  "input_tokens_est": 2335,
+  "output_tokens_est": 1861,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

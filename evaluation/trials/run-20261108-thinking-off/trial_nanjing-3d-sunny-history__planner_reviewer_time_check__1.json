@@ -1,0 +1,295 @@
+{
+  "trial_id": "19b566181cf94c1ca0b6f1d9dec4e25d",
+  "case_id": "nanjing-3d-sunny-history",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "closed_on_visit_day"
+  ],
+  "first_draft_l0": [],
+  "first_draft_l1": [
+    "closed_on_visit_day",
+    "closed_on_visit_day"
+  ],
+  "first_draft_soft_score": 97.0,
+  "final_delivered_iteration": 4,
+  "planning_revision_rounds": 3,
+  "review_round": 4,
+  "reviewer_calls": 4,
+  "time_check_round": 1,
+  "snapshot_count": 4,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day",
+        "closed_on_visit_day"
+      ],
+      "defect_count": 2,
+      "soft_score": 97.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "9bb0f4022e61f03a",
+      "spot_names": [
+        "玄武湖景区",
+        "古鸡鸣寺",
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "总统府",
+        "中山陵景区"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day"
+      ],
+      "defect_count": 1,
+      "soft_score": 97.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "a3a501ff64cdd7d8",
+      "spot_names": [
+        "玄武湖景区",
+        "古鸡鸣寺",
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "江苏江宁汤山方山国家地质公园博物馆",
+        "南京牛首山文化旅游区"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day"
+      ],
+      "defect_count": 1,
+      "soft_score": 97.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "fd2c978b226c3be1",
+      "spot_names": [
+        "玄武湖景区",
+        "古鸡鸣寺",
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "南京牛首山文化旅游区",
+        "江苏江宁汤山方山国家地质公园博物馆"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 4,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day"
+      ],
+      "defect_count": 1,
+      "soft_score": 97.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 1,
+      "rework_requested": true,
+      "route_signature": "cdab5a4c43ca9571",
+      "spot_names": [
+        "玄武湖景区",
+        "古鸡鸣寺",
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "南京牛首山文化旅游区",
+        "江苏江宁汤山方山国家地质公园博物馆"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 97.0,
+  "warnings": [
+    "Day3（2026-08-03 周一） 景点可能闭馆：江苏江宁汤山方山国家地质公园博物馆（参考开放信息：4月4日-12月31日 周一 不开放），建议调整游览日期或行前核实",
+    "【开放时间修正（第1轮）】仅修正以下时段冲突，其余安排保持不变：\n- Day3 江苏江宁汤山方山国家地质公园博物馆：安排在周一参观，但景点周一不开放"
+  ],
+  "route_names": [
+    "玄武湖景区",
+    "古鸡鸣寺",
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "南京牛首山文化旅游区",
+    "江苏江宁汤山方山国家地质公园博物馆"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "江苏江宁汤山方山国家地质公园博物馆",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "玄武湖景区",
+    "古鸡鸣寺",
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "南京牛首山文化旅游区",
+    "江苏江宁汤山方山国家地质公园博物馆"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "江苏江宁汤山方山国家地质公园博物馆",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [
+    "玄武湖景区"
+  ],
+  "must_visit_ok": true,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 221.051,
+  "node_latency_ms": {
+    "planner": 156655.868,
+    "snapshot_gate": 11.485,
+    "reviewer": 50755.222,
+    "snapshot_reviewer": 11.332,
+    "time_check": 13419.109,
+    "snapshot_time_check": 2.126
+  },
+  "input_tokens_est": 20481,
+  "output_tokens_est": 4596,
+  "llm_calls": 9,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 97.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

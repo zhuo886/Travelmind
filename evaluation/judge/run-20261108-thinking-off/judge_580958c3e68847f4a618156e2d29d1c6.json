@@ -1,0 +1,163 @@
+{
+  "trial_id": "580958c3e68847f4a618156e2d29d1c6",
+  "case_id": "nanjing-3d-sunny-history",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 5,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 3,
+          "diversity_and_dining": 4
+        },
+        "evidence": {
+          "preference_fit": [
+            "Day1: 玄武湖景区、古鸡鸣寺",
+            "Day2: 中国科举博物馆、南京夫子庙",
+            "Day3: 南京牛首山文化旅游区、南京长江大桥"
+          ],
+          "pacing": [
+            "每天2个景点，上午下午各一个，符合'每天景点别太多'的偏好",
+            "开始时间均为10:00，符合'不喜欢早起'的偏好"
+          ],
+          "geographic_coherence": [
+            "Day1: 玄武湖和鸡鸣寺地理位置较近",
+            "Day2: 科举博物馆和夫子庙地理位置较近",
+            "Day3: 牛首山和长江大桥地理位置较远，存在折返"
+          ],
+          "time_realism": [
+            "每个景点安排2-3小时，时间分配合理",
+            "景点开放时间未提供，但安排时间符合常规参观时长"
+          ],
+          "completeness": [
+            "提供了景点名称和时间安排",
+            "缺少交通方式和餐饮信息，但scope中已声明不需要评价"
+          ],
+          "diversity_and_dining": [
+            "景点类型多样：湖泊、寺庙、博物馆、文化区、山景、大桥",
+            "scope.meals=false，不评价餐饮安排"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "路线主要包含历史古迹和博物馆，符合用户偏好；每天景点数量适中，符合慢节奏需求",
+          "pacing": "每天安排2个景点，上午下午各一个，时间分配合理，符合用户不喜欢早起和慢节奏的偏好",
+          "geographic_coherence": "前两天的景点地理位置较近，但第三天的牛首山和长江大桥距离较远，存在地理折返",
+          "time_realism": "每个景点安排2-3小时，时间分配合理，符合常规参观时长",
+          "completeness": "提供了景点名称和时间安排，但缺少交通方式和餐饮信息",
+          "diversity_and_dining": "景点类型多样，包括自然景观、历史古迹、文化场所等，体验丰富"
+        },
+        "flags": [
+          "missing_dining",
+          "missing_transport"
+        ],
+        "overall_comment": "路线基本符合用户偏好，景点选择合理，时间安排适中，但地理连贯性有待提高",
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 743,
+          "output_tokens": 502,
+          "total_tokens": 1245,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 42942.61,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        },
+        "weighted_score": 81.0,
+        "cache_hit": false
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 5,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 3,
+          "diversity_and_dining": 4
+        },
+        "evidence": {
+          "preference_fit": [
+            "Day1: 玄武湖景区、古鸡鸣寺",
+            "Day2: 中国科举博物馆、南京夫子庙",
+            "Day3: 南京牛首山文化旅游区、南京长江大桥"
+          ],
+          "pacing": [
+            "每天2个景点，上午10点开始，下午1点半开始，符合'不喜欢早起，慢节奏，每天景点别太多'的偏好"
+          ],
+          "geographic_coherence": [
+            "景点之间没有明确提及地理位置关系，可能存在折返"
+          ],
+          "time_realism": [
+            "每个景点安排2-3小时，时间分配合理，符合一般游览节奏"
+          ],
+          "completeness": [
+            "缺少景点间交通方式和具体地址信息"
+          ],
+          "diversity_and_dining": [
+            "景点类型多样，包括湖泊、寺庙、博物馆、文化区、大桥等，符合'历史古迹、博物馆'的偏好"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "路线主要包含历史古迹和博物馆，符合用户偏好，每天景点数量适中",
+          "pacing": "每天安排2个景点，上午10点开始，下午1点半开始，符合'不喜欢早起，慢节奏'的偏好",
+          "geographic_coherence": "没有明确提及景点间的地理位置关系，无法判断地理顺序是否合理",
+          "time_realism": "每个景点安排2-3小时，时间分配合理，符合一般游览节奏",
+          "completeness": "缺少景点间交通方式和具体地址信息，影响路线的直接执行性",
+          "diversity_and_dining": "景点类型多样，包括湖泊、寺庙、博物馆、文化区、大桥等，体验丰富"
+        },
+        "flags": [],
+        "overall_comment": "路线基本符合用户偏好，节奏适中，但缺少地理信息和交通细节",
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 743,
+          "output_tokens": 428,
+          "total_tokens": 1171,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 20942.857,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        },
+        "weighted_score": 81.0,
+        "cache_hit": false
+      }
+    ],
+    "overall_mean": 81.0,
+    "dimension_mean": {
+      "preference_fit": 4.0,
+      "pacing": 5.0,
+      "geographic_coherence": 3.0,
+      "time_realism": 5.0,
+      "completeness": 3.0,
+      "diversity_and_dining": 4.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 6,
+      "within_one": 6,
+      "exact_rate": 1.0,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.0,
+      "quadratic_weighted_kappa": 1.0
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "missing_dining",
+      "missing_transport"
+    ],
+    "judge_calls": 2,
+    "replayed_calls": 0,
+    "judge_tokens_est": 2416,
+    "cache_hits": 0,
+    "errors": []
+  }
+}

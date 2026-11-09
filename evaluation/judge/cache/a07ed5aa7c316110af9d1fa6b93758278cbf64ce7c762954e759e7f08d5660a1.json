@@ -1,0 +1,44 @@
+{
+  "key": "a07ed5aa7c316110af9d1fa6b93758278cbf64ce7c762954e759e7f08d5660a1",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "65fa6ca68672bf5a361436c26dcb028159071397e7235dd7054b4051858e60f8",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程包含束河古镇、白沙古镇、丽江古城等符合古镇文化和纳西民族风情的景点，但每天10:00开始可能不够'睡到自然醒'，且缺少手工艺体验的具体安排。",
+    "pacing": "每天上午和下午各安排2.5-3.5小时活动，节奏适中，符合慢旅行要求，但未明确安排休息和用餐时间。",
+    "geographic_coherence": "每天景点地理位置相对集中，如束河→白沙、丽江古城→狮子山、玉龙雪山→蓝月谷等，减少了不必要的往返。",
+    "time_realism": "每天10:00开始符合'不早起'要求，晴天天气有利于户外活动，但未考虑景点间实际交通时间。",
+    "completeness": "缺少交通方式、住宿信息、餐饮推荐、门票预订等关键执行信息，无法直接按此行程出行。",
+    "diversity_and_dining": "景点类型多样（古镇、自然景观、文化景点），但未安排餐饮体验和休息时间，文化体验深度不足。"
+  },
+  "flags": [
+    "缺少餐饮安排",
+    "缺少交通信息",
+    "缺少住宿信息",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程整体符合丽江慢旅行的需求，景点选择合理，但缺少执行细节和深度文化体验。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 822,
+    "output_tokens": 328,
+    "total_tokens": 1150,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 33739.965,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

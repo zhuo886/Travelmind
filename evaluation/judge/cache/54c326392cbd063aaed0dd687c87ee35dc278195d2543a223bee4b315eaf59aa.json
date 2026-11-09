@@ -1,0 +1,44 @@
+{
+  "key": "54c326392cbd063aaed0dd687c87ee35dc278195d2543a223bee4b315eaf59aa",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "bf36a5150252a233b60add0a7e59d2ad06d92a6a8f8a6c8e0de0d0a3e2e3f03e",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 5,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "用户偏好海滨自然景观，但Day1的南山大小洞天、南山文化旅游区、南山海上观音以宗教文化为主，与偏好不符。Day2-3的天涯海角、三亚湾、亚龙湾海滩符合海滨自然偏好，但连续3天中雨严重影响户外体验。",
+    "pacing": "每天3个景点，每个景点3.5小时，时间安排合理，不过于紧凑也不过于松散。",
+    "geographic_coherence": "Day1所有景点集中在南山区域，Day2集中在天涯海角区域，Day3集中在亚龙湾区域，地理顺序合理，无折返。",
+    "time_realism": "每个景点3.5小时的时间安排合理，但连续3天中雨的天气条件使户外活动难以实现，时间安排不够现实。",
+    "completeness": "缺少景点间交通信息、餐饮安排、雨天备选方案等必要信息，信息不完整。",
+    "diversity_and_dining": "行程以观光为主，缺乏餐饮安排和多样化体验，没有考虑休息时间。"
+  },
+  "flags": [
+    "连续雨天影响",
+    "文化景点与偏好不符",
+    "缺少餐饮安排",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程地理组织良好，但受连续雨天严重影响，且首日文化景点与用户海滨自然偏好不符，缺少餐饮和备选方案等实用信息。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 702,
+    "output_tokens": 338,
+    "total_tokens": 1040,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 38942.363,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

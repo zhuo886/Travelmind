@@ -1,0 +1,44 @@
+{
+  "key": "1b5d16f791e6700c1c1c4e100be2dcd124f73797f0dc7ac019e873fda2e702cc",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "00786b6e8e624c235c5a4fbdc2eb0e55372bdeb6fc14b4d87e0902cf7ed8e35e",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 2,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Most attractions align with '海滨自然' preference: 三亚湾, 椰梦长廊, 亚龙湾海滩, 蜈支洲岛. However, 南山文化旅游区 and 海月广场 are less aligned with seaside/natural focus.",
+    "pacing": "Each day has 3 spots with 2.5-3 hours duration, which is reasonable. However, moderate rain forecast for all 3 days makes outdoor activities challenging and uncomfortable.",
+    "geographic_coherence": "Good geographic flow within each day: Day 1 (Nanshan → Tianya Haijiao), Day 2 (Sanya Bay → Coconut Dream Corridor → Haiyue Square), Day 3 (Yalong Bay → Wuzhizhou Island). Minimal backtracking.",
+    "time_realism": "2.5-3 hours per spot is reasonable, but no travel time between locations is factored in. Moderate rain forecast makes timing unrealistic for outdoor activities.",
+    "completeness": "Lacks transportation details, meal arrangements, contingency plans for bad weather, opening hours, and ticket requirements.",
+    "diversity_and_dining": "Limited variety - mostly beach/natural sightseeing. No dining recommendations or meal times included. No indoor alternatives for rainy weather."
+  },
+  "flags": [
+    "bad_weather_all_days",
+    "no_dining_plans",
+    "no_transportation_details",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary focuses well on seaside/natural attractions but is severely compromised by continuous moderate rain forecast. Lacks essential details for practical execution and doesn't provide alternatives for bad weather conditions.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 698,
+    "output_tokens": 762,
+    "total_tokens": 1460,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 36625.328,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

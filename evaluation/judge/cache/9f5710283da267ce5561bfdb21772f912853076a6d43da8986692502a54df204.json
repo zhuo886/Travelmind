@@ -1,0 +1,63 @@
+{
+  "key": "9f5710283da267ce5561bfdb21772f912853076a6d43da8986692502a54df204",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "cfcae2f7321f5172dba333f11298b8247a03485f682b3f4e216d4ed7fb0db333",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 5,
+    "completeness": 4,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "Day1: 上海海洋水族馆(下午)",
+      "Day1: 上海城隍庙(晚上)"
+    ],
+    "pacing": [
+      "Day1: 14:00-16:30 上海海洋水族馆",
+      "Day1: 17:30-19:00 上海城隍庙"
+    ],
+    "geographic_coherence": [
+      "Day1: 上海海洋水族馆到上海城隍庙"
+    ],
+    "time_realism": [
+      "Day1: 14:00-16:30 上海海洋水族馆",
+      "Day1: 17:30-19:00 上海城隍庙"
+    ],
+    "completeness": [
+      "Day1: 上海海洋水族馆(14:00-16:30)",
+      "Day1: 上海城隍庙(17:30-19:00)"
+    ],
+    "diversity_and_dining": [
+      "Day1: 上海海洋水族馆",
+      "Day1: 上海城隍庙"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "路线包含下午和晚上的活动，符合用户'下午出发，喜欢夜间游览'的习惯。但缺少用户明确提到的'夜景、外滩、都市光影'相关景点。",
+    "pacing": "一天安排两个景点，时间分配合理，没有过满或过空的情况。",
+    "geographic_coherence": "从上海海洋水族馆到城隍庙有一定距离，但未提供具体位置信息，无法完全评估地理顺序的合理性。",
+    "time_realism": "每个景点的时间安排合理，符合一般游览时间，且考虑了用户下午出发的习惯。",
+    "completeness": "路线提供了景点名称和时间，但缺少交通方式和具体位置信息。",
+    "diversity_and_dining": "景点类型多样（水族馆和庙宇），但未安排餐饮（scope.meals=false，不扣分）。"
+  },
+  "flags": [],
+  "overall_comment": "路线基本符合用户习惯，但缺少用户明确偏好的夜景、外滩和都市光影相关景点。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 526,
+    "output_tokens": 468,
+    "total_tokens": 994,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 20859.167,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

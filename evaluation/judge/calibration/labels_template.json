@@ -1,0 +1,4 @@
+{
+  "note": "人工校准标签模板。labels 的 key 是 trial_id 或 checkpoint target_id，value 是人工总分 0-100（可只填部分）。未填写时 Judge 报告显示 N/A，不得伪造。",
+  "labels": {}
+}

@@ -1,0 +1,47 @@
+{
+  "total_records": 81,
+  "by_source": {
+    "snapshot_trace": null,
+    "proxy": {
+      "source": "proxy",
+      "trials": 81,
+      "rework_attempted": 24,
+      "rework_events_with_first_l0": 6,
+      "rework_effective": 6,
+      "rework_ineffective": 0,
+      "rework_effective_rate": {
+        "num": 6,
+        "den": 6,
+        "value": 1.0
+      },
+      "rework_ineffective_rate": {
+        "num": 0,
+        "den": 6,
+        "value": 0.0
+      },
+      "clean_block": null,
+      "clean_block_rate": null,
+      "rework_regression_rate": null,
+      "delivered_trials": 78,
+      "delivered_with_defect": 12,
+      "delivered_with_defect_rate": {
+        "num": 12,
+        "den": 78,
+        "value": 0.1538
+      },
+      "wrong_accept": 4,
+      "over_reject": 0,
+      "wrong_accept_rate": {
+        "num": 4,
+        "den": 81,
+        "value": 0.0494
+      },
+      "over_reject_rate": {
+        "num": 0,
+        "den": 81,
+        "value": 0.0
+      },
+      "note": "proxy 的 rework_ineffective 是“问题仍在”，不等于 Planner 忽略审核；clean_block 与 regression 无法从旧记录判断。"
+    }
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "trial_id": "861b5dda2b2a49ab85e4a76cfad71854",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "weather_exposure_conflict"
+  ],
+  "first_draft_l0": [],
+  "first_draft_l1": [
+    "weather_exposure_conflict"
+  ],
+  "first_draft_soft_score": 57.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [
+        "weather_exposure_conflict"
+      ],
+      "defect_count": 1,
+      "soft_score": 57.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "f414d9b405d11939",
+      "spot_names": [
+        "天涯小镇",
+        "椰梦长廊",
+        "三亚湾",
+        "鹿回头风景区",
+        "小东海",
+        "红树林生态公园",
+        "亚龙湾海滩",
+        "亚龙湾国家旅游度假区",
+        "海棠河生态公园"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 57.0,
+  "warnings": [
+    "全程恶劣天气且所有已排景点均为室外，请补充室内替代或调整行程"
+  ],
+  "route_names": [
+    "天涯小镇",
+    "椰梦长廊",
+    "三亚湾",
+    "鹿回头风景区",
+    "小东海",
+    "红树林生态公园",
+    "亚龙湾海滩",
+    "亚龙湾国家旅游度假区",
+    "海棠河生态公园"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "天涯小镇",
+          "period": "morning",
+          "start": "09:08",
+          "end": "11:08"
+        },
+        {
+          "name": "椰梦长廊",
+          "period": "afternoon",
+          "start": "12:08",
+          "end": "14:08"
+        },
+        {
+          "name": "三亚湾",
+          "period": "evening",
+          "start": "15:08",
+          "end": "17:08"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "鹿回头风景区",
+          "period": "morning",
+          "start": "09:01",
+          "end": "11:01"
+        },
+        {
+          "name": "小东海",
+          "period": "afternoon",
+          "start": "12:01",
+          "end": "14:01"
+        },
+        {
+          "name": "红树林生态公园",
+          "period": "evening",
+          "start": "15:01",
+          "end": "17:01"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "亚龙湾海滩",
+          "period": "morning",
+          "start": "09:34",
+          "end": "11:34"
+        },
+        {
+          "name": "亚龙湾国家旅游度假区",
+          "period": "afternoon",
+          "start": "12:34",
+          "end": "14:34"
+        },
+        {
+          "name": "海棠河生态公园",
+          "period": "evening",
+          "start": "15:34",
+          "end": "17:34"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "天涯小镇",
+    "椰梦长廊",
+    "三亚湾",
+    "鹿回头风景区",
+    "小东海",
+    "红树林生态公园",
+    "亚龙湾海滩",
+    "亚龙湾国家旅游度假区",
+    "海棠河生态公园"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "天涯小镇",
+          "period": "morning",
+          "start": "09:08",
+          "end": "11:08"
+        },
+        {
+          "name": "椰梦长廊",
+          "period": "afternoon",
+          "start": "12:08",
+          "end": "14:08"
+        },
+        {
+          "name": "三亚湾",
+          "period": "evening",
+          "start": "15:08",
+          "end": "17:08"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "鹿回头风景区",
+          "period": "morning",
+          "start": "09:01",
+          "end": "11:01"
+        },
+        {
+          "name": "小东海",
+          "period": "afternoon",
+          "start": "12:01",
+          "end": "14:01"
+        },
+        {
+          "name": "红树林生态公园",
+          "period": "evening",
+          "start": "15:01",
+          "end": "17:01"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "亚龙湾海滩",
+          "period": "morning",
+          "start": "09:34",
+          "end": "11:34"
+        },
+        {
+          "name": "亚龙湾国家旅游度假区",
+          "period": "afternoon",
+          "start": "12:34",
+          "end": "14:34"
+        },
+        {
+          "name": "海棠河生态公园",
+          "period": "evening",
+          "start": "15:34",
+          "end": "17:34"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 53.382,
+  "node_latency_ms": {
+    "planner": 53292.39,
+    "snapshot_gate": 1.695
+  },
+  "input_tokens_est": 2616,
+  "output_tokens_est": 1227,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 57.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 1,
+      "date": "2026-10-15",
+      "limit": 1,
+      "outdoor_count": 3,
+      "outdoor_spots": [
+        "天涯小镇",
+        "椰梦长廊",
+        "三亚湾"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 2,
+      "date": "2026-10-16",
+      "limit": 1,
+      "outdoor_count": 3,
+      "outdoor_spots": [
+        "鹿回头风景区",
+        "小东海",
+        "红树林生态公园"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 3,
+      "date": "2026-10-17",
+      "limit": 1,
+      "outdoor_count": 3,
+      "outdoor_spots": [
+        "亚龙湾海滩",
+        "亚龙湾国家旅游度假区",
+        "海棠河生态公园"
+      ]
+    }
+  ],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

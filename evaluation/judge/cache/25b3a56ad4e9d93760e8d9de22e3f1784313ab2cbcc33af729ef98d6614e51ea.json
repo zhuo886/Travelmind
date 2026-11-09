@@ -1,0 +1,41 @@
+{
+  "key": "25b3a56ad4e9d93760e8d9de22e3f1784313ab2cbcc33af729ef98d6614e51ea",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "d9a9ae4fbc9b41f0d45967d4af2ecc7d3913bae3a74c663bcc30207874814705",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程中部分景点符合用户对历史古迹和博物馆的偏好（总统府、中国科举博物馆、南京夫子庙），但玄武湖景区主要是自然景观，南京牛首山文化旅游区主要是佛教文化，南京长江大桥是现代建筑，不完全符合偏好。每天景点数量适中（2个），符合'每天景点别太多'的要求。起始时间都是10:00，符合'不喜欢早起'的习惯。",
+    "pacing": "每天只有2个景点，每个景点游览时间约2.5小时，节奏相对缓慢，符合'慢节奏'的要求。上午10:00-12:30，下午14:00-16:30，中间有1.5小时的休息/用餐时间，时间安排合理，不过满。",
+    "geographic_coherence": "Day 1的玄武湖景区和总统府都在南京市中心区域，地理位置相对集中；Day 2的中国科举博物馆和南京夫子庙都在夫子庙附近，地理位置集中；但Day 3的南京牛首山文化旅游区和南京长江大桥，一个在郊区，一个在市区，地理位置相对分散，需要往返。",
+    "time_realism": "每天上午10:00开始，下午14:00开始，符合'不喜欢早起'的要求。每个景点游览时间约2.5小时，对于大多数景点来说时间合理。但未考虑景点之间的通勤时间，可能会影响实际行程。",
+    "completeness": "行程包含了日期、景点名称、时间段等基本信息，但缺少交通方式、具体路线、餐饮安排、住宿信息、门票信息、预约要求、紧急联系方式和注意事项等执行所需的详细信息。",
+    "diversity_and_dining": "景点类型包括自然景观、历史古迹、博物馆、文化旅游区、现代建筑，有一定多样性，但每天景点类型相对单一，缺乏深度体验。没有安排专门的餐饮时间，只有景点之间的1.5小时休息时间，没有考虑当地的特色美食体验。"
+  },
+  "flags": [
+    "evidence_missing"
+  ],
+  "overall_comment": "行程基本符合用户对慢节奏和少量景点的需求，但在景点选择与用户偏好的契合度、地理位置的连贯性、信息完整性和体验多样性方面还有改进空间。建议增加更多符合历史古迹和博物馆偏好的景点，优化Day 3的景点安排以减少折返，补充详细的交通和餐饮信息，并增加当地特色美食体验。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 604,
+    "output_tokens": 527,
+    "total_tokens": 1131,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 66763.586,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

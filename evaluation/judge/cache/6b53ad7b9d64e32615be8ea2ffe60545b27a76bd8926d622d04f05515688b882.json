@@ -1,0 +1,43 @@
+{
+  "key": "6b53ad7b9d64e32615be8ea2ffe60545b27a76bd8926d622d04f05515688b882",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "deed0e562f4da15386016cb8102fb448e34122b9e53faac3be90c6553fcbe776",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 3,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "完美契合用户偏好：束河古镇、白沙古镇、丽江古城都是纳西族文化核心区域，充分体现古镇文化和纳西民族风情；每天10:00开始，符合'慢节奏，睡到自然醒，不早起'的习惯",
+    "pacing": "节奏合理：每天2-3个景点，每个2.5-3小时，有充足时间体验；但第2天下午和晚上都在狮子山区域，略显重复",
+    "geographic_coherence": "地理顺序较好：第1天束河→白沙，第2天丽江古城→狮子山，第3天拉市海→玉水寨，第4天玉龙雪山→蓝月谷，第5天千古情→大研花巷，避免了明显折返",
+    "time_realism": "时间安排现实：各景点开放时间合理，10:00开始符合不早起的习惯；但第4天玉龙雪山13:00结束可能偏早，景区较大",
+    "completeness": "基本信息完整，但缺少交通方式、景点间通勤时间、门票信息等执行细节",
+    "diversity_and_dining": "体验多样：涵盖古镇文化(束河、白沙、丽江古城)、自然景观(拉市海、玉龙雪山、蓝月谷)、民族文化(玉水寨)、主题演出(千古情)，类型丰富"
+  },
+  "flags": [
+    "geographic_inefficiency",
+    "other",
+    "preference_mismatch"
+  ],
+  "overall_comment": "整体优秀的丽江文化体验行程，完美契合用户对纳西古镇文化和慢节奏旅行的偏好，景点选择具有代表性，地理安排合理，节奏适中。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 996,
+    "output_tokens": 372,
+    "total_tokens": 1368,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 65488.887,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

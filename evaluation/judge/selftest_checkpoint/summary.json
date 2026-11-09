@@ -1,0 +1,48 @@
+{
+  "provider": "stub",
+  "model": null,
+  "targets": 54,
+  "scored": 54,
+  "skipped": 0,
+  "coverage": 1.0,
+  "overall_mean": 79.78,
+  "dimension_mean": {
+    "preference_fit": 4.0,
+    "pacing": 4.0,
+    "geographic_coherence": 3.926,
+    "time_realism": 4.0,
+    "completeness": 5.0,
+    "diversity_and_dining": 3.0
+  },
+  "kappa_mean": null,
+  "judge_calls": 52,
+  "judge_tokens_est": 0,
+  "cache_hits": 2,
+  "errors": [],
+  "low_score": [
+    {
+      "target_id": "pair_03_lijiang-5d-sunny-slowpace_remove_spot_B",
+      "overall": 74.0
+    },
+    {
+      "target_id": "pair_05_lijiang-5d-sunny-slowpace_cross_day_B",
+      "overall": 74.0
+    }
+  ],
+  "by_case": {
+    "lijiang-5d-sunny-slowpace": 79.0,
+    "nanjing-3d-sunny-history": 80.0,
+    "nanjing-3d-tighthours-negative": 80.0,
+    "sanya-3d-allrain-outdoor-negative": 80.0,
+    "shanghai-1d-sunny-nightlife": 80.0
+  },
+  "generated_at": "2026-11-07T07:34:02.336740+00:00",
+  "k": 1,
+  "calibration": {
+    "n": 0,
+    "mae": null,
+    "spearman": null,
+    "band_agreement": null,
+    "note": "没有人工校准标签；N/A"
+  }
+}

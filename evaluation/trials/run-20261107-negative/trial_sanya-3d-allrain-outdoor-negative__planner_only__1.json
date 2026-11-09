@@ -1,0 +1,134 @@
+{
+  "trial_id": "edda98ef0d474a838fe79b0544d9b4ec",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "opening_time_conflict"
+  ],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "soft_score": 57.0,
+  "warnings": [
+    "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突"
+  ],
+  "route_names": [
+    "三亚南山文化旅游区",
+    "南山文化旅游区南山海上观音",
+    "天涯海角游览区",
+    "三亚湾",
+    "椰梦长廊",
+    "海月广场",
+    "亚龙湾海滩",
+    "亚龙湾国家旅游度假区",
+    "蜈支洲岛旅游风景区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "三亚南山文化旅游区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "南山文化旅游区南山海上观音",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "天涯海角游览区",
+          "period": "evening",
+          "start": "16:30",
+          "end": "18:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "三亚湾",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "椰梦长廊",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "海月广场",
+          "period": "evening",
+          "start": "16:30",
+          "end": "18:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "亚龙湾海滩",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "亚龙湾国家旅游度假区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "蜈支洲岛旅游风景区",
+          "period": "evening",
+          "start": "16:30",
+          "end": "18:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "must_avoid_ok": null,
+  "latency_s": 115.251,
+  "node_latency_ms": {
+    "planner": 115172.696,
+    "snapshot_gate": 3.338
+  },
+  "input_tokens_est": 2508,
+  "output_tokens_est": 1505,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

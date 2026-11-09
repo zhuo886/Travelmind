@@ -1,0 +1,45 @@
+{
+  "key": "c27b1a070c7ae4aadd794946318b2cffd65a7ca65ad973e306a1ca08474f7bbb",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "073b70e8b7cf735c9d3b4cd8dc7b97eb6632d3725529514bca724f13aab08585",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Itinerary matches preferences for ancient town culture and Naxi ethnic customs with visits to Shuhe, Baisha, and Lijiang Ancient Towns. 10:00 start times align with 'sleep in naturally' preference. Missing explicit handicraft experiences.",
+    "pacing": "All days start at 10:00 matching slow pace preference. Each day has 2-3 activities with reasonable 2.5-hour sessions. Day 2 has 3 activities which may be slightly packed.",
+    "geographic_coherence": "Day 2 activities are well-clustered in Lijiang Ancient Town. Day 4 activities are both at Yulong Snow Mountain. Other days involve potential travel between different areas (Shuhe-Baisha, Lashi-Yushuizhai, Qianxiang-Dayan Flower Lane).",
+    "time_realism": "Reasonable 10:00, 14:00, 17:30 start times with 2.5-hour sessions. Yulong Snow Mountain timing (10:00-13:00) may be tight for such a large area. No travel time between locations accounted for.",
+    "completeness": "Basic schedule with times and locations provided. Missing transportation details, meal arrangements, accommodation, entrance fees, and activity specifics. Information is functional but incomplete for direct execution.",
+    "diversity_and_dining": "Good variety: ancient towns, wetlands, mountain, cultural shows. No dining arrangements or meal times specified. No specific cultural experiences beyond location visits."
+  },
+  "flags": [
+    "missing_dining_details",
+    "missing_transportation_info",
+    "day_2_packed",
+    "yulong_timing_concern",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary aligns well with cultural preferences and slow pace requirements but lacks completeness for practical execution. Geographic routing could be optimized, and dining arrangements need to be added.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 858,
+    "output_tokens": 907,
+    "total_tokens": 1765,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 55440.101,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

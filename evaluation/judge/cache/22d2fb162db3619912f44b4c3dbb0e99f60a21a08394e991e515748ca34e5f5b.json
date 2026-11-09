@@ -1,0 +1,45 @@
+{
+  "key": "22d2fb162db3619912f44b4c3dbb0e99f60a21a08394e991e515748ca34e5f5b",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "073b70e8b7cf735c9d3b4cd8dc7b97eb6632d3725529514bca724f13aab08585",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 2,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程符合古镇文化和纳西民族风情偏好，每天10:00开始符合睡到自然醒的习惯。但缺少手工艺体验的具体安排。",
+    "pacing": "每天2-3个景点，节奏适中，但第2天下午和晚上都在狮子山区域，略显重复。",
+    "geographic_coherence": "第1天束河古镇和白沙古镇地理位置分散，第2天狮子山区域景点集中但路线规划不清晰。",
+    "time_realism": "每个景点2.5小时时间安排合理，符合一般游览节奏，但玉龙雪山可能需要更长时间。",
+    "completeness": "缺少餐饮安排、交通方式、门票信息等必要执行信息，无法直接执行。",
+    "diversity_and_dining": "包含古镇、自然景观、文化演出等多样体验，但未考虑餐饮安排和休息时间。"
+  },
+  "flags": [
+    "缺少餐饮信息",
+    "缺少交通安排",
+    "缺少门票信息",
+    "第2天狮子山区域重复",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程基本符合偏好，但信息不完整，地理路线规划有优化空间。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 858,
+    "output_tokens": 296,
+    "total_tokens": 1154,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 55619.363,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

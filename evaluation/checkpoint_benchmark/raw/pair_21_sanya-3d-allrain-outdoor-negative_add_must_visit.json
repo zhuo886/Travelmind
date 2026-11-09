@@ -1,0 +1,219 @@
+{
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "edit_type": "add_must_visit",
+  "instruction": "第2天一定去“三亚凤凰岭海誓山盟景区”，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 69.613,
+    "input_tokens": 2561,
+    "output_tokens": 1394,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "天涯海角游览区",
+      "天涯小镇",
+      "椰梦长廊",
+      "三亚凤凰岭海誓山盟景区",
+      "海月广场",
+      "三亚湾",
+      "亚龙湾海滩",
+      "亚龙湾国家旅游度假区",
+      "亚龙湾风景区-天下第一湾"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "天涯海角游览区",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "天涯小镇",
+            "period": "afternoon",
+            "start_time": "13:30",
+            "end_time": "16:30"
+          },
+          {
+            "name": "椰梦长廊",
+            "period": "evening",
+            "start_time": "17:00",
+            "end_time": "19:00"
+          }
+        ],
+        "theme": "天涯风情与海滨漫步"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "三亚凤凰岭海誓山盟景区",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "海月广场",
+            "period": "afternoon",
+            "start_time": "13:30",
+            "end_time": "16:30"
+          },
+          {
+            "name": "三亚湾",
+            "period": "evening",
+            "start_time": "17:00",
+            "end_time": "19:00"
+          }
+        ],
+        "theme": "凤凰岭誓言与海滨风光"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "亚龙湾海滩",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "亚龙湾国家旅游度假区",
+            "period": "afternoon",
+            "start_time": "13:30",
+            "end_time": "16:30"
+          },
+          {
+            "name": "亚龙湾风景区-天下第一湾",
+            "period": "evening",
+            "start_time": "17:00",
+            "end_time": "19:00"
+          }
+        ],
+        "theme": "亚龙湾度假体验"
+      }
+    ],
+    "warnings": [
+      "全程恶劣天气且所有已排景点均为室外，请补充室内替代或调整行程",
+      "【用户修改意见】第2天一定去“三亚凤凰岭海誓山盟景区”，其他安排尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 56.118,
+    "input_tokens": 2989,
+    "output_tokens": 950,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "南山文化旅游区南山海上观音",
+      "三亚凤凰岭海誓山盟景区",
+      "鹿回头风景区",
+      "红树林生态公园",
+      "亚龙湾海滩",
+      "亚龙湾国家旅游度假区",
+      "亚龙湾风景区-天下第一湾"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "南山大小洞天旅游区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "11:00"
+          },
+          {
+            "name": "三亚南山文化旅游区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "15:00"
+          },
+          {
+            "name": "南山文化旅游区南山海上观音",
+            "period": "evening",
+            "start_time": "16:00",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "南山文化景区一日游"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "三亚凤凰岭海誓山盟景区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "鹿回头风景区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "15:00"
+          },
+          {
+            "name": "红树林生态公园",
+            "period": "evening",
+            "start_time": "16:00",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "凤凰岭景区与吉阳自然风光"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "亚龙湾海滩",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "11:00"
+          },
+          {
+            "name": "亚龙湾国家旅游度假区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "15:00"
+          },
+          {
+            "name": "亚龙湾风景区-天下第一湾",
+            "period": "evening",
+            "start_time": "16:00",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "亚龙湾海滩度假区体验"
+      }
+    ],
+    "warnings": [
+      "全程恶劣天气且所有已排景点均为室外，请补充室内替代或调整行程",
+      "【用户修改意见】第2天一定去“三亚凤凰岭海誓山盟景区”，其他安排尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.6667,
+    "B": 0.6667
+  }
+}

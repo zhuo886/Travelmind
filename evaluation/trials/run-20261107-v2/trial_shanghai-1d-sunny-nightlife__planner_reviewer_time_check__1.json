@@ -1,0 +1,85 @@
+{
+  "trial_id": "7fca0ee8788a43a0b17caf586fa2c7f1",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [
+    "unknown_poi"
+  ],
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "time_check_round": 1,
+  "snapshot_count": 2,
+  "soft_score": 97.0,
+  "warnings": [
+    "Day1 行程安排合理，建议提前预约上海海洋水族馆门票，暑期游客较多"
+  ],
+  "route_names": [
+    "上海失恋博物馆",
+    "上海海洋水族馆"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海失恋博物馆",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        },
+        {
+          "name": "上海海洋水族馆",
+          "period": "evening",
+          "start": "17:00",
+          "end": "21:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 2
+  },
+  "must_visit_expected": [
+    "上海海洋水族馆"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 203.918,
+  "node_latency_ms": {
+    "planner": 90032.988,
+    "snapshot_gate": 3.096,
+    "reviewer": 87299.234,
+    "snapshot_reviewer": 4.351,
+    "time_check": 26478.327,
+    "snapshot_time_check": 0.629
+  },
+  "input_tokens_est": 10416,
+  "output_tokens_est": 1702,
+  "llm_calls": 5,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

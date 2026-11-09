@@ -1,0 +1,44 @@
+{
+  "key": "c6b78fc4d89ccdcf68398f0cf04c0cee21cff0d9e6b4d3182352ba36575c37c7",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": null,
+  "payload_hash": "00786b6e8e624c235c5a4fbdc2eb0e55372bdeb6fc14b4d87e0902cf7ed8e35e",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程主要包含海滨和自然景点，符合用户偏好。三亚南山文化旅游区、天涯海角、三亚湾、椰梦长廊、亚龙湾海滩、蜈支洲岛等都是海滨自然景观。",
+    "pacing": "每天安排3个景点，每个景点2.5-3小时，时间分配基本合理。但连续3天中雨天气可能影响户外活动的实际执行。",
+    "geographic_coherence": "每天景点地理分布合理：第1天南山和天涯海角相对集中；第2天三亚湾、椰梦长廊、海月广场都在三亚湾区域；第3天亚龙湾和蜈支洲岛地理位置连贯。",
+    "time_realism": "时间安排基本合理，但未考虑景点间交通时间和雨天对行程的影响。每天10:00开始，中间有1小时休息，18:30结束，节奏适中。",
+    "completeness": "信息不完整，缺少交通安排、餐饮安排、住宿信息、雨天应对方案等必要信息。",
+    "diversity_and_dining": "活动类型单一，全是户外观光，缺乏餐饮安排和休息时间。每天都是相似的海滩游览模式，体验多样性不足。"
+  },
+  "flags": [
+    "雨天影响",
+    "活动单一",
+    "信息不完整",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程基本符合海滨自然偏好，地理安排合理，但缺乏雨天应对方案和活动多样性，信息完整度不足。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 698,
+    "output_tokens": 345,
+    "total_tokens": 1043,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 50611.335,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

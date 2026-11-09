@@ -1,0 +1,55 @@
+{
+  "key": "27eb66b65c921c34b37c6a2a85b8655429ff819d7cddbe0f87fdf5091ac5a1bb",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "a58ddd7b0b7127cbf099b5b10104ea58951c5dbe279591675c548c982e78c43f",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 5,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "上海海洋水族馆",
+      "外滩"
+    ],
+    "pacing": [
+      "上海海洋水族馆",
+      "外滩"
+    ],
+    "geographic_coherence": [
+      "上海海洋水族馆",
+      "外滩"
+    ],
+    "time_realism": [
+      "上海海洋水族馆",
+      "外滩"
+    ],
+    "completeness": [
+      "上海海洋水族馆",
+      "外滩"
+    ],
+    "diversity_and_dining": [
+      "上海海洋水族馆",
+      "外滩"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 2 仅用于管线自测",
+    "pacing": "stub judge 2 仅用于管线自测",
+    "geographic_coherence": "stub judge 2 仅用于管线自测",
+    "time_realism": "stub judge 2 仅用于管线自测",
+    "completeness": "stub judge 2 仅用于管线自测",
+    "diversity_and_dining": "stub judge 2 仅用于管线自测"
+  },
+  "flags": [
+    "other"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

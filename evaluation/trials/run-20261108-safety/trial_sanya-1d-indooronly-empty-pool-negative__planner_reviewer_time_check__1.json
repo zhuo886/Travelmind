@@ -1,0 +1,159 @@
+{
+  "trial_id": "da84039d47964d9a970115ba6bf91171",
+  "case_id": "sanya-1d-indooronly-empty-pool-negative",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": false,
+  "status": "FAILED",
+  "hard_pass": false,
+  "l0_codes": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "l1_codes": [],
+  "first_draft_l0": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 75.0,
+  "final_delivered_iteration": 3,
+  "planning_revision_rounds": 3,
+  "review_round": 4,
+  "reviewer_calls": 4,
+  "time_check_round": 1,
+  "snapshot_count": 4,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [
+        "route_structure",
+        "candidate_pool_preference_conflict"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 75.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "97d170e1550eee4a",
+      "spot_names": [],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [
+        "route_structure",
+        "candidate_pool_preference_conflict"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 75.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "97d170e1550eee4a",
+      "spot_names": [],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [
+        "route_structure",
+        "candidate_pool_preference_conflict"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 75.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "97d170e1550eee4a",
+      "spot_names": [],
+      "is_delivered": true
+    },
+    {
+      "iteration": 4,
+      "l0_codes": [
+        "unknown_poi",
+        "unknown_poi",
+        "unknown_poi",
+        "candidate_pool_preference_conflict",
+        "indoor_constraint",
+        "indoor_constraint",
+        "indoor_constraint"
+      ],
+      "l1_codes": [],
+      "defect_count": 7,
+      "soft_score": 92.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "16c4e5c7c0760a3f",
+      "spot_names": [
+        "三亚博物馆",
+        "三亚国际免税城",
+        "三亚千古情景区"
+      ],
+      "is_delivered": false
+    }
+  ],
+  "soft_score": null,
+  "warnings": [],
+  "route_names": [],
+  "route_by_day": [],
+  "delivered_route_names": [],
+  "delivered_route_by_day": [],
+  "oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": false,
+  "infeasible_reason": "candidate_pool_preference_conflict：候选池无明确室内景点",
+  "must_avoid_ok": null,
+  "latency_s": 292.069,
+  "node_latency_ms": {
+    "planner": 129142.44,
+    "snapshot_gate": 2.729,
+    "reviewer": 131128.617,
+    "snapshot_reviewer": 2.379,
+    "time_check": 31628.545,
+    "snapshot_time_check": 1.857
+  },
+  "input_tokens_est": 10563,
+  "output_tokens_est": 2833,
+  "llm_calls": 9,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": false,
+  "delivered_plan": false,
+  "draft_soft_score": 75.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "expectations_evaluated": false,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "CORRECT_REJECT",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

@@ -1,0 +1,43 @@
+{
+  "key": "118a6502b33c46713a4218d4d08cca8e9604a7e8732509c3d44bb0038d907492",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "6b8fd66e39fbc53944983955c5101b9c7fb80d7a64e6dd86c29f085daeeb380c",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 2,
+    "completeness": 3,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程包含束河古镇、丽江古城、白沙古镇等符合纳西民族风情和古镇文化的景点，但每天10:00开始与'睡到自然醒，不早起'的习惯冲突",
+    "pacing": "每天固定10:00-12:30和14:00-16:30两个时段，节奏规律但略显刻板，缺乏弹性",
+    "geographic_coherence": "各景点地理顺序合理，第4-5天在玉龙雪山区域集中，减少往返",
+    "time_realism": "固定10:00开始不符合'睡到自然醒'的习惯，且未考虑景点间实际通勤时间",
+    "completeness": "提供具体时间地点但缺少交通、餐饮、门票等实用信息",
+    "diversity_and_dining": "以观光为主，缺乏餐饮安排和多样化体验"
+  },
+  "flags": [
+    "early_start_conflict_with_habit",
+    "missing_practical_details",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程在古镇文化体验方面较好，但时间安排与用户习惯不符，且缺乏实用信息补充",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 824,
+    "output_tokens": 303,
+    "total_tokens": 1127,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 38492.403,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

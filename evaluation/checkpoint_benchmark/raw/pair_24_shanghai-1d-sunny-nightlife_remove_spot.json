@@ -1,0 +1,109 @@
+{
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "edit_type": "remove_spot",
+  "instruction": "去掉第1天的“上海海洋水族馆”，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 108.143,
+    "input_tokens": 4688,
+    "output_tokens": 441,
+    "llm_calls": 2,
+    "status": "FAILED",
+    "hard_pass": false,
+    "plan_generated": true,
+    "route_names": [
+      "上海城隍庙",
+      "上海豫园",
+      "上海失恋博物馆"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海城隍庙",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          },
+          {
+            "name": "上海豫园",
+            "period": "afternoon",
+            "start_time": "16:30",
+            "end_time": "18:00"
+          },
+          {
+            "name": "上海失恋博物馆",
+            "period": "evening",
+            "start_time": "19:00",
+            "end_time": "21:00"
+          }
+        ],
+        "theme": "黄浦经典文化夜游"
+      }
+    ],
+    "warnings": [],
+    "failure_codes": [
+      "missing_must_visit"
+    ],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 31.443,
+    "input_tokens": 2441,
+    "output_tokens": 378,
+    "llm_calls": 1,
+    "status": "FAILED",
+    "hard_pass": false,
+    "plan_generated": true,
+    "route_names": [
+      "上海失恋博物馆",
+      "上海城隍庙",
+      "上海豫园"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海失恋博物馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          },
+          {
+            "name": "上海城隍庙",
+            "period": "evening",
+            "start_time": "17:00",
+            "end_time": "19:00"
+          },
+          {
+            "name": "上海豫园",
+            "period": "evening",
+            "start_time": "19:30",
+            "end_time": "21:00"
+          }
+        ],
+        "theme": "黄浦经典夜景之旅"
+      }
+    ],
+    "warnings": [],
+    "failure_codes": [
+      "missing_must_visit"
+    ],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 1.0,
+    "B": 1.0
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "ac75a857cedf2e2c6213ef5dc4f6a30bb4b549b3b1ffa28ef21b13c576cfc323",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "2f915de6c5f99c3afc6f46360b1f839e77b9f9c0f035e62f2015bf9e9616bd5d",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 5,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Matches user preferences for evening activities and Bund viewing, but could include more night views/urban light shows",
+    "pacing": "Reasonable timing with 3-hour aquarium visit and 2.5-hour Bund visit, but 2-hour gap between activities could be better utilized",
+    "geographic_coherence": "Both Shanghai Ocean Aquarium and Bund are in the same general area (Pudong), minimizing travel time",
+    "time_realism": "Timing is realistic for evening viewing, though aquarium hours (14:00-17:00) may need verification",
+    "completeness": "Missing transportation details, meal arrangements, and specific logistics information",
+    "diversity_and_dining": "Limited to 2 attractions with no dining arrangements specified, reducing experiential diversity"
+  },
+  "flags": [
+    "missing_dining_info",
+    "gap_in_schedule",
+    "limited_activities",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary matches core preferences for evening Bund viewing but lacks dining arrangements and has a 2-hour gap that could be better utilized. Geographic coherence is excellent as both locations are close together.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 386,
+    "output_tokens": 597,
+    "total_tokens": 983,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 33303.958,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

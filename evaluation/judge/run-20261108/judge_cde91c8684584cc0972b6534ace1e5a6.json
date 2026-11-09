@@ -1,0 +1,115 @@
+{
+  "trial_id": "cde91c8684584cc0972b6534ace1e5a6",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 4,
+          "geographic_coherence": 5,
+          "time_realism": 5,
+          "completeness": 4,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 87.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "The evening visit to The Bund (19:00-21:30) perfectly matches the user's preference for night views and urban light shows. However, the afternoon Shanghai Ocean Aquarium visit (14:00-17:00) doesn't align with the stated preference for evening tours.",
+          "pacing": "The itinerary has a reasonable 2-hour gap between attractions (17:00-19:00) allowing for travel time, with neither the 3-hour aquarium visit nor the 2.5-hour Bund visit feeling rushed.",
+          "geographic_coherence": "Both attractions are centrally located in Shanghai with minimal expected travel time between them, creating an efficient route.",
+          "time_realism": "The timing aligns perfectly with the user's habit of afternoon departure and preference for evening tours, with realistic durations for each attraction.",
+          "completeness": "The route provides specific start/end times for each attraction, though transportation details are omitted as per scope.",
+          "diversity_and_dining": "Good variety between indoor educational experience (aquarium) and outdoor scenic experience (Bund), though dining arrangements are not evaluated per scope."
+        },
+        "flags": [
+          "other"
+        ],
+        "overall_comment": "The itinerary effectively matches the user's preferences for evening urban sightseeing, with good geographic coherence and realistic timing. The afternoon aquarium visit provides a nice contrast to the evening Bund experience.",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 525,
+          "output_tokens": 771,
+          "total_tokens": 1296,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 78472.027,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 4,
+          "geographic_coherence": 5,
+          "time_realism": 5,
+          "completeness": 5,
+          "diversity_and_dining": 3
+        },
+        "weighted_score": 87.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "The evening visit to The Bund (19:00-21:30) perfectly matches the user's preference for night views and urban light shows. However, the afternoon visit to Shanghai Ocean Aquarium doesn't align with the stated habit of preferring evening tours.",
+          "pacing": "The schedule has reasonable timing with 3 hours at the aquarium and 2.5 hours at the Bund, plus a 2-hour gap between activities, which allows for rest without being too rushed.",
+          "geographic_coherence": "Both attractions are in central Shanghai and relatively close to each other, minimizing travel time and creating a logical geographic flow.",
+          "time_realism": "Both attractions have realistic time allocations: 3 hours for the aquarium and 2.5 hours for the Bund evening viewing, both within typical operating hours.",
+          "completeness": "The route provides specific times and locations for both attractions, meeting the basic requirements for a complete itinerary.",
+          "diversity_and_dining": "The itinerary includes both indoor (aquarium) and outdoor (Bund) experiences, providing experiential diversity. However, since meals evaluation is excluded per scope, the diversity score is limited."
+        },
+        "flags": [
+          "other"
+        ],
+        "overall_comment": "The itinerary effectively matches the user's preferences for evening urban experiences, particularly the Bund night views. The pacing is reasonable and geographic coherence is excellent. The schedule is realistic and complete for the required scope.",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 525,
+          "output_tokens": 807,
+          "total_tokens": 1332,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 41707.98,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      }
+    ],
+    "overall_mean": 87.0,
+    "dimension_mean": {
+      "preference_fit": 4.0,
+      "pacing": 4.0,
+      "geographic_coherence": 5.0,
+      "time_realism": 5.0,
+      "completeness": 4.5,
+      "diversity_and_dining": 3.5
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 4,
+      "within_one": 6,
+      "exact_rate": 0.6667,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.333,
+      "quadratic_weighted_kappa": 0.5714
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "other"
+    ],
+    "judge_calls": 0,
+    "replayed_calls": 2,
+    "judge_tokens_est": 2628,
+    "cache_hits": 2,
+    "errors": []
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "edit_type": "slow_pace",
+  "instruction": "整体改成慢节奏，每天最多安排2个景点，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 89.915,
+    "input_tokens": 2560,
+    "output_tokens": 1227,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "三亚南山文化旅游区",
+      "天涯海角游览区",
+      "三亚西岛海洋文化旅游区",
+      "鹿回头风景区",
+      "蜈支洲岛旅游风景区",
+      "亚龙湾海滩"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "三亚南山文化旅游区",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "天涯海角游览区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "雨中文化之旅"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "三亚西岛海洋文化旅游区",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "鹿回头风景区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "雨中海洋与山景"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "蜈支洲岛旅游风景区",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "亚龙湾海滩",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "雨中岛屿与海滩"
+      }
+    ],
+    "warnings": [
+      "全程恶劣天气且所有已排景点均为室外，请补充室内替代或调整行程",
+      "【用户修改意见】整体改成慢节奏，每天最多安排2个景点，其他安排尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 136.203,
+    "input_tokens": 2988,
+    "output_tokens": 1228,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "天涯海角游览区",
+      "天涯小镇",
+      "亚龙湾海滩",
+      "亚龙湾国家旅游度假区"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "南山大小洞天旅游区",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "11:30"
+          },
+          {
+            "name": "三亚南山文化旅游区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "南山文化之旅"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "天涯海角游览区",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "11:30"
+          },
+          {
+            "name": "天涯小镇",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "天涯风情体验"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "亚龙湾海滩",
+            "period": "morning",
+            "start_time": "09:00",
+            "end_time": "11:30"
+          },
+          {
+            "name": "亚龙湾国家旅游度假区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "亚龙湾休闲时光"
+      }
+    ],
+    "warnings": [
+      "全程恶劣天气且所有已排景点均为室外，请补充室内替代或调整行程",
+      "【用户修改意见】整体改成慢节奏，每天最多安排2个景点，其他安排尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.3333,
+    "B": 0.6667
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "trial_id": "5bd8d0902207442caa07ce9b2100f1ff",
+  "case_id": "lijiang-5d-sunny-slowpace",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 5,
+          "pacing": 4,
+          "geographic_coherence": 4,
+          "time_realism": 4,
+          "completeness": 3,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 81.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "完美契合用户偏好：束河古镇、白沙古镇、丽江古城都是纳西族文化核心区域，充分体现古镇文化和纳西民族风情；每天10:00开始，符合'慢节奏，睡到自然醒，不早起'的习惯",
+          "pacing": "节奏合理：每天2-3个景点，每个2.5-3小时，有充足时间体验；但第2天下午和晚上都在狮子山区域，略显重复",
+          "geographic_coherence": "地理顺序较好：第1天束河→白沙，第2天丽江古城→狮子山，第3天拉市海→玉水寨，第4天玉龙雪山→蓝月谷，第5天千古情→大研花巷，避免了明显折返",
+          "time_realism": "时间安排现实：各景点开放时间合理，10:00开始符合不早起的习惯；但第4天玉龙雪山13:00结束可能偏早，景区较大",
+          "completeness": "基本信息完整，但缺少交通方式、景点间通勤时间、门票信息等执行细节",
+          "diversity_and_dining": "体验多样：涵盖古镇文化(束河、白沙、丽江古城)、自然景观(拉市海、玉龙雪山、蓝月谷)、民族文化(玉水寨)、主题演出(千古情)，类型丰富"
+        },
+        "flags": [
+          "geographic_inefficiency",
+          "other",
+          "preference_mismatch"
+        ],
+        "overall_comment": "整体优秀的丽江文化体验行程，完美契合用户对纳西古镇文化和慢节奏旅行的偏好，景点选择具有代表性，地理安排合理，节奏适中。",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 996,
+          "output_tokens": 372,
+          "total_tokens": 1368,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 65488.887,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 5,
+          "pacing": 4,
+          "geographic_coherence": 4,
+          "time_realism": 5,
+          "completeness": 5,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 91.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "完美契合用户偏好：包含束河古镇、白沙古镇、丽江古城等纳西族文化核心景点，符合'古镇文化、纳西民族风情、手工艺'要求；每天10:00开始，符合'慢节奏，睡到自然醒，不早起'的习惯",
+          "pacing": "节奏合理：每天2个主要景点，时间充裕（2.5-3小时），没有赶场感；但第2天有3个景点，下午到晚上连续安排略显紧凑",
+          "geographic_coherence": "地理顺序合理：同一天内的景点相对集中，如第1天束河和白沙古镇，第2天丽江古城内景点，第4天玉龙雪山景区内景点，减少了不必要的往返",
+          "time_realism": "时间安排现实：每个景点2.5-3小时游览时间合理，符合实际游览需求；10:00开始符合用户不早起的习惯",
+          "completeness": "路线信息完整：明确标注了每天、每个景点的时间段和顺序，可直接执行",
+          "diversity_and_dining": "体验多样：涵盖古镇文化（束河、白沙、丽江古城）、自然风光（拉市海、玉水寨、玉龙雪山）、文化表演（千古情），体验丰富；scope.meals=false，不评价餐饮"
+        },
+        "flags": [
+          "geographic_inefficiency",
+          "other",
+          "preference_mismatch"
+        ],
+        "overall_comment": "丽江5日游路线设计优秀，完美契合用户对纳西文化和慢节奏旅行的需求，景点选择经典且地理分布合理，时间安排宽松舒适。",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 996,
+          "output_tokens": 376,
+          "total_tokens": 1372,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 41851.857,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      }
+    ],
+    "overall_mean": 86.0,
+    "dimension_mean": {
+      "preference_fit": 5.0,
+      "pacing": 4.0,
+      "geographic_coherence": 4.0,
+      "time_realism": 4.5,
+      "completeness": 4.0,
+      "diversity_and_dining": 4.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 4,
+      "within_one": 5,
+      "exact_rate": 0.6667,
+      "within_one_rate": 0.8333,
+      "mean_abs_diff": 0.5,
+      "quadratic_weighted_kappa": -0.0
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "geographic_inefficiency",
+      "other",
+      "preference_mismatch"
+    ],
+    "judge_calls": 0,
+    "replayed_calls": 2,
+    "judge_tokens_est": 2740,
+    "cache_hits": 2,
+    "errors": []
+  }
+}

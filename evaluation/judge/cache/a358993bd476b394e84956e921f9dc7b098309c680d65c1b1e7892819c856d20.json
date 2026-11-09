@@ -1,0 +1,65 @@
+{
+  "key": "a358993bd476b394e84956e921f9dc7b098309c680d65c1b1e7892819c856d20",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "6646eb4cda5c34ade8f33cae2199dd322e200145815b4b986b2f612417322b34",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 5,
+    "completeness": 4,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "Day 1: 上海海洋水族馆 (下午)",
+      "Day 1: 上海城隍庙 (晚上)",
+      "用户偏好: 夜景、外滩、都市光影, 下午出发, 喜欢夜间游览"
+    ],
+    "pacing": [
+      "Day 1: 上海海洋水族馆 14:00-16:30 (2.5小时)",
+      "Day 1: 上海城隍庙 17:30-21:00 (3.5小时)"
+    ],
+    "geographic_coherence": [
+      "上海海洋水族馆和城隍庙位于不同区域，需要跨区移动"
+    ],
+    "time_realism": [
+      "下午14:00开始符合用户习惯",
+      "晚上游览符合用户偏好"
+    ],
+    "completeness": [
+      "景点、时间、顺序已提供"
+    ],
+    "diversity_and_dining": [
+      "包含水族馆和传统文化景点，但scope.meals=false不评价餐饮"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "行程完全符合用户偏好：下午出发，夜间游览，且包含夜景相关的景点",
+    "pacing": "时间安排合理，每个景点有充足时间，但只有一个全天行程略显简单",
+    "geographic_coherence": "两个景点位于不同区域，需要跨区移动，存在一定折返",
+    "time_realism": "时间安排现实，符合景点开放时间和用户习惯",
+    "completeness": "提供了景点、时间和顺序，可直接执行，但缺少交通信息",
+    "diversity_and_dining": "景点类型多样，但scope.meals=false不评价餐饮安排"
+  },
+  "flags": [
+    "other",
+    "preference_mismatch"
+  ],
+  "overall_comment": "行程很好地满足了用户对夜间游览的偏好，时间安排合理，但景点地理分布有一定折返，且单日行程略显简单。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 526,
+    "output_tokens": 446,
+    "total_tokens": 972,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 33147.638,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

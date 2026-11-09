@@ -1,0 +1,97 @@
+{
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "edit_type": "replace_indoor",
+  "instruction": "把第1天下午的“上海海洋水族馆”换成室内的“上海失恋博物馆”，其他天尽量保持不变。",
+  "A": {
+    "latency_s": 35.119,
+    "input_tokens": 2358,
+    "output_tokens": 425,
+    "llm_calls": 1,
+    "status": "FAILED",
+    "hard_pass": false,
+    "plan_generated": true,
+    "route_names": [
+      "上海失恋博物馆",
+      "外滩"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海失恋博物馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          },
+          {
+            "name": "外滩",
+            "period": "evening",
+            "start_time": "19:00",
+            "end_time": "21:30"
+          }
+        ],
+        "theme": "黄浦江畔浪漫夜色"
+      }
+    ],
+    "warnings": [],
+    "failure_codes": [
+      "unknown_poi",
+      "missing_must_visit"
+    ],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 27.366,
+    "input_tokens": 2453,
+    "output_tokens": 282,
+    "llm_calls": 1,
+    "status": "FAILED",
+    "hard_pass": false,
+    "plan_generated": true,
+    "route_names": [
+      "上海失恋博物馆",
+      "外滩"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海失恋博物馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          },
+          {
+            "name": "外滩",
+            "period": "evening",
+            "start_time": "19:00",
+            "end_time": "21:30"
+          }
+        ],
+        "theme": "室内文化体验与外滩夜景"
+      }
+    ],
+    "warnings": [],
+    "failure_codes": [
+      "unknown_poi",
+      "missing_must_visit"
+    ],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 1.0,
+    "B": 1.0
+  }
+}

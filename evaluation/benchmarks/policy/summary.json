@@ -1,0 +1,738 @@
+{
+  "benchmark": "production_policy_replay",
+  "kind": "replay",
+  "sources": [
+    "evaluation\\trials\\run-20261107-v2",
+    "evaluation\\trials\\run-20261107-negative"
+  ],
+  "cases": 5,
+  "arms": {
+    "A_planner_only": {
+      "arm": "A_planner_only",
+      "trials": 5,
+      "esr": {
+        "num": 2,
+        "den": 5,
+        "value": 0.4
+      },
+      "omr": {
+        "num": 2,
+        "den": 5,
+        "value": 0.4
+      },
+      "hpr": {
+        "num": 4,
+        "den": 5,
+        "value": 0.8
+      },
+      "pdr": {
+        "num": 2,
+        "den": 5,
+        "value": 0.4
+      },
+      "tokens_total": 16629,
+      "tokens_median": 3243,
+      "latency_p50_s": 99.647,
+      "outcomes": {
+        "PARTIAL": 2,
+        "SUCCESS_WITH_WARNINGS": 2,
+        "HARD_FAIL": 1
+      }
+    },
+    "B_reviewer": {
+      "arm": "B_reviewer",
+      "trials": 5,
+      "esr": {
+        "num": 3,
+        "den": 5,
+        "value": 0.6
+      },
+      "omr": {
+        "num": 3,
+        "den": 5,
+        "value": 0.6
+      },
+      "hpr": {
+        "num": 5,
+        "den": 5,
+        "value": 1.0
+      },
+      "pdr": {
+        "num": 0,
+        "den": 5,
+        "value": 0.0
+      },
+      "tokens_total": 62283,
+      "tokens_median": 12337,
+      "latency_p50_s": 249.565,
+      "outcomes": {
+        "SUCCESS_WITH_WARNINGS": 4,
+        "SUCCESS": 1
+      }
+    },
+    "C_reviewer_time_check": {
+      "arm": "C_reviewer_time_check",
+      "trials": 5,
+      "esr": {
+        "num": 3,
+        "den": 5,
+        "value": 0.6
+      },
+      "omr": {
+        "num": 3,
+        "den": 5,
+        "value": 0.6
+      },
+      "hpr": {
+        "num": 5,
+        "den": 5,
+        "value": 1.0
+      },
+      "pdr": {
+        "num": 0,
+        "den": 5,
+        "value": 0.0
+      },
+      "tokens_total": 50235,
+      "tokens_median": 8784,
+      "latency_p50_s": 236.281,
+      "outcomes": {
+        "SUCCESS": 2,
+        "SUCCESS_WITH_WARNINGS": 3
+      }
+    },
+    "D_risk_gate": {
+      "arm": "D_risk_gate",
+      "trials": 5,
+      "esr": {
+        "num": 3,
+        "den": 5,
+        "value": 0.6
+      },
+      "omr": {
+        "num": 3,
+        "den": 5,
+        "value": 0.6
+      },
+      "hpr": {
+        "num": 5,
+        "den": 5,
+        "value": 1.0
+      },
+      "pdr": {
+        "num": 0,
+        "den": 5,
+        "value": 0.0
+      },
+      "tokens_total": 50235,
+      "tokens_median": 8784,
+      "latency_p50_s": 236.281,
+      "outcomes": {
+        "SUCCESS": 2,
+        "SUCCESS_WITH_WARNINGS": 3
+      }
+    }
+  },
+  "skip": {
+    "cases": 5,
+    "skipped": 0,
+    "rate": 0.0
+  },
+  "attribution": {
+    "rework_trials": 5,
+    "rule_fixed": 2,
+    "rule_ineffective": 0,
+    "semantic_only": 3,
+    "details": [
+      {
+        "case_id": "nanjing-3d-sunny-history",
+        "mode": "planner_reviewer",
+        "rounds": 1,
+        "first_draft_l0": [],
+        "final_l0": [],
+        "kind": "semantic_only"
+      },
+      {
+        "case_id": "shanghai-1d-sunny-nightlife",
+        "mode": "planner_reviewer",
+        "rounds": 3,
+        "first_draft_l0": [
+          "unknown_poi"
+        ],
+        "final_l0": [],
+        "kind": "rule_fixed"
+      },
+      {
+        "case_id": "shanghai-1d-sunny-nightlife",
+        "mode": "planner_reviewer_time_check",
+        "rounds": 1,
+        "first_draft_l0": [
+          "unknown_poi"
+        ],
+        "final_l0": [],
+        "kind": "rule_fixed"
+      },
+      {
+        "case_id": "sanya-3d-allrain-outdoor-negative",
+        "mode": "planner_reviewer",
+        "rounds": 1,
+        "first_draft_l0": [],
+        "final_l0": [],
+        "kind": "semantic_only"
+      },
+      {
+        "case_id": "sanya-3d-allrain-outdoor-negative",
+        "mode": "planner_reviewer_time_check",
+        "rounds": 1,
+        "first_draft_l0": [],
+        "final_l0": [],
+        "kind": "semantic_only"
+      }
+    ],
+    "note": "first_draft_l0 非空→规则触发；首版就无 L0 却发生返工→语义/软约束触发"
+  },
+  "drafts": {
+    "drafts": 30,
+    "by_source": {
+      "checkpoint": {
+        "drafts": 15,
+        "skipped": 0,
+        "defect_known": 0
+      },
+      "trial": {
+        "drafts": 15,
+        "skipped": 0,
+        "defect_known": 15
+      }
+    },
+    "skipped": 0,
+    "skip_rate": 0.0,
+    "defect_known": 15,
+    "false_skip": 0,
+    "false_skip_rate": null,
+    "false_skip_note": "checkpoint 草稿无 l0_codes，误跳过只能在 defect_known 子集上计算",
+    "rows": [
+      {
+        "draft_id": "lijiang-5d-sunny-slowpace::planner_only",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "habit_constraint",
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": [
+          "habit_constraint"
+        ]
+      },
+      {
+        "draft_id": "lijiang-5d-sunny-slowpace::planner_reviewer",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "lijiang-5d-sunny-slowpace::planner_reviewer_time_check",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "nanjing-3d-sunny-history::planner_only",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "nanjing-3d-sunny-history::planner_reviewer",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "nanjing-3d-sunny-history::planner_reviewer_time_check",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "shanghai-1d-sunny-nightlife::planner_only",
+        "case_id": "shanghai-1d-sunny-nightlife",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "unknown_poi",
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [
+          "unknown_poi"
+        ],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "shanghai-1d-sunny-nightlife::planner_reviewer",
+        "case_id": "shanghai-1d-sunny-nightlife",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "shanghai-1d-sunny-nightlife::planner_reviewer_time_check",
+        "case_id": "shanghai-1d-sunny-nightlife",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "nanjing-3d-tighthours-negative::planner_only",
+        "case_id": "nanjing-3d-tighthours-negative",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "nanjing-3d-tighthours-negative::planner_reviewer",
+        "case_id": "nanjing-3d-tighthours-negative",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "nanjing-3d-tighthours-negative::planner_reviewer_time_check",
+        "case_id": "nanjing-3d-tighthours-negative",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "sanya-3d-allrain-outdoor-negative::planner_only",
+        "case_id": "sanya-3d-allrain-outdoor-negative",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "opening_time_conflict",
+          "weather_outdoor_conflict",
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": [
+          "opening_time_conflict"
+        ]
+      },
+      {
+        "draft_id": "sanya-3d-allrain-outdoor-negative::planner_reviewer",
+        "case_id": "sanya-3d-allrain-outdoor-negative",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "weather_outdoor_conflict",
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "sanya-3d-allrain-outdoor-negative::planner_reviewer_time_check",
+        "case_id": "sanya-3d-allrain-outdoor-negative",
+        "source": "trial",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "weather_outdoor_conflict",
+          "preference_review"
+        ],
+        "l0_known": true,
+        "l0_codes": [],
+        "l1_codes": []
+      },
+      {
+        "draft_id": "checkpoint::pair_01_lijiang-5d-sunny-slowpace_replace_indoor",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_02_lijiang-5d-sunny-slowpace_add_must_visit",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "unknown_poi",
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_03_lijiang-5d-sunny-slowpace_remove_spot",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_04_lijiang-5d-sunny-slowpace_change_time",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "opening_time_conflict",
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_05_lijiang-5d-sunny-slowpace_cross_day",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_06_lijiang-5d-sunny-slowpace_slow_pace",
+        "case_id": "lijiang-5d-sunny-slowpace",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_07_nanjing-3d-sunny-history_change_time",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "habit_constraint",
+          "opening_time_conflict",
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_08_nanjing-3d-sunny-history_cross_day",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "habit_constraint",
+          "opening_time_conflict",
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_09_nanjing-3d-sunny-history_slow_pace",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_10_nanjing-3d-sunny-history_replace_indoor",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "opening_time_conflict",
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_11_nanjing-3d-sunny-history_add_must_visit",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_12_nanjing-3d-sunny-history_remove_spot",
+        "case_id": "nanjing-3d-sunny-history",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_13_nanjing-3d-tighthours-negative_add_must_visit",
+        "case_id": "nanjing-3d-tighthours-negative",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_14_nanjing-3d-tighthours-negative_remove_spot",
+        "case_id": "nanjing-3d-tighthours-negative",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      },
+      {
+        "draft_id": "checkpoint::pair_15_nanjing-3d-tighthours-negative_change_time",
+        "case_id": "nanjing-3d-tighthours-negative",
+        "source": "checkpoint",
+        "skipped": false,
+        "review_required": true,
+        "flags": [
+          "habit_constraint",
+          "preference_review"
+        ],
+        "l0_known": false,
+        "l0_codes": null,
+        "l1_codes": null
+      }
+    ]
+  },
+  "rows": [
+    {
+      "case_id": "lijiang-5d-sunny-slowpace",
+      "expected_feasible": null,
+      "gate": {
+        "review_required": true,
+        "time_check_required": true,
+        "review_skipped": false,
+        "flags": [
+          "habit_constraint",
+          "preference_review"
+        ]
+      },
+      "arm_outcome": {
+        "A": "PARTIAL",
+        "B": "SUCCESS_WITH_WARNINGS",
+        "C": "SUCCESS",
+        "D": "SUCCESS"
+      },
+      "arm_source": {
+        "D": "C"
+      }
+    },
+    {
+      "case_id": "nanjing-3d-sunny-history",
+      "expected_feasible": null,
+      "gate": {
+        "review_required": true,
+        "time_check_required": true,
+        "review_skipped": false,
+        "flags": [
+          "preference_review"
+        ]
+      },
+      "arm_outcome": {
+        "A": "SUCCESS_WITH_WARNINGS",
+        "B": "SUCCESS_WITH_WARNINGS",
+        "C": "SUCCESS_WITH_WARNINGS",
+        "D": "SUCCESS_WITH_WARNINGS"
+      },
+      "arm_source": {
+        "D": "C"
+      }
+    },
+    {
+      "case_id": "nanjing-3d-tighthours-negative",
+      "expected_feasible": null,
+      "gate": {
+        "review_required": true,
+        "time_check_required": true,
+        "review_skipped": false,
+        "flags": [
+          "preference_review"
+        ]
+      },
+      "arm_outcome": {
+        "A": "SUCCESS_WITH_WARNINGS",
+        "B": "SUCCESS",
+        "C": "SUCCESS",
+        "D": "SUCCESS"
+      },
+      "arm_source": {
+        "D": "C"
+      }
+    },
+    {
+      "case_id": "sanya-3d-allrain-outdoor-negative",
+      "expected_feasible": null,
+      "gate": {
+        "review_required": true,
+        "time_check_required": true,
+        "review_skipped": false,
+        "flags": [
+          "opening_time_conflict",
+          "weather_outdoor_conflict",
+          "preference_review"
+        ]
+      },
+      "arm_outcome": {
+        "A": "PARTIAL",
+        "B": "SUCCESS_WITH_WARNINGS",
+        "C": "SUCCESS_WITH_WARNINGS",
+        "D": "SUCCESS_WITH_WARNINGS"
+      },
+      "arm_source": {
+        "D": "C"
+      }
+    },
+    {
+      "case_id": "shanghai-1d-sunny-nightlife",
+      "expected_feasible": null,
+      "gate": {
+        "review_required": true,
+        "time_check_required": true,
+        "review_skipped": false,
+        "flags": [
+          "unknown_poi",
+          "preference_review"
+        ]
+      },
+      "arm_outcome": {
+        "A": "HARD_FAIL",
+        "B": "SUCCESS_WITH_WARNINGS",
+        "C": "SUCCESS_WITH_WARNINGS",
+        "D": "SUCCESS_WITH_WARNINGS"
+      },
+      "arm_source": {
+        "D": "C"
+      }
+    }
+  ]
+}

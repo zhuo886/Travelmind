@@ -1,0 +1,47 @@
+{
+  "provider": "llm",
+  "model": "glm-4.5-flash",
+  "targets": 6,
+  "scored": 5,
+  "skipped": 1,
+  "coverage": 0.8333,
+  "overall_mean": 79.2,
+  "dimension_mean": {
+    "preference_fit": 4.0,
+    "pacing": 4.6,
+    "geographic_coherence": 3.0,
+    "time_realism": 5.0,
+    "completeness": 3.6,
+    "diversity_and_dining": 3.2
+  },
+  "kappa_mean": 1.0,
+  "kappa_pooled": 1.0,
+  "judge_calls": 10,
+  "replayed_calls": 0,
+  "judge_tokens_est": 11521,
+  "cache_hits": 0,
+  "errors": [],
+  "low_score": [],
+  "low_score_threshold": 60.0,
+  "flag_counts": {
+    "geographic_inefficiency": 1,
+    "incomplete_practical_info": 1,
+    "missing_dining": 1,
+    "missing_transport": 3,
+    "other": 3,
+    "preference_mismatch": 1
+  },
+  "by_case": {
+    "nanjing-3d-sunny-history": 80.0,
+    "shanghai-1d-sunny-nightlife": 78.0
+  },
+  "generated_at": "2026-11-08T13:55:53.305740+00:00",
+  "k": 2,
+  "calibration": {
+    "n": 0,
+    "mae": null,
+    "spearman": null,
+    "band_agreement": null,
+    "note": "没有人工校准标签；N/A"
+  }
+}

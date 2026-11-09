@@ -1,0 +1,43 @@
+{
+  "key": "85965a789e41fd4b3200cf37e2cbec58406ba1c18543f3c3f8ed3b7c13568fab",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "e1e293e7b2f42eb6bc066487d95af88e9b2e1d2def197d35c10f561c6e66938e",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 4,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "完美契合用户偏好：所有景点都围绕古镇文化、纳西民族风情（束河古镇、白沙古镇、丽江古城），且每天10:00开始符合'慢节奏，睡到自然醒，不早起'的习惯",
+    "pacing": "节奏合理：每天2个景点，上午下午各一个，时间分配均匀（2.5-3小时/景点），不过不过空",
+    "geographic_coherence": "地理顺序一般：第1天束河→白沙，第2天丽江古城内部，第3-5天距离较远（玉龙雪山、虎跳峡、长江第一湾），存在一定折返",
+    "time_realism": "时间安排现实：每天10:00开始符合不早起的习惯，每个景点2.5-3小时游览时间合理，景点间2小时缓冲时间足够",
+    "completeness": "路线信息完整：明确标注了每天景点、具体时间段、顺序，可直接执行",
+    "diversity_and_dining": "体验多样：涵盖古镇文化、自然风光（玉龙雪山、虎跳峡）、民族风情，体验类型丰富"
+  },
+  "flags": [
+    "geographic_inefficiency",
+    "other",
+    "preference_mismatch"
+  ],
+  "overall_comment": "整体优秀的丽江5日游行程，完美匹配用户对古镇文化和慢节奏的偏好，景点选择经典且多样，时间安排合理。主要优化点在于第3-5天的地理分布，可以考虑调整顺序减少长途往返。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 960,
+    "output_tokens": 354,
+    "total_tokens": 1314,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 49540.19,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

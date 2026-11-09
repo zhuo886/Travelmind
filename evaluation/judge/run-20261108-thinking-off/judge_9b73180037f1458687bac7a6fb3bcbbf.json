@@ -1,0 +1,172 @@
+{
+  "trial_id": "9b73180037f1458687bac7a6fb3bcbbf",
+  "case_id": "nanjing-3d-sunny-history",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 5,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 3,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "Day1: 玄武湖景区、古鸡鸣寺都是历史古迹",
+            "Day2: 中国科举博物馆、南京夫子庙符合历史古迹偏好",
+            "每天景点数量少，符合'每天景点别太多'的习惯"
+          ],
+          "pacing": [
+            "每天10:00开始，12:00结束上午行程，13:30开始，15:30结束下午行程",
+            "每天只有2个景点，时间安排宽松，符合'慢节奏'的习惯"
+          ],
+          "geographic_coherence": [
+            "Day1: 玄武湖和鸡鸣寺地理位置较近",
+            "Day2: 科举博物馆和夫子庙地理位置较近",
+            "Day3: 不老村和水墨大埝地理位置较远，但未提供具体位置信息"
+          ],
+          "time_realism": [
+            "每天10:00开始，符合'不喜欢早起'的习惯",
+            "每个景点安排2.5小时，时间安排合理"
+          ],
+          "completeness": [
+            "路线提供了景点名称和时间安排",
+            "缺少交通方式和景点之间的通勤时间"
+          ],
+          "diversity_and_dining": [
+            "景点类型多样，包括湖泊、寺庙、博物馆、文化景区",
+            "scope.meals=false，不评价餐饮安排"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "路线主要安排历史古迹和博物馆，符合用户偏好；每天景点数量少，符合用户习惯；但缺少必去点的具体信息",
+          "pacing": "每天只有2个景点，时间安排宽松，符合'慢节奏'和'不喜欢早起'的习惯",
+          "geographic_coherence": "前两天的景点地理位置较合理，第三天的两个景点可能距离较远，但未提供具体位置信息",
+          "time_realism": "每天10:00开始，符合'不喜欢早起'的习惯；每个景点安排2.5小时，时间安排合理",
+          "completeness": "路线提供了景点名称和时间安排，但缺少交通方式和景点之间的通勤时间",
+          "diversity_and_dining": "景点类型多样，包括湖泊、寺庙、博物馆、文化景区；scope.meals=false，不评价餐饮安排"
+        },
+        "flags": [
+          "incomplete_practical_info",
+          "missing_transport"
+        ],
+        "overall_comment": "路线基本符合用户偏好和习惯，时间安排合理，但缺少交通方式和景点位置信息",
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 740,
+          "output_tokens": 537,
+          "total_tokens": 1277,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 21963.088,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        },
+        "weighted_score": 78.0,
+        "cache_hit": false
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 5,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 3,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "Day1: 玄武湖景区、古鸡鸣寺都是历史古迹",
+            "Day2: 中国科举博物馆、南京夫子庙符合历史古迹偏好",
+            "每天景点数量少，符合'每天景点别太多'的习惯"
+          ],
+          "pacing": [
+            "每天10:00开始，12:00结束上午行程，13:30开始，15:30结束下午行程",
+            "每天只有2个景点，节奏缓慢，符合'慢节奏'的习惯"
+          ],
+          "geographic_coherence": [
+            "Day1: 玄武湖和鸡鸣寺地理位置较近",
+            "Day2: 科举博物馆和夫子庙地理位置较近",
+            "Day3: 不老村和水墨大埝地理位置较远，但未安排在同一天"
+          ],
+          "time_realism": [
+            "每天10:00开始，符合'不喜欢早起'的习惯",
+            "每个景点安排2.5小时，时间安排合理"
+          ],
+          "completeness": [
+            "路线包含景点、时间、顺序",
+            "缺少交通方式和餐饮信息，但scope中已声明不需要评价"
+          ],
+          "diversity_and_dining": [
+            "景点类型多样：湖泊、寺庙、博物馆、文化街区、乡村",
+            "scope.meals=false，不评价餐饮安排"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "路线主要安排历史古迹和博物馆，符合用户偏好；每天景点数量少，符合用户习惯；但缺少必去点的明确信息",
+          "pacing": "每天只有2个景点，开始时间晚(10:00)，结束时间早(15:30)，完全符合用户'慢节奏、不喜欢早起、每天景点别太多'的习惯",
+          "geographic_coherence": "前两天的景点地理位置较合理，但第三天的不老村和水墨大埝距离较远，可能需要较长时间通勤",
+          "time_realism": "每个景点安排2.5小时，时间安排合理；开始时间晚，符合用户'不喜欢早起'的习惯",
+          "completeness": "路线包含景点、时间、顺序等基本信息，但缺少交通方式和餐饮信息，不过scope中已声明不需要评价这些信息",
+          "diversity_and_dining": "景点类型多样，包括自然景观、历史古迹、文化街区等，体验丰富；但scope.meals=false，不评价餐饮安排"
+        },
+        "flags": [
+          "geographic_inefficiency"
+        ],
+        "overall_comment": "路线基本符合用户偏好和习惯，节奏缓慢，景点数量适中，但第三天的景点地理位置安排不够合理。",
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 740,
+          "output_tokens": 574,
+          "total_tokens": 1314,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 22795.324,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        },
+        "weighted_score": 78.0,
+        "cache_hit": false
+      }
+    ],
+    "overall_mean": 78.0,
+    "dimension_mean": {
+      "preference_fit": 4.0,
+      "pacing": 5.0,
+      "geographic_coherence": 3.0,
+      "time_realism": 5.0,
+      "completeness": 3.0,
+      "diversity_and_dining": 3.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 6,
+      "within_one": 6,
+      "exact_rate": 1.0,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.0,
+      "quadratic_weighted_kappa": 1.0
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "geographic_inefficiency",
+      "incomplete_practical_info",
+      "missing_transport"
+    ],
+    "judge_calls": 2,
+    "replayed_calls": 0,
+    "judge_tokens_est": 2591,
+    "cache_hits": 0,
+    "errors": []
+  }
+}

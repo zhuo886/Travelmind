@@ -1,0 +1,103 @@
+{
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "edit_type": "change_time",
+  "instruction": "第1天第一个景点改到10:00以后开始，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 51.67,
+    "input_tokens": 2348,
+    "output_tokens": 479,
+    "llm_calls": 1,
+    "status": "FAILED",
+    "hard_pass": false,
+    "plan_generated": true,
+    "route_names": [
+      "上海海洋水族馆",
+      "上海豫园",
+      "外滩夜景"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海海洋水族馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          },
+          {
+            "name": "上海豫园",
+            "period": "evening",
+            "start_time": "17:30",
+            "end_time": "19:00"
+          },
+          {
+            "name": "外滩夜景",
+            "period": "evening",
+            "start_time": "19:30",
+            "end_time": "21:30"
+          }
+        ],
+        "theme": "海洋探索与都市夜景之旅"
+      }
+    ],
+    "warnings": [],
+    "failure_codes": [
+      "unknown_poi"
+    ],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 33.166,
+    "input_tokens": 2445,
+    "output_tokens": 462,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "上海海洋水族馆",
+      "上海城隍庙"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海海洋水族馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          },
+          {
+            "name": "上海城隍庙",
+            "period": "evening",
+            "start_time": "17:30",
+            "end_time": "19:00"
+          }
+        ],
+        "theme": "海洋探索与传统文化夜景"
+      }
+    ],
+    "warnings": [
+      "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突",
+      "【用户修改意见】第1天第一个景点改到10:00以后开始，其他安排尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.5,
+    "B": 0.5
+  }
+}

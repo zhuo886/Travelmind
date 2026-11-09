@@ -1,0 +1,177 @@
+{
+  "case_id": "nanjing-3d-sunny-history",
+  "edit_type": "replace_indoor",
+  "instruction": "把第1天下午的“总统府”换成室内的“江苏江宁汤山方山国家地质公园博物馆”，其他天尽量保持不变。",
+  "A": {
+    "latency_s": 51.493,
+    "input_tokens": 2124,
+    "output_tokens": 1256,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "玄武湖景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙",
+      "古鸡鸣寺",
+      "中山陵景区"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "玄武湖景区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "江苏江宁汤山方山国家地质公园博物馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "历史古迹与地质文化探索"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "中国科举博物馆(江南贡院)",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "南京夫子庙",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "科举文化与秦淮风光"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "古鸡鸣寺",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "中山陵景区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "宗教文化与纪念建筑"
+      }
+    ],
+    "warnings": [
+      "Day3（2026-08-03 周一） 景点可能闭馆：中山陵景区（参考开放信息：08:30-17:00(周一闭馆)），建议调整游览日期或行前核实",
+      "【用户修改意见】把第1天下午的“总统府”换成室内的“江苏江宁汤山方山国家地质公园博物馆”，其他天尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 164.751,
+    "input_tokens": 2418,
+    "output_tokens": 871,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "玄武湖景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙",
+      "南京牛首山文化旅游区",
+      "南京长江大桥"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "玄武湖景区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "江苏江宁汤山方山国家地质公园博物馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "历史古迹与地质文化"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "中国科举博物馆(江南贡院)",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "南京夫子庙",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "科举文化与秦淮风情"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "南京牛首山文化旅游区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "南京长江大桥",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "佛教文化与长江风光"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】把第1天下午的“总统府”换成室内的“江苏江宁汤山方山国家地质公园博物馆”，其他天尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.6,
+    "B": 1.0
+  }
+}

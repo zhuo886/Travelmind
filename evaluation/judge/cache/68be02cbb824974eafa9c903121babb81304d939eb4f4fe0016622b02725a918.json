@@ -1,0 +1,69 @@
+{
+  "key": "68be02cbb824974eafa9c903121babb81304d939eb4f4fe0016622b02725a918",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "df4e7fd9942b361818d33b6474a6bf587d759a64862f2fde930341c1d80198ff",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 5,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "天涯海角游览区",
+      "椰梦长廊",
+      "三亚湾",
+      "后海村",
+      "亚龙湾海滩",
+      "海棠河生态公园"
+    ],
+    "pacing": [
+      "Day 1",
+      "Day 2",
+      "Day 3"
+    ],
+    "geographic_coherence": [
+      "Day 1",
+      "Day 2",
+      "Day 3"
+    ],
+    "time_realism": [
+      "weather"
+    ],
+    "completeness": [
+      "route"
+    ],
+    "diversity_and_dining": [
+      "spots"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "Most spots align with seaside/natural preferences, though 崖州古城 is less aligned",
+    "pacing": "2.5-3 hour intervals between activities provide reasonable pacing",
+    "geographic_coherence": "Each day's activities are geographically grouped within specific regions",
+    "time_realism": "Normal作息 schedule but bad weather contingency not addressed",
+    "completeness": "Missing transportation, meal arrangements, and weather contingency plans",
+    "diversity_and_dining": "Good variety of attraction types but no dining considerations"
+  },
+  "flags": [
+    "bad_weather_all_days"
+  ],
+  "overall_comment": "",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 686,
+    "output_tokens": 478,
+    "total_tokens": 1164,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 46230.416,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "6b2ab7d3fef2170382269c5d52344ebe82634cf0273b902abdb85f7c3d94023d",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "c2dbdf6b6ba14c3e7d116a67abbfc35a52640ad5137dd4164e8701ca73fb65d3",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 2,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "路线符合历史古迹和自然景观偏好，每天10:00开始符合不喜欢早起的习惯。中山陵、古鸡鸣寺是历史古迹，不老村、水墨大埝是自然景观。",
+    "pacing": "每天活动时间5-7小时，有1-2小时午休，节奏较合理。但Day 3下午4.5小时较长，可能较累。",
+    "geographic_coherence": "景点分布较分散，存在折返。Day 1不老村到水墨大埝需跨区，Day 2中山陵到鸡鸣寺需穿越市区，Day 3地质公园到欢乐谷距离较远。",
+    "time_realism": "时间安排现实，10:00开始符合偏好，各景点游览时长合理，有足够交通时间。",
+    "completeness": "缺少交通方式、餐饮安排、具体地址等关键信息，无法直接执行。",
+    "diversity_and_dining": "缺乏餐饮安排和休息时间，只有景点游览，体验单一。"
+  },
+  "flags": [
+    "缺少餐饮安排",
+    "景点地理分散",
+    "信息不完整",
+    "evidence_missing"
+  ],
+  "overall_comment": "路线基本符合偏好，但地理分散且信息不完整影响实用性。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 597,
+    "output_tokens": 306,
+    "total_tokens": 903,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 40655.668,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

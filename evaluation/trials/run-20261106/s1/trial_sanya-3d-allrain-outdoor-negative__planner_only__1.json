@@ -1,0 +1,49 @@
+{
+  "trial_id": "64813d0880784371ba45914a63747d83",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "opening_time_conflict"
+  ],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "soft_score": 57.0,
+  "oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "must_avoid_ok": null,
+  "latency_s": 314.271,
+  "node_latency_ms": {
+    "planner": 313094.325,
+    "snapshot_gate": 2.6
+  },
+  "input_tokens_est": 7524,
+  "output_tokens_est": 1441,
+  "llm_calls": 3,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

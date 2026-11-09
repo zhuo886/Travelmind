@@ -1,0 +1,26 @@
+{
+  "mode": "planner_only",
+  "pairs": 27,
+  "p50_ms": {
+    "A": 69119.0,
+    "B": 61048.0
+  },
+  "latency_reduction": 0.1168,
+  "input_tokens": {
+    "A": 62904,
+    "B": 67052
+  },
+  "token_reduction": -0.0659,
+  "edit_satisfaction": {
+    "A": 1.0,
+    "B": 1.0
+  },
+  "retention": {
+    "A": 0.735,
+    "B": 0.9061
+  },
+  "hard_pass": {
+    "A": 0.8148,
+    "B": 0.9259
+  }
+}

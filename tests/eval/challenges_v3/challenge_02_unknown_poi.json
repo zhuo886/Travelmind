@@ -1,0 +1,24 @@
+{
+  "id": "challenge-02-unknown-poi",
+  "base_fixture": "nanjing-3d-sunny-history",
+  "injected_defect": "unknown_poi",
+  "expected_verdict": "reject",
+  "expected_keywords": ["非候选池", "池外", "不存在", "未知"],
+  "expected_defect_codes": ["unknown_poi"],
+  "label_source": "deterministic_injection",
+  "route": [
+    {"day": 1, "spots": [
+      {"name": "玄武湖景区", "start_time": "10:00", "end_time": "12:00"},
+      {"name": "中国科举博物馆(江南贡院)", "start_time": "14:00", "end_time": "16:00"}
+    ]},
+    {"day": 2, "spots": [
+      {"name": "中山陵景区", "start_time": "10:00", "end_time": "12:30"},
+      {"name": "总统府", "start_time": "14:00", "end_time": "16:00"}
+    ]},
+    {"day": 3, "spots": [
+      {"name": "南京夫子庙", "start_time": "10:00", "end_time": "12:00"},
+      {"name": "不存在的测试景点", "start_time": "14:00", "end_time": "15:30"}
+    ]}
+  ],
+  "note": "注入池外景点；生产 Reviewer 会用 unknown_spots 覆盖 approve，预期打回。"
+}

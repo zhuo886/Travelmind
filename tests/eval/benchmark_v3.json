@@ -1,0 +1,225 @@
+{
+  "version": "v3",
+  "frozen_at": "2026-11-08",
+  "supersedes": "benchmark_v2.json",
+  "rubric_version": "judge-rubric-v1",
+  "note": "v3 继承 v2 的 10 个 fixture（不复制），只新增 2 个真正不可行的安全负样本。expected_feasible 是人工复核标签，不依赖 allowed_outcomes 反推。",
+  "cases": [
+    {
+      "id": "nanjing-3d-sunny-history",
+      "tier": "regression",
+      "allowed_outcomes": [
+        "SUCCESS",
+        "SUCCESS_WITH_WARNINGS"
+      ],
+      "must_visit": [
+        "玄武湖景区"
+      ],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "d43de594a8504c4f8e43e2d41cf1ef1fffd498f1090aa92172ef08dbffc3846c",
+      "judge_required": true,
+      "note": "基准 3 天历史游；query 显式点名玄武湖景区"
+    },
+    {
+      "id": "nanjing-3d-singlerain-history",
+      "tier": "regression",
+      "allowed_outcomes": [
+        "SUCCESS",
+        "SUCCESS_WITH_WARNINGS"
+      ],
+      "must_visit": [],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "724d04a528405e377f0d920ac7649c9edaaf4c34870aaf37235608b1cd97cfcb",
+      "judge_required": true,
+      "note": "单日雨的 3 天历史游"
+    },
+    {
+      "id": "nanjing-3d-tighthours-negative",
+      "tier": "capability",
+      "allowed_outcomes": [
+        "SUCCESS",
+        "SUCCESS_WITH_WARNINGS"
+      ],
+      "must_visit": [],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "4a58eb0dcc99c06e92029589fac62d4d5abdb5142d757663b02f32138c36903e",
+      "judge_required": true,
+      "note": "v1 复核确认实际可行；v2 修正标签"
+    },
+    {
+      "id": "shanghai-1d-sunny-nightlife",
+      "tier": "regression",
+      "allowed_outcomes": [
+        "SUCCESS",
+        "SUCCESS_WITH_WARNINGS"
+      ],
+      "must_visit": [
+        "上海海洋水族馆"
+      ],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "8312c47b245e42983e01e09400a43b60eeb39d5a7266cb879da2ce23647aef1f",
+      "judge_required": true,
+      "note": "1 天 + 夜景时段；query 显式点名上海海洋水族馆"
+    },
+    {
+      "id": "shanghai-3d-smallpool-negative",
+      "tier": "capability",
+      "allowed_outcomes": [
+        "SUCCESS_WITH_WARNINGS",
+        "PARTIAL"
+      ],
+      "must_visit": [],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "bce71694b1c072ca2bfe0746ae5085d3b607bad7bec2447fe0d0e4e093af4c50",
+      "judge_required": true,
+      "note": "候选池不足"
+    },
+    {
+      "id": "shanghai-3d-beyond-forecast",
+      "tier": "regression",
+      "allowed_outcomes": [
+        "SUCCESS",
+        "SUCCESS_WITH_WARNINGS"
+      ],
+      "must_visit": [],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "de722a74c92bd017510d93814d6b046a573e88320a0c9820d0f6eb8fa9438522",
+      "judge_required": true,
+      "note": "超出天气预报范围"
+    },
+    {
+      "id": "lijiang-5d-sunny-slowpace",
+      "tier": "regression",
+      "allowed_outcomes": [
+        "SUCCESS",
+        "SUCCESS_WITH_WARNINGS"
+      ],
+      "must_visit": [
+        "束河古镇"
+      ],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "220566ea31b3798fc16c1dd0c30ab3d805f3aee3b22f0839e7b6db426e1f4d89",
+      "judge_required": true,
+      "note": "5 天慢节奏；query 显式点名束河古镇"
+    },
+    {
+      "id": "lijiang-3d-allrain-history",
+      "tier": "capability",
+      "allowed_outcomes": [
+        "SUCCESS",
+        "SUCCESS_WITH_WARNINGS",
+        "PARTIAL"
+      ],
+      "must_visit": [],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "88765b2979f9bb04056990e80bc92950e581aa1c3a34c678014c55f220dbf631",
+      "judge_required": true,
+      "note": "全程雨"
+    },
+    {
+      "id": "sanya-3d-allrain-outdoor-negative",
+      "tier": "capability",
+      "allowed_outcomes": [
+        "PARTIAL",
+        "CORRECT_REJECT"
+      ],
+      "must_visit": [],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "44a8d16f2cffd6dfef4a47e1e67d6cb824ebb6ededbbf26c72890c97097e8c34",
+      "judge_required": true,
+      "note": "雨天全露天负样本；样本可行，但应降级 PARTIAL"
+    },
+    {
+      "id": "jingdezhen-3d-sunny-history",
+      "tier": "regression",
+      "allowed_outcomes": [
+        "SUCCESS",
+        "SUCCESS_WITH_WARNINGS"
+      ],
+      "must_visit": [],
+      "expected_feasible": true,
+      "fixture_source": "v2",
+      "fixture_sha256": "d6b137a4ba57cc35d99716beb289f7f6ae8253ff19f9ad1729dbcb95d1a613e2",
+      "judge_required": true,
+      "note": "小城分散型"
+    },
+    {
+      "id": "shanghai-1d-twohour-three-must-negative",
+      "tier": "safety",
+      "allowed_outcomes": [
+        "CORRECT_REJECT",
+        "PARTIAL"
+      ],
+      "must_visit": [
+        "上海朱家角古镇旅游区",
+        "上海迪士尼度假区",
+        "上海海昌海洋公园"
+      ],
+      "expected_feasible": false,
+      "infeasible_reason": "physical_time_deadlock：3 个必去点最短游览 180 分钟 > 120 分钟窗口",
+      "fixture_source": "v3",
+      "fixture_sha256": "8c3c16d1da6551de4f38c9f93615fdeff39902711704f84369be78251ba743f9",
+      "judge_required": true,
+      "note": "真正不可行：2 小时窗口 + 3 个远距必去点 + 每处至少 60 分钟"
+    },
+    {
+      "id": "sanya-1d-indooronly-empty-pool-negative",
+      "tier": "safety",
+      "allowed_outcomes": [
+        "CORRECT_REJECT",
+        "PARTIAL"
+      ],
+      "must_visit": [],
+      "expected_feasible": false,
+      "infeasible_reason": "candidate_pool_preference_conflict：候选池无明确室内景点",
+      "fixture_source": "v3",
+      "fixture_sha256": "6319479afa5589b9f07f29e558aa2ff9fea29c549cf9209f48dcc60aacb6ab9a",
+      "judge_required": true,
+      "note": "真正不可行：用户只去室内，池中 indoor 全为 false"
+    },
+    {
+      "id": "nanjing-1d-night-closed-negative",
+      "tier": "safety",
+      "allowed_outcomes": [
+        "CORRECT_REJECT",
+        "PARTIAL"
+      ],
+      "must_visit": [
+        "中山陵景区",
+        "南京牛首山文化旅游区"
+      ],
+      "expected_feasible": false,
+      "infeasible_reason": "opening_hours_deadlock：20:00-22:00 窗口内池内 5 个景点全部闭馆（最晚 17:30）",
+      "fixture_source": "v3",
+      "fixture_sha256": "5c01d588ccea79dfd1f2af23bab94a226c2df36c1edf1e2aabc6e7ea9a087ffd",
+      "judge_required": false,
+      "note": "营业时间不可行"
+    },
+    {
+      "id": "shanghai-1d-unavailable-poi-negative",
+      "tier": "safety",
+      "allowed_outcomes": [
+        "CORRECT_REJECT",
+        "PARTIAL"
+      ],
+      "must_visit": [
+        "上海天文馆"
+      ],
+      "expected_feasible": false,
+      "infeasible_reason": "required_poi_unavailable：点名景点不在冻结候选池内",
+      "fixture_source": "v3",
+      "fixture_sha256": "29cc20ca140bf3e79b7ba65a0dde9d1a15d4b2c7c3af0f89c6b02e1cbf0c8a00",
+      "judge_required": false,
+      "note": "池语义下的不可行；真实链路应由检索补全，属评测边界"
+    }
+  ]
+}

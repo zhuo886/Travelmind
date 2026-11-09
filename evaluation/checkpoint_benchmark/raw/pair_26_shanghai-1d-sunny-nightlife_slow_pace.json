@@ -1,0 +1,96 @@
+{
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "edit_type": "slow_pace",
+  "instruction": "整体改成慢节奏，每天最多安排2个景点，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 110.123,
+    "input_tokens": 4694,
+    "output_tokens": 404,
+    "llm_calls": 2,
+    "status": "FAILED",
+    "hard_pass": false,
+    "plan_generated": true,
+    "route_names": [
+      "上海海洋水族馆",
+      "外滩"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海海洋水族馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "18:00"
+          },
+          {
+            "name": "外滩",
+            "period": "evening",
+            "start_time": "19:30",
+            "end_time": "22:00"
+          }
+        ],
+        "theme": "海洋探索与都市夜景"
+      }
+    ],
+    "warnings": [],
+    "failure_codes": [
+      "unknown_poi"
+    ],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 35.651,
+    "input_tokens": 2444,
+    "output_tokens": 359,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "上海海洋水族馆",
+      "上海失恋博物馆"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海海洋水族馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          },
+          {
+            "name": "上海失恋博物馆",
+            "period": "evening",
+            "start_time": "19:00",
+            "end_time": "21:30"
+          }
+        ],
+        "theme": "室内夜景探索之旅"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】整体改成慢节奏，每天最多安排2个景点，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.5,
+    "B": 1.0
+  }
+}

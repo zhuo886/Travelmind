@@ -1,0 +1,27 @@
+{
+  "id": "challenge-06-overpacked",
+  "base_fixture": "nanjing-3d-sunny-history",
+  "injected_defect": "overpacked",
+  "expected_verdict": "reject",
+  "expected_keywords": ["上限", "过多", "拥挤", "紧凑", "每天"],
+  "expected_defect_codes": ["daily_capacity_exceeded"],
+  "label_source": "deterministic_injection",
+  "route": [
+    {"day": 1, "spots": [
+      {"name": "玄武湖景区", "start_time": "09:00", "end_time": "10:00"},
+      {"name": "中国科举博物馆(江南贡院)", "start_time": "10:30", "end_time": "11:30"},
+      {"name": "总统府", "start_time": "13:00", "end_time": "14:00"},
+      {"name": "古鸡鸣寺", "start_time": "14:30", "end_time": "15:30"},
+      {"name": "南京夫子庙", "start_time": "16:00", "end_time": "17:00"}
+    ]},
+    {"day": 2, "spots": [
+      {"name": "中山陵景区", "start_time": "10:00", "end_time": "12:30"},
+      {"name": "莲花广场", "start_time": "14:00", "end_time": "15:00"}
+    ]},
+    {"day": 3, "spots": [
+      {"name": "南京长江大桥", "start_time": "10:00", "end_time": "11:30"},
+      {"name": "江豚落日音乐广场", "start_time": "14:00", "end_time": "15:30"}
+    ]}
+  ],
+  "note": "Day1 塞入 5 个景点，超过 max_per_day=3；预期审核指出每日上限/节奏问题。"
+}

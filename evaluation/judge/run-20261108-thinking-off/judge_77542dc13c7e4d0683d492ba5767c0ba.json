@@ -1,0 +1,163 @@
+{
+  "trial_id": "77542dc13c7e4d0683d492ba5767c0ba",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 3,
+          "pacing": 4,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 4,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "Day1: 上海海洋水族馆(下午)",
+            "Day1: 上海城隍庙(晚上)"
+          ],
+          "pacing": [
+            "Day1: 14:00-16:30 上海海洋水族馆",
+            "Day1: 17:30-19:00 上海城隍庙"
+          ],
+          "geographic_coherence": [
+            "Day1: 上海海洋水族馆到上海城隍庙"
+          ],
+          "time_realism": [
+            "Day1: 14:00-16:30 上海海洋水族馆",
+            "Day1: 17:30-19:00 上海城隍庙"
+          ],
+          "completeness": [
+            "Day1: 上海海洋水族馆(14:00-16:30)",
+            "Day1: 上海城隍庙(17:30-19:00)"
+          ],
+          "diversity_and_dining": [
+            "Day1: 上海海洋水族馆",
+            "Day1: 上海城隍庙"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "路线包含下午和晚上的活动，符合用户'下午出发，喜欢夜间游览'的习惯。但缺少用户明确提到的'夜景、外滩、都市光影'相关景点。",
+          "pacing": "一天安排两个景点，时间分配合理，没有过满或过空的情况。",
+          "geographic_coherence": "从上海海洋水族馆到城隍庙有一定距离，但未提供具体位置信息，无法完全评估地理顺序的合理性。",
+          "time_realism": "每个景点的时间安排合理，符合一般游览时间，且考虑了用户下午出发的习惯。",
+          "completeness": "路线提供了景点名称和时间，但缺少交通方式和具体位置信息。",
+          "diversity_and_dining": "景点类型多样（水族馆和庙宇），但未安排餐饮（scope.meals=false，不扣分）。"
+        },
+        "flags": [],
+        "overall_comment": "路线基本符合用户习惯，但缺少用户明确偏好的夜景、外滩和都市光影相关景点。",
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 526,
+          "output_tokens": 468,
+          "total_tokens": 994,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 20859.167,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        },
+        "weighted_score": 74.0,
+        "cache_hit": false
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 3,
+          "pacing": 4,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 4,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "Day1: 上海海洋水族馆(下午)",
+            "Day1: 上海城隍庙(晚上)"
+          ],
+          "pacing": [
+            "Day1: 14:00-16:30 上海海洋水族馆",
+            "Day1: 17:30-19:00 上海城隍庙"
+          ],
+          "geographic_coherence": [
+            "Day1: 上海海洋水族馆到上海城隍庙"
+          ],
+          "time_realism": [
+            "Day1: 14:00-16:30 上海海洋水族馆",
+            "Day1: 17:30-19:00 上海城隍庙"
+          ],
+          "completeness": [
+            "Day1: 上海海洋水族馆(14:00-16:30)",
+            "Day1: 上海城隍庙(17:30-19:00)"
+          ],
+          "diversity_and_dining": [
+            "Day1: 上海海洋水族馆",
+            "Day1: 上海城隍庙"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "路线部分符合用户偏好(夜间游览)，但缺少外滩和都市光影体验。上海城隍庙在晚上开放，符合夜间游览偏好，但未包含用户明确提到的外滩和都市光影景点。",
+          "pacing": "一天的节奏较为合理，下午和晚上各有一个景点，时间安排适中，没有过于紧凑或松散。",
+          "geographic_coherence": "从上海海洋水族馆到城隍庙有一定距离，但未提供具体交通信息，无法完全评估地理连贯性。",
+          "time_realism": "时间安排现实，每个景点有足够的时间游览，且符合用户下午出发、夜间游览的习惯。",
+          "completeness": "路线信息基本完整，包含了景点名称和时间，但缺少交通方式和具体行程细节。",
+          "diversity_and_dining": "景点类型有一定多样性(水族馆和庙宇)，但餐饮评价不在范围内。体验多样性一般，缺少用户明确提到的外滩和都市光影体验。"
+        },
+        "flags": [
+          "missing_transport",
+          "other"
+        ],
+        "overall_comment": "路线基本符合用户偏好，但缺少用户明确提到的外滩和都市光影体验。时间安排合理，但地理连贯性有待评估。",
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 526,
+          "output_tokens": 507,
+          "total_tokens": 1033,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 37077.171,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        },
+        "weighted_score": 74.0,
+        "cache_hit": false
+      }
+    ],
+    "overall_mean": 74.0,
+    "dimension_mean": {
+      "preference_fit": 3.0,
+      "pacing": 4.0,
+      "geographic_coherence": 3.0,
+      "time_realism": 5.0,
+      "completeness": 4.0,
+      "diversity_and_dining": 3.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 6,
+      "within_one": 6,
+      "exact_rate": 1.0,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.0,
+      "quadratic_weighted_kappa": 1.0
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "missing_transport",
+      "other"
+    ],
+    "judge_calls": 2,
+    "replayed_calls": 0,
+    "judge_tokens_est": 2027,
+    "cache_hits": 0,
+    "errors": []
+  }
+}

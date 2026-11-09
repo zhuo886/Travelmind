@@ -1,0 +1,76 @@
+{
+  "version": "v1",
+  "frozen_at": "2026-11-06",
+  "cases": [
+    {
+      "id": "nanjing-3d-sunny-history",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": ["玄武湖景区"],
+      "must_avoid": [],
+      "note": "基准 3 天历史游"
+    },
+    {
+      "id": "nanjing-3d-singlerain-history",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": [],
+      "must_avoid": [],
+      "note": "单日雨的 3 天历史游"
+    },
+    {
+      "id": "nanjing-3d-tighthours-negative",
+      "allowed_outcomes": ["PARTIAL", "CORRECT_REJECT"],
+      "must_visit": [],
+      "must_avoid": [],
+      "note": "时间窗口不可行边界"
+    },
+    {
+      "id": "shanghai-1d-sunny-nightlife",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": ["上海海洋水族馆"],
+      "must_avoid": [],
+      "note": "1 天 + 夜景时段"
+    },
+    {
+      "id": "shanghai-3d-smallpool-negative",
+      "allowed_outcomes": ["SUCCESS_WITH_WARNINGS", "PARTIAL"],
+      "must_visit": [],
+      "must_avoid": [],
+      "note": "候选池不足"
+    },
+    {
+      "id": "shanghai-3d-beyond-forecast",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": [],
+      "must_avoid": [],
+      "note": "超出天气预报范围"
+    },
+    {
+      "id": "lijiang-5d-sunny-slowpace",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": ["束河古镇"],
+      "must_avoid": [],
+      "note": "5 天慢节奏"
+    },
+    {
+      "id": "lijiang-3d-allrain-history",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS", "PARTIAL"],
+      "must_visit": [],
+      "must_avoid": [],
+      "note": "全程雨"
+    },
+    {
+      "id": "sanya-3d-allrain-outdoor-negative",
+      "allowed_outcomes": ["PARTIAL", "CORRECT_REJECT"],
+      "must_visit": [],
+      "must_avoid": [],
+      "note": "雨天全露天负样本"
+    },
+    {
+      "id": "jingdezhen-3d-sunny-history",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": [],
+      "must_avoid": [],
+      "note": "小城分散型"
+    }
+  ]
+}

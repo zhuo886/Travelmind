@@ -1,0 +1,257 @@
+{
+  "total_trials": 6,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0
+  },
+  "effective_trials": 6,
+  "outcome_counts": {
+    "PARTIAL": 1,
+    "SUCCESS": 2,
+    "SUCCESS_WITH_WARNINGS": 3
+  },
+  "label_counts": {
+    "MATCH": 1,
+    "MISMATCH": 3,
+    "WRONG_ACCEPT": 2
+  },
+  "fdr": {
+    "num": 5,
+    "den": 6,
+    "value": 0.8333
+  },
+  "pdr": {
+    "num": 1,
+    "den": 6,
+    "value": 0.1667
+  },
+  "omr": {
+    "num": 1,
+    "den": 6,
+    "value": 0.1667
+  },
+  "hpr": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "fpr": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "oor": {
+    "outside": 0,
+    "references": 45,
+    "value": 0.0
+  },
+  "msr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "rounds": {
+    "mean": 0.333,
+    "snapshot_count_mean": 1.333
+  },
+  "soft_score": {
+    "mean": 77.5,
+    "n": 6
+  },
+  "latency_s": {
+    "n": 6,
+    "median": 223.955,
+    "min": 72.863,
+    "max": 527.128,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "node_latency_ms": {
+    "planner": {
+      "n": 6,
+      "median": 126644.791,
+      "max": 321544.3
+    },
+    "snapshot_gate": {
+      "n": 6,
+      "median": 2.542,
+      "max": 6.5
+    },
+    "reviewer": {
+      "n": 4,
+      "median": 80613.925,
+      "max": 160506.5
+    },
+    "snapshot_reviewer": {
+      "n": 4,
+      "median": 3.734,
+      "max": 12.0
+    },
+    "time_check": {
+      "n": 2,
+      "median": 86704.417,
+      "max": 126227.3
+    },
+    "snapshot_time_check": {
+      "n": 2,
+      "median": 2.866,
+      "max": 4.5
+    }
+  },
+  "tool_calls": {
+    "candidate_api_calls_mean": 0.0,
+    "route_leg_count_mean": 0.0
+  },
+  "usage": {
+    "input_tokens_est_mean": 5754.3,
+    "output_tokens_est_mean": 2231.3,
+    "llm_calls_mean": 2.67
+  },
+  "by_case": {
+    "nanjing-3d-tighthours-negative": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 0,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 3,
+        "value": 0.0
+      },
+      "median_latency_s": 158.966,
+      "soft_score_mean": 94.67,
+      "input_tokens_est_mean": 2570.7,
+      "output_tokens_est_mean": 1508.3,
+      "total_tokens_est_mean": 4079.0,
+      "llm_calls_mean": 2.0
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 1,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 3,
+        "value": 0.3333
+      },
+      "median_latency_s": 298.717,
+      "soft_score_mean": 60.33,
+      "input_tokens_est_mean": 8938.0,
+      "output_tokens_est_mean": 2954.3,
+      "total_tokens_est_mean": 11892.3,
+      "llm_calls_mean": 3.33
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 2,
+      "generated": 2,
+      "hard_pass": 2,
+      "match": 1,
+      "hpr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 2,
+        "value": 0.5
+      },
+      "median_latency_s": 94.057,
+      "soft_score_mean": 72.0,
+      "input_tokens_est_mean": 1892.5,
+      "output_tokens_est_mean": 1345.5,
+      "total_tokens_est_mean": 3238.0,
+      "llm_calls_mean": 1.0
+    },
+    "planner_reviewer": {
+      "trials": 2,
+      "generated": 2,
+      "hard_pass": 2,
+      "match": 0,
+      "hpr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 2,
+        "value": 0.0
+      },
+      "median_latency_s": 228.841,
+      "soft_score_mean": 82.0,
+      "input_tokens_est_mean": 7306.0,
+      "output_tokens_est_mean": 2315.0,
+      "total_tokens_est_mean": 9621.0,
+      "llm_calls_mean": 3.0
+    },
+    "planner_reviewer_time_check": {
+      "trials": 2,
+      "generated": 2,
+      "hard_pass": 2,
+      "match": 0,
+      "hpr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 2,
+        "value": 0.0
+      },
+      "median_latency_s": 408.036,
+      "soft_score_mean": 78.5,
+      "input_tokens_est_mean": 8064.5,
+      "output_tokens_est_mean": 3033.5,
+      "total_tokens_est_mean": 11098.0,
+      "llm_calls_mean": 4.0
+    }
+  },
+  "pass_at_k": {
+    "nanjing-3d-tighthours-negative": {
+      "k": 3,
+      "outcome_pass_at_k": false,
+      "outcome_pass_pow_k": false
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 1,
+    "den": 2,
+    "value": 0.5
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 0,
+    "den": 2,
+    "value": 0.0
+  }
+}

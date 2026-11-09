@@ -1,0 +1,125 @@
+{
+  "trial_id": "3312ec57385a4a04a862dc61dcd84bef",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": false,
+  "status": "FAILED",
+  "hard_pass": false,
+  "l0_codes": [
+    "unknown_poi"
+  ],
+  "l1_codes": [],
+  "first_draft_l0": [
+    "unknown_poi"
+  ],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 87.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [
+        "unknown_poi"
+      ],
+      "l1_codes": [],
+      "defect_count": 1,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "aef57e9194961485",
+      "spot_names": [
+        "上海海洋水族馆",
+        "外滩"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": null,
+  "warnings": [],
+  "route_names": [
+    "上海海洋水族馆",
+    "外滩"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        },
+        {
+          "name": "外滩",
+          "period": "evening",
+          "start": "18:00",
+          "end": "21:00"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [],
+  "delivered_route_by_day": [],
+  "oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "must_visit_expected": [
+    "上海海洋水族馆"
+  ],
+  "must_visit_ok": false,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 44.863,
+  "node_latency_ms": {
+    "planner": 44814.168,
+    "snapshot_gate": 3.848
+  },
+  "input_tokens_est": 2403,
+  "output_tokens_est": 327,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [
+    "unknown_poi"
+  ],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": false,
+  "draft_soft_score": 87.0,
+  "draft_oor": {
+    "outside": 1,
+    "total": 2
+  },
+  "expectations_evaluated": false,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "FAILED",
+  "benchmark_label": "OVER_REJECT",
+  "expected_outcome_match": false,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

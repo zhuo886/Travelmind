@@ -1,0 +1,43 @@
+{
+  "key": "8305095022f9d40f45a17b8fd157e2c76628e4fed380029b19d7e3fb6fa83591",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "bf36a5150252a233b60add0a7e59d2ad06d92a6a8f8a6c8e0de0d0a3e2e3f03e",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 5,
+    "time_realism": 2,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Days 2-3 match seaside preference (天涯海角, 三亚湾, 亚龙湾), but Day 1 cultural attractions don't match",
+    "pacing": "3.5-4 hour intervals between activities provide reasonable rest time",
+    "geographic_coherence": "Excellent geographic grouping by area each day",
+    "time_realism": "Ignores 3-day moderate rain forecast which would make outdoor activities impossible",
+    "completeness": "Missing transport, meals, weather contingencies, accommodation details",
+    "diversity_and_dining": "No dining considerations, limited activity diversity"
+  },
+  "flags": [
+    "weather_impact",
+    "missing_contingencies",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary has good geographic coherence and pacing but fails to account for bad weather and lacks essential details like transportation and dining. The preference fit is mixed with Day 1 not matching the user's seaside preference.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 702,
+    "output_tokens": 490,
+    "total_tokens": 1192,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 78609.922,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

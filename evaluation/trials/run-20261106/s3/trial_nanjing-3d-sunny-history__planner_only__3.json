@@ -1,0 +1,53 @@
+{
+  "trial_id": "29f4e1c6cd0c4ccf90efd82207c6b578",
+  "case_id": "nanjing-3d-sunny-history",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "opening_time_conflict",
+    "habit_constraint",
+    "closed_on_visit_day"
+  ],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "soft_score": 77.0,
+  "oor": {
+    "outside": 0,
+    "total": 7
+  },
+  "must_visit_expected": [
+    "玄武湖景区"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 114.075,
+  "node_latency_ms": {
+    "planner": 114000.776,
+    "snapshot_gate": 2.551
+  },
+  "input_tokens_est": 2048,
+  "output_tokens_est": 1358,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

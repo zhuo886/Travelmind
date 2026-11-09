@@ -1,0 +1,2743 @@
+{
+  "generated_at": "2026-11-08T14:29:15.974652+00:00",
+  "cases": 4,
+  "success": 2,
+  "errors": 0,
+  "records": [
+    {
+      "case_id": "chengdu-weekend-tea",
+      "query": "成都周末两天，想泡茶馆吃火锅，明天中午开始",
+      "focus": "相对日期解析 + 餐饮/偏好",
+      "success": true,
+      "status": "PARTIAL_SUCCESS",
+      "days": 2,
+      "spots": [
+        "空山茶事·三国馆",
+        "成都武侯祠博物馆",
+        "交子金融博物馆",
+        "四川大学博物馆",
+        "成都杜甫草堂博物馆",
+        "水井坊博物馆"
+      ],
+      "spot_count": 6,
+      "route_issues": [
+        "Day1 翠孃孃老火锅(春熙路老店) 与 成都武侯祠博物馆 的游玩/餐饮时间重叠",
+        "Day1 景点与餐饮衔接时间不足：空山茶事·三国馆→翠孃孃老火锅(春熙路老店)，预留 0 分钟，已核验通勤需 10 分钟",
+        "Day2 景点与餐饮衔接时间不足：四川大学博物馆→川西坝子火锅(交子大道3.0直营店)，预留 0 分钟，已核验通勤需 22 分钟",
+        "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突",
+        "Day1行程路线有折返，建议调整景点顺序以减少不必要的往返"
+      ],
+      "plan": {
+        "candidate_pool": {
+          "status": "insufficient",
+          "missing_coverage": [
+            "diversity"
+          ],
+          "coverage": {
+            "count": 26,
+            "required_count": 6,
+            "indoor": 13,
+            "outdoor": 0,
+            "required_indoor": 0,
+            "unknown_type": 13,
+            "requested_count": 0,
+            "requested_hits": 0,
+            "regions": 8,
+            "categories": 10
+          },
+          "search_rounds": 1,
+          "api_calls": 4,
+          "effective_api_budget": 4
+        },
+        "query": "成都周末两天，想泡茶馆吃火锅，明天中午开始",
+        "destination": "成都",
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-10",
+        "days_count": 2,
+        "preferences": {
+          "attraction": null,
+          "food": "火锅",
+          "habit": null
+        },
+        "approved": true,
+        "status": "PARTIAL_SUCCESS",
+        "warnings": [
+          "Day1 翠孃孃老火锅(春熙路老店) 与 成都武侯祠博物馆 的游玩/餐饮时间重叠",
+          "Day1 景点与餐饮衔接时间不足：空山茶事·三国馆→翠孃孃老火锅(春熙路老店)，预留 0 分钟，已核验通勤需 10 分钟",
+          "Day2 景点与餐饮衔接时间不足：四川大学博物馆→川西坝子火锅(交子大道3.0直营店)，预留 0 分钟，已核验通勤需 22 分钟",
+          "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突",
+          "Day1行程路线有折返，建议调整景点顺序以减少不必要的往返",
+          "Day1空山茶事·三国馆→武侯祠博物馆→交子金融博物馆存在折返路线，建议调整顺序减少不必要的往返。"
+        ],
+        "failure_reasons": [],
+        "score_info": {
+          "final_score": 87.0,
+          "selected_iteration": 1,
+          "breakdown": {
+            "named_poi": 20.0,
+            "pace": 20.0,
+            "continuity": 15.0,
+            "weather": 15.0,
+            "preference_match": 15.0,
+            "diversity_and_dining": 2.0
+          }
+        },
+        "review_rounds": 3,
+        "audit_policy": {
+          "review_skipped": false,
+          "review_required": true,
+          "time_check_required": true,
+          "risk_score": 4,
+          "risk_flags": [
+            "opening_time_conflict",
+            "user_modification",
+            "meal_overlap",
+            "invalid_time_slot"
+          ]
+        },
+        "weather_forecast": [
+          {
+            "date": "2026-11-09",
+            "day_weather": "阴",
+            "night_weather": "阴",
+            "day_temp": "18",
+            "night_temp": "8",
+            "is_bad": false
+          },
+          {
+            "date": "2026-11-10",
+            "day_weather": "多云",
+            "night_weather": "阴",
+            "day_temp": "18",
+            "night_temp": "7",
+            "is_bad": false
+          }
+        ],
+        "weather_note": null,
+        "meal_planning": {
+          "status": "ok",
+          "duration_min": 60,
+          "slots": [
+            {
+              "day": 1,
+              "meal": "lunch",
+              "restaurant_name": "翠孃孃老火锅(春熙路老店)",
+              "start_time": "13:30",
+              "end_time": "14:30",
+              "duration_min": 60,
+              "reason": "火锅偏好，评分高"
+            },
+            {
+              "day": 1,
+              "meal": "dinner",
+              "restaurant_name": "皇城老妈火锅(皇城店)",
+              "start_time": "18:30",
+              "end_time": "19:30",
+              "duration_min": 60,
+              "reason": "传统火锅，位置便利"
+            },
+            {
+              "day": 2,
+              "meal": "lunch",
+              "restaurant_name": "川西坝子火锅(交子大道3.0直营店)",
+              "start_time": "12:00",
+              "end_time": "13:00",
+              "duration_min": 60,
+              "reason": "川菜火锅，评分高"
+            },
+            {
+              "day": 2,
+              "meal": "dinner",
+              "restaurant_name": "龙户人家串串香火锅(成都新街里店)",
+              "start_time": "18:30",
+              "end_time": "19:30",
+              "duration_min": 60,
+              "reason": "串串火锅，评分高"
+            }
+          ]
+        },
+        "route_issues": [
+          "Day1 翠孃孃老火锅(春熙路老店) 与 成都武侯祠博物馆 的游玩/餐饮时间重叠",
+          "Day1 景点与餐饮衔接时间不足：空山茶事·三国馆→翠孃孃老火锅(春熙路老店)，预留 0 分钟，已核验通勤需 10 分钟",
+          "Day2 景点与餐饮衔接时间不足：四川大学博物馆→川西坝子火锅(交子大道3.0直营店)，预留 0 分钟，已核验通勤需 22 分钟",
+          "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突",
+          "Day1行程路线有折返，建议调整景点顺序以减少不必要的往返",
+          "Day1空山茶事·三国馆→武侯祠博物馆→交子金融博物馆存在折返路线，建议调整顺序减少不必要的往返。"
+        ],
+        "service_status": {
+          "semantic_memory": "not_requested",
+          "time_check": "ok",
+          "meal_search": "ok",
+          "meal_recommend": "ok",
+          "spot_tips": "ok",
+          "main_meal_search": "ok"
+        },
+        "degraded_services": [],
+        "days": [
+          {
+            "day": 1,
+            "date": "2026-11-09",
+            "theme": "三国文化与金融历史",
+            "timeline": [
+              {
+                "type": "hotel",
+                "name": "全季酒店(成都太古里滨江路店)",
+                "location": {
+                  "lng": 104.079353,
+                  "lat": 30.645577
+                },
+                "address": "滨江东路162号(近新南门地铁站)",
+                "tel": "028-84783777;19981240425",
+                "rating": 4.4,
+                "cost": null,
+                "hotel_info": {
+                  "name": "全季酒店(成都太古里滨江路店)",
+                  "location": {
+                    "lng": 104.079353,
+                    "lat": 30.645577
+                  },
+                  "address": "滨江东路162号(近新南门地铁站)",
+                  "tel": "028-84783777;19981240425",
+                  "rating": 4.4,
+                  "nightly_price": null,
+                  "nights": 1,
+                  "estimated_total": null,
+                  "price_source": "本次高德酒店查询未返回价格",
+                  "note": "按连锁酒店候选中本次可见价格优先推荐；房价会随日期、房型和入住人数变化，请在预订页复核。",
+                  "anchor_source": "recommended"
+                }
+              },
+              {
+                "type": "attraction",
+                "name": "空山茶事·三国馆",
+                "start_time": "12:00",
+                "end_time": "13:30",
+                "period": "morning",
+                "rating": 4.6,
+                "open_time": "周一至周日 09:00-22:00",
+                "photo": "https://aos-comment.amap.com/B0JRZ53JMX/comment/29666d709df137d9e68df1a87b99ffce_2048_2048_80.jpg",
+                "location": {
+                  "lng": 104.057976,
+                  "lat": 30.670428
+                },
+                "tip": null,
+                "guide": null,
+                "address": "过街楼街115号附1号",
+                "tel": "19308203402",
+                "cost": 60.0,
+                "ticket_info": {
+                  "price": 60.0,
+                  "price_label": "本次高德参考价 ¥60",
+                  "source_name": "高德地点实时查询",
+                  "source_url": null,
+                  "verified_at": "2026-11-08",
+                  "live_query": true,
+                  "pricing_basis": "amap_live",
+                  "note": "第三方地点数据，购票前请到景区官方渠道复核。"
+                },
+                "travel_from_prev": {
+                  "mode": "transit",
+                  "mode_label": "地铁/公交",
+                  "distance_km": 6.6,
+                  "duration_min": 37,
+                  "estimated_cost": 3.0,
+                  "instruction": "步行约 778m → 地铁13号线（新南门上车，小南街下车） → 步行约 151m → 地铁17号线（小南街上车，西大街下车） → 步行约 449m",
+                  "steps": [
+                    "步行约 778m",
+                    "地铁13号线（新南门上车，小南街下车）",
+                    "步行约 151m",
+                    "地铁17号线（小南街上车，西大街下车）",
+                    "步行约 449m"
+                  ],
+                  "transit_lines": [
+                    {
+                      "name": "地铁13号线",
+                      "departure_stop": "新南门",
+                      "arrival_stop": "小南街"
+                    },
+                    {
+                      "name": "地铁17号线",
+                      "departure_stop": "小南街",
+                      "arrival_stop": "西大街"
+                    }
+                  ],
+                  "source": "amap",
+                  "estimate": false,
+                  "from": "全季酒店(成都太古里滨江路店)",
+                  "to": "空山茶事·三国馆"
+                },
+                "dist_from_prev_km": 6.6
+              },
+              {
+                "type": "lunch",
+                "name": "翠孃孃老火锅(春熙路老店)",
+                "start_time": "13:30",
+                "end_time": "14:30",
+                "duration_min": 60,
+                "reason": "火锅偏好，评分高",
+                "cost": 102.0,
+                "rating": 4.7,
+                "keytag": "餐饮服务;中餐厅;火锅店",
+                "location": {
+                  "lng": 104.078075,
+                  "lat": 30.661312
+                },
+                "address": "永兴巷15号附1号(熊猫邮局旁50米)",
+                "photo": "https://store.is.autonavi.com/showpic/88678c30257f9168423b01e063561dd0",
+                "open_time": "周一至周日 11:00-01:00",
+                "tel": "15328052249;18140097359",
+                "category": "火锅店",
+                "cost_info": {
+                  "estimate": false,
+                  "source_name": "本次高德餐饮查询",
+                  "observed_at": "2026-11-08",
+                  "price_label": "高德人均 ¥102"
+                },
+                "travel_from_prev": {
+                  "from": "空山茶事·三国馆",
+                  "to": "翠孃孃老火锅(春熙路老店)",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 2.98,
+                  "duration_min": 10,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 2.98 km，约 10 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 2.98
+              },
+              {
+                "type": "attraction",
+                "name": "成都武侯祠博物馆",
+                "start_time": "14:00",
+                "end_time": "16:00",
+                "period": "afternoon",
+                "rating": 4.8,
+                "open_time": "周一至周日 09:00-18:00",
+                "photo": "http://store.is.autonavi.com/showpic/2a74b5da7192e4628a9bdcc368e002ac",
+                "location": {
+                  "lng": 104.047992,
+                  "lat": 30.646168
+                },
+                "tip": null,
+                "guide": null,
+                "address": "武侯祠大街231号",
+                "tel": "028-85535951",
+                "cost": null,
+                "travel_from_prev": {
+                  "from": "翠孃孃老火锅(春熙路老店)",
+                  "to": "成都武侯祠博物馆",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 5.45,
+                  "duration_min": 20,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 5.45 km，约 20 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 5.45
+              },
+              {
+                "type": "attraction",
+                "name": "交子金融博物馆",
+                "start_time": "16:30",
+                "end_time": "18:00",
+                "period": "afternoon",
+                "rating": 4.5,
+                "open_time": "周一 全天关闭；周二至周日 09:00-17:00 最晚进入16:30",
+                "photo": "https://comment-oss-online.oss-cn-wulanchabu.aliyuncs.com/B0H1YHVHFK/comment/content_media_external_images_media_524664_c3.jpg",
+                "location": {
+                  "lng": 104.076625,
+                  "lat": 30.582839
+                },
+                "tip": null,
+                "guide": null,
+                "address": "桂溪街道桂溪街道锦云东二巷",
+                "tel": "028-60106006",
+                "cost": null,
+                "travel_from_prev": {
+                  "from": "成都武侯祠博物馆",
+                  "to": "交子金融博物馆",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 9.37,
+                  "duration_min": 24,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 9.37 km，约 24 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 9.37
+              },
+              {
+                "type": "dinner",
+                "name": "皇城老妈火锅(皇城店)",
+                "start_time": "18:30",
+                "end_time": "19:30",
+                "duration_min": 60,
+                "reason": "传统火锅，位置便利",
+                "cost": 115.0,
+                "rating": 4.8,
+                "keytag": "餐饮服务;中餐厅;火锅店",
+                "location": {
+                  "lng": 104.052475,
+                  "lat": 30.621677
+                },
+                "address": "二环路南三段20号",
+                "photo": "https://store.is.autonavi.com/showpic/fb6a373869d341850000006913004726?type=pic",
+                "open_time": "周一至周日 11:00-23:00",
+                "tel": "028-85139999",
+                "category": "火锅店",
+                "cost_info": {
+                  "estimate": false,
+                  "source_name": "本次高德餐饮查询",
+                  "observed_at": "2026-11-08",
+                  "price_label": "高德人均 ¥115"
+                },
+                "travel_from_prev": {
+                  "mode": "transit",
+                  "mode_label": "地铁/公交",
+                  "distance_km": 11.98,
+                  "duration_min": 61,
+                  "estimated_cost": 4.0,
+                  "instruction": "步行约 1219m → 地铁6号线（金融城东上车，东光下车） → 步行约 134m → 地铁8号线（东光上车，芳草街下车） → 步行约 837m",
+                  "steps": [
+                    "步行约 1219m",
+                    "地铁6号线（金融城东上车，东光下车）",
+                    "步行约 134m",
+                    "地铁8号线（东光上车，芳草街下车）",
+                    "步行约 837m"
+                  ],
+                  "transit_lines": [
+                    {
+                      "name": "地铁6号线",
+                      "departure_stop": "金融城东",
+                      "arrival_stop": "东光"
+                    },
+                    {
+                      "name": "地铁8号线",
+                      "departure_stop": "东光",
+                      "arrival_stop": "芳草街"
+                    }
+                  ],
+                  "source": "amap",
+                  "estimate": false,
+                  "from": "交子金融博物馆",
+                  "to": "皇城老妈火锅(皇城店)"
+                },
+                "dist_from_prev_km": 11.98
+              }
+            ],
+            "budget": {
+              "currency": "CNY",
+              "unit": "per_person",
+              "ticket_known": 60.0,
+              "meal_known": 217.0,
+              "meal_estimated": 0.0,
+              "transport_estimated": 7.0,
+              "known_subtotal": 284.0,
+              "estimated_subtotal": 284.0,
+              "unknown_items": [
+                "成都武侯祠博物馆门票",
+                "交子金融博物馆门票"
+              ],
+              "note": "按人估算；餐厅缺价时采用附近中位数或品类基线，实际支付可能浮动。"
+            },
+            "mobility_advice": "当天存在多段跨区路线，建议比较打车总价、租车日租价和停车条件。"
+          },
+          {
+            "day": 2,
+            "date": "2026-11-10",
+            "theme": "学术文化与酒文化体验",
+            "timeline": [
+              {
+                "type": "hotel",
+                "name": "全季酒店(成都太古里滨江路店)",
+                "location": {
+                  "lng": 104.079353,
+                  "lat": 30.645577
+                },
+                "address": "滨江东路162号(近新南门地铁站)",
+                "tel": "028-84783777;19981240425",
+                "rating": 4.4,
+                "cost": null,
+                "hotel_info": {
+                  "name": "全季酒店(成都太古里滨江路店)",
+                  "location": {
+                    "lng": 104.079353,
+                    "lat": 30.645577
+                  },
+                  "address": "滨江东路162号(近新南门地铁站)",
+                  "tel": "028-84783777;19981240425",
+                  "rating": 4.4,
+                  "nightly_price": null,
+                  "nights": 1,
+                  "estimated_total": null,
+                  "price_source": "本次高德酒店查询未返回价格",
+                  "note": "按连锁酒店候选中本次可见价格优先推荐；房价会随日期、房型和入住人数变化，请在预订页复核。",
+                  "anchor_source": "recommended"
+                }
+              },
+              {
+                "type": "attraction",
+                "name": "四川大学博物馆",
+                "start_time": "10:00",
+                "end_time": "12:00",
+                "period": "morning",
+                "rating": 4.7,
+                "open_time": "1/1-12/31 周一 全天不开放；1/1-12/31 周二–周日 09:00–17:00开放 最晚进入16:30；元旦节,春节,清明节,劳动节,端午节,中秋节,国庆节 09:00–17:00开放 最晚进入16:30",
+                "photo": "http://store.is.autonavi.com/showpic/a6c4480be43ab487e7d819b7419bf011",
+                "location": {
+                  "lng": 104.090711,
+                  "lat": 30.636303
+                },
+                "tip": null,
+                "guide": null,
+                "address": "望江路19号",
+                "tel": "028-85412313",
+                "cost": null,
+                "travel_from_prev": {
+                  "mode": "transit",
+                  "mode_label": "地铁/公交",
+                  "distance_km": 2.43,
+                  "duration_min": 26,
+                  "estimated_cost": 2.0,
+                  "instruction": "步行约 778m → 地铁13号线（新南门上车，九眼桥下车） → 步行约 480m",
+                  "steps": [
+                    "步行约 778m",
+                    "地铁13号线（新南门上车，九眼桥下车）",
+                    "步行约 480m"
+                  ],
+                  "transit_lines": [
+                    {
+                      "name": "地铁13号线",
+                      "departure_stop": "新南门",
+                      "arrival_stop": "九眼桥"
+                    }
+                  ],
+                  "source": "amap",
+                  "estimate": false,
+                  "from": "全季酒店(成都太古里滨江路店)",
+                  "to": "四川大学博物馆"
+                },
+                "dist_from_prev_km": 2.43
+              },
+              {
+                "type": "lunch",
+                "name": "川西坝子火锅(交子大道3.0直营店)",
+                "start_time": "12:00",
+                "end_time": "13:00",
+                "duration_min": 60,
+                "reason": "川菜火锅，评分高",
+                "cost": 106.0,
+                "rating": 4.8,
+                "keytag": "餐饮服务;中餐厅;四川菜(川菜)|餐饮服务;中餐厅;火锅店",
+                "location": {
+                  "lng": 104.052216,
+                  "lat": 30.582602
+                },
+                "address": "交子大道456号(交子大道地铁站D口步行130米)",
+                "photo": "http://store.is.autonavi.com/showpic/c0aae8d4e8c02711f4a52532fcb71d34",
+                "open_time": "周一至周日 10:30-24:00",
+                "tel": "028-87766517",
+                "category": "火锅店",
+                "cost_info": {
+                  "estimate": false,
+                  "source_name": "本次高德餐饮查询",
+                  "observed_at": "2026-11-08",
+                  "price_label": "高德人均 ¥106"
+                },
+                "travel_from_prev": {
+                  "from": "四川大学博物馆",
+                  "to": "川西坝子火锅(交子大道3.0直营店)",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 9.14,
+                  "duration_min": 22,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 9.14 km，约 22 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 9.14
+              },
+              {
+                "type": "attraction",
+                "name": "成都杜甫草堂博物馆",
+                "start_time": "13:30",
+                "end_time": "16:00",
+                "period": "afternoon",
+                "rating": 4.8,
+                "open_time": "周一至周日 09:00-18:00",
+                "photo": "http://store.is.autonavi.com/showpic/afa4c7dfa19bb60e18618913136bda7d",
+                "location": {
+                  "lng": 104.028514,
+                  "lat": 30.660153
+                },
+                "tip": null,
+                "guide": null,
+                "address": "青华路37号",
+                "tel": "028-68921800;028-87345202;028-87327392",
+                "cost": null,
+                "travel_from_prev": {
+                  "from": "川西坝子火锅(交子大道3.0直营店)",
+                  "to": "成都杜甫草堂博物馆",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 11.41,
+                  "duration_min": 21,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 11.41 km，约 21 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 11.41
+              },
+              {
+                "type": "attraction",
+                "name": "水井坊博物馆",
+                "start_time": "16:30",
+                "end_time": "18:00",
+                "period": "evening",
+                "rating": 4.5,
+                "open_time": "周一至周日 09:00-17:30 最晚进入16:30",
+                "photo": "http://store.is.autonavi.com/showpic/9c0fd7370600b68d6e4e40d7fb6a2c1e",
+                "location": {
+                  "lng": 104.086085,
+                  "lat": 30.645047
+                },
+                "tip": null,
+                "guide": null,
+                "address": "水井坊街道水井街19-25号",
+                "tel": "028-84436999;028-84430666",
+                "cost": null,
+                "travel_from_prev": {
+                  "from": "成都杜甫草堂博物馆",
+                  "to": "水井坊博物馆",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 8.56,
+                  "duration_min": 21,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 8.56 km，约 21 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 8.56
+              },
+              {
+                "type": "dinner",
+                "name": "龙户人家串串香火锅(成都新街里店)",
+                "start_time": "18:30",
+                "end_time": "19:30",
+                "duration_min": 60,
+                "reason": "串串火锅，评分高",
+                "cost": 82.0,
+                "rating": 4.9,
+                "keytag": "餐饮服务;中餐厅;火锅店",
+                "location": {
+                  "lng": 104.055386,
+                  "lat": 30.591022
+                },
+                "address": "荟锦路166号2楼",
+                "photo": "https://store.is.autonavi.com/showpic/a016f01727e3ae0a0000003219906309?type=pic",
+                "open_time": "周一至周日 11:00-02:00",
+                "tel": "15678422140;19108030634",
+                "category": "火锅店",
+                "cost_info": {
+                  "estimate": false,
+                  "source_name": "本次高德餐饮查询",
+                  "observed_at": "2026-11-08",
+                  "price_label": "高德人均 ¥82"
+                },
+                "travel_from_prev": {
+                  "mode": "transit",
+                  "mode_label": "地铁/公交",
+                  "distance_km": 11.35,
+                  "duration_min": 55,
+                  "estimated_cost": 4.0,
+                  "instruction": "步行约 686m → 地铁2号线（东门大桥上车，天府广场下车） → 步行约 110m → 地铁1号线（天府广场上车，高新下车） → 步行约 1137m",
+                  "steps": [
+                    "步行约 686m",
+                    "地铁2号线（东门大桥上车，天府广场下车）",
+                    "步行约 110m",
+                    "地铁1号线（天府广场上车，高新下车）",
+                    "步行约 1137m"
+                  ],
+                  "transit_lines": [
+                    {
+                      "name": "地铁2号线",
+                      "departure_stop": "东门大桥",
+                      "arrival_stop": "天府广场"
+                    },
+                    {
+                      "name": "地铁1号线",
+                      "departure_stop": "天府广场",
+                      "arrival_stop": "高新"
+                    }
+                  ],
+                  "source": "amap",
+                  "estimate": false,
+                  "from": "水井坊博物馆",
+                  "to": "龙户人家串串香火锅(成都新街里店)"
+                },
+                "dist_from_prev_km": 11.35
+              }
+            ],
+            "budget": {
+              "currency": "CNY",
+              "unit": "per_person",
+              "ticket_known": 0.0,
+              "meal_known": 188.0,
+              "meal_estimated": 0.0,
+              "transport_estimated": 6.0,
+              "known_subtotal": 194.0,
+              "estimated_subtotal": 194.0,
+              "unknown_items": [
+                "四川大学博物馆门票",
+                "成都杜甫草堂博物馆门票",
+                "水井坊博物馆门票"
+              ],
+              "note": "按人估算；餐厅缺价时采用附近中位数或品类基线，实际支付可能浮动。"
+            },
+            "mobility_advice": "当天存在多段跨区路线，建议比较打车总价、租车日租价和停车条件。"
+          }
+        ],
+        "meal_slots": [
+          {
+            "day": 1,
+            "meal": "lunch",
+            "restaurant_name": "翠孃孃老火锅(春熙路老店)",
+            "start_time": "13:30",
+            "end_time": "14:30",
+            "duration_min": 60,
+            "reason": "火锅偏好，评分高"
+          },
+          {
+            "day": 1,
+            "meal": "dinner",
+            "restaurant_name": "皇城老妈火锅(皇城店)",
+            "start_time": "18:30",
+            "end_time": "19:30",
+            "duration_min": 60,
+            "reason": "传统火锅，位置便利"
+          },
+          {
+            "day": 2,
+            "meal": "lunch",
+            "restaurant_name": "川西坝子火锅(交子大道3.0直营店)",
+            "start_time": "12:00",
+            "end_time": "13:00",
+            "duration_min": 60,
+            "reason": "川菜火锅，评分高"
+          },
+          {
+            "day": 2,
+            "meal": "dinner",
+            "restaurant_name": "龙户人家串串香火锅(成都新街里店)",
+            "start_time": "18:30",
+            "end_time": "19:30",
+            "duration_min": 60,
+            "reason": "串串火锅，评分高"
+          }
+        ],
+        "hotel": {
+          "name": "全季酒店(成都太古里滨江路店)",
+          "location": {
+            "lng": 104.079353,
+            "lat": 30.645577
+          },
+          "address": "滨江东路162号(近新南门地铁站)",
+          "tel": "028-84783777;19981240425",
+          "rating": 4.4,
+          "nightly_price": null,
+          "nights": 1,
+          "estimated_total": null,
+          "price_source": "本次高德酒店查询未返回价格",
+          "note": "按连锁酒店候选中本次可见价格优先推荐；房价会随日期、房型和入住人数变化，请在预订页复核。",
+          "anchor_source": "recommended"
+        },
+        "budget_summary": {
+          "currency": "CNY",
+          "unit": "per_person",
+          "ticket_known": 60.0,
+          "meal_known": 405.0,
+          "meal_estimated": 0.0,
+          "transport_estimated": 13.0,
+          "known_subtotal": 478.0,
+          "estimated_subtotal": 478.0,
+          "unknown_items": [
+            "成都武侯祠博物馆门票",
+            "交子金融博物馆门票",
+            "四川大学博物馆门票",
+            "成都杜甫草堂博物馆门票",
+            "水井坊博物馆门票"
+          ],
+          "lodging_nightly": null,
+          "lodging_nights": 1,
+          "lodging_estimated_total": null,
+          "note": "按人估算；门票来自本次实时网页查询，未知价格未计入合计。"
+        },
+        "candidate_spots": [
+          {
+            "name": "麓镇山顶广场",
+            "rating": 4.5,
+            "open_time": "周一至周日 00:00-24:00",
+            "location": {
+              "lng": 104.094867,
+              "lat": 30.482027
+            },
+            "photo": "https://aos-comment.amap.com/B0FFFDYUFR/comment/6005f3366c10f04237beaee49dcceeef_2048_2048_80.jpg",
+            "address": "柳湖街与云山路交叉口南80米"
+          },
+          {
+            "name": "新华公园",
+            "rating": 4.7,
+            "open_time": "周一至周日 00:00-24:00",
+            "location": {
+              "lng": 104.105629,
+              "lat": 30.656332
+            },
+            "photo": "http://store.is.autonavi.com/showpic/7d77428b141b16de96515fa71dfbb4fb",
+            "address": "双林路87号"
+          },
+          {
+            "name": "立巢航空博物馆",
+            "rating": 4.6,
+            "open_time": "周一至周日 10:00-18:00 最晚进入17:30",
+            "location": {
+              "lng": 104.060695,
+              "lat": 30.569163
+            },
+            "photo": "http://store.is.autonavi.com/showpic/3b3b3c2bb8ebd64f1a8063f1cb8a27c7",
+            "address": "天府大道1700号环球中心D馆"
+          },
+          {
+            "name": "三和老爷车博物馆",
+            "rating": 4.7,
+            "open_time": "1/1-12/31 周二–周日 09:00–17:00开放 最晚进入16:00；1/1-12/31 周一 全天不开放；劳动节,端午节,中秋节,国庆节 09:00–17:00开放 最晚进入16:00",
+            "location": {
+              "lng": 104.04128,
+              "lat": 30.597103
+            },
+            "photo": "http://store.is.autonavi.com/showpic/9cd73a665380723fe71c958289f78788",
+            "address": "机场路新加坡工业园区新园南一路2号"
+          },
+          {
+            "name": "Paulmann柏曼灯具(成都旗舰店)",
+            "rating": 4.6,
+            "open_time": "周一至周日 10:00-18:00",
+            "location": {
+              "lng": 104.025564,
+              "lat": 30.607808
+            },
+            "photo": "https://aos-comment.amap.com/B0I1MUCV7D/comment/IMG_20241119_150849_tem_1732000187729_42541516.jpg",
+            "address": "华兴街道太平寺西路3号梵木flying国际文创公园A2栋201室"
+          },
+          {
+            "name": "成都博物馆",
+            "rating": 4.8,
+            "open_time": "07/04-08/31 周二–周四, 周日 09:00–18:30开放 最晚进入18:00；07/04-08/31 周五–周六 09:00–20:30开放 最晚进入20:00；07/04-08/31 周一 全天不开放；01/01-07/03 周一 全天不开放；09/01-12/31 周一 全天不开放；01/01-07/03 周二–周四, 周日 09:00–17:00开放 最晚进入16:30；09/01-12/31 周二–周四, 周日 09:00–17:00开放 最晚进入16:30；01/01-07/03 周五–周六 09:00–20:30开放 最晚进入20:00；09/01-12/31 周五–周六 09:00–20:30开放 最晚进入20:00；劳动节,端午节,中秋节,国庆节 09:00–20:30开放 最晚进入20:00",
+            "location": {
+              "lng": 104.063749,
+              "lat": 30.657297
+            },
+            "photo": "http://store.is.autonavi.com/showpic/2892dfb3b4f73400dc26209b74a74fdb",
+            "address": "小河街1号"
+          },
+          {
+            "name": "四川博物院",
+            "rating": 4.7,
+            "open_time": "05/18 09:00–17:00开放 最晚进入16:00；10/05 09:00–17:00开放；01/01-05/17 周二–周日 09:00–17:00开放 最晚进入16:00；05/19-10/04 周二–周日 09:00–17:00开放 最晚进入16:00；10/06-12/31 周二–周日 09:00–17:00开放 最晚进入16:00；01/01-05/17 周一 全天不开放；05/19-10/04 周一 全天不开放；10/06-12/31 周一 全天不开放；清明节,端午节 09:00–17:00开放 最晚进入16:00；每周一闭馆(国家法定节假日除外）",
+            "location": {
+              "lng": 104.034127,
+              "lat": 30.660792
+            },
+            "photo": "http://store.is.autonavi.com/showpic/836d32ef2e76c2a17135c284dde5fe79",
+            "address": "青华路5号"
+          },
+          {
+            "name": "许燎源现代设计艺术博物馆",
+            "rating": 4.5,
+            "open_time": "1月1日-2月14日 周二-周日 09:00-17:30开放（17:00停止入园）；周一 不开放；2月24日-12月31日 周二-周日 09:00-17:30开放（17:00停止入园）；周一 不开放；每年2月15日-2月19日 不开放；2月20日-2月23日 09:00-17:30开放（17:00停止入园）；4月18日｜固定场次 09:00-17:30开放；5月18日｜固定场次 09:00-17:30开放；旦节,清明节,劳动节,端午节,国庆节 09:00-17:30开放（17:00停止入园）；具体开放时间以官方通知为准",
+            "location": {
+              "lng": 104.156608,
+              "lat": 30.582607
+            },
+            "photo": "http://store.is.autonavi.com/showpic/1596a64537f454294e2d6c2eae297322",
+            "address": "三圣街道三圣村红砂联合三组303号"
+          },
+          {
+            "name": "成都蜀锦织绣博物馆",
+            "rating": 4.6,
+            "open_time": "周一至周日 09:30-18:30 最晚进入18:00",
+            "location": {
+              "lng": 104.037045,
+              "lat": 30.657296
+            },
+            "photo": "http://store.is.autonavi.com/showpic/ed2df5dfc3c64453df393e54e9b0a993",
+            "address": "草堂东路18号锦绣工场古玩城3号楼"
+          },
+          {
+            "name": "成都生命奥秘博物馆(今站购物中心店)",
+            "rating": 4.6,
+            "open_time": "周一,周四-周日 10:00-21:30开放（20:30停止入园）；周二-周三 10:00-18:00开放（17:00停止入园）；元旦节,春节,清明节,劳动节,端午节,中秋节,国庆节 10:00-21:30开放（20:30停止入园）；具体营业状态以当天开放情况为准",
+            "location": {
+              "lng": 104.066505,
+              "lat": 30.657579
+            },
+            "photo": "http://store.is.autonavi.com/showpic/2530f5fb62bcd3fac398a3a201de14c1",
+            "address": "春熙路天府广场负一楼B07今站购物中心"
+          },
+          {
+            "name": "南苑小树林",
+            "rating": 4.5,
+            "open_time": "周一至周日 10:00-21:00",
+            "location": {
+              "lng": 104.055641,
+              "lat": 30.574957
+            },
+            "photo": "https://store.is.autonavi.com/showpic/f8533d22179e481a0000009206736593?type=pic",
+            "address": "锦城大道865号(吉瑞网球场B区旁边)"
+          },
+          {
+            "name": "归野涧",
+            "rating": 4.6,
+            "open_time": "周一至周日 10:00-19:00",
+            "location": {
+              "lng": 104.054751,
+              "lat": 30.40307
+            },
+            "photo": "https://store.is.autonavi.com/showpic/893c1af749987bfb0000002444138055?type=pic",
+            "address": "正兴街道官塘村"
+          },
+          {
+            "name": "红旗栖岛·闲坐水岸",
+            "rating": 4.5,
+            "open_time": null,
+            "location": {
+              "lng": 104.339517,
+              "lat": 30.58447
+            },
+            "photo": "https://store.is.autonavi.com/showpic/0824a1321e9b70320000008250988211?type=pic",
+            "address": "红旗水库东南侧"
+          },
+          {
+            "name": "少城菁华",
+            "rating": 4.5,
+            "open_time": "周一至周日 09:00-20:00",
+            "location": {
+              "lng": 104.056766,
+              "lat": 30.65672
+            },
+            "photo": "https://aos-comment.amap.com/B0J2O5B1WR/comment/content_media_external_images_media_1000121998_ss__1731077636130_73672753.jpg",
+            "address": "小南街10号(人民公园地铁站J口步行360米)"
+          },
+          {
+            "name": "叙春山",
+            "rating": 4.6,
+            "open_time": "周一至周日 09:30-19:00",
+            "location": {
+              "lng": 104.086591,
+              "lat": 30.336084
+            },
+            "photo": "https://aos-comment.amap.com/B0L2AS0UML/comment/content_media_external_file_100007157_1768986896018_88041114.jpg",
+            "address": "天府新区煎茶街道老农村6组305号1栋4单元1楼1号"
+          },
+          {
+            "name": "百花深处",
+            "rating": 4.7,
+            "open_time": "周一至周日 09:00-21:00",
+            "location": {
+              "lng": 104.136595,
+              "lat": 30.578111
+            },
+            "photo": "https://aos-comment.amap.com/B0IBY52DV1/comment/20260324-625b2631da461945124a26c5-2jBoX659rTN6nmyx0Wl4sj.jpg",
+            "address": "幸福路"
+          },
+          {
+            "name": "玛歌庄园火锅公园",
+            "rating": 4.6,
+            "open_time": "周一至周日 09:30-14:00,16:30-21:30",
+            "location": {
+              "lng": 104.176822,
+              "lat": 30.587861
+            },
+            "photo": "https://aos-comment.amap.com/B0H0A6RP4M/comment/content_media_external_images_media_15301_1657407793536_3b18e988.jpg",
+            "address": "大面街道驿都西路2888号"
+          },
+          {
+            "name": "小福鲤成都火锅",
+            "rating": 4.5,
+            "open_time": "周一至周日 11:00-02:00",
+            "location": {
+              "lng": 104.088225,
+              "lat": 30.528525
+            },
+            "photo": "https://store.is.autonavi.com/showpic/b87036b63efae19b0000002400010180",
+            "address": "观东二街与应龙南一路299号附180号"
+          },
+          {
+            "name": "易园园林博物馆",
+            "rating": 4.6,
+            "open_time": "周一至周日 10:00-17:00 最晚进入17:00",
+            "location": {
+              "lng": 104.014958,
+              "lat": 30.71778
+            },
+            "photo": "http://aos-cdn-image.amap.com/sns/ugccomment/fded3628-6b4e-4bde-9b89-db10f80929b7.jpeg",
+            "address": "金泉路8号"
+          },
+          {
+            "name": "凤凰湖旅游景区",
+            "rating": 4.6,
+            "open_time": "周一至周日 00:00-24:00",
+            "location": {
+              "lng": 104.28206,
+              "lat": 30.897978
+            },
+            "photo": "http://aos-cdn-image.amap.com/sns/ugccomment/8d98f3b1-38d5-40f2-b5b2-0e420552cb7b.jpg",
+            "address": "金凤路1号"
+          }
+        ],
+        "knowledge_sources": [],
+        "selection_reasons": [
+          {
+            "name": "空山茶事·三国馆",
+            "reason": "茶馆体验，三国文化",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          },
+          {
+            "name": "成都武侯祠博物馆",
+            "reason": "三国历史，高评分",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          },
+          {
+            "name": "交子金融博物馆",
+            "reason": "金融历史，室内景点",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          },
+          {
+            "name": "成都杜甫草堂博物馆",
+            "reason": "文学文化，高评分",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          },
+          {
+            "name": "水井坊博物馆",
+            "reason": "酒文化，室内景点",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          },
+          {
+            "name": "四川大学博物馆",
+            "reason": "学术文化，室内景点",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          }
+        ],
+        "poi_attributes": {},
+        "history": [
+          "意图识别：destination=成都，2026-11-09~2026-11-10（2天），景点偏好=None，餐饮偏好=火锅，习惯=None",
+          "[query_rewrite] '成都周末两天，想泡茶馆吃火锅，明天中午开始' → '成都周末两天，想泡茶馆吃火锅，明天中午开始'（用户历史画像为空，因此仅使用本次查询中的偏好。本次查询明确表达了餐饮偏好为火锅，其他偏好如景点、习惯、最大步行和雨天室内优先均未指定或为否。）",
+          "高德基础候选池：15 个景点",
+          "[joint_planner] 安排茶馆体验与火锅餐饮，避开周一闭馆风险，优先室内景点应对阴雨天气。；规范化景点名称 1 个",
+          "[第1轮] Reviewer ❌打回（75分）：Day1空山茶事·三国馆→武侯祠博物馆→交子金融博物馆存在折返路线，建议调整顺序减少不必要的往返。\n  → 问题列表：Day1行程路线有折返，建议调整景点顺序以减少不必要的往返",
+          "[joint_planner] 优化路线顺序，确保茶馆体验优先，火锅偏好匹配高评分店，避开周一闭馆风险。",
+          "[第2轮] Reviewer ❌打回（75分）：Day1路线存在折返，建议调整空山茶事·三国馆、成都武侯祠博物馆和交子金融博物馆的顺序，减少不必要的往返。\n  → 问题列表：Day1路线可能存在绕路，建议提前规划好行车路线以节省时间",
+          "[joint_planner] 优化景点顺序，确保火锅体验，避开周一闭馆风险。",
+          "[第3轮] Reviewer ❌打回（75分）：Day1路线存在折返，建议调整空山茶事·三国馆、成都武侯祠博物馆和交子金融博物馆的顺序，减少不必要的往返。\n  → 问题列表：Day1路线可能需要调整顺序，减少不必要的往返",
+          "finalize：已组装最终计划"
+        ]
+      },
+      "missing_fields": [],
+      "plan_id": null,
+      "latency_s": 241.702,
+      "llm_calls": 9,
+      "input_tokens_est": 30312,
+      "output_tokens_est": 3292,
+      "node_ms": {
+        "intent": 5967.9,
+        "weather_search": 275.3,
+        "main_meal_search": 428.2,
+        "query_rewrite": 6394.1,
+        "attraction_search": 592.4,
+        "candidate_react": 11405.7,
+        "candidate_search": 515.5,
+        "candidate_validator": 5.9,
+        "candidate_ready": 1.0,
+        "planner": 59630.7,
+        "route_distance_check": 555.9,
+        "risk_gate": 11.8,
+        "snapshot_gate": 14.7,
+        "reviewer": 41922.7,
+        "snapshot_reviewer": 11.1,
+        "finalize_direct": 2502.9
+      },
+      "nodes_entered": [
+        "attraction_search",
+        "candidate_react",
+        "candidate_ready",
+        "candidate_search",
+        "candidate_validator",
+        "finalize_direct",
+        "intent",
+        "main_meal_search",
+        "planner",
+        "query_rewrite",
+        "reviewer",
+        "risk_gate",
+        "route_distance_check",
+        "snapshot_gate",
+        "snapshot_reviewer",
+        "weather_search"
+      ],
+      "events": [
+        {
+          "node": "intent",
+          "event": "start",
+          "t": 0.645
+        },
+        {
+          "node": "intent",
+          "event": "end",
+          "t": 6.613,
+          "ms": 5967.9,
+          "summary": "已识别：成都，2 天行程。"
+        },
+        {
+          "node": "main_meal_search",
+          "event": "start",
+          "t": 6.616
+        },
+        {
+          "node": "query_rewrite",
+          "event": "start",
+          "t": 6.616
+        },
+        {
+          "node": "weather_search",
+          "event": "start",
+          "t": 6.616
+        },
+        {
+          "node": "weather_search",
+          "event": "end",
+          "t": 6.891,
+          "ms": 275.3,
+          "summary": "已获取天气预报。"
+        },
+        {
+          "node": "main_meal_search",
+          "event": "end",
+          "t": 7.044,
+          "ms": 428.2,
+          "summary": "已建立 20 个餐馆候选（ok）。示例：龙户人家串串香火锅(春熙路店)、翠孃孃老火锅(春熙路老店)、皇城老妈火锅(皇城店)。"
+        },
+        {
+          "node": "query_rewrite",
+          "event": "end",
+          "t": 13.01,
+          "ms": 6394.1,
+          "summary": "已结合本次需求和用户偏好，整理检索约束。"
+        },
+        {
+          "node": "attraction_search",
+          "event": "start",
+          "t": 13.011
+        },
+        {
+          "node": "attraction_search",
+          "event": "end",
+          "t": 13.604,
+          "ms": 592.4,
+          "summary": "已建立 15 个候选景点池。示例：麓镇山顶广场、新华公园、交子金融博物馆。"
+        },
+        {
+          "node": "candidate_react",
+          "event": "start",
+          "t": 13.607
+        },
+        {
+          "node": "candidate_react",
+          "event": "end",
+          "t": 25.013,
+          "ms": 11405.7,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "candidate_search",
+          "event": "start",
+          "t": 25.014
+        },
+        {
+          "node": "candidate_search",
+          "event": "end",
+          "t": 25.529,
+          "ms": 515.5,
+          "summary": "已建立 26 个候选景点池。示例：麓镇山顶广场、新华公园、交子金融博物馆。"
+        },
+        {
+          "node": "candidate_validator",
+          "event": "start",
+          "t": 25.531
+        },
+        {
+          "node": "candidate_validator",
+          "event": "end",
+          "t": 25.537,
+          "ms": 5.9,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "candidate_ready",
+          "event": "start",
+          "t": 25.539
+        },
+        {
+          "node": "candidate_ready",
+          "event": "end",
+          "t": 25.54,
+          "ms": 1.0,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "planner",
+          "event": "start",
+          "t": 25.541
+        },
+        {
+          "node": "planner",
+          "event": "end",
+          "t": 58.598,
+          "ms": 33057.5,
+          "summary": "第 1 轮行程草案已生成：2 天、6 个景点。"
+        },
+        {
+          "node": "route_distance_check",
+          "event": "start",
+          "t": 58.6
+        },
+        {
+          "node": "route_distance_check",
+          "event": "end",
+          "t": 59.156,
+          "ms": 555.9,
+          "summary": "已核验 6/8 段道路距离（drive），2 段接口失败"
+        },
+        {
+          "node": "risk_gate",
+          "event": "start",
+          "t": 59.158
+        },
+        {
+          "node": "risk_gate",
+          "event": "end",
+          "t": 59.17,
+          "ms": 11.8,
+          "summary": "检测到 3 项风险，已升级到独立审核。"
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "start",
+          "t": 59.172
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "end",
+          "t": 59.18,
+          "ms": 8.9,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "reviewer",
+          "event": "start",
+          "t": 59.182
+        },
+        {
+          "node": "reviewer",
+          "event": "end",
+          "t": 101.104,
+          "ms": 41922.7,
+          "summary": "评审发现 1 项需调整内容，已交回规划 Agent 修改。"
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "start",
+          "t": 101.106
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "end",
+          "t": 101.116,
+          "ms": 10.2,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "planner",
+          "event": "start",
+          "t": 101.117
+        },
+        {
+          "node": "planner",
+          "event": "end",
+          "t": 160.748,
+          "ms": 59630.7,
+          "summary": "第 2 轮行程草案已生成：2 天、6 个景点。"
+        },
+        {
+          "node": "route_distance_check",
+          "event": "start",
+          "t": 160.749
+        },
+        {
+          "node": "route_distance_check",
+          "event": "end",
+          "t": 160.927,
+          "ms": 177.2,
+          "summary": "已核验 8/8 段道路距离（drive）"
+        },
+        {
+          "node": "risk_gate",
+          "event": "start",
+          "t": 160.928
+        },
+        {
+          "node": "risk_gate",
+          "event": "end",
+          "t": 160.931,
+          "ms": 3.7,
+          "summary": "检测到 5 项风险，已升级到独立审核。"
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "start",
+          "t": 160.933
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "end",
+          "t": 160.943,
+          "ms": 10.0,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "reviewer",
+          "event": "start",
+          "t": 160.944
+        },
+        {
+          "node": "reviewer",
+          "event": "end",
+          "t": 185.306,
+          "ms": 24362.4,
+          "summary": "评审发现 1 项需调整内容，已交回规划 Agent 修改。"
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "start",
+          "t": 185.308
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "end",
+          "t": 185.318,
+          "ms": 10.6,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "planner",
+          "event": "start",
+          "t": 185.319
+        },
+        {
+          "node": "planner",
+          "event": "end",
+          "t": 216.776,
+          "ms": 31456.8,
+          "summary": "第 3 轮行程草案已生成：2 天、6 个景点。"
+        },
+        {
+          "node": "route_distance_check",
+          "event": "start",
+          "t": 216.777
+        },
+        {
+          "node": "route_distance_check",
+          "event": "end",
+          "t": 216.922,
+          "ms": 145.1,
+          "summary": "已核验 8/8 段道路距离（drive）"
+        },
+        {
+          "node": "risk_gate",
+          "event": "start",
+          "t": 216.925
+        },
+        {
+          "node": "risk_gate",
+          "event": "end",
+          "t": 216.928,
+          "ms": 3.9,
+          "summary": "检测到 4 项风险，已升级到独立审核。"
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "start",
+          "t": 216.93
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "end",
+          "t": 216.944,
+          "ms": 14.7,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "reviewer",
+          "event": "start",
+          "t": 216.945
+        },
+        {
+          "node": "reviewer",
+          "event": "end",
+          "t": 239.183,
+          "ms": 22237.4,
+          "summary": "评审发现 1 项需调整内容，已交回规划 Agent 修改。"
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "start",
+          "t": 239.184
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "end",
+          "t": 239.195,
+          "ms": 11.1,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "finalize_direct",
+          "event": "start",
+          "t": 239.196
+        },
+        {
+          "node": "finalize_direct",
+          "event": "end",
+          "t": 241.699,
+          "ms": 2502.9,
+          "summary": "行程已整理完成，正在展示结果。"
+        }
+      ],
+      "error": null
+    },
+    {
+      "case_id": "hangzhou-1d-date-hint",
+      "query": "杭州一日，西湖边慢慢走，11.18开始",
+      "focus": "显式月日解析 + 单日节奏",
+      "success": true,
+      "status": "PARTIAL_SUCCESS",
+      "days": 1,
+      "spots": [
+        "杭州西湖风景名胜区",
+        "灵隐寺",
+        "中国丝绸博物馆"
+      ],
+      "spot_count": 3,
+      "route_issues": [
+        "Day1 绿茶餐厅(龙井路店) 与 中国丝绸博物馆 的游玩/餐饮时间重叠",
+        "Day1 景点与餐饮衔接时间不足：灵隐寺→绿茶餐厅(龙井路店)，预留 0 分钟，已核验通勤需 11 分钟",
+        "灵隐寺到中国丝绸博物馆之间有4.9公里车程，建议预留足够通勤时间"
+      ],
+      "plan": {
+        "candidate_pool": {
+          "status": "insufficient",
+          "missing_coverage": [
+            "diversity"
+          ],
+          "coverage": {
+            "count": 30,
+            "required_count": 4,
+            "indoor": 17,
+            "outdoor": 0,
+            "required_indoor": 0,
+            "unknown_type": 13,
+            "requested_count": 0,
+            "requested_hits": 0,
+            "regions": 6,
+            "categories": 6
+          },
+          "search_rounds": 2,
+          "api_calls": 4,
+          "effective_api_budget": 4
+        },
+        "query": "杭州一日，西湖边慢慢走，11.18开始",
+        "destination": "杭州",
+        "start_date": "2026-11-18",
+        "end_date": "2026-11-18",
+        "days_count": 1,
+        "preferences": {
+          "attraction": "西湖边",
+          "food": null,
+          "habit": "慢慢走"
+        },
+        "approved": true,
+        "status": "PARTIAL_SUCCESS",
+        "warnings": [
+          "Day1 绿茶餐厅(龙井路店) 与 中国丝绸博物馆 的游玩/餐饮时间重叠",
+          "Day1 景点与餐饮衔接时间不足：灵隐寺→绿茶餐厅(龙井路店)，预留 0 分钟，已核验通勤需 11 分钟",
+          "灵隐寺到中国丝绸博物馆之间有4.9公里车程，建议预留足够通勤时间"
+        ],
+        "failure_reasons": [],
+        "score_info": {
+          "final_score": 100.0,
+          "selected_iteration": 2,
+          "breakdown": {
+            "named_poi": 20.0,
+            "pace": 20.0,
+            "continuity": 15.0,
+            "weather": 15.0,
+            "preference_match": 25.0,
+            "diversity_and_dining": 5.0
+          }
+        },
+        "review_rounds": 4,
+        "audit_policy": {
+          "review_skipped": false,
+          "review_required": true,
+          "time_check_required": true,
+          "risk_score": 4,
+          "risk_flags": [
+            "meal_opening_conflict",
+            "meal_time_structure",
+            "invalid_time_slot",
+            "preference_review"
+          ]
+        },
+        "weather_forecast": [],
+        "weather_note": "旅游日期超出天气预报范围（高德预报约 4 天内），建议出行前关注天气预报",
+        "meal_planning": {
+          "status": "ok",
+          "duration_min": 60,
+          "slots": [
+            {
+              "day": 1,
+              "meal": "lunch",
+              "restaurant_name": "绿茶餐厅(龙井路店)",
+              "start_time": "13:30",
+              "end_time": "14:30",
+              "duration_min": 60,
+              "reason": "西湖边特色餐厅"
+            },
+            {
+              "day": 1,
+              "meal": "dinner",
+              "restaurant_name": "楼外楼(杭州西湖风景名胜区店)",
+              "start_time": "17:30",
+              "end_time": "18:30",
+              "duration_min": 60,
+              "reason": "西湖传统美食"
+            }
+          ]
+        },
+        "route_issues": [
+          "Day1 绿茶餐厅(龙井路店) 与 中国丝绸博物馆 的游玩/餐饮时间重叠",
+          "Day1 景点与餐饮衔接时间不足：灵隐寺→绿茶餐厅(龙井路店)，预留 0 分钟，已核验通勤需 11 分钟",
+          "灵隐寺到中国丝绸博物馆之间有4.9公里车程，建议预留足够通勤时间"
+        ],
+        "service_status": {
+          "semantic_memory": "not_requested",
+          "time_check": "ok",
+          "meal_search": "ok",
+          "meal_recommend": "ok",
+          "spot_tips": "ok",
+          "main_meal_search": "ok"
+        },
+        "degraded_services": [],
+        "days": [
+          {
+            "day": 1,
+            "date": "2026-11-18",
+            "theme": "西湖文化与自然风光",
+            "timeline": [
+              {
+                "type": "hotel",
+                "name": "全季酒店",
+                "location": {
+                  "lng": 120.100266,
+                  "lat": 30.300625
+                },
+                "address": "古墩路与萍水西街交叉口东80米(三坝地铁站A口旁)",
+                "tel": "0571-87988988",
+                "rating": 4.7,
+                "cost": null,
+                "hotel_info": {
+                  "name": "全季酒店",
+                  "location": {
+                    "lng": 120.100266,
+                    "lat": 30.300625
+                  },
+                  "address": "古墩路与萍水西街交叉口东80米(三坝地铁站A口旁)",
+                  "tel": "0571-87988988",
+                  "rating": 4.7,
+                  "nightly_price": null,
+                  "nights": 1,
+                  "estimated_total": null,
+                  "price_source": "本次高德酒店查询未返回价格",
+                  "note": "按连锁酒店候选中本次可见价格优先推荐；房价会随日期、房型和入住人数变化，请在预订页复核。",
+                  "anchor_source": "recommended"
+                }
+              },
+              {
+                "type": "attraction",
+                "name": "杭州西湖风景名胜区",
+                "start_time": "09:00",
+                "end_time": "11:00",
+                "period": "morning",
+                "rating": 4.9,
+                "open_time": "周一至周日 00:00-24:00",
+                "photo": "https://store.is.autonavi.com/showpic/78e3e7b400e9290d0000003670488183",
+                "location": {
+                  "lng": 120.121358,
+                  "lat": 30.222692
+                },
+                "tip": null,
+                "guide": null,
+                "address": "西湖街道龙井路1号",
+                "tel": "0571-87179617",
+                "cost": null,
+                "travel_from_prev": {
+                  "mode": "transit",
+                  "mode_label": "公交",
+                  "distance_km": 13.27,
+                  "duration_min": 76,
+                  "estimated_cost": 7.0,
+                  "instruction": "步行约 55m → 91路（萍水西街竞舟北路口上车，桂花城下车） → 步行约 1m → 180路（桂花城上车，里鸡笼山下车） → 步行约 331m → 87路（外鸡笼山上车，烟霞洞下车） → 步行约 472m",
+                  "steps": [
+                    "步行约 55m",
+                    "91路（萍水西街竞舟北路口上车，桂花城下车）",
+                    "步行约 1m",
+                    "180路（桂花城上车，里鸡笼山下车）",
+                    "步行约 331m",
+                    "87路（外鸡笼山上车，烟霞洞下车）",
+                    "步行约 472m"
+                  ],
+                  "transit_lines": [
+                    {
+                      "name": "91路",
+                      "departure_stop": "萍水西街竞舟北路口",
+                      "arrival_stop": "桂花城"
+                    },
+                    {
+                      "name": "180路",
+                      "departure_stop": "桂花城",
+                      "arrival_stop": "里鸡笼山"
+                    },
+                    {
+                      "name": "87路",
+                      "departure_stop": "外鸡笼山",
+                      "arrival_stop": "烟霞洞"
+                    }
+                  ],
+                  "source": "amap",
+                  "estimate": false,
+                  "from": "全季酒店",
+                  "to": "杭州西湖风景名胜区"
+                },
+                "dist_from_prev_km": 13.27
+              },
+              {
+                "type": "attraction",
+                "name": "灵隐寺",
+                "start_time": "11:30",
+                "end_time": "13:30",
+                "period": "afternoon",
+                "rating": 4.8,
+                "open_time": "周一至周日 07:30-18:00",
+                "photo": "http://store.is.autonavi.com/showpic/4aa0a6a1b6ee72c9833441f363cbb43a",
+                "location": {
+                  "lng": 120.101406,
+                  "lat": 30.240826
+                },
+                "tip": null,
+                "guide": null,
+                "address": "法云弄1号",
+                "tel": null,
+                "cost": 45.0,
+                "ticket_info": {
+                  "price": 45.0,
+                  "price_label": "实时网页查询·成人参考票 ¥45",
+                  "ticket_type": "成人基础票",
+                  "pricing_basis": "live_web_query",
+                  "source_name": "实时搜索：163.com",
+                  "source_url": "https://163.com/dy/article/K1I6JI1M05560ABS.html",
+                  "verified_at": "2026-11-08",
+                  "queried_at": "2026-11-08T14:25:13.891504+00:00",
+                  "live_query": true,
+                  "note": "非官网统一接口数据，购票前请点击来源复核。"
+                },
+                "travel_from_prev": {
+                  "from": "杭州西湖风景名胜区",
+                  "to": "灵隐寺",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 6.88,
+                  "duration_min": 17,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 6.88 km，约 17 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 6.88
+              },
+              {
+                "type": "lunch",
+                "name": "绿茶餐厅(龙井路店)",
+                "start_time": "13:30",
+                "end_time": "14:30",
+                "duration_min": 60,
+                "reason": "西湖边特色餐厅",
+                "cost": 60.0,
+                "rating": 4.7,
+                "keytag": "餐饮服务;中餐厅;浙江菜",
+                "location": {
+                  "lng": 120.123486,
+                  "lat": 30.232349
+                },
+                "address": "龙井路83号(浙江宾馆后门斜对面)",
+                "photo": "http://store.is.autonavi.com/query_pic?id=stdcc12055-8642-4c5c-ad45-41aa171d70c3&user=search&operate=original",
+                "open_time": "周一至周日 10:30-21:00；2026-07-11至2026-07-11 10:30-20:00",
+                "tel": "0571-87888022",
+                "category": "浙江菜",
+                "cost_info": {
+                  "estimate": false,
+                  "source_name": "本次高德餐饮查询",
+                  "observed_at": "2026-11-08",
+                  "price_label": "高德人均 ¥60"
+                },
+                "travel_from_prev": {
+                  "from": "灵隐寺",
+                  "to": "绿茶餐厅(龙井路店)",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 4.34,
+                  "duration_min": 11,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 4.34 km，约 11 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 4.34
+              },
+              {
+                "type": "attraction",
+                "name": "中国丝绸博物馆",
+                "start_time": "14:00",
+                "end_time": "15:30",
+                "period": "afternoon",
+                "rating": 4.7,
+                "open_time": "全年 周二–周日 09:00–17:00开放 最晚进入16:30；全年 周一 全天不开放；清明节,劳动节,端午节,中秋节,国庆节 09:00–17:00开放 最晚进入16:30",
+                "photo": "http://store.is.autonavi.com/showpic/db3a7113a8b9005d5f26d19ce28e9456",
+                "location": {
+                  "lng": 120.151292,
+                  "lat": 30.22287
+                },
+                "tip": null,
+                "guide": null,
+                "address": "玉皇山路73-1号(近南山路)",
+                "tel": "0571-87035223",
+                "cost": null,
+                "travel_from_prev": {
+                  "from": "绿茶餐厅(龙井路店)",
+                  "to": "中国丝绸博物馆",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 4.92,
+                  "duration_min": 9,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 4.92 km，约 9 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 4.92
+              },
+              {
+                "type": "dinner",
+                "name": "楼外楼(杭州西湖风景名胜区店)",
+                "start_time": "17:30",
+                "end_time": "18:30",
+                "duration_min": 60,
+                "reason": "西湖传统美食",
+                "cost": 155.0,
+                "rating": 4.6,
+                "keytag": "餐饮服务;中餐厅;综合酒楼",
+                "location": {
+                  "lng": 120.140723,
+                  "lat": 30.250209
+                },
+                "address": "西湖街道孤山路30号(近平湖秋月)",
+                "photo": "http://store.is.autonavi.com/showpic/bc86fc8915e75f905f26404ed15e6eb4",
+                "open_time": "周一至周日 10:30-14:00,16:30-20:30",
+                "tel": "0571-87969023;19157652805",
+                "category": "综合酒楼",
+                "cost_info": {
+                  "estimate": false,
+                  "source_name": "本次高德餐饮查询",
+                  "observed_at": "2026-11-08",
+                  "price_label": "高德人均 ¥155"
+                },
+                "travel_from_prev": {
+                  "from": "中国丝绸博物馆",
+                  "to": "楼外楼(杭州西湖风景名胜区店)",
+                  "mode": "taxi_or_car",
+                  "mode_label": "驾车",
+                  "distance_km": 7.84,
+                  "duration_min": 16,
+                  "estimated_cost": 0,
+                  "instruction": "道路距离 7.84 km，约 16 分钟。",
+                  "source": "amap",
+                  "estimate": false
+                },
+                "dist_from_prev_km": 7.84
+              }
+            ],
+            "budget": {
+              "currency": "CNY",
+              "unit": "per_person",
+              "ticket_known": 45.0,
+              "meal_known": 215.0,
+              "meal_estimated": 0.0,
+              "transport_estimated": 7.0,
+              "known_subtotal": 267.0,
+              "estimated_subtotal": 267.0,
+              "unknown_items": [
+                "杭州西湖风景名胜区门票",
+                "中国丝绸博物馆门票"
+              ],
+              "note": "按人估算；餐厅缺价时采用附近中位数或品类基线，实际支付可能浮动。"
+            },
+            "mobility_advice": "当天存在多段跨区路线，建议比较打车总价、租车日租价和停车条件。"
+          }
+        ],
+        "meal_slots": [
+          {
+            "day": 1,
+            "meal": "lunch",
+            "restaurant_name": "绿茶餐厅(龙井路店)",
+            "start_time": "13:30",
+            "end_time": "14:30",
+            "duration_min": 60,
+            "reason": "西湖边特色餐厅"
+          },
+          {
+            "day": 1,
+            "meal": "dinner",
+            "restaurant_name": "楼外楼(杭州西湖风景名胜区店)",
+            "start_time": "17:30",
+            "end_time": "18:30",
+            "duration_min": 60,
+            "reason": "西湖传统美食"
+          }
+        ],
+        "hotel": {
+          "name": "全季酒店",
+          "location": {
+            "lng": 120.100266,
+            "lat": 30.300625
+          },
+          "address": "古墩路与萍水西街交叉口东80米(三坝地铁站A口旁)",
+          "tel": "0571-87988988",
+          "rating": 4.7,
+          "nightly_price": null,
+          "nights": 1,
+          "estimated_total": null,
+          "price_source": "本次高德酒店查询未返回价格",
+          "note": "按连锁酒店候选中本次可见价格优先推荐；房价会随日期、房型和入住人数变化，请在预订页复核。",
+          "anchor_source": "recommended"
+        },
+        "budget_summary": {
+          "currency": "CNY",
+          "unit": "per_person",
+          "ticket_known": 45.0,
+          "meal_known": 215.0,
+          "meal_estimated": 0.0,
+          "transport_estimated": 7.0,
+          "known_subtotal": 267.0,
+          "estimated_subtotal": 267.0,
+          "unknown_items": [
+            "杭州西湖风景名胜区门票",
+            "中国丝绸博物馆门票"
+          ],
+          "lodging_nightly": null,
+          "lodging_nights": 1,
+          "lodging_estimated_total": null,
+          "note": "按人估算；门票来自本次实时网页查询，未知价格未计入合计。"
+        },
+        "candidate_spots": [
+          {
+            "name": "北支江公园",
+            "rating": 4.5,
+            "open_time": "周一至周日 00:00-24:00",
+            "location": {
+              "lng": 120.001489,
+              "lat": 30.071689
+            },
+            "photo": "https://aos-comment.amap.com/B0FFI061PI/comment/05B05DC4_ED71_40D8_BD95_F27A6619403E_L0_001_1500_200_1768040877178_16731884.jpg",
+            "address": "江滨东大道70号"
+          },
+          {
+            "name": "杭州基督教会崇一堂",
+            "rating": 4.7,
+            "open_time": "周一至周日 00:00-24:00",
+            "location": {
+              "lng": 120.208778,
+              "lat": 30.259353
+            },
+            "photo": "http://store.is.autonavi.com/showpic/a1e5c5393aac49b86aa10948b299c766",
+            "address": "新塘路26号(近庆春广场)"
+          },
+          {
+            "name": "南宋德寿宫遗址博物馆",
+            "rating": 4.7,
+            "open_time": "周一 全天关闭；周二至周日 09:30-17:00 最晚进入16:30；每周一闭馆（国家法定节假日另行安排)",
+            "location": {
+              "lng": 120.173273,
+              "lat": 30.238678
+            },
+            "photo": "http://store.is.autonavi.com/showpic/e6ad74fe111781ace3615d93423e57fb",
+            "address": "望江路228-264号(江城路地铁站E口步行460米)"
+          },
+          {
+            "name": "胡庆余堂(总店)",
+            "rating": 4.6,
+            "open_time": "周一至周日 08:00-20:30",
+            "location": {
+              "lng": 120.168961,
+              "lat": 30.239832
+            },
+            "photo": "http://store.is.autonavi.com/showpic/b41aea34495b8ab32fa857bf32710382",
+            "address": "大井巷95号(1号线定安路站或者7号线吴山广场地铁站D口大约步行480米)"
+          },
+          {
+            "name": "杭州博物馆",
+            "rating": 4.7,
+            "open_time": "全年 周一, 周三–周日 09:00–16:30开放 最晚进入16:00；全年 周二 全天不开放；劳动节,元旦节,春节,清明节,端午节,中秋节,国庆节 09:00–16:30开放 最晚进入16:00",
+            "location": {
+              "lng": 120.166525,
+              "lat": 30.239091
+            },
+            "photo": "http://store.is.autonavi.com/showpic/0e1b38f070c1fcfc580cf7c150ff6db9",
+            "address": "粮道山18号"
+          },
+          {
+            "name": "杭州亚运会博物馆",
+            "rating": 4.6,
+            "open_time": "周一 闭馆, 周二至周日 09:00-16:30",
+            "location": {
+              "lng": 120.229057,
+              "lat": 30.228256
+            },
+            "photo": "https://store.is.autonavi.com/showpic/b364303f435afdde0000003134834264?type=pic",
+            "address": "杭州奥体中心体育场西南角B1层"
+          },
+          {
+            "name": "可可主角·杭州巧克力博物馆",
+            "rating": 4.6,
+            "open_time": "周一至周日 09:00-23:00",
+            "location": {
+              "lng": 120.168077,
+              "lat": 30.239898
+            },
+            "photo": "https://store.is.autonavi.com/showpic/4b72d829f39b8be60000000721458698?type=pic",
+            "address": "东太平巷与高银街交叉口南80米"
+          },
+          {
+            "name": "浙江自然博物院",
+            "rating": 4.7,
+            "open_time": "4月1日至10月31日 周二至周日 09:00-17:00开放（16:00停止入园）；11月1日至次年3月31日 周二至周日 09:30-17:00开放（16:00停止入园）；周一 不开放(遇法定假日照常开放,顺延休馆)；具体开放时间以官方通知为准",
+            "location": {
+              "lng": 120.164581,
+              "lat": 30.276814
+            },
+            "photo": "http://store.is.autonavi.com/showpic/fd5f152adebfc82a7f30b097677bb735",
+            "address": "西湖文化广场6号"
+          },
+          {
+            "name": "朱炳仁铜雕艺术博物馆",
+            "rating": 4.6,
+            "open_time": "周一至周日 09:00-21:00",
+            "location": {
+              "lng": 120.167138,
+              "lat": 30.239925
+            },
+            "photo": "https://aos-comment.amap.com/comment/content_service__1773014993459_14618308_1773015070816_75685539.jpg",
+            "address": "河坊街207-221号"
+          },
+          {
+            "name": "胡庆余堂体验馆(安荣巷店)",
+            "rating": 4.5,
+            "open_time": "周一至周日 08:30-20:30",
+            "location": {
+              "lng": 120.168744,
+              "lat": 30.239509
+            },
+            "photo": "https://aos-comment.amap.com/B0L3JCDNWV/comment/20260309-ba9e10de7ef9af83d1cf186a-186N8wcAZh2AhttTFm6uuy.jpg",
+            "address": "大井巷 95 号-2 一楼"
+          },
+          {
+            "name": "杭州西湖博物馆总馆",
+            "rating": 4.7,
+            "open_time": "周一,周三至周日 09:00-17:00 最晚进入16:30；周二 全天关闭；西博馆区:9:00-17:00（16:30停止入场）；名人馆区:8:30-16:30（16:00停止入场）；官窑馆区:8:30-16:30（16:00停止入场） 周二闭馆，遇法定节假日正常开放 具体营业时间以当天开放情况为准",
+            "location": {
+              "lng": 120.157449,
+              "lat": 30.241739
+            },
+            "photo": "http://store.is.autonavi.com/showpic/f54bef41704d0eed29033e0dfa741bdb",
+            "address": "南山路89号"
+          },
+          {
+            "name": "浙江省博物馆(孤山馆区)",
+            "rating": 4.7,
+            "open_time": "周二至周日 09:00-17:00开放 最晚进入16:30； 周一 全天不开放(遇法定节假日正常开放，闭馆顺延至节后第一天 )；清明节,端午节,中秋节,国庆节 09:00-17:00开放 最晚进入16:30；具体开放时间以官方通知为准",
+            "location": {
+              "lng": 120.143778,
+              "lat": 30.251243
+            },
+            "photo": "http://store.is.autonavi.com/showpic/9cb883411f7c9ff49fb41d3d695839ce",
+            "address": "孤山路25号"
+          },
+          {
+            "name": "中国财税博物馆",
+            "rating": 4.5,
+            "open_time": "每周一闭馆，周二至周日:09:00-16:30(16:00停止入馆)",
+            "location": {
+              "lng": 120.16294,
+              "lat": 30.238785
+            },
+            "photo": "https://aos-comment.amap.com/B0FFFBYA3P/comment/565DFF87_C72D_44BA_B83F_64C94B987FEF_L0_001_1500_200_1754405368262_31140178.jpg",
+            "address": "吴山景区(吴山广场地铁站C口步行290米)"
+          },
+          {
+            "name": "杭州生命奥秘博物馆",
+            "rating": 4.5,
+            "open_time": null,
+            "location": {
+              "lng": 120.163725,
+              "lat": 30.271425
+            },
+            "photo": "https://store.is.autonavi.com/showpic/8f3e5657d8e7f7e50000002907462932?type=pic",
+            "address": "武林广场中央商城地下一层(地铁D口楼上)"
+          },
+          {
+            "name": "南宋官窑博物馆",
+            "rating": 4.6,
+            "open_time": "周一,周三至周日 08:30-16:30；周二 全天关闭",
+            "location": {
+              "lng": 120.155048,
+              "lat": 30.209606
+            },
+            "photo": "http://store.is.autonavi.com/showpic/319cbe194121b91a633848b795f1653e",
+            "address": "南复路60号"
+          },
+          {
+            "name": "林彪行宫-704工程",
+            "rating": 4.7,
+            "open_time": "周一至周日 08:00-17:30",
+            "location": {
+              "lng": 120.125204,
+              "lat": 30.233047
+            },
+            "photo": "https://store.is.autonavi.com/showpic/7b755922781c77a70000003771438726?type=pic",
+            "address": "龙井路79号浙江宾馆"
+          },
+          {
+            "name": "西湖博览会博物馆",
+            "rating": 4.5,
+            "open_time": "周一 全天关闭；周二至周日 09:00-16:30 最晚进入16:30",
+            "location": {
+              "lng": 120.145469,
+              "lat": 30.257426
+            },
+            "photo": "https://store.is.autonavi.com/showpic/844BF09D79924028802EC3DB89AEA5D6",
+            "address": "北山路41-42号"
+          },
+          {
+            "name": "浙江省地质博物馆",
+            "rating": 4.7,
+            "open_time": "周三至周日 09:30-16:30",
+            "location": {
+              "lng": 120.248659,
+              "lat": 30.180029
+            },
+            "photo": "https://aos-comment.amap.com/B0I1Z5IXED/comment/content_media_external_file_100001514_1757628242031_62528754.jpg",
+            "address": "金山路128号"
+          },
+          {
+            "name": "杭州西湖风景名胜区-古湧金门",
+            "rating": 4.6,
+            "open_time": "周一至周日 00:00-24:00",
+            "location": {
+              "lng": 120.160502,
+              "lat": 30.246411
+            },
+            "photo": "http://store.is.autonavi.com/showpic/972eb3855d5a503a7a1a7e53c209b86b",
+            "address": "杭州西湖风景名胜区南山路南山路"
+          },
+          {
+            "name": "西溪国家湿地公园",
+            "rating": 4.8,
+            "open_time": "10月8日至3月31日 周一至周日 08:00-17:30 门票售票时间:8:00-16:30,船票售票时间:8:00-16:15,观光车环线售票时间:8:00-16:00（节假日视乘车客流调整环线售票截止时间）,单程售票时间 8:00-17:20；4月1日至10月7日 周一至周日 07:30-18:30 门票售票时间:7:30-17:30,船票售票时间:7:30-16:45，观光车环线售票时间:7:30-17:00（节假日视乘车客流调整环线售票截止时间），单程售票时间 7:30-18:20；",
+            "location": {
+              "lng": 120.061159,
+              "lat": 30.255079
+            },
+            "photo": "http://store.is.autonavi.com/showpic/ee8ba4fd213aa0ee5605e41415921500",
+            "address": "天目山路518号"
+          }
+        ],
+        "knowledge_sources": [],
+        "selection_reasons": [
+          {
+            "name": "杭州西湖风景名胜区",
+            "reason": "西湖边核心景点",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          },
+          {
+            "name": "灵隐寺",
+            "reason": "西湖边著名古刹",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          },
+          {
+            "name": "中国丝绸博物馆",
+            "reason": "西湖边文化景点",
+            "source_ids": [],
+            "evidence_status": "unverified"
+          }
+        ],
+        "poi_attributes": {},
+        "history": [
+          "意图识别：destination=杭州，2026-11-18~2026-11-18（1天），景点偏好=西湖边，餐饮偏好=None，习惯=慢慢走",
+          "[query_rewrite] '杭州一日，西湖边慢慢走，11.18开始' → '杭州一日，西湖边慢慢走，11.18开始'（用户历史画像为空，因此仅使用本次查询中的偏好。景点偏好为'西湖边'，餐饮偏好为'无'，游玩习惯为'慢慢走'，最大步行距离未指定，雨天室内优先为'否'。这些偏好已直接融入改写后的查询中。）",
+          "高德基础候选池：19 个景点",
+          "[joint_planner] 西湖边景点与餐厅安排，满足一日游需求。",
+          "[第1轮] Reviewer ❌打回（65分）：Day1景点数量5个超出\"慢慢走\"习惯，建议减少至2-3个；西湖→灵隐寺→市区的折返路线不合理，建议调整为西湖周边连续景点。\n  → 问题列表：Day1行程较紧凑，建议减少景点数量以符合慢慢走的习惯；西湖到灵隐寺再到市区的路线有折返，建议调整为西湖周边连续游览",
+          "[joint_planner] 减少景点数量，调整为西湖周边连续景点，优化用餐安排",
+          "[第2轮] Reviewer ✅通过（85分）：路线已优化，西湖周边景点集中，符合\"慢慢走\"习惯，无需修改。\n  → 问题列表：灵隐寺到中国丝绸博物馆之间有4.9公里车程，建议预留足够通勤时间",
+          "[joint_planner] 西湖周边景点集中，符合用户'慢慢走'需求，餐饮安排在景点附近。",
+          "[第3轮] Reviewer ✅通过（85分）：(无意见)",
+          "[joint_planner] 修复了景点与餐饮衔接时间不足的问题，确保行程合理。",
+          "[第4轮] Reviewer ✅通过（85分）：(无意见)\n  → 问题列表：Day1 行程安排合理，景点间衔接顺畅，建议预留充足时间欣赏西湖美景",
+          "finalize：已组装最终计划"
+        ]
+      },
+      "missing_fields": [],
+      "plan_id": null,
+      "latency_s": 208.003,
+      "llm_calls": 13,
+      "input_tokens_est": 41195,
+      "output_tokens_est": 2947,
+      "node_ms": {
+        "intent": 4553.2,
+        "weather_search": 260.2,
+        "main_meal_search": 451.4,
+        "query_rewrite": 4223.9,
+        "attraction_search": 627.9,
+        "candidate_react": 2639.0,
+        "candidate_search": 377.5,
+        "candidate_validator": 5.9,
+        "candidate_ready": 1.5,
+        "planner": 29979.3,
+        "route_distance_check": 542.7,
+        "risk_gate": 7.4,
+        "snapshot_gate": 6.1,
+        "reviewer": 73850.2,
+        "snapshot_reviewer": 5.0,
+        "finalize_direct": 2101.2
+      },
+      "nodes_entered": [
+        "attraction_search",
+        "candidate_react",
+        "candidate_ready",
+        "candidate_search",
+        "candidate_validator",
+        "finalize_direct",
+        "intent",
+        "main_meal_search",
+        "planner",
+        "query_rewrite",
+        "reviewer",
+        "risk_gate",
+        "route_distance_check",
+        "snapshot_gate",
+        "snapshot_reviewer",
+        "weather_search"
+      ],
+      "events": [
+        {
+          "node": "intent",
+          "event": "start",
+          "t": 1.442
+        },
+        {
+          "node": "intent",
+          "event": "end",
+          "t": 5.995,
+          "ms": 4553.2,
+          "summary": "已识别：杭州，1 天行程。"
+        },
+        {
+          "node": "main_meal_search",
+          "event": "start",
+          "t": 5.997
+        },
+        {
+          "node": "query_rewrite",
+          "event": "start",
+          "t": 5.997
+        },
+        {
+          "node": "weather_search",
+          "event": "start",
+          "t": 5.997
+        },
+        {
+          "node": "weather_search",
+          "event": "end",
+          "t": 6.257,
+          "ms": 260.2,
+          "summary": "旅游日期超出天气预报范围（高德预报约 4 天内），建议出行前关注天气预报。"
+        },
+        {
+          "node": "main_meal_search",
+          "event": "end",
+          "t": 6.449,
+          "ms": 451.4,
+          "summary": "已建立 20 个餐馆候选（ok）。示例：肉本家·炭烤肉(杭州浙大总店)、乔村二十八道(钱江世纪城店)、杭州酒家(延安路店)。"
+        },
+        {
+          "node": "query_rewrite",
+          "event": "end",
+          "t": 10.221,
+          "ms": 4223.9,
+          "summary": "已结合本次需求和用户偏好，整理检索约束。"
+        },
+        {
+          "node": "attraction_search",
+          "event": "start",
+          "t": 10.223
+        },
+        {
+          "node": "attraction_search",
+          "event": "end",
+          "t": 10.85,
+          "ms": 627.9,
+          "summary": "已建立 19 个候选景点池。示例：北支江公园、杭州基督教会崇一堂、南宋德寿宫遗址博物馆。"
+        },
+        {
+          "node": "candidate_react",
+          "event": "start",
+          "t": 10.853
+        },
+        {
+          "node": "candidate_react",
+          "event": "end",
+          "t": 13.091,
+          "ms": 2238.3,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "candidate_search",
+          "event": "start",
+          "t": 13.092
+        },
+        {
+          "node": "candidate_search",
+          "event": "end",
+          "t": 13.457,
+          "ms": 364.8,
+          "summary": "已建立 30 个候选景点池。示例：北支江公园、杭州基督教会崇一堂、南宋德寿宫遗址博物馆。"
+        },
+        {
+          "node": "candidate_validator",
+          "event": "start",
+          "t": 13.458
+        },
+        {
+          "node": "candidate_validator",
+          "event": "end",
+          "t": 13.463,
+          "ms": 4.7,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "candidate_react",
+          "event": "start",
+          "t": 13.464
+        },
+        {
+          "node": "candidate_react",
+          "event": "end",
+          "t": 16.103,
+          "ms": 2639.0,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "candidate_search",
+          "event": "start",
+          "t": 16.105
+        },
+        {
+          "node": "candidate_search",
+          "event": "end",
+          "t": 16.483,
+          "ms": 377.5,
+          "summary": "已建立 30 个候选景点池。示例：北支江公园、杭州基督教会崇一堂、南宋德寿宫遗址博物馆。"
+        },
+        {
+          "node": "candidate_validator",
+          "event": "start",
+          "t": 16.484
+        },
+        {
+          "node": "candidate_validator",
+          "event": "end",
+          "t": 16.49,
+          "ms": 5.9,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "candidate_ready",
+          "event": "start",
+          "t": 16.492
+        },
+        {
+          "node": "candidate_ready",
+          "event": "end",
+          "t": 16.494,
+          "ms": 1.5,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "planner",
+          "event": "start",
+          "t": 16.495
+        },
+        {
+          "node": "planner",
+          "event": "end",
+          "t": 45.538,
+          "ms": 29043.2,
+          "summary": "第 1 轮行程草案已生成：1 天、5 个景点。"
+        },
+        {
+          "node": "route_distance_check",
+          "event": "start",
+          "t": 45.54
+        },
+        {
+          "node": "route_distance_check",
+          "event": "end",
+          "t": 46.082,
+          "ms": 542.7,
+          "summary": "已核验 6/6 段道路距离（drive）"
+        },
+        {
+          "node": "risk_gate",
+          "event": "start",
+          "t": 46.085
+        },
+        {
+          "node": "risk_gate",
+          "event": "end",
+          "t": 46.092,
+          "ms": 7.4,
+          "summary": "检测到 5 项风险，已升级到独立审核。"
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "start",
+          "t": 46.094
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "end",
+          "t": 46.1,
+          "ms": 6.1,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "reviewer",
+          "event": "start",
+          "t": 46.101
+        },
+        {
+          "node": "reviewer",
+          "event": "end",
+          "t": 119.952,
+          "ms": 73850.2,
+          "summary": "评审发现 2 项需调整内容，已交回规划 Agent 修改。"
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "start",
+          "t": 119.953
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "end",
+          "t": 119.958,
+          "ms": 5.0,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "planner",
+          "event": "start",
+          "t": 119.959
+        },
+        {
+          "node": "planner",
+          "event": "end",
+          "t": 149.938,
+          "ms": 29979.3,
+          "summary": "第 2 轮行程草案已生成：1 天、3 个景点。"
+        },
+        {
+          "node": "route_distance_check",
+          "event": "start",
+          "t": 149.939
+        },
+        {
+          "node": "route_distance_check",
+          "event": "end",
+          "t": 150.114,
+          "ms": 174.6,
+          "summary": "已核验 4/4 段道路距离（drive）"
+        },
+        {
+          "node": "risk_gate",
+          "event": "start",
+          "t": 150.117
+        },
+        {
+          "node": "risk_gate",
+          "event": "end",
+          "t": 150.12,
+          "ms": 3.0,
+          "summary": "检测到 5 项风险，已升级到独立审核。"
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "start",
+          "t": 150.122
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "end",
+          "t": 150.126,
+          "ms": 4.0,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "reviewer",
+          "event": "start",
+          "t": 150.128
+        },
+        {
+          "node": "reviewer",
+          "event": "end",
+          "t": 158.643,
+          "ms": 8515.3,
+          "summary": "行程评审通过，进入开放时间核验。"
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "start",
+          "t": 158.645
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "end",
+          "t": 158.65,
+          "ms": 4.9,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "planner",
+          "event": "start",
+          "t": 158.651
+        },
+        {
+          "node": "planner",
+          "event": "end",
+          "t": 174.99,
+          "ms": 16338.9,
+          "summary": "第 3 轮行程草案已生成：1 天、3 个景点。"
+        },
+        {
+          "node": "route_distance_check",
+          "event": "start",
+          "t": 174.991
+        },
+        {
+          "node": "route_distance_check",
+          "event": "end",
+          "t": 174.995,
+          "ms": 3.5,
+          "summary": "已核验 4/4 段道路距离（drive）"
+        },
+        {
+          "node": "risk_gate",
+          "event": "start",
+          "t": 174.997
+        },
+        {
+          "node": "risk_gate",
+          "event": "end",
+          "t": 174.999,
+          "ms": 1.9,
+          "summary": "检测到 5 项风险，已升级到独立审核。"
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "start",
+          "t": 175.0
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "end",
+          "t": 175.004,
+          "ms": 4.3,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "reviewer",
+          "event": "start",
+          "t": 175.006
+        },
+        {
+          "node": "reviewer",
+          "event": "end",
+          "t": 180.891,
+          "ms": 5885.4,
+          "summary": "行程评审通过，进入开放时间核验。"
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "start",
+          "t": 180.892
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "end",
+          "t": 180.897,
+          "ms": 4.2,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "planner",
+          "event": "start",
+          "t": 180.898
+        },
+        {
+          "node": "planner",
+          "event": "end",
+          "t": 198.665,
+          "ms": 17766.8,
+          "summary": "第 4 轮行程草案已生成：1 天、3 个景点。"
+        },
+        {
+          "node": "route_distance_check",
+          "event": "start",
+          "t": 198.666
+        },
+        {
+          "node": "route_distance_check",
+          "event": "end",
+          "t": 198.668,
+          "ms": 2.3,
+          "summary": "已核验 4/4 段道路距离（drive）"
+        },
+        {
+          "node": "risk_gate",
+          "event": "start",
+          "t": 198.669
+        },
+        {
+          "node": "risk_gate",
+          "event": "end",
+          "t": 198.671,
+          "ms": 1.4,
+          "summary": "检测到 4 项风险，已升级到独立审核。"
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "start",
+          "t": 198.672
+        },
+        {
+          "node": "snapshot_gate",
+          "event": "end",
+          "t": 198.676,
+          "ms": 4.3,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "reviewer",
+          "event": "start",
+          "t": 198.677
+        },
+        {
+          "node": "reviewer",
+          "event": "end",
+          "t": 205.894,
+          "ms": 7217.0,
+          "summary": "行程评审通过，进入开放时间核验。"
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "start",
+          "t": 205.895
+        },
+        {
+          "node": "snapshot_reviewer",
+          "event": "end",
+          "t": 205.899,
+          "ms": 3.2,
+          "summary": "一个规划阶段已完成，正在继续下一步。"
+        },
+        {
+          "node": "finalize_direct",
+          "event": "start",
+          "t": 205.9
+        },
+        {
+          "node": "finalize_direct",
+          "event": "end",
+          "t": 208.001,
+          "ms": 2101.2,
+          "summary": "行程已整理完成，正在展示结果。"
+        }
+      ],
+      "error": null
+    },
+    {
+      "case_id": "nanjing-3d-history",
+      "query": "南京三天，想看历史建筑和博物馆，节奏慢一点，别太赶",
+      "focus": "多日 + 偏好约束 + 必去未点名",
+      "success": false,
+      "status": "FAILED",
+      "days": 0,
+      "spots": [],
+      "spot_count": 0,
+      "route_issues": [],
+      "missing_fields": [
+        "出行开始日期",
+        "出行结束日期"
+      ],
+      "plan_id": null,
+      "latency_s": 8.612,
+      "llm_calls": 1,
+      "input_tokens_est": 265,
+      "output_tokens_est": 134,
+      "node_ms": {
+        "intent": 7758.4,
+        "clarify": 0.6
+      },
+      "nodes_entered": [
+        "clarify",
+        "intent"
+      ],
+      "events": [
+        {
+          "node": "intent",
+          "event": "start",
+          "t": 0.851
+        },
+        {
+          "node": "intent",
+          "event": "end",
+          "t": 8.609,
+          "ms": 7758.4,
+          "summary": "已识别：南京，0 天行程。"
+        },
+        {
+          "node": "clarify",
+          "event": "start",
+          "t": 8.611
+        },
+        {
+          "node": "clarify",
+          "event": "end",
+          "t": 8.611,
+          "ms": 0.6,
+          "summary": "我还不能准确理解这次旅行请求，请补充：出发日期（或相对日期，如明天）、旅行天数/结束日期。"
+        }
+      ],
+      "error": null
+    },
+    {
+      "case_id": "vague-request-clarify",
+      "query": "我想出去玩几天，你看着安排",
+      "focus": "信息不足时应追问（clarify），不得凭空编造目的地",
+      "success": false,
+      "status": "FAILED",
+      "days": 0,
+      "spots": [],
+      "spot_count": 0,
+      "route_issues": [],
+      "missing_fields": [
+        "目的地",
+        "出行开始日期",
+        "出行结束日期"
+      ],
+      "plan_id": null,
+      "latency_s": 5.429,
+      "llm_calls": 1,
+      "input_tokens_est": 259,
+      "output_tokens_est": 124,
+      "node_ms": {
+        "intent": 4764.2,
+        "clarify": 0.5
+      },
+      "nodes_entered": [
+        "clarify",
+        "intent"
+      ],
+      "events": [
+        {
+          "node": "intent",
+          "event": "start",
+          "t": 0.662
+        },
+        {
+          "node": "intent",
+          "event": "end",
+          "t": 5.426,
+          "ms": 4764.2,
+          "summary": "已识别：目的地，0 天行程。"
+        },
+        {
+          "node": "clarify",
+          "event": "start",
+          "t": 5.427
+        },
+        {
+          "node": "clarify",
+          "event": "end",
+          "t": 5.428,
+          "ms": 0.5,
+          "summary": "我还不能准确理解这次旅行请求，请补充：目的地城市、出发日期（或相对日期，如明天）、旅行天数/结束日期。"
+        }
+      ],
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "key": "4f415135bb2f22eecb98ed565dc87aadf108a98a8fe4398e7c923ac6ba129451",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "d9a9ae4fbc9b41f0d45967d4af2ecc7d3913bae3a74c663bcc30207874814705",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 5,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 3,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "所有景点都符合用户对历史古迹和博物馆的偏好，每天2个景点数量适中，且所有景点都从10:00开始，符合用户不喜欢早起的习惯。",
+    "pacing": "每天安排2个景点，每个景点2.5小时，午间有1.5小时休息时间，节奏舒缓合理。",
+    "geographic_coherence": "第1天玄武湖和总统府地理位置相近；第2天科举博物馆和夫子庙都在秦淮区；但第3天牛首山和长江大桥地理位置相距较远，需要较长时间通勤。",
+    "time_realism": "所有景点从10:00开始符合用户习惯，每个景点2.5小时游览时间合理，但第3天跨区景点间的通勤时间可能较长。",
+    "completeness": "提供了具体景点和时间，但缺少交通、餐饮、住宿等必要信息。",
+    "diversity_and_dining": "所有景点均为历史古迹类型，缺乏多样性；未包含餐饮安排和休息时间规划。"
+  },
+  "flags": [
+    "地理安排第3天不合理",
+    "缺乏餐饮安排",
+    "缺乏交通信息",
+    "evidence_missing"
+  ],
+  "overall_comment": "整体行程符合用户对历史古迹的偏好，节奏舒缓，但第3天地理安排不合理，且缺乏餐饮和交通信息。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 604,
+    "output_tokens": 325,
+    "total_tokens": 929,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 43766.431,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "case_id": "nanjing-3d-tighthours-negative",
+  "edit_type": "change_time",
+  "instruction": "第1天第一个景点改到10:00以后开始，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 58.052,
+    "input_tokens": 1330,
+    "output_tokens": 1195,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "南京牛首山文化旅游区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "不老村",
+      "水墨大埝旅游区"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "古鸡鸣寺",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "中山陵景区",
+            "period": "afternoon",
+            "start_time": "13:30",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "历史古迹探索之旅"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "南京牛首山文化旅游区",
+            "period": "morning",
+            "start_time": "09:30",
+            "end_time": "12:00"
+          },
+          {
+            "name": "江苏江宁汤山方山国家地质公园博物馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "自然景观与文化体验"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "不老村",
+            "period": "morning",
+            "start_time": "09:30",
+            "end_time": "12:00"
+          },
+          {
+            "name": "水墨大埝旅游区",
+            "period": "afternoon",
+            "start_time": "13:30",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "浦口自然风光"
+      }
+    ],
+    "warnings": [
+      "Day2 首站早于 10:00",
+      "Day3 首站早于 10:00",
+      "【用户修改意见】第1天第一个景点改到10:00以后开始，其他安排尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 46.38,
+    "input_tokens": 1624,
+    "output_tokens": 533,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "南京欢乐谷",
+      "不老村",
+      "水墨大埝旅游区"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "古鸡鸣寺",
+            "period": "morning",
+            "start_time": "10:30",
+            "end_time": "12:00"
+          },
+          {
+            "name": "中山陵景区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "历史文化古迹之旅"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "江苏江宁汤山方山国家地质公园博物馆",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "南京欢乐谷",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "地质科普与主题乐园"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "不老村",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "水墨大埝旅游区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "自然风光休闲"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】第1天第一个景点改到10:00以后开始，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.8333,
+    "B": 1.0
+  }
+}

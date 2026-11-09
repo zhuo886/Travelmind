@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-11-06T10:42:47.382275+00:00",
+  "model": "glm-4.5-flash",
+  "provider": "openai",
+  "modes": [
+    "planner_only",
+    "planner_reviewer",
+    "planner_reviewer_time_check"
+  ],
+  "cases": [
+    "nanjing-3d-sunny-history",
+    "sanya-3d-allrain-outdoor-negative",
+    "shanghai-1d-sunny-nightlife"
+  ],
+  "k": 3,
+  "trials": 27
+}

@@ -1,0 +1,39 @@
+{
+  "key": "9055d75f28c7e193a6bb031265bd67d4a4ae282e1a165138d2bf3fb5e75db334",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "9ab09ea9553e49d39f9e32ddb1775b222a66ccd09fce479e8464660f3d29f283",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 5,
+    "geographic_coherence": 4,
+    "time_realism": 5,
+    "completeness": 4,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "总统府、中国科举博物馆、夫子庙都是历史古迹，符合用户偏好；每天只有2个景点，符合'每天景点别太多'的要求；10:00开始不算太早，符合'不喜欢早起'的偏好",
+    "pacing": "每天都是10:00-12:30，14:00-16:30，节奏规律；每天只有2个景点，有充足的休息时间；上午和下午各2.5小时，时间分配合理",
+    "geographic_coherence": "玄武湖和总统府都在市中心，距离较近；科举博物馆和夫子庙也在同一区域；每天内部景点之间地理位置相对连贯",
+    "time_realism": "10:00开始不算太早，符合用户偏好；每个景点2.5小时，时间充足；午餐时间安排合理",
+    "completeness": "提供了具体的时间安排；每天景点数量适中；虽然缺少交通和餐饮信息，但scope中说明不需要考虑",
+    "diversity_and_dining": "景点类型多样，包括历史古迹（总统府、科举博物馆、夫子庙）、自然景观（玄武湖）、文化旅游区（牛首山）、现代建筑（长江大桥）"
+  },
+  "flags": [],
+  "overall_comment": "行程整体安排合理，符合用户偏好，节奏适中，景点选择多样，时间安排合理。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 742,
+    "output_tokens": 336,
+    "total_tokens": 1078,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 39389.281,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

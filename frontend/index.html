@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>途见 · AI 旅行规划</title>
+  <meta name="description" content="多 Agent 协作的旅行行程编排系统" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css?v=20261108-magazine6" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React 18 + Babel Standalone（CDN，无构建） -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+
+  <!-- SortableJS（行程手动编辑拖拽） -->
+  <script src="https://unpkg.com/sortablejs@1.15.6/Sortable.min.js" crossorigin></script>
+
+  <!-- API 客户端（纯 JS，无 JSX） -->
+  <script src="/api.js?v=20261108-magazine6"></script>
+
+  <!-- JSX 组件（Babel 在浏览器端转译） -->
+  <script type="text/babel" src="/components.jsx?v=20261108-magazine6"></script>
+  <script type="text/babel" src="/edit.jsx?v=20261108-magazine6"></script>
+  <script type="text/babel" src="/pages.jsx?v=20261108-magazine6"></script>
+  <script type="text/babel" src="/main.jsx?v=20261108-magazine6"></script>
+</body>
+</html>

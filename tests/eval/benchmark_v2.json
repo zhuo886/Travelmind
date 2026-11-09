@@ -1,0 +1,88 @@
+{
+  "version": "v2",
+  "frozen_at": "2026-11-07",
+  "supersedes": "benchmark_v1.json",
+  "note": "v1 的 must_visit 只是 benchmark 元数据，未进入 fixture query；v2 把点名需求写入 query（触发词 + 引号），使 constraints.active_must_visit() 生效，missing_must_visit 进入 L0。",
+  "cases": [
+    {
+      "id": "nanjing-3d-sunny-history",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": ["玄武湖景区"],
+      "must_visit_in_query": true,
+      "must_avoid": [],
+      "note": "基准 3 天历史游；query 显式点名玄武湖景区"
+    },
+    {
+      "id": "nanjing-3d-singlerain-history",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": [],
+      "must_visit_in_query": false,
+      "must_avoid": [],
+      "note": "单日雨的 3 天历史游"
+    },
+    {
+      "id": "nanjing-3d-tighthours-negative",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": [],
+      "must_visit_in_query": false,
+      "must_avoid": [],
+      "note": "v1 复核确认该 fixture 实际可行（6 点/3 天且时间窗合法），v2 修正标签；真正不可行的负样本另建"
+    },
+    {
+      "id": "shanghai-1d-sunny-nightlife",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": ["上海海洋水族馆"],
+      "must_visit_in_query": true,
+      "must_avoid": [],
+      "note": "1 天 + 夜景时段；query 显式点名上海海洋水族馆"
+    },
+    {
+      "id": "shanghai-3d-smallpool-negative",
+      "allowed_outcomes": ["SUCCESS_WITH_WARNINGS", "PARTIAL"],
+      "must_visit": [],
+      "must_visit_in_query": false,
+      "must_avoid": [],
+      "note": "候选池不足"
+    },
+    {
+      "id": "shanghai-3d-beyond-forecast",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": [],
+      "must_visit_in_query": false,
+      "must_avoid": [],
+      "note": "超出天气预报范围"
+    },
+    {
+      "id": "lijiang-5d-sunny-slowpace",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": ["束河古镇"],
+      "must_visit_in_query": true,
+      "must_avoid": [],
+      "note": "5 天慢节奏；query 显式点名束河古镇"
+    },
+    {
+      "id": "lijiang-3d-allrain-history",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS", "PARTIAL"],
+      "must_visit": [],
+      "must_visit_in_query": false,
+      "must_avoid": [],
+      "note": "全程雨"
+    },
+    {
+      "id": "sanya-3d-allrain-outdoor-negative",
+      "allowed_outcomes": ["PARTIAL", "CORRECT_REJECT"],
+      "must_visit": [],
+      "must_visit_in_query": false,
+      "must_avoid": [],
+      "note": "雨天全露天负样本"
+    },
+    {
+      "id": "jingdezhen-3d-sunny-history",
+      "allowed_outcomes": ["SUCCESS", "SUCCESS_WITH_WARNINGS"],
+      "must_visit": [],
+      "must_visit_in_query": false,
+      "must_avoid": [],
+      "note": "小城分散型"
+    }
+  ]
+}

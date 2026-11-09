@@ -1,0 +1,256 @@
+{
+  "case_id": "lijiang-5d-sunny-slowpace",
+  "edit_type": "add_must_visit",
+  "instruction": "第2天一定去“丽江千古情景区”，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 90.651,
+    "input_tokens": 2384,
+    "output_tokens": 1765,
+    "llm_calls": 1,
+    "status": "FAILED",
+    "hard_pass": false,
+    "plan_generated": true,
+    "route_names": [
+      "束河古镇",
+      "白沙古镇",
+      "丽江古城",
+      "丽江千古情景区",
+      "丽江玉水寨风景区",
+      "中济海公园",
+      "玉龙雪山国家级风景名胜区",
+      "玉龙雪山国家级风景名胜区蓝月谷",
+      "丽江古城-狮子山",
+      "丽江之眼观景台"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "束河古镇",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "白沙古镇",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "纳西古镇文化体验"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "丽江古城",
+            "period": "morning",
+            "start_time": "10:30",
+            "end_time": "12:30"
+          },
+          {
+            "name": "丽江千古情景区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "18:00"
+          }
+        ],
+        "theme": "古城文化与千古情表演"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "丽江玉水寨风景区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "中济海公园",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "纳西自然与民俗文化"
+      },
+      {
+        "day": 4,
+        "spots": [
+          {
+            "name": "玉龙雪山国家级风景名胜区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "14:00"
+          },
+          {
+            "name": "玉龙雪山国家级风景名胜区蓝月谷",
+            "period": "afternoon",
+            "start_time": "14:30",
+            "end_time": "17:00"
+          }
+        ],
+        "theme": "雪山风光与自然美景"
+      },
+      {
+        "day": 5,
+        "spots": [
+          {
+            "name": "丽江古城-狮子山",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "丽江之眼观景台",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "古城全景与观景体验"
+      }
+    ],
+    "warnings": [],
+    "failure_codes": [
+      "unknown_poi"
+    ],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 59.655,
+    "input_tokens": 2881,
+    "output_tokens": 1148,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "束河古镇",
+      "丽江玉水寨风景区",
+      "丽江古城",
+      "丽江千古情景区",
+      "白沙古镇",
+      "丽江拉市海湿地公园",
+      "玉龙雪山国家级风景名胜区",
+      "玉龙雪山国家级风景名胜区蓝月谷",
+      "丽江古城-狮子山(狮山路)",
+      "中济海公园"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "束河古镇",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "丽江玉水寨风景区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "纳西文化深度体验"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "丽江古城",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "丽江千古情景区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "21:00"
+          }
+        ],
+        "theme": "古城文化+千古情演出"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "白沙古镇",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "丽江拉市海湿地公园",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "古镇湿地自然风光"
+      },
+      {
+        "day": 4,
+        "spots": [
+          {
+            "name": "玉龙雪山国家级风景名胜区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "玉龙雪山国家级风景名胜区蓝月谷",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "雪山蓝月谷奇景"
+      },
+      {
+        "day": 5,
+        "spots": [
+          {
+            "name": "丽江古城-狮子山(狮山路)",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "中济海公园",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "古城全景与休闲"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】第2天一定去“丽江千古情景区”，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.7,
+    "B": 0.9
+  }
+}

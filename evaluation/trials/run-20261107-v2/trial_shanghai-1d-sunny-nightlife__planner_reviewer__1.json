@@ -1,0 +1,81 @@
+{
+  "trial_id": "6f2ec03e106240f0a40303bc02ab7f1f",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [
+    "unknown_poi"
+  ],
+  "final_delivered_iteration": 4,
+  "planning_revision_rounds": 3,
+  "review_round": 4,
+  "time_check_round": 0,
+  "snapshot_count": 4,
+  "soft_score": 97.0,
+  "warnings": [
+    "Day1 从浦东新区到黄浦区需要跨江，建议提前规划交通路线，预留充足的通行时间"
+  ],
+  "route_names": [
+    "上海海洋水族馆",
+    "上海失恋博物馆"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        },
+        {
+          "name": "上海失恋博物馆",
+          "period": "evening",
+          "start": "17:30",
+          "end": "20:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 2
+  },
+  "must_visit_expected": [
+    "上海海洋水族馆"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 314.484,
+  "node_latency_ms": {
+    "planner": 153886.385,
+    "snapshot_gate": 7.291,
+    "reviewer": 159045.148,
+    "snapshot_reviewer": 6.805
+  },
+  "input_tokens_est": 20183,
+  "output_tokens_est": 3184,
+  "llm_calls": 8,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

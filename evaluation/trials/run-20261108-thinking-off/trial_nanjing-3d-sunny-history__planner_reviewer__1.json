@@ -1,0 +1,290 @@
+{
+  "trial_id": "6a6a4701d3dc43669da71dce64cc47d1",
+  "case_id": "nanjing-3d-sunny-history",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "closed_on_visit_day"
+  ],
+  "first_draft_l0": [],
+  "first_draft_l1": [
+    "closed_on_visit_day"
+  ],
+  "first_draft_soft_score": 97.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 3,
+  "review_round": 4,
+  "reviewer_calls": 4,
+  "time_check_round": 0,
+  "snapshot_count": 4,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day"
+      ],
+      "defect_count": 1,
+      "soft_score": 97.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "062d1b491a109e06",
+      "spot_names": [
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "玄武湖景区",
+        "中山陵景区",
+        "总统府",
+        "古鸡鸣寺"
+      ],
+      "is_delivered": true
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "duplicate_poi"
+      ],
+      "defect_count": 1,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "03800dedcaa28f5a",
+      "spot_names": [
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "玄武湖景区",
+        "中山陵景区",
+        "南京夫子庙",
+        "古鸡鸣寺"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day"
+      ],
+      "defect_count": 1,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "c5d5b0058fd3e1e8",
+      "spot_names": [
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "玄武湖景区",
+        "中山陵景区",
+        "古鸡鸣寺",
+        "总统府"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 4,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day"
+      ],
+      "defect_count": 1,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "5951b74ea0905f23",
+      "spot_names": [
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "玄武湖景区",
+        "中山陵景区",
+        "古鸡鸣寺",
+        "江苏江宁汤山方山国家地质公园博物馆"
+      ],
+      "is_delivered": false
+    }
+  ],
+  "soft_score": 97.0,
+  "warnings": [
+    "Day3（2026-08-03 周一） 景点可能闭馆：总统府（参考开放信息：08:30-18:00（17:00停止入场，周一闭馆）(数据来源:江苏省文旅厅公共服务平台苏心游)），建议调整游览日期或行前核实",
+    "Day3总统府周一闭馆，建议提前核实开放情况或更换其他景点",
+    "Day3总统府周一闭馆，需替换为其他开放景点或调整行程日期。"
+  ],
+  "route_names": [
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "玄武湖景区",
+    "中山陵景区",
+    "总统府",
+    "古鸡鸣寺"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "中山陵景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "总统府",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:00"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "玄武湖景区",
+    "中山陵景区",
+    "总统府",
+    "古鸡鸣寺"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "中山陵景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "总统府",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [
+    "玄武湖景区"
+  ],
+  "must_visit_ok": true,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 167.092,
+  "node_latency_ms": {
+    "planner": 122411.612,
+    "snapshot_gate": 11.652,
+    "reviewer": 44510.557,
+    "snapshot_reviewer": 10.336
+  },
+  "input_tokens_est": 20327,
+  "output_tokens_est": 3520,
+  "llm_calls": 8,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 97.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

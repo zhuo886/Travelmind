@@ -1,0 +1,61 @@
+{
+  "key": "613263b79056df95a470fc46495cd88d2e4be8f3fef2a3377834d51438a0abd7",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "57d24b1643760e4f2f0a04e697d3c7a348001bf9178a2d34e28ee35c8aef1868",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "南山文化旅游区南山海上观音"
+    ],
+    "pacing": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "南山文化旅游区南山海上观音"
+    ],
+    "geographic_coherence": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "南山文化旅游区南山海上观音"
+    ],
+    "time_realism": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "南山文化旅游区南山海上观音"
+    ],
+    "completeness": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "南山文化旅游区南山海上观音"
+    ],
+    "diversity_and_dining": [
+      "南山大小洞天旅游区",
+      "三亚南山文化旅游区",
+      "南山文化旅游区南山海上观音"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

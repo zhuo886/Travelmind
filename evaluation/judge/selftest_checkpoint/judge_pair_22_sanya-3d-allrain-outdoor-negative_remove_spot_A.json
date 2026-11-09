@@ -1,0 +1,88 @@
+{
+  "trial_id": "pair_22_sanya-3d-allrain-outdoor-negative_remove_spot_A",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "judge": {
+    "rubric_version": "judge-rubric-v1",
+    "prompt_version": "judge-prompt-v1",
+    "provider": "stub",
+    "model": null,
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 4,
+          "geographic_coherence": 4,
+          "time_realism": 4,
+          "completeness": 5,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "南山大小洞天旅游区",
+            "天涯海角游览区",
+            "椰梦长廊"
+          ],
+          "pacing": [
+            "南山大小洞天旅游区",
+            "天涯海角游览区",
+            "椰梦长廊"
+          ],
+          "geographic_coherence": [
+            "南山大小洞天旅游区",
+            "天涯海角游览区",
+            "椰梦长廊"
+          ],
+          "time_realism": [
+            "南山大小洞天旅游区",
+            "天涯海角游览区",
+            "椰梦长廊"
+          ],
+          "completeness": [
+            "南山大小洞天旅游区",
+            "天涯海角游览区",
+            "椰梦长廊"
+          ],
+          "diversity_and_dining": [
+            "南山大小洞天旅游区",
+            "天涯海角游览区",
+            "椰梦长廊"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "stub judge 1 仅用于管线自测",
+          "pacing": "stub judge 1 仅用于管线自测",
+          "geographic_coherence": "stub judge 1 仅用于管线自测",
+          "time_realism": "stub judge 1 仅用于管线自测",
+          "completeness": "stub judge 1 仅用于管线自测",
+          "diversity_and_dining": "stub judge 1 仅用于管线自测"
+        },
+        "flags": [
+          "stub_provider"
+        ],
+        "overall_comment": "stub provider: never use as a quality result",
+        "usage": {},
+        "weighted_score": 80.0,
+        "cache_hit": false
+      }
+    ],
+    "overall_mean": 80.0,
+    "dimension_mean": {
+      "preference_fit": 4.0,
+      "pacing": 4.0,
+      "geographic_coherence": 4.0,
+      "time_realism": 4.0,
+      "completeness": 5.0,
+      "diversity_and_dining": 3.0
+    },
+    "agreement": null,
+    "low_score_dimensions": [],
+    "flags": [
+      "stub_provider"
+    ],
+    "judge_calls": 1,
+    "judge_tokens_est": 0,
+    "cache_hits": 0,
+    "errors": []
+  }
+}

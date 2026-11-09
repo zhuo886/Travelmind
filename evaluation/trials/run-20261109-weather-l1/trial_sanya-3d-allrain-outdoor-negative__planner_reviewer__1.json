@@ -1,0 +1,326 @@
+{
+  "trial_id": "40fab1ba78ca486dbf816c71485079e7",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "weather_exposure_conflict",
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch"
+  ],
+  "first_draft_l0": [],
+  "first_draft_l1": [
+    "weather_exposure_conflict",
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch"
+  ],
+  "first_draft_soft_score": 72.0,
+  "final_delivered_iteration": 3,
+  "planning_revision_rounds": 2,
+  "review_round": 3,
+  "reviewer_calls": 3,
+  "time_check_round": 0,
+  "snapshot_count": 3,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [
+        "weather_exposure_conflict",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch"
+      ],
+      "defect_count": 4,
+      "soft_score": 72.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "77cb14a8e3c70e1e",
+      "spot_names": [
+        "天涯海角游览区",
+        "天涯小镇",
+        "三亚凤凰岭海誓山盟景区",
+        "鹿回头风景区",
+        "亚龙湾海滩",
+        "亚龙湾国家旅游度假区"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "weather_exposure_conflict",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch"
+      ],
+      "defect_count": 4,
+      "soft_score": 72.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "92fe7241f2795f4a",
+      "spot_names": [
+        "天涯小镇",
+        "海月广场",
+        "三亚湾",
+        "椰梦长廊",
+        "三亚·中交凤凰岛",
+        "海棠广场"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [],
+      "l1_codes": [
+        "weather_exposure_conflict",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch"
+      ],
+      "defect_count": 4,
+      "soft_score": 72.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "92fe7241f2795f4a",
+      "spot_names": [
+        "天涯小镇",
+        "海月广场",
+        "三亚湾",
+        "椰梦长廊",
+        "三亚·中交凤凰岛",
+        "海棠广场"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 72.0,
+  "warnings": [
+    "全程恶劣天气且所有已排景点均为室外，请补充室内替代或调整行程",
+    "Day1 为恶劣天气，仍安排了 2 个室外景点（天涯小镇、海月广场），请替换为室内或调整顺序",
+    "Day2 为恶劣天气，仍安排了 2 个室外景点（三亚湾、椰梦长廊），请替换为室内或调整顺序",
+    "Day3 为恶劣天气，仍安排了 2 个室外景点（三亚·中交凤凰岛、海棠广场），请替换为室内或调整顺序",
+    "连续三天雨天，建议调整为室内景点或减少户外活动时间，避免雨天影响体验",
+    "全程雨天仍安排室外景点，需替换为室内景点或调整行程。Day1、Day2、Day3均需修改。"
+  ],
+  "route_names": [
+    "天涯小镇",
+    "海月广场",
+    "三亚湾",
+    "椰梦长廊",
+    "三亚·中交凤凰岛",
+    "海棠广场"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "天涯小镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "海月广场",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "三亚湾",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "椰梦长廊",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "三亚·中交凤凰岛",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "海棠广场",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "15:00"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "天涯小镇",
+    "海月广场",
+    "三亚湾",
+    "椰梦长廊",
+    "三亚·中交凤凰岛",
+    "海棠广场"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "天涯小镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "海月广场",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "三亚湾",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "椰梦长廊",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "三亚·中交凤凰岛",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "海棠广场",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "15:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 133.687,
+  "node_latency_ms": {
+    "planner": 86309.696,
+    "snapshot_gate": 9.464,
+    "reviewer": 46388.004,
+    "snapshot_reviewer": 7.975
+  },
+  "input_tokens_est": 18036,
+  "output_tokens_est": 2472,
+  "llm_calls": 6,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 72.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 1,
+      "date": "2026-10-15",
+      "limit": 1,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "天涯小镇",
+        "海月广场"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 2,
+      "date": "2026-10-16",
+      "limit": 1,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "三亚湾",
+        "椰梦长廊"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 3,
+      "date": "2026-10-17",
+      "limit": 1,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "三亚·中交凤凰岛",
+        "海棠广场"
+      ]
+    }
+  ],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

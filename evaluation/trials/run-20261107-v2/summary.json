@@ -1,0 +1,204 @@
+{
+  "total_trials": 2,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 2,
+    "value": 0.0
+  },
+  "effective_trials": 2,
+  "outcome_counts": {
+    "SUCCESS_WITH_WARNINGS": 2
+  },
+  "label_counts": {
+    "MATCH": 2
+  },
+  "fdr": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  },
+  "pdr": {
+    "num": 0,
+    "den": 2,
+    "value": 0.0
+  },
+  "omr": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  },
+  "hpr": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  },
+  "fpr": {
+    "num": 0,
+    "den": 2,
+    "value": 0.0
+  },
+  "oor": {
+    "outside": 0,
+    "references": 4,
+    "value": 0.0
+  },
+  "msr": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 2,
+    "den": 2,
+    "value": 1.0
+  },
+  "rounds": {
+    "mean": 2.0,
+    "snapshot_count_mean": 3.0
+  },
+  "soft_score": {
+    "mean": 97.0,
+    "n": 2
+  },
+  "latency_s": {
+    "n": 2,
+    "median": 259.201,
+    "min": 203.918,
+    "max": 314.484,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "node_latency_ms": {
+    "planner": {
+      "n": 2,
+      "median": 121959.687,
+      "max": 153886.4
+    },
+    "snapshot_gate": {
+      "n": 2,
+      "median": 5.194,
+      "max": 7.3
+    },
+    "reviewer": {
+      "n": 2,
+      "median": 123172.191,
+      "max": 159045.1
+    },
+    "snapshot_reviewer": {
+      "n": 2,
+      "median": 5.578,
+      "max": 6.8
+    },
+    "time_check": {
+      "n": 1,
+      "median": 26478.327,
+      "max": 26478.3
+    },
+    "snapshot_time_check": {
+      "n": 1,
+      "median": 0.629,
+      "max": 0.6
+    }
+  },
+  "tool_calls": {
+    "candidate_api_calls_mean": 0.0,
+    "route_leg_count_mean": 0.0
+  },
+  "usage": {
+    "input_tokens_est_mean": 15299.5,
+    "output_tokens_est_mean": 2443.0,
+    "llm_calls_mean": 6.5
+  },
+  "by_case": {
+    "shanghai-1d-sunny-nightlife": {
+      "trials": 2,
+      "generated": 2,
+      "hard_pass": 2,
+      "match": 2,
+      "hpr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 259.201,
+      "soft_score_mean": 97.0,
+      "input_tokens_est_mean": 15299.5,
+      "output_tokens_est_mean": 2443.0,
+      "total_tokens_est_mean": 17742.5,
+      "llm_calls_mean": 6.5
+    }
+  },
+  "by_mode": {
+    "planner_reviewer": {
+      "trials": 1,
+      "generated": 1,
+      "hard_pass": 1,
+      "match": 1,
+      "hpr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "median_latency_s": 314.484,
+      "soft_score_mean": 97.0,
+      "input_tokens_est_mean": 20183.0,
+      "output_tokens_est_mean": 3184.0,
+      "total_tokens_est_mean": 23367.0,
+      "llm_calls_mean": 8.0
+    },
+    "planner_reviewer_time_check": {
+      "trials": 1,
+      "generated": 1,
+      "hard_pass": 1,
+      "match": 1,
+      "hpr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 1,
+        "value": 1.0
+      },
+      "median_latency_s": 203.918,
+      "soft_score_mean": 97.0,
+      "input_tokens_est_mean": 10416.0,
+      "output_tokens_est_mean": 1702.0,
+      "total_tokens_est_mean": 12118.0,
+      "llm_calls_mean": 5.0
+    }
+  },
+  "pass_at_k": {
+    "shanghai-1d-sunny-nightlife": {
+      "k": 2,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  }
+}

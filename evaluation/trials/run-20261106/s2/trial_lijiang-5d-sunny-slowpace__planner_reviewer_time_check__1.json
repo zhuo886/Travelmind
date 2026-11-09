@@ -1,0 +1,57 @@
+{
+  "trial_id": "ffe1e021fdc74c0d90bc565e4b53db28",
+  "case_id": "lijiang-5d-sunny-slowpace",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "time_check_round": 1,
+  "snapshot_count": 2,
+  "soft_score": 100.0,
+  "oor": {
+    "outside": 0,
+    "total": 10
+  },
+  "must_visit_expected": [
+    "束河古镇"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 362.93,
+  "node_latency_ms": {
+    "planner": 147946.43,
+    "snapshot_gate": 4.995,
+    "reviewer": 144567.269,
+    "snapshot_reviewer": 4.433,
+    "time_check": 70311.691,
+    "snapshot_time_check": 1.591
+  },
+  "input_tokens_est": 12416,
+  "output_tokens_est": 4305,
+  "llm_calls": 5,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

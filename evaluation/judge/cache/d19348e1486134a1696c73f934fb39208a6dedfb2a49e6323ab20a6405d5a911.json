@@ -1,0 +1,39 @@
+{
+  "key": "d19348e1486134a1696c73f934fb39208a6dedfb2a49e6323ab20a6405d5a911",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "56fe24930fdd00837ec69b8fca40c3ab6822d0a9a72c3c52d36e75f6a44c0d57",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 4,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程基本符合用户历史古迹和自然景观的偏好，每天10:00开始也符合不喜欢早起的习惯。Day1和Day2的景点完全匹配偏好，但Day3的南京欢乐谷与历史古迹/自然景观偏好不符。",
+    "pacing": "每天安排2个景点，每个景点2.5-3小时，时间充裕合理。12:30-13:30有1小时午餐间隔，整体节奏适中，不过不过满。",
+    "geographic_coherence": "每天内的景点相对集中（Day1和Day3都在江宁区，Day2都在玄武区），但跨天之间可能存在地理折返，3日游的跨区域移动是正常安排。",
+    "time_realism": "每天10:00开始符合用户习惯，每个景点时间安排合理。虽然缺少景点间通勤时间，但整体时间安排现实可行。",
+    "completeness": "提供了具体的景点名称和时间段，信息基本完整可直接执行。根据scope要求，不评价缺失的交通和餐饮信息。",
+    "diversity_and_dining": "景点类型多样，包含历史古迹、自然景观、地质博物馆和主题乐园，体验丰富。但scope.meals=false，不评价餐饮安排。"
+  },
+  "flags": [],
+  "overall_comment": "这是一个整体质量不错的南京3日游行程，基本符合用户偏好，时间安排合理，信息完整。主要优点是每天节奏适中，景点选择符合历史古迹和自然景观偏好，且符合不早起的习惯。需要改进的是第3天的南京欢乐谷与用户偏好不太匹配，以及可以考虑优化跨天的地理路线减少折返。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 736,
+    "output_tokens": 398,
+    "total_tokens": 1134,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 60698.099,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

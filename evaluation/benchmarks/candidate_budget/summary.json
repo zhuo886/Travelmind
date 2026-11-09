@@ -1,0 +1,163 @@
+{
+  "benchmark": "candidate_budget",
+  "kind": "aggregation",
+  "sources": [
+    "evaluation\\trials\\run-20261106\\s1",
+    "evaluation\\trials\\run-20261106\\s2",
+    "evaluation\\trials\\run-20261106\\s3",
+    "evaluation\\trials\\run-20261107-v2",
+    "evaluation\\trials\\run-20261107-negative"
+  ],
+  "safety_sources": [
+    "evaluation\\trials\\run-20261107-safety-hardreject-v2"
+  ],
+  "records": 81,
+  "budget": {
+    "ceiling": 10,
+    "trials": 81,
+    "exercised": false,
+    "compliant": 81,
+    "compliance_rate": null,
+    "violations": [],
+    "calls_total": 0,
+    "calls_median": 0,
+    "calls_max": 0,
+    "by_mode": {
+      "planner_only": {
+        "trials": 27,
+        "median": 0,
+        "max": 0
+      },
+      "planner_reviewer": {
+        "trials": 27,
+        "median": 0,
+        "max": 0
+      },
+      "planner_reviewer_time_check": {
+        "trials": 27,
+        "median": 0,
+        "max": 0
+      }
+    },
+    "reason": "已冻结 trial 的 candidate_api_calls 全为 0（harness 从 planner 起跑，不经过检索节点），预算合规无法由这批数据证明；预算行为改由 gap_fill 的 bounded_react 臂覆盖",
+    "scenario_check": {
+      "source": "evaluation\\benchmarks\\gap_fill\\summary.json",
+      "scenarios": 28,
+      "compliant": 28,
+      "rate": 1.0,
+      "max_calls": 2,
+      "ceiling": 10,
+      "note": "受控场景跑的是真实决策队列与执行器（仅检索结果被桩替换）"
+    }
+  },
+  "round_ceiling": 2,
+  "hallucination": {
+    "trials": 81,
+    "oor": {
+      "outside": 3,
+      "total": 505,
+      "rate": 0.00594
+    },
+    "unknown_poi_by_mode": {
+      "planner_only": {
+        "trials": 27,
+        "unknown_poi": 3
+      },
+      "planner_reviewer": {
+        "trials": 27,
+        "unknown_poi": 0
+      },
+      "planner_reviewer_time_check": {
+        "trials": 27,
+        "unknown_poi": 0
+      }
+    },
+    "first_draft_unknown_poi": 9,
+    "blocked_by_reviewer": 6,
+    "blocked_trials": [
+      {
+        "trial_id": "ce9ae841769d44a385bdb3ae301cdf66",
+        "case_id": "sanya-3d-allrain-outdoor-negative",
+        "mode": "planner_reviewer_time_check"
+      },
+      {
+        "trial_id": "a97cf6f0fcfd47b8bfddee2aac486944",
+        "case_id": "sanya-3d-allrain-outdoor-negative",
+        "mode": "planner_reviewer"
+      },
+      {
+        "trial_id": "f5075edbf3dc455a86fc90c51bfb3961",
+        "case_id": "sanya-3d-allrain-outdoor-negative",
+        "mode": "planner_reviewer"
+      },
+      {
+        "trial_id": "4da6d7977e324ee5b6cb07401ba19669",
+        "case_id": "shanghai-1d-sunny-nightlife",
+        "mode": "planner_reviewer"
+      },
+      {
+        "trial_id": "6f2ec03e106240f0a40303bc02ab7f1f",
+        "case_id": "shanghai-1d-sunny-nightlife",
+        "mode": "planner_reviewer"
+      },
+      {
+        "trial_id": "7fca0ee8788a43a0b17caf586fa2c7f1",
+        "case_id": "shanghai-1d-sunny-nightlife",
+        "mode": "planner_reviewer_time_check"
+      }
+    ]
+  },
+  "must_visit": {
+    "evaluated": 39,
+    "passed": 33,
+    "rate": 0.8462,
+    "by_bucket": {
+      "v1": {
+        "evaluated": 30,
+        "passed": 24,
+        "failed_cases": [
+          "nanjing-3d-sunny-history::planner_only",
+          "nanjing-3d-sunny-history::planner_reviewer",
+          "nanjing-3d-sunny-history::planner_only",
+          "nanjing-3d-sunny-history::planner_reviewer",
+          "nanjing-3d-sunny-history::planner_reviewer_time_check",
+          "nanjing-3d-sunny-history::planner_reviewer_time_check"
+        ],
+        "rate": 0.8
+      },
+      "v2": {
+        "evaluated": 9,
+        "passed": 9,
+        "failed_cases": [],
+        "rate": 1.0
+      }
+    },
+    "infeasible_trials": 0,
+    "note": "不可行 case 的 must_visit_ok=False 是正确拒绝的结果，不应当作覆盖失败"
+  },
+  "safety": {
+    "trials": 6,
+    "outcomes": {
+      "CORRECT_REJECT": 6
+    },
+    "must_visit_evaluated": 3,
+    "must_visit_passed": 0,
+    "note": "安全样本 intended 为不可行；must_visit_ok=False 与 CORRECT_REJECT 一致，不算失败"
+  },
+  "dedupe": {
+    "available": false,
+    "trials_with_trace": 0,
+    "repeated_query_rejected": null,
+    "cache_hits": null,
+    "reason": "现有 trial 未落盘 candidate_search_trace；该字段自本轮起在 run_trials 中补写，去重与缓存命中需下一轮运行才有数据"
+  },
+  "l0_code_counts": {
+    "unknown_poi": 3
+  },
+  "l1_code_counts": {
+    "opening_time_conflict": 7,
+    "duplicate_poi": 3,
+    "habit_constraint": 3,
+    "closed_on_visit_day": 2
+  }
+}

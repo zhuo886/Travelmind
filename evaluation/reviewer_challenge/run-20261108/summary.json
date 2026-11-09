@@ -1,0 +1,391 @@
+{
+  "challenges": 6,
+  "k": 2,
+  "defect_challenges": 5,
+  "clean_challenges": 1,
+  "defect_runs": 10,
+  "detection_rate": {
+    "num": 10,
+    "den": 10,
+    "value": 1.0
+  },
+  "keyword_match_rate": {
+    "num": 10,
+    "den": 10,
+    "value": 1.0
+  },
+  "clean_runs": 2,
+  "clean_block_rate": {
+    "num": 0,
+    "den": 2,
+    "value": 0.0
+  },
+  "clean_issue_runs": 2,
+  "errors": 0,
+  "tokens_est": 32488,
+  "latency_median_s": 51.6,
+  "latency_max_s": 67.244,
+  "consensus_accuracy": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "consistency_rate": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "by_defect": {
+    "duplicate_poi": {
+      "runs": 2,
+      "detected": 2,
+      "detection_rate": 1.0,
+      "keyword_match": 2,
+      "keyword_match_rate": 1.0
+    },
+    "missing_must_visit": {
+      "runs": 2,
+      "detected": 2,
+      "detection_rate": 1.0,
+      "keyword_match": 2,
+      "keyword_match_rate": 1.0
+    },
+    "overpacked": {
+      "runs": 2,
+      "detected": 2,
+      "detection_rate": 1.0,
+      "keyword_match": 2,
+      "keyword_match_rate": 1.0
+    },
+    "unknown_poi": {
+      "runs": 2,
+      "detected": 2,
+      "detection_rate": 1.0,
+      "keyword_match": 2,
+      "keyword_match_rate": 1.0
+    },
+    "weather_outdoor": {
+      "runs": 2,
+      "detected": 2,
+      "detection_rate": 1.0,
+      "keyword_match": 2,
+      "keyword_match_rate": 1.0
+    }
+  },
+  "results": [
+    {
+      "challenge_id": "challenge-01-clean-control",
+      "base_fixture": "nanjing-3d-sunny-history",
+      "injected_defect": "none",
+      "expected_verdict": "approve",
+      "expected_keywords": [],
+      "runs": [
+        {
+          "verdict": "approve",
+          "expected": "approve",
+          "correct": true,
+          "keywords_hit": [],
+          "keyword_match": null,
+          "issues": [
+            "Day2中山陵景区和总统府均为周一闭馆，但安排在周日游览，请行前确认实际开放时间"
+          ],
+          "opinion": "",
+          "latency_s": 44.643,
+          "tokens_est": 2599,
+          "error": null
+        },
+        {
+          "verdict": "approve",
+          "expected": "approve",
+          "correct": true,
+          "keywords_hit": [],
+          "keyword_match": null,
+          "issues": [
+            "Day3为周一，建议提前核实中山陵景区和总统府的开放情况，如遇闭馆可考虑替换为其他开放景点"
+          ],
+          "opinion": "",
+          "latency_s": 50.133,
+          "tokens_est": 2550,
+          "error": null
+        }
+      ],
+      "consensus": "approve",
+      "consistent": true,
+      "consensus_correct": true
+    },
+    {
+      "challenge_id": "challenge-02-unknown-poi",
+      "base_fixture": "nanjing-3d-sunny-history",
+      "injected_defect": "unknown_poi",
+      "expected_verdict": "reject",
+      "expected_keywords": [
+        "非候选池",
+        "池外",
+        "不存在",
+        "未知"
+      ],
+      "runs": [
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "不存在"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "Day3包含'不存在的测试景点'，请替换为候选池中的实际景点",
+            "Day3安排在周一，中山陵景区和总统府周一闭馆，建议调整游览日期或替换为其他景点",
+            "建议将闭馆风险景点调整到Day1或Day2"
+          ],
+          "opinion": "1. Day3的\"不存在的测试景点\"不在候选池中，必须替换为候选池中的景点，建议替换为候选池中秦淮区的其他历史古迹景点。\n\n2. Day3为周一，中山陵景区和总统府周一闭馆，存在闭馆风险。建议将这两个景点调整到Day1或Day2，或替换为周一开放的景点。\n\n3. 建议将Day3的南京夫子庙保留，并替换为周一开放的候选景点，如江苏江宁汤山方山国家地质公园博物馆（但需确认周一是否开放）或其他周一开放的景点。",
+          "latency_s": 60.692,
+          "tokens_est": 2721,
+          "error": null
+        },
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "不存在"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "Day3包含不存在的景点，请替换为候选池中的实际景点",
+            "Day3是周一，部分景点可能闭馆，建议行前核实具体开放时间"
+          ],
+          "opinion": "1. Day3包含\"不存在的测试景点\"，该景点不在候选池中，必须替换为候选池中的景点\n2. Day3安排了南京夫子庙，但当天是周一，需注意夫子庙虽然开放，但其他景点如中山陵景区、总统府在周一闭馆\n3. 建议将Day3的\"不存在的测试景点\"替换为候选池中周一开放的景点，如莲花广场、江豚落日音乐广场等",
+          "latency_s": 51.6,
+          "tokens_est": 2685,
+          "error": null
+        }
+      ],
+      "consensus": "reject",
+      "consistent": true,
+      "consensus_correct": true
+    },
+    {
+      "challenge_id": "challenge-03-missing-must-visit",
+      "base_fixture": "nanjing-3d-sunny-history",
+      "injected_defect": "missing_must_visit",
+      "expected_verdict": "reject",
+      "expected_keywords": [
+        "玄武湖",
+        "点名",
+        "必去",
+        "未安排",
+        "遗漏"
+      ],
+      "runs": [
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "玄武湖",
+            "必去"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "行程中缺少您明确要求的必去景点'玄武湖景区'，建议添加到行程中",
+            "Day3的莲花广场评分相对较低，可以考虑替换为更符合您偏好的景点"
+          ],
+          "opinion": "路线存在严重问题：未包含用户明确要求的必去景点\"玄武湖景区\"。建议将玄武湖景区替换Day3的莲花广场，因为莲花广场评分较低(4.5分)且不是用户偏好的历史古迹或博物馆类型。调整后Day3可安排为：南京夫子庙(10:00-12:00)、玄武湖景区(14:00-15:30)。同时建议核实Day2中山陵景区和总统府的开放时间，确保安排合理。",
+          "latency_s": 60.899,
+          "tokens_est": 2664,
+          "error": null
+        },
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "玄武湖",
+            "必去"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "建议将必去的玄武湖景区加入行程中，当前路线缺少这个重要景点",
+            "Day3的莲花广场可以替换为玄武湖景区，因为莲花广场相对普通而玄武湖是必去景点",
+            "可以考虑调整景点分布，让同区域的景点集中在同一天游览，减少跨区移动"
+          ],
+          "opinion": "必须添加必去的\"玄武湖景区\"到行程中。建议将Day3的莲花广场替换为玄武湖景区，因为莲花广场相对普通，而玄武湖是必去景点且评分更高（4.8分）。同时建议将Day3的南京夫子庙移至Day1，与总统府形成秦淮区历史古迹集中游览，Day2可保留中山陵+古鸡鸣寺+玄武湖的组合。",
+          "latency_s": 43.767,
+          "tokens_est": 2591,
+          "error": null
+        }
+      ],
+      "consensus": "reject",
+      "consistent": true,
+      "consensus_correct": true
+    },
+    {
+      "challenge_id": "challenge-04-weather-outdoor",
+      "base_fixture": "sanya-3d-allrain-outdoor-negative",
+      "injected_defect": "weather_outdoor",
+      "expected_verdict": "reject",
+      "expected_keywords": [
+        "雨",
+        "室内",
+        "天气",
+        "室外",
+        "露天"
+      ],
+      "runs": [
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "雨",
+            "室内",
+            "天气",
+            "露天"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "连续3天中雨天气，建议优先安排室内景点，当前所有景点均为露天景区，雨天体验会受影响",
+            "每天景点分布在不同区域（吉阳、天涯、海棠），建议按地理区域重新规划行程，减少跨区移动时间"
+          ],
+          "opinion": "路线存在两个主要问题：1）天气冲突：连续3天中雨天气，但所有安排的景点均为露天景区，严重违反雨天优先室内景点的约束；2）路线规划不合理：每天景点分布在相距较远的区域（吉阳-天涯-海棠），造成大量跨区移动和折返。建议重新规划：1）寻找室内景点替代露天景区，如博物馆、购物中心等；2）按地理区域重新分组景点，每天集中在1-2个区域内游览，减少跨区移动。",
+          "latency_s": 46.063,
+          "tokens_est": 3021,
+          "error": null
+        },
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "雨",
+            "室内",
+            "天气",
+            "室外"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "连续3天中雨天气，建议将室外海滩景点替换为室内景点，如三亚国际免税城、三亚千古情景区等室内场所",
+            "每天跨区游览距离较远，建议重新规划行程，每天集中在1-2个区域内游览",
+            "雨天游览建议携带雨具，注意防滑安全"
+          ],
+          "opinion": "路线存在严重天气违规问题：连续3天中雨天气却全部安排室外海滩和景区，违反雨雪天优先室内景点的硬约束。同时每天跨区游览导致地理跨度大、折返路线多。建议：1）将所有室外景点替换为室内景点，如博物馆、购物中心、室内娱乐场所等；2）重新规划地理分区，每天集中在1-2个区域内游览；3）减少每日景点数量至1-2个，避免雨天疲劳。",
+          "latency_s": 45.409,
+          "tokens_est": 3086,
+          "error": null
+        }
+      ],
+      "consensus": "reject",
+      "consistent": true,
+      "consensus_correct": true
+    },
+    {
+      "challenge_id": "challenge-05-duplicate-poi",
+      "base_fixture": "nanjing-3d-sunny-history",
+      "injected_defect": "duplicate_poi",
+      "expected_verdict": "reject",
+      "expected_keywords": [
+        "重复",
+        "再次",
+        "同一天",
+        "duplicate"
+      ],
+      "runs": [
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "重复"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "Day1行程中重复游览玄武湖景区，建议将其中一个时段替换为其他景点"
+          ],
+          "opinion": "Day1重复安排玄武湖景区两次，违反\"绝对不可以重复玩相同的景点\"规则。建议Day1将其中一个玄武湖时段替换为其他历史古迹或博物馆景点，如中国科举博物馆或古鸡鸣寺。",
+          "latency_s": 53.04,
+          "tokens_est": 2570,
+          "error": null
+        },
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "重复"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "Day1重复游览了玄武湖景区，建议替换为不同的景点组合",
+            "建议增加博物馆类景点以满足您喜欢博物馆的偏好"
+          ],
+          "opinion": "路线存在严重违规：Day1重复游览玄武湖景区两次，违反\"绝对不可以重复玩相同的景点\"的硬性规定。建议Day1替换为玄武湖景区+其他历史古迹或博物馆景点，如中国科举博物馆或古鸡鸣寺。同时建议增加博物馆类景点以满足用户\"喜欢博物馆\"的偏好。",
+          "latency_s": 67.244,
+          "tokens_est": 2586,
+          "error": null
+        }
+      ],
+      "consensus": "reject",
+      "consistent": true,
+      "consensus_correct": true
+    },
+    {
+      "challenge_id": "challenge-06-overpacked",
+      "base_fixture": "nanjing-3d-sunny-history",
+      "injected_defect": "overpacked",
+      "expected_verdict": "reject",
+      "expected_keywords": [
+        "上限",
+        "过多",
+        "拥挤",
+        "紧凑",
+        "每天"
+      ],
+      "runs": [
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "过多",
+            "紧凑",
+            "每天"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "Day1行程较紧凑，建议减少景点数量至2-3个，避免过于匆忙",
+            "Day3南京长江大桥和江豚落日音乐广场距离较远，建议预留充足的交通时间"
+          ],
+          "opinion": "Day1景点数量过多（5个），违反用户\"慢节奏，每天景点别太多\"的习惯要求，建议减少至2-3个景点。Day3南京长江大桥和江豚落日音乐广场地理跨度较大，建议调整为同区域景点或增加交通时间预算。",
+          "latency_s": 61.885,
+          "tokens_est": 2704,
+          "error": null
+        },
+        {
+          "verdict": "reject",
+          "expected": "reject",
+          "correct": true,
+          "keywords_hit": [
+            "过多",
+            "紧凑",
+            "每天"
+          ],
+          "keyword_match": true,
+          "issues": [
+            "Day1行程较紧凑，建议减少景点数量至2-3个，符合慢节奏游玩习惯",
+            "Day3南京长江大桥和江豚落日音乐广场地理位置较远，建议考虑调整景点组合"
+          ],
+          "opinion": "Day1景点数量过多（5个），严重违反\"慢节奏，每天景点别太多\"的用户习惯，建议减少至2-3个景点。Day3存在跨区折返路线，建议调整景点组合以减少地理跨度。",
+          "latency_s": 44.514,
+          "tokens_est": 2711,
+          "error": null
+        }
+      ],
+      "consensus": "reject",
+      "consistent": true,
+      "consensus_correct": true
+    }
+  ],
+  "provider": "llm",
+  "model": "glm-4.5-flash"
+}

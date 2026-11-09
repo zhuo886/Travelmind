@@ -1,0 +1,152 @@
+{
+  "trial_id": "ed07761735084206abc15f1d7ac09eed",
+  "case_id": "shanghai-1d-twohour-three-must-negative",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": false,
+  "status": "FAILED",
+  "hard_pass": false,
+  "l0_codes": [],
+  "l1_codes": [
+    "physical_time_deadlock"
+  ],
+  "first_draft_l0": [
+    "missing_must_visit"
+  ],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 80.33,
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "reviewer_calls": 2,
+  "time_check_round": 1,
+  "snapshot_count": 2,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [
+        "missing_must_visit"
+      ],
+      "l1_codes": [],
+      "defect_count": 1,
+      "soft_score": 80.33,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "8d28009682d9a533",
+      "spot_names": [
+        "上海朱家角古镇旅游区",
+        "上海迪士尼度假区"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "physical_time_deadlock"
+      ],
+      "defect_count": 1,
+      "soft_score": 82.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "48a3e85623149a6e",
+      "spot_names": [
+        "上海朱家角古镇旅游区",
+        "上海迪士尼度假区",
+        "上海海昌海洋公园"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": null,
+  "warnings": [],
+  "route_names": [
+    "上海朱家角古镇旅游区",
+    "上海迪士尼度假区",
+    "上海海昌海洋公园"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海朱家角古镇旅游区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "14:45"
+        },
+        {
+          "name": "上海迪士尼度假区",
+          "period": "afternoon",
+          "start": "15:00",
+          "end": "15:45"
+        },
+        {
+          "name": "上海海昌海洋公园",
+          "period": "afternoon",
+          "start": "15:45",
+          "end": "16:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [],
+  "delivered_route_by_day": [],
+  "oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "must_visit_expected": [
+    "上海朱家角古镇旅游区",
+    "上海迪士尼度假区",
+    "上海海昌海洋公园"
+  ],
+  "must_visit_ok": false,
+  "expected_feasible": false,
+  "infeasible_reason": "physical_time_deadlock：3 个必去点最短游览 180 分钟 > 120 分钟窗口",
+  "must_avoid_ok": null,
+  "latency_s": 203.614,
+  "node_latency_ms": {
+    "planner": 80077.87,
+    "snapshot_gate": 1.487,
+    "reviewer": 95959.96,
+    "snapshot_reviewer": 1.776,
+    "time_check": 27410.862,
+    "snapshot_time_check": 0.525
+  },
+  "input_tokens_est": 5488,
+  "output_tokens_est": 1825,
+  "llm_calls": 5,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [
+    "physical_time_deadlock"
+  ],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": false,
+  "draft_soft_score": 82.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 3
+  },
+  "expectations_evaluated": false,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "CORRECT_REJECT",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

@@ -1,0 +1,44 @@
+{
+  "key": "91846eaf1c3e22f44185a6d6f2562fcfb25b51bf7ca8848d899e690b406b6c4f",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "00786b6e8e624c235c5a4fbdc2eb0e55372bdeb6fc14b4d87e0902cf7ed8e35e",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 2,
+    "time_realism": 2,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Most attractions align with '海滨自然' preference (三亚湾, 椰梦长廊, 亚龙湾海滩, 蜈支洲岛), but includes cultural sites (南山) that may not match preference perfectly",
+    "pacing": "Consistent 3-spot daily schedule with 2.5-3 hours per spot, but evening activities on rainy days may be challenging",
+    "geographic_coherence": "Day 1 inefficient route from Nanshan (south) to Tianya Haijiao (west); Day 3 includes ferry to Wuzhizhou Island which requires additional travel time",
+    "time_realism": "All days have moderate rain forecast, making outdoor activities problematic; ferry to Wuzhizhou Island in evening may not be feasible",
+    "completeness": "Missing transportation details, meal planning, accommodation, and weather contingency measures",
+    "diversity_and_dining": "Mix of cultural, natural, and urban attractions but no dining considerations; limited activity variety"
+  },
+  "flags": [
+    "rain_impact",
+    "geographic_inefficiency",
+    "missing_logistics",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary has good preference alignment for seaside attractions but suffers from geographic inefficiency and poor weather contingency planning. Missing transportation and dining details make it less practical for direct execution.\"",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 698,
+    "output_tokens": 663,
+    "total_tokens": 1361,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 38271.493,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "trial_id": "cde91c8684584cc0972b6534ace1e5a6",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "FAILED",
+  "hard_pass": false,
+  "l0_codes": [
+    "unknown_poi"
+  ],
+  "l1_codes": [],
+  "first_draft_l0": [
+    "unknown_poi"
+  ],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "soft_score": 87.0,
+  "warnings": [],
+  "route_names": [
+    "上海海洋水族馆",
+    "外滩"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "17:00"
+        },
+        {
+          "name": "外滩",
+          "period": "evening",
+          "start": "19:00",
+          "end": "21:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 1,
+    "total": 2
+  },
+  "must_visit_expected": [
+    "上海海洋水族馆"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 99.622,
+  "node_latency_ms": {
+    "planner": 99532.301,
+    "snapshot_gate": 5.409
+  },
+  "input_tokens_est": 2295,
+  "output_tokens_est": 419,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [
+    "unknown_poi"
+  ],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "HARD_FAIL",
+  "benchmark_label": "HARD_FAIL",
+  "expected_outcome_match": false
+}

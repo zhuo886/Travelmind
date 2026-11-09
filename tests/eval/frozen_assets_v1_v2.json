@@ -1,0 +1,33 @@
+{
+  "note": "v1/v2 资产冻结指纹。任何变更都会让 tests/test_eval_assets.py 失败；如确需变更，必须新建版本并同步更新本文件与文档。",
+  "v1": {
+    "benchmark": "d549b735732462848431c54fb3a570dfdcd9cd5ba1eeaacd9099b411d611c67c",
+    "fixtures": {
+      "jingdezhen-3d-sunny-history.json": "d6b137a4ba57cc35d99716beb289f7f6ae8253ff19f9ad1729dbcb95d1a613e2",
+      "lijiang-3d-allrain-history.json": "88765b2979f9bb04056990e80bc92950e581aa1c3a34c678014c55f220dbf631",
+      "lijiang-5d-sunny-slowpace.json": "3bb9f9435657734b15b494678fac64bcc01a3f6561f224a463dc6cbdf165bbe0",
+      "nanjing-3d-singlerain-history.json": "724d04a528405e377f0d920ac7649c9edaaf4c34870aaf37235608b1cd97cfcb",
+      "nanjing-3d-sunny-history.json": "48f1bf06a67490e7b20bc67f0daae53baa339d8d1de070c1f2cbe0d844985861",
+      "nanjing-3d-tighthours-negative.json": "4a58eb0dcc99c06e92029589fac62d4d5abdb5142d757663b02f32138c36903e",
+      "sanya-3d-allrain-outdoor-negative.json": "44a8d16f2cffd6dfef4a47e1e67d6cb824ebb6ededbbf26c72890c97097e8c34",
+      "shanghai-1d-sunny-nightlife.json": "082c56f9979c971c18012c1de40772ad80522bad73599d55015fb7c060334ef9",
+      "shanghai-3d-beyond-forecast.json": "de722a74c92bd017510d93814d6b046a573e88320a0c9820d0f6eb8fa9438522",
+      "shanghai-3d-smallpool-negative.json": "bce71694b1c072ca2bfe0746ae5085d3b607bad7bec2447fe0d0e4e093af4c50"
+    }
+  },
+  "v2": {
+    "benchmark": "653d28b3f06d8050907eec904454cfa27e50ac821aadf9aa6baa350c51c8d7ec",
+    "fixtures": {
+      "jingdezhen-3d-sunny-history.json": "d6b137a4ba57cc35d99716beb289f7f6ae8253ff19f9ad1729dbcb95d1a613e2",
+      "lijiang-3d-allrain-history.json": "88765b2979f9bb04056990e80bc92950e581aa1c3a34c678014c55f220dbf631",
+      "lijiang-5d-sunny-slowpace.json": "220566ea31b3798fc16c1dd0c30ab3d805f3aee3b22f0839e7b6db426e1f4d89",
+      "nanjing-3d-singlerain-history.json": "724d04a528405e377f0d920ac7649c9edaaf4c34870aaf37235608b1cd97cfcb",
+      "nanjing-3d-sunny-history.json": "d43de594a8504c4f8e43e2d41cf1ef1fffd498f1090aa92172ef08dbffc3846c",
+      "nanjing-3d-tighthours-negative.json": "4a58eb0dcc99c06e92029589fac62d4d5abdb5142d757663b02f32138c36903e",
+      "sanya-3d-allrain-outdoor-negative.json": "44a8d16f2cffd6dfef4a47e1e67d6cb824ebb6ededbbf26c72890c97097e8c34",
+      "shanghai-1d-sunny-nightlife.json": "8312c47b245e42983e01e09400a43b60eeb39d5a7266cb879da2ce23647aef1f",
+      "shanghai-3d-beyond-forecast.json": "de722a74c92bd017510d93814d6b046a573e88320a0c9820d0f6eb8fa9438522",
+      "shanghai-3d-smallpool-negative.json": "bce71694b1c072ca2bfe0746ae5085d3b607bad7bec2447fe0d0e4e093af4c50"
+    }
+  }
+}

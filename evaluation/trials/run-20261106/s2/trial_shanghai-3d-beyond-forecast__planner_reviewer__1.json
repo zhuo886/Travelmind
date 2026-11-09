@@ -1,0 +1,51 @@
+{
+  "trial_id": "ca49937f72324c98a47bef930976d297",
+  "case_id": "shanghai-3d-beyond-forecast",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "time_check_round": 0,
+  "snapshot_count": 2,
+  "soft_score": 90.0,
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "must_avoid_ok": null,
+  "latency_s": 208.682,
+  "node_latency_ms": {
+    "planner": 107416.454,
+    "snapshot_gate": 2.336,
+    "reviewer": 101116.947,
+    "snapshot_reviewer": 4.849
+  },
+  "input_tokens_est": 10426,
+  "output_tokens_est": 2647,
+  "llm_calls": 4,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

@@ -1,0 +1,55 @@
+{
+  "provider": "llm",
+  "model": "glm-4.5-flash",
+  "targets": 15,
+  "scored": 15,
+  "skipped": 0,
+  "coverage": 1.0,
+  "overall_mean": 78.73,
+  "dimension_mean": {
+    "preference_fit": 3.867,
+    "pacing": 3.933,
+    "geographic_coherence": 3.667,
+    "time_realism": 4.267,
+    "completeness": 4.167,
+    "diversity_and_dining": 3.633
+  },
+  "kappa_mean": 0.5088,
+  "kappa_pooled": 0.5975,
+  "judge_calls": 0,
+  "replayed_calls": 30,
+  "judge_tokens_est": 37126,
+  "cache_hits": 30,
+  "errors": [],
+  "low_score": [
+    {
+      "target_id": "05b475300de9495bbd600a5e6efcb679",
+      "overall": 53.0
+    }
+  ],
+  "low_score_threshold": 60.0,
+  "flag_counts": {
+    "bad_weather_all_days": 7,
+    "evidence_missing": 1,
+    "geographic_inefficiency": 9,
+    "limited_diversity": 1,
+    "missing_transport": 2,
+    "other": 13,
+    "preference_mismatch": 10
+  },
+  "by_case": {
+    "lijiang-5d-sunny-slowpace": 81.67,
+    "nanjing-3d-sunny-history": 84.5,
+    "nanjing-3d-tighthours-negative": 80.0,
+    "sanya-3d-allrain-outdoor-negative": 68.5,
+    "shanghai-1d-sunny-nightlife": 79.0
+  },
+  "generated_at": "2026-11-07T09:22:06.579059+00:00",
+  "k": 2,
+  "calibration": {
+    "n": 0,
+    "mae": null,
+    "spearman": null,
+    "band_agreement": null
+  }
+}

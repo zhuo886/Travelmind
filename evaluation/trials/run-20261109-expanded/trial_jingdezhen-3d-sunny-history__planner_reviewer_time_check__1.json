@@ -1,0 +1,269 @@
+{
+  "trial_id": "0442f7ede5a245718fd8a64914f08b77",
+  "case_id": "jingdezhen-3d-sunny-history",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 85.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 1,
+  "time_check_round": 1,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 85.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "81c4afc0a6bf76d0",
+      "spot_names": [
+        "景德镇古窑民俗博览区",
+        "景德镇陶阳里历史文化旅游区",
+        "陶溪川文创街区",
+        "景德镇陶源谷·三宝旅游度假区·三宝国际陶艺村",
+        "景德镇陶源谷旅游度假区·陶侃剧场",
+        "受气瓶",
+        "浮梁古县衙",
+        "浮梁县新平村瓷宫",
+        "瑶里古镇风景区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 85.0,
+  "warnings": [],
+  "route_names": [
+    "景德镇古窑民俗博览区",
+    "景德镇陶阳里历史文化旅游区",
+    "陶溪川文创街区",
+    "景德镇陶源谷·三宝旅游度假区·三宝国际陶艺村",
+    "景德镇陶源谷旅游度假区·陶侃剧场",
+    "受气瓶",
+    "浮梁古县衙",
+    "浮梁县新平村瓷宫",
+    "瑶里古镇风景区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "景德镇古窑民俗博览区",
+          "period": "morning",
+          "start": "09:00",
+          "end": "11:30"
+        },
+        {
+          "name": "景德镇陶阳里历史文化旅游区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "16:00"
+        },
+        {
+          "name": "陶溪川文创街区",
+          "period": "evening",
+          "start": "17:00",
+          "end": "19:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "景德镇陶源谷·三宝旅游度假区·三宝国际陶艺村",
+          "period": "morning",
+          "start": "09:15",
+          "end": "11:45"
+        },
+        {
+          "name": "景德镇陶源谷旅游度假区·陶侃剧场",
+          "period": "afternoon",
+          "start": "13:45",
+          "end": "16:15"
+        },
+        {
+          "name": "受气瓶",
+          "period": "evening",
+          "start": "17:15",
+          "end": "19:45"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "浮梁古县衙",
+          "period": "morning",
+          "start": "09:11",
+          "end": "11:41"
+        },
+        {
+          "name": "浮梁县新平村瓷宫",
+          "period": "afternoon",
+          "start": "13:41",
+          "end": "16:11"
+        },
+        {
+          "name": "瑶里古镇风景区",
+          "period": "evening",
+          "start": "17:11",
+          "end": "19:41"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "景德镇古窑民俗博览区",
+    "景德镇陶阳里历史文化旅游区",
+    "陶溪川文创街区",
+    "景德镇陶源谷·三宝旅游度假区·三宝国际陶艺村",
+    "景德镇陶源谷旅游度假区·陶侃剧场",
+    "受气瓶",
+    "浮梁古县衙",
+    "浮梁县新平村瓷宫",
+    "瑶里古镇风景区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "景德镇古窑民俗博览区",
+          "period": "morning",
+          "start": "09:00",
+          "end": "11:30"
+        },
+        {
+          "name": "景德镇陶阳里历史文化旅游区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "16:00"
+        },
+        {
+          "name": "陶溪川文创街区",
+          "period": "evening",
+          "start": "17:00",
+          "end": "19:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "景德镇陶源谷·三宝旅游度假区·三宝国际陶艺村",
+          "period": "morning",
+          "start": "09:15",
+          "end": "11:45"
+        },
+        {
+          "name": "景德镇陶源谷旅游度假区·陶侃剧场",
+          "period": "afternoon",
+          "start": "13:45",
+          "end": "16:15"
+        },
+        {
+          "name": "受气瓶",
+          "period": "evening",
+          "start": "17:15",
+          "end": "19:45"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "浮梁古县衙",
+          "period": "morning",
+          "start": "09:11",
+          "end": "11:41"
+        },
+        {
+          "name": "浮梁县新平村瓷宫",
+          "period": "afternoon",
+          "start": "13:41",
+          "end": "16:11"
+        },
+        {
+          "name": "瑶里古镇风景区",
+          "period": "evening",
+          "start": "17:11",
+          "end": "19:41"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 111.196,
+  "node_latency_ms": {
+    "planner": 73885.17,
+    "snapshot_gate": 2.182,
+    "reviewer": 7649.089,
+    "snapshot_reviewer": 1.335,
+    "time_check": 28510.594,
+    "snapshot_time_check": 1.315
+  },
+  "input_tokens_est": 4573,
+  "output_tokens_est": 1516,
+  "llm_calls": 3,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 85.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "SUCCESS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

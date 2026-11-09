@@ -1,0 +1,43 @@
+{
+  "key": "d0d6e33b377f6b230abd7521f0efc3ec0da9ff3e8f400f0140a60dd651a648b0",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "3326bff4ab073274d268ef10a4e086205a64935e32d78e9e919a36ab1808c207",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 5,
+    "completeness": 5,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程包含中国科举博物馆、古鸡鸣寺、南京夫子庙等历史古迹，符合用户对历史古迹和博物馆的偏好；每天10:00开始，符合不喜欢早起的习惯；每天仅2个景点，节奏缓慢，符合用户要求。",
+    "pacing": "每天安排2个景点，上午下午各一个，时间间隔合理；每个景点停留2-3小时，不会太赶也不会太松散，整体节奏适中。",
+    "geographic_coherence": "玄武湖和鸡鸣寺都在城北，地理位置相近；科举博物馆和夫子庙都在城南，地理位置相近；长江大桥和江豚落日音乐广场都在长江边，地理位置相近，减少了不必要的折返。",
+    "time_realism": "每天从10:00开始，符合不喜欢早起的习惯；每个景点安排2-3小时，时间安排合理；虽然缺少景点间通勤时间，但scope.transport_legs=false，不扣分。",
+    "completeness": "提供了具体的景点名称、时间安排，信息完整可直接执行；虽然缺少交通和用餐信息，但scope.meals=false和scope.transport_legs=false，不扣分。",
+    "diversity_and_dining": "景点类型多样：有湖泊、寺庙、博物馆、古街、大桥、广场等；scope.meals=false，不评价餐饮安排。"
+  },
+  "flags": [
+    "geographic_inefficiency",
+    "other",
+    "preference_mismatch"
+  ],
+  "overall_comment": "行程安排合理，符合用户对历史古迹的偏好和慢节奏的要求，每天景点数量适中，地理位置安排考虑了就近原则，整体体验良好。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 742,
+    "output_tokens": 411,
+    "total_tokens": 1153,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 47380.892,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "key": "4968367debf211e437e0b3bd80a9ddb0e444c16a14b8e20b27f7c79eb71a382b",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "277c0f2d7c0693f2e33c9692b6006a8fbd3ffde5018919199d6c231944fcd824",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "玄武湖景区",
+      "古鸡鸣寺",
+      "总统府"
+    ],
+    "pacing": [
+      "玄武湖景区",
+      "古鸡鸣寺",
+      "总统府"
+    ],
+    "geographic_coherence": [
+      "玄武湖景区",
+      "古鸡鸣寺",
+      "总统府"
+    ],
+    "time_realism": [
+      "玄武湖景区",
+      "古鸡鸣寺",
+      "总统府"
+    ],
+    "completeness": [
+      "玄武湖景区",
+      "古鸡鸣寺",
+      "总统府"
+    ],
+    "diversity_and_dining": [
+      "玄武湖景区",
+      "古鸡鸣寺",
+      "总统府"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

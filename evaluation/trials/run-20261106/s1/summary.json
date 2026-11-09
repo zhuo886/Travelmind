@@ -1,0 +1,236 @@
+{
+  "total_trials": 9,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 9,
+    "value": 0.0
+  },
+  "effective_trials": 9,
+  "outcome_counts": {
+    "PARTIAL": 1,
+    "SUCCESS": 1,
+    "SUCCESS_WITH_WARNINGS": 7
+  },
+  "label_counts": {
+    "MATCH": 4,
+    "MISMATCH": 4,
+    "WRONG_ACCEPT": 1
+  },
+  "fdr": {
+    "num": 8,
+    "den": 9,
+    "value": 0.8889
+  },
+  "pdr": {
+    "num": 1,
+    "den": 9,
+    "value": 0.1111
+  },
+  "omr": {
+    "num": 4,
+    "den": 9,
+    "value": 0.4444
+  },
+  "hpr": {
+    "num": 9,
+    "den": 9,
+    "value": 1.0
+  },
+  "fpr": {
+    "num": 8,
+    "den": 9,
+    "value": 0.8889
+  },
+  "oor": {
+    "outside": 0,
+    "references": 60,
+    "value": 0.0
+  },
+  "msr": {
+    "num": 2,
+    "den": 3,
+    "value": 0.6667
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 1,
+    "den": 1,
+    "value": 1.0
+  },
+  "rounds": {
+    "mean": 0.444,
+    "snapshot_count_mean": 1.444
+  },
+  "soft_score": {
+    "mean": 84.33,
+    "n": 9
+  },
+  "latency_s": {
+    "n": 9,
+    "median": 314.271,
+    "min": 59.736,
+    "max": 537.952,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "usage": {
+    "input_tokens_est_mean": 8107.7,
+    "output_tokens_est_mean": 2188.1,
+    "llm_calls_mean": 3.78
+  },
+  "by_case": {
+    "nanjing-3d-sunny-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 412.203,
+      "soft_score_mean": 93.67,
+      "input_tokens_est_mean": 10001.3,
+      "llm_calls_mean": 4.33
+    },
+    "nanjing-3d-tighthours-negative": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 0,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 3,
+        "value": 0.0
+      },
+      "median_latency_s": 307.773,
+      "soft_score_mean": 94.0,
+      "input_tokens_est_mean": 3881.7,
+      "llm_calls_mean": 3.0
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 1,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 3,
+        "value": 0.3333
+      },
+      "median_latency_s": 314.271,
+      "soft_score_mean": 65.33,
+      "input_tokens_est_mean": 10440.0,
+      "llm_calls_mean": 4.0
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 2,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 3,
+        "value": 0.6667
+      },
+      "median_latency_s": 307.773,
+      "soft_score_mean": 77.0,
+      "input_tokens_est_mean": 4467.7,
+      "llm_calls_mean": 2.33
+    },
+    "planner_reviewer": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 1,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 3,
+        "value": 0.3333
+      },
+      "median_latency_s": 296.972,
+      "soft_score_mean": 84.67,
+      "input_tokens_est_mean": 8872.3,
+      "llm_calls_mean": 3.67
+    },
+    "planner_reviewer_time_check": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 1,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 1,
+        "den": 3,
+        "value": 0.3333
+      },
+      "median_latency_s": 392.731,
+      "soft_score_mean": 91.33,
+      "input_tokens_est_mean": 10983.0,
+      "llm_calls_mean": 5.33
+    }
+  },
+  "pass_at_k": {
+    "nanjing-3d-sunny-history": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "nanjing-3d-tighthours-negative": {
+      "k": 3,
+      "outcome_pass_at_k": false,
+      "outcome_pass_pow_k": false
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 2,
+    "den": 3,
+    "value": 0.6667
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 1,
+    "den": 3,
+    "value": 0.3333
+  }
+}

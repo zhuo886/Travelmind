@@ -1,0 +1,233 @@
+{
+  "trial_id": "8418bf4628424595bc211a30602d0fe3",
+  "case_id": "shanghai-3d-beyond-forecast",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 82.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 82.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "60e2bfeb5157db9e",
+      "spot_names": [
+        "上海城隍庙",
+        "上海豫园",
+        "上海失恋博物馆",
+        "上海海洋水族馆",
+        "上海迪士尼度假区",
+        "上海朱家角古镇旅游区",
+        "淀山湖风景区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 82.0,
+  "warnings": [
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "上海城隍庙",
+    "上海豫园",
+    "上海失恋博物馆",
+    "上海海洋水族馆",
+    "上海迪士尼度假区",
+    "上海朱家角古镇旅游区",
+    "淀山湖风景区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海城隍庙",
+          "period": "morning",
+          "start": "09:03",
+          "end": "11:03"
+        },
+        {
+          "name": "上海豫园",
+          "period": "afternoon",
+          "start": "11:33",
+          "end": "14:03"
+        },
+        {
+          "name": "上海失恋博物馆",
+          "period": "evening",
+          "start": "15:03",
+          "end": "17:33"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "morning",
+          "start": "09:07",
+          "end": "12:07"
+        },
+        {
+          "name": "上海迪士尼度假区",
+          "period": "afternoon",
+          "start": "13:07",
+          "end": "21:07"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "上海朱家角古镇旅游区",
+          "period": "morning",
+          "start": "10:16",
+          "end": "13:16"
+        },
+        {
+          "name": "淀山湖风景区",
+          "period": "afternoon",
+          "start": "14:16",
+          "end": "17:16"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "上海城隍庙",
+    "上海豫园",
+    "上海失恋博物馆",
+    "上海海洋水族馆",
+    "上海迪士尼度假区",
+    "上海朱家角古镇旅游区",
+    "淀山湖风景区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海城隍庙",
+          "period": "morning",
+          "start": "09:03",
+          "end": "11:03"
+        },
+        {
+          "name": "上海豫园",
+          "period": "afternoon",
+          "start": "11:33",
+          "end": "14:03"
+        },
+        {
+          "name": "上海失恋博物馆",
+          "period": "evening",
+          "start": "15:03",
+          "end": "17:33"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "上海海洋水族馆",
+          "period": "morning",
+          "start": "09:07",
+          "end": "12:07"
+        },
+        {
+          "name": "上海迪士尼度假区",
+          "period": "afternoon",
+          "start": "13:07",
+          "end": "21:07"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "上海朱家角古镇旅游区",
+          "period": "morning",
+          "start": "10:16",
+          "end": "13:16"
+        },
+        {
+          "name": "淀山湖风景区",
+          "period": "afternoon",
+          "start": "14:16",
+          "end": "17:16"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 7
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 51.035,
+  "node_latency_ms": {
+    "planner": 50937.162,
+    "snapshot_gate": 0.703
+  },
+  "input_tokens_est": 2410,
+  "output_tokens_est": 1086,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 82.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 7
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

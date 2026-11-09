@@ -1,0 +1,123 @@
+{
+  "trial_id": "8d21f600f8f646e0b0988ca035a34ef6",
+  "case_id": "shanghai-1d-twohour-three-must-negative",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": false,
+  "status": "FAILED",
+  "hard_pass": false,
+  "l0_codes": [
+    "missing_must_visit",
+    "missing_must_visit"
+  ],
+  "l1_codes": [],
+  "first_draft_l0": [
+    "missing_must_visit",
+    "missing_must_visit"
+  ],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 73.67,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [
+        "missing_must_visit",
+        "missing_must_visit"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 73.67,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "149eb9007fa57681",
+      "spot_names": [
+        "上海朱家角古镇旅游区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": null,
+  "warnings": [],
+  "route_names": [
+    "上海朱家角古镇旅游区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "上海朱家角古镇旅游区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "15:00"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [],
+  "delivered_route_by_day": [],
+  "oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "must_visit_expected": [
+    "上海朱家角古镇旅游区",
+    "上海迪士尼度假区",
+    "上海海昌海洋公园"
+  ],
+  "must_visit_ok": false,
+  "expected_feasible": false,
+  "infeasible_reason": "physical_time_deadlock：3 个必去点最短游览 180 分钟 > 120 分钟窗口",
+  "must_avoid_ok": null,
+  "latency_s": 16.497,
+  "node_latency_ms": {
+    "planner": 16380.374,
+    "snapshot_gate": 2.411
+  },
+  "input_tokens_est": 1177,
+  "output_tokens_est": 229,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [
+    "missing_must_visit",
+    "missing_must_visit"
+  ],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": false,
+  "draft_soft_score": 73.67,
+  "draft_oor": {
+    "outside": 0,
+    "total": 1
+  },
+  "expectations_evaluated": false,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "CORRECT_REJECT",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

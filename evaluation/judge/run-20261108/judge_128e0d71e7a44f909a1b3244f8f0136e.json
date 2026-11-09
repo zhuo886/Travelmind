@@ -1,0 +1,117 @@
+{
+  "trial_id": "128e0d71e7a44f909a1b3244f8f0136e",
+  "case_id": "nanjing-3d-sunny-history",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 5,
+          "pacing": 4,
+          "geographic_coherence": 4,
+          "time_realism": 5,
+          "completeness": 5,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 91.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "行程包含中国科举博物馆、古鸡鸣寺、南京夫子庙等历史古迹，符合用户对历史古迹和博物馆的偏好；每天10:00开始，符合不喜欢早起的习惯；每天仅2个景点，节奏缓慢，符合用户要求。",
+          "pacing": "每天安排2个景点，上午下午各一个，时间间隔合理；每个景点停留2-3小时，不会太赶也不会太松散，整体节奏适中。",
+          "geographic_coherence": "玄武湖和鸡鸣寺都在城北，地理位置相近；科举博物馆和夫子庙都在城南，地理位置相近；长江大桥和江豚落日音乐广场都在长江边，地理位置相近，减少了不必要的折返。",
+          "time_realism": "每天从10:00开始，符合不喜欢早起的习惯；每个景点安排2-3小时，时间安排合理；虽然缺少景点间通勤时间，但scope.transport_legs=false，不扣分。",
+          "completeness": "提供了具体的景点名称、时间安排，信息完整可直接执行；虽然缺少交通和用餐信息，但scope.meals=false和scope.transport_legs=false，不扣分。",
+          "diversity_and_dining": "景点类型多样：有湖泊、寺庙、博物馆、古街、大桥、广场等；scope.meals=false，不评价餐饮安排。"
+        },
+        "flags": [
+          "geographic_inefficiency",
+          "other",
+          "preference_mismatch"
+        ],
+        "overall_comment": "行程安排合理，符合用户对历史古迹的偏好和慢节奏的要求，每天景点数量适中，地理位置安排考虑了就近原则，整体体验良好。",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 742,
+          "output_tokens": 411,
+          "total_tokens": 1153,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 47380.892,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 5,
+          "geographic_coherence": 3,
+          "time_realism": 4,
+          "completeness": 4,
+          "diversity_and_dining": 3
+        },
+        "weighted_score": 77.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "Day 1和2的历史古迹和博物馆符合偏好，但Day 3的现代景点不太符合",
+          "pacing": "每天只有2个景点，10:00开始，符合慢节奏要求",
+          "geographic_coherence": "三天景点相对集中，但可能存在跨区域移动",
+          "time_realism": "时间安排合理，符合用户不喜欢早起的偏好",
+          "completeness": "提供了具体的时间安排和景点选择",
+          "diversity_and_dining": "景点类型有一定多样性，但主要集中在历史古迹"
+        },
+        "flags": [],
+        "overall_comment": "行程整体符合用户慢节奏、少景点的偏好，前两天的历史古迹和博物馆选择很好，但第三天的现代景点与用户偏好不太匹配。节奏安排合理，时间现实性强。",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 742,
+          "output_tokens": 248,
+          "total_tokens": 990,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 48098.127,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      }
+    ],
+    "overall_mean": 84.0,
+    "dimension_mean": {
+      "preference_fit": 4.5,
+      "pacing": 4.5,
+      "geographic_coherence": 3.5,
+      "time_realism": 4.5,
+      "completeness": 4.5,
+      "diversity_and_dining": 3.5
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 0,
+      "within_one": 6,
+      "exact_rate": 0.0,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 1.0,
+      "quadratic_weighted_kappa": 0.1429
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "geographic_inefficiency",
+      "other",
+      "preference_mismatch"
+    ],
+    "judge_calls": 0,
+    "replayed_calls": 2,
+    "judge_tokens_est": 2143,
+    "cache_hits": 2,
+    "errors": []
+  }
+}

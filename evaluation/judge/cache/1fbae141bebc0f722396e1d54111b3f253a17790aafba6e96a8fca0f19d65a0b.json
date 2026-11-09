@@ -1,0 +1,68 @@
+{
+  "key": "1fbae141bebc0f722396e1d54111b3f253a17790aafba6e96a8fca0f19d65a0b",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "36bfad81d850e55b2b69762fd4ac9b9e122172b873086f1ab48ebb602bfe5f6d",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 5,
+    "geographic_coherence": 3,
+    "time_realism": 5,
+    "completeness": 4,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "Day1: 玄武湖景区、古鸡鸣寺",
+      "Day2: 中国科举博物馆、南京夫子庙",
+      "Day3: 南京长江大桥、不老村"
+    ],
+    "pacing": [
+      "每天2个景点，上午10:00-12:00，下午13:30-15:30",
+      "符合'不喜欢早起，慢节奏，每天景点别太多'的偏好"
+    ],
+    "geographic_coherence": [
+      "玄武湖和鸡鸣寺位置相近",
+      "科举博物馆和夫子庙位置相近",
+      "长江大桥和不老村位置较远，存在折返"
+    ],
+    "time_realism": [
+      "每天10:00开始，13:30开始，符合'不喜欢早起'的偏好",
+      "每个景点安排2.5小时，时间安排合理"
+    ],
+    "completeness": [
+      "景点、时间、顺序信息完整",
+      "缺少交通方式和餐饮信息，但scope中已声明不评价"
+    ],
+    "diversity_and_dining": [
+      "景点类型多样：湖泊、寺庙、博物馆、历史街区、桥梁、乡村",
+      "scope.meals=false，不评价餐饮安排"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "路线中的景点多为历史古迹和博物馆，符合用户偏好，但缺少一些南京著名的历史景点如中山陵、明孝陵等",
+    "pacing": "每天安排2个景点，上午下午各一个，时间宽松，符合用户'慢节奏'和'每天景点别太多'的偏好",
+    "geographic_coherence": "前两天的景点地理位置相对集中，但第三天的长江大桥和不老村位置较远，存在一定的地理折返",
+    "time_realism": "每天10:00开始，符合'不喜欢早起'的偏好，每个景点安排2.5小时，时间安排合理",
+    "completeness": "景点、时间、顺序信息完整，可直接执行，但缺少交通方式和餐饮信息",
+    "diversity_and_dining": "景点类型多样，包括自然景观、宗教场所、博物馆、历史街区、桥梁和乡村，体验丰富"
+  },
+  "flags": [
+    "other"
+  ],
+  "overall_comment": "整体路线符合用户偏好，节奏适中，景点选择多样，但地理分布不够集中，且缺少部分南京标志性景点",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 739,
+    "output_tokens": 521,
+    "total_tokens": 1260,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 21454.014,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "trial_id": "f8b2ccda1f0941119af293e7ae2f523f",
+  "case_id": "nanjing-1d-night-closed-negative",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 97.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 1,
+  "time_check_round": 1,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 97.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "3eb1a2caf921d461",
+      "spot_names": [
+        "中山陵景区",
+        "南京牛首山文化旅游区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 97.0,
+  "warnings": [],
+  "route_names": [
+    "中山陵景区",
+    "南京牛首山文化旅游区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "中山陵景区",
+          "period": "afternoon",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "afternoon",
+          "start": "12:30",
+          "end": "14:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "中山陵景区",
+    "南京牛首山文化旅游区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "中山陵景区",
+          "period": "afternoon",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "afternoon",
+          "start": "12:30",
+          "end": "14:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 2
+  },
+  "must_visit_expected": [
+    "中山陵景区",
+    "南京牛首山文化旅游区"
+  ],
+  "must_visit_ok": true,
+  "expected_feasible": false,
+  "infeasible_reason": "opening_hours_deadlock：20:00-22:00 窗口内池内 5 个景点全部闭馆（最晚 17:30）",
+  "must_avoid_ok": null,
+  "latency_s": 38.145,
+  "node_latency_ms": {
+    "planner": 20859.537,
+    "snapshot_gate": 1.927,
+    "reviewer": 10207.527,
+    "snapshot_reviewer": 0.556,
+    "time_check": 5995.719,
+    "snapshot_time_check": 0.577
+  },
+  "input_tokens_est": 2869,
+  "output_tokens_est": 624,
+  "llm_calls": 3,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 97.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 2
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "SUCCESS",
+  "benchmark_label": "WRONG_ACCEPT",
+  "expected_outcome_match": false,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

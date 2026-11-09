@@ -1,0 +1,44 @@
+{
+  "key": "f75be5fde4de7ce158c67729597ef42837b5d5ef3e7a294e46e22562da4f0210",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "52411283745070d5b0ad161df56f222bf522f083453a723a4e3568441ec3006b",
+  "scores": {
+    "preference_fit": 2,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 2,
+    "completeness": 1,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "The evening timing (17:00-21:00) matches the user's preference for evening tours, but neither attraction aligns with the specific preferences for night scenes, Bund, or urban light shows. The aquarium may have lighting but is not focused on urban night scenes.",
+    "pacing": "The 2.5-hour museum visit and 4-hour aquarium visit with a 30-minute gap creates a reasonable rhythm, but the 4-hour aquarium duration is excessive for most visitors.",
+    "geographic_coherence": "Both attractions are located in the Lujiazui area near the Bund, minimizing travel time and creating logical geographic flow.",
+    "time_realism": "The 4-hour aquarium visit (17:00-21:00) is unrealistic as most aquariums can be thoroughly explored in 2-3 hours maximum.",
+    "completeness": "The itinerary lacks essential information including transportation between locations, dining recommendations, specific addresses, and meeting points.",
+    "diversity_and_dining": "Only two indoor attractions are provided with no dining options or variety in activity types, and no rest time is explicitly considered."
+  },
+  "flags": [
+    "unrealistic_time_allocation",
+    "missing_dining_options",
+    "limited_attraction_variety",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary has good geographic coherence and matches the evening preference timing, but suffers from unrealistic time allocation for the aquarium, lacks completeness with missing transportation and dining information, and doesn't align well with the specific attraction preferences for night scenes and urban light shows.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 389,
+    "output_tokens": 829,
+    "total_tokens": 1218,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 52632.712,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

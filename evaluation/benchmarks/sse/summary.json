@@ -1,0 +1,83 @@
+{
+  "benchmark": "sse_timing",
+  "kind": "local_stub",
+  "node_delay_ms": 5.0,
+  "repeats": 5,
+  "nodes": 15,
+  "ttfe_p50_ms": 0.09,
+  "time_to_first_event_p50_ms": 0.09,
+  "ttfe_min_ms": 0.08,
+  "total_p50_ms": 230.44,
+  "events_per_run": 31,
+  "violations": [],
+  "order_compliance": 1.0,
+  "sequence_respected": true,
+  "unlabeled_graph_nodes": [
+    "main_meal_output"
+  ],
+  "http_probe": {
+    "status_code": 200,
+    "events": 8,
+    "event_types": [
+      "run",
+      "stage",
+      "stage_summary",
+      "stage",
+      "stage_summary",
+      "stage",
+      "stage_summary",
+      "result"
+    ],
+    "result_unique": true,
+    "result_last": true,
+    "total_ms": 39.8,
+    "note": "TestClient 缓冲整个响应，TTFE 只能在进程内测；此处验帧形状与事件序列"
+  },
+  "runs": [
+    {
+      "ttfe_ms": 0.13,
+      "time_to_first_event_ms": 0.13,
+      "total_ms": 224.95,
+      "stages": 15,
+      "summaries": 15,
+      "result_events": 1,
+      "sequence_respected": true
+    },
+    {
+      "ttfe_ms": 0.08,
+      "time_to_first_event_ms": 0.08,
+      "total_ms": 230.44,
+      "stages": 15,
+      "summaries": 15,
+      "result_events": 1,
+      "sequence_respected": true
+    },
+    {
+      "ttfe_ms": 0.25,
+      "time_to_first_event_ms": 0.25,
+      "total_ms": 215.98,
+      "stages": 15,
+      "summaries": 15,
+      "result_events": 1,
+      "sequence_respected": true
+    },
+    {
+      "ttfe_ms": 0.09,
+      "time_to_first_event_ms": 0.09,
+      "total_ms": 233.9,
+      "stages": 15,
+      "summaries": 15,
+      "result_events": 1,
+      "sequence_respected": true
+    },
+    {
+      "ttfe_ms": 0.08,
+      "time_to_first_event_ms": 0.08,
+      "total_ms": 230.49,
+      "stages": 15,
+      "summaries": 15,
+      "result_events": 1,
+      "sequence_respected": true
+    }
+  ]
+}

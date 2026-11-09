@@ -1,0 +1,41 @@
+{
+  "key": "85f077d51d6b59f8d7e0892933cf1f47e5d341c893d178a19c6f85e97a4b8324",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "7e2651210fda84badf8b41d2392f86e5af4798134ec7537423faeb95175b0019",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 2,
+    "geographic_coherence": 4,
+    "time_realism": 2,
+    "completeness": 3,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Mixed match - Day 2 (天涯海角, 三亚湾) and Day 3 (亚龙湾 beaches) align with beach/nature preferences; Day 1 (南山大小洞天, 南山文化旅游区, 南山海上观音) focuses more on cultural/religious attractions",
+    "pacing": "Very rigid scheduling with exactly 3.5-hour blocks per spot and no buffer time; moderate rain weather makes this intense pacing unrealistic",
+    "geographic_coherence": "Each day's attractions are well-grouped geographically: Day 1 (all 南山 area), Day 2 (all western/northwestern area), Day 3 (all 亚龙湾 area)",
+    "time_realism": "Unrealistic timing that doesn't account for travel time between spots or weather delays; moderate rain would likely slow down transportation",
+    "completeness": "Basic spot names and times provided but insufficient for direct execution; missing specific addresses, detailed activities, and practical information",
+    "diversity_and_dining": "Some diversity within days but days 2 and 3 are repetitive with multiple beach spots; dining not evaluated per scope"
+  },
+  "flags": [
+    "bad_weather_all_days"
+  ],
+  "overall_comment": "The itinerary has good geographic grouping within each day but suffers from unrealistic timing and poor pacing. The mixed preference fit (cultural vs beach/nature) and repetitive beach attractions on days 2-3 reduce the overall quality. Moderate rain all three days significantly impacts feasibility.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 840,
+    "output_tokens": 733,
+    "total_tokens": 1573,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 64675.137,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

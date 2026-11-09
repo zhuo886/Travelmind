@@ -1,0 +1,113 @@
+{
+  "trial_id": "7fca0ee8788a43a0b17caf586fa2c7f1",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 3,
+          "pacing": 4,
+          "geographic_coherence": 4,
+          "time_realism": 5,
+          "completeness": 5,
+          "diversity_and_dining": 3
+        },
+        "weighted_score": 80.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "Matches timing preference for evening activities but missing the key Bund attraction specifically mentioned in preferences",
+          "pacing": "Reasonable time allocation for each attraction with adequate duration, not rushed",
+          "geographic_coherence": "For a single day itinerary with two attractions, the arrangement appears geographically sensible",
+          "time_realism": "Timing is realistic with appropriate gaps between activities and no scheduling conflicts",
+          "completeness": "All required route information is provided within the specified scope",
+          "diversity_and_dining": "Moderate diversity in attraction types, but limited to only two attractions total"
+        },
+        "flags": [
+          "preference_mismatch"
+        ],
+        "overall_comment": "The itinerary has good timing and reasonable pacing but misses the key Bund attraction that was specifically mentioned in the user's preferences for night views and urban light shows.",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 527,
+          "output_tokens": 534,
+          "total_tokens": 1061,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 47420.275,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 3,
+          "pacing": 4,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 4,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 77.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "Partial alignment with night preference - Shanghai Ocean Aquarium (evening) matches night tour habit, but Shanghai Breakup Museum doesn't align with stated preference for Bund/urban light shows",
+          "pacing": "Good flow from afternoon to evening with reasonable durations: 14:00-16:30 (2.5h) and 17:00-21:00 (4h)",
+          "geographic_coherence": "Limited location information but two attractions suggest reasonable geographic placement for a single day",
+          "time_realism": "Realistic timing with no conflicts, matches afternoon departure preference and extends into evening as desired",
+          "completeness": "Specific times and locations provided for Day 1, complete within scope constraints",
+          "diversity_and_dining": "Good variety of attraction types (museum and aquarium), meals not evaluated per scope"
+        },
+        "flags": [],
+        "overall_comment": "The itinerary has good timing and pacing that matches the user's preference for afternoon departure and evening activities. However, the attraction selection could be better aligned with the stated preference for night views, Bund, and urban light shows. The Shanghai Ocean Aquarium offers evening hours which partially satisfies the night preference, but the Shanghai Breakup Museum doesn't match the stated interests.",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 527,
+          "output_tokens": 695,
+          "total_tokens": 1222,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 57397.952,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      }
+    ],
+    "overall_mean": 78.5,
+    "dimension_mean": {
+      "preference_fit": 3.0,
+      "pacing": 4.0,
+      "geographic_coherence": 3.5,
+      "time_realism": 5.0,
+      "completeness": 4.5,
+      "diversity_and_dining": 3.5
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 3,
+      "within_one": 6,
+      "exact_rate": 0.5,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.5,
+      "quadratic_weighted_kappa": 0.5714
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "preference_mismatch"
+    ],
+    "judge_calls": 0,
+    "replayed_calls": 2,
+    "judge_tokens_est": 2283,
+    "cache_hits": 2,
+    "errors": []
+  }
+}

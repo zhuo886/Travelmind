@@ -1,0 +1,24 @@
+{
+  "id": "challenge-04-weather-outdoor",
+  "base_fixture": "sanya-3d-allrain-outdoor-negative",
+  "injected_defect": "weather_outdoor",
+  "expected_verdict": "reject",
+  "expected_keywords": ["雨", "室内", "天气", "室外", "露天"],
+  "expected_defect_codes": ["weather_exposure_conflict"],
+  "label_source": "deterministic_injection",
+  "route": [
+    {"day": 1, "spots": [
+      {"name": "亚龙湾海滩", "start_time": "10:00", "end_time": "12:00"},
+      {"name": "天涯海角游览区", "start_time": "14:00", "end_time": "16:00"}
+    ]},
+    {"day": 2, "spots": [
+      {"name": "蜈支洲岛旅游风景区", "start_time": "10:00", "end_time": "12:30"},
+      {"name": "鹿回头风景区", "start_time": "14:00", "end_time": "16:00"}
+    ]},
+    {"day": 3, "spots": [
+      {"name": "三亚湾", "start_time": "10:00", "end_time": "12:00"},
+      {"name": "亚龙湾国家旅游度假区", "start_time": "14:00", "end_time": "16:00"}
+    ]}
+  ],
+  "note": "3 天全程雨且全部露天；确定性 L1 为 weather_exposure_conflict，预期审核要求室内替代或降级。"
+}

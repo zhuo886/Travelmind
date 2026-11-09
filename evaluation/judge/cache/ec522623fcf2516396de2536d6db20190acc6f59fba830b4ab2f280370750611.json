@@ -1,0 +1,61 @@
+{
+  "key": "ec522623fcf2516396de2536d6db20190acc6f59fba830b4ab2f280370750611",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "f35d8ba5c3bae0a051692b8a8af0ac0c5a331152363150eaac382e46a3a2fa63",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 2,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "束河古镇",
+      "丽江玉水寨风景区",
+      "狮子山万古楼景区"
+    ],
+    "pacing": [
+      "束河古镇",
+      "丽江玉水寨风景区",
+      "狮子山万古楼景区"
+    ],
+    "geographic_coherence": [
+      "束河古镇",
+      "丽江玉水寨风景区",
+      "狮子山万古楼景区"
+    ],
+    "time_realism": [
+      "束河古镇",
+      "丽江玉水寨风景区",
+      "狮子山万古楼景区"
+    ],
+    "completeness": [
+      "束河古镇",
+      "丽江玉水寨风景区",
+      "狮子山万古楼景区"
+    ],
+    "diversity_and_dining": [
+      "束河古镇",
+      "丽江玉水寨风景区",
+      "狮子山万古楼景区"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

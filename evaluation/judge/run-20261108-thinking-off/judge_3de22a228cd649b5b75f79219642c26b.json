@@ -1,0 +1,164 @@
+{
+  "trial_id": "3de22a228cd649b5b75f79219642c26b",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 5,
+          "pacing": 4,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 4,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "Day 1: 上海海洋水族馆 (下午)",
+            "Day 1: 上海城隍庙 (晚上)",
+            "用户偏好: 夜景、外滩、都市光影, 下午出发, 喜欢夜间游览"
+          ],
+          "pacing": [
+            "Day 1: 上海海洋水族馆 14:00-16:30 (2.5小时)",
+            "Day 1: 上海城隍庙 17:30-21:00 (3.5小时)"
+          ],
+          "geographic_coherence": [
+            "上海海洋水族馆和城隍庙位于不同区域，需要跨区移动"
+          ],
+          "time_realism": [
+            "下午14:00开始符合用户习惯",
+            "晚上游览符合用户偏好"
+          ],
+          "completeness": [
+            "景点、时间、顺序已提供"
+          ],
+          "diversity_and_dining": [
+            "包含水族馆和传统文化景点，但scope.meals=false不评价餐饮"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "行程完全符合用户偏好：下午出发，夜间游览，且包含夜景相关的景点",
+          "pacing": "时间安排合理，每个景点有充足时间，但只有一个全天行程略显简单",
+          "geographic_coherence": "两个景点位于不同区域，需要跨区移动，存在一定折返",
+          "time_realism": "时间安排现实，符合景点开放时间和用户习惯",
+          "completeness": "提供了景点、时间和顺序，可直接执行，但缺少交通信息",
+          "diversity_and_dining": "景点类型多样，但scope.meals=false不评价餐饮安排"
+        },
+        "flags": [
+          "other",
+          "preference_mismatch"
+        ],
+        "overall_comment": "行程很好地满足了用户对夜间游览的偏好，时间安排合理，但景点地理分布有一定折返，且单日行程略显简单。",
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 526,
+          "output_tokens": 446,
+          "total_tokens": 972,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 33147.638,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        },
+        "weighted_score": 82.0,
+        "cache_hit": false
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 5,
+          "pacing": 4,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 4,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "Day1: 上海海洋水族馆(下午)",
+            "Day1: 上海城隍庙(晚上)",
+            "preferences: 夜景、外滩、都市光影",
+            "preferences: 下午出发，喜欢夜间游览"
+          ],
+          "pacing": [
+            "Day1: 上海海洋水族馆(14:00-16:30)",
+            "Day1: 上海城隍庙(17:30-21:00)"
+          ],
+          "geographic_coherence": [
+            "上海海洋水族馆和上海城隍庙位置不同，但未提供具体位置信息"
+          ],
+          "time_realism": [
+            "Day1: 上海海洋水族馆(14:00-16:30)",
+            "Day1: 上海城隍庙(17:30-21:00)",
+            "weather: 晴"
+          ],
+          "completeness": [
+            "Day1: 上海海洋水族馆(14:00-16:30)",
+            "Day1: 上海城隍庙(17:30-21:00)"
+          ],
+          "diversity_and_dining": [
+            "上海海洋水族馆和上海城隍庙提供不同类型的体验"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "行程完全符合用户偏好：下午出发(14:00)，夜间游览(17:30-21:00)，且包含夜景相关的景点(城隍庙)",
+          "pacing": "时间安排合理，下午2点到4点半参观水族馆，傍晚5点半到9点参观城隍庙，有足够时间体验每个景点",
+          "geographic_coherence": "两个景点位置不同，但未提供具体位置信息，无法判断地理顺序是否合理",
+          "time_realism": "时间安排现实，景点开放时间合理，天气晴朗适合户外活动",
+          "completeness": "提供了景点名称和时间，但缺少交通方式和具体位置信息",
+          "diversity_and_dining": "提供了两种不同类型的景点(水族馆和庙宇)，但scope.meals=false，不评价餐饮安排"
+        },
+        "flags": [],
+        "overall_comment": "行程基本符合用户偏好，时间安排合理，但缺少地理信息和交通细节",
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 526,
+          "output_tokens": 498,
+          "total_tokens": 1024,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 20437.826,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        },
+        "weighted_score": 82.0,
+        "cache_hit": false
+      }
+    ],
+    "overall_mean": 82.0,
+    "dimension_mean": {
+      "preference_fit": 5.0,
+      "pacing": 4.0,
+      "geographic_coherence": 3.0,
+      "time_realism": 5.0,
+      "completeness": 4.0,
+      "diversity_and_dining": 3.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 6,
+      "within_one": 6,
+      "exact_rate": 1.0,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.0,
+      "quadratic_weighted_kappa": 1.0
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "other",
+      "preference_mismatch"
+    ],
+    "judge_calls": 2,
+    "replayed_calls": 0,
+    "judge_tokens_est": 1996,
+    "cache_hits": 0,
+    "errors": []
+  }
+}

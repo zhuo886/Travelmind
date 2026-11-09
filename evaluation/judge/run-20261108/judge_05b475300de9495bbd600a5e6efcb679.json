@@ -1,0 +1,120 @@
+{
+  "trial_id": "05b475300de9495bbd600a5e6efcb679",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 3,
+          "pacing": 2,
+          "geographic_coherence": 4,
+          "time_realism": 2,
+          "completeness": 3,
+          "diversity_and_dining": 3
+        },
+        "weighted_score": 56.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "Mixed match - Day 2 (天涯海角, 三亚湾) and Day 3 (亚龙湾 beaches) align with beach/nature preferences; Day 1 (南山大小洞天, 南山文化旅游区, 南山海上观音) focuses more on cultural/religious attractions",
+          "pacing": "Very rigid scheduling with exactly 3.5-hour blocks per spot and no buffer time; moderate rain weather makes this intense pacing unrealistic",
+          "geographic_coherence": "Each day's attractions are well-grouped geographically: Day 1 (all 南山 area), Day 2 (all western/northwestern area), Day 3 (all 亚龙湾 area)",
+          "time_realism": "Unrealistic timing that doesn't account for travel time between spots or weather delays; moderate rain would likely slow down transportation",
+          "completeness": "Basic spot names and times provided but insufficient for direct execution; missing specific addresses, detailed activities, and practical information",
+          "diversity_and_dining": "Some diversity within days but days 2 and 3 are repetitive with multiple beach spots; dining not evaluated per scope"
+        },
+        "flags": [
+          "bad_weather_all_days"
+        ],
+        "overall_comment": "The itinerary has good geographic grouping within each day but suffers from unrealistic timing and poor pacing. The mixed preference fit (cultural vs beach/nature) and repetitive beach attractions on days 2-3 reduce the overall quality. Moderate rain all three days significantly impacts feasibility.",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 840,
+          "output_tokens": 733,
+          "total_tokens": 1573,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 64675.137,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 3,
+          "pacing": 1,
+          "geographic_coherence": 3,
+          "time_realism": 2,
+          "completeness": 3,
+          "diversity_and_dining": 3
+        },
+        "weighted_score": 50.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "Day 1 (南山大小洞天旅游区、三亚南山文化旅游区、南山海上观音) focuses on cultural/religious attractions, not matching '海滨自然' preference. Day 2 (天涯海角、天涯小镇、三亚湾) has mixed match with two seaside spots. Day 3 (亚龙湾海滩、亚龙湾国家旅游度假区、亚龙湾风景区) fully matches seaside/nature preference. 2/3 days align with preferences.",
+          "pacing": "Each spot allocated only 30 minutes (09:00-09:30, 13:00-13:30, 16:00-16:30), which is extremely rushed and unrealistic for proper experience. No time for travel between distant locations like Nanshan to Yalong Bay. Early end times suggest incomplete day planning.",
+          "geographic_coherence": "Day 1: All spots in Nanshan area - good coherence. Day 2: 天涯海角 and 天涯小镇 are close, 三亚湾 slightly further - reasonable. Day 3: All spots in Yalong Bay area - good coherence. However, major jumps between Nanshan→Tianya→Yalong Bay create significant inter-day travel.",
+          "time_realism": "30 minutes per spot is unrealistic for most attractions. No travel time allocated between distant regions. Moderate rain forecast all days not considered in planning. Schedule doesn't account for weather impacts on outdoor activities.",
+          "completeness": "Basic spot and timing information provided, but with unrealistic 30-minute durations per spot, the itinerary lacks practical completeness. No transportation details (per scope) or meal information (per scope).",
+          "diversity_and_dining": "Attraction diversity exists: cultural (Day 1), mixed (Day 2), seaside/nature (Day 3). However, rushed pace limits meaningful diversity experience. Meals not evaluated per scope constraints."
+        },
+        "flags": [
+          "bad_weather_all_days",
+          "other"
+        ],
+        "overall_comment": "The itinerary has significant pacing issues with only 30 minutes per spot, making it impractical to experience attractions properly. While geographic coherence is good within each day, the inter-day travel between distant regions (Nanshan→Tianya→Yalong Bay) is not accounted for. Moderate weather conditions are completely ignored in the planning. The preference fit is moderate with 2/3 days matching seaside/nature preferences, but the rushed pace undermines the overall quality.",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 840,
+          "output_tokens": 1148,
+          "total_tokens": 1988,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 53679.111,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      }
+    ],
+    "overall_mean": 53.0,
+    "dimension_mean": {
+      "preference_fit": 3.0,
+      "pacing": 1.5,
+      "geographic_coherence": 3.5,
+      "time_realism": 2.0,
+      "completeness": 3.0,
+      "diversity_and_dining": 3.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 4,
+      "within_one": 6,
+      "exact_rate": 0.6667,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.333,
+      "quadratic_weighted_kappa": 0.7143
+    },
+    "low_score_dimensions": [
+      "pacing",
+      "time_realism"
+    ],
+    "flags": [
+      "bad_weather_all_days",
+      "other"
+    ],
+    "judge_calls": 0,
+    "replayed_calls": 2,
+    "judge_tokens_est": 3561,
+    "cache_hits": 2,
+    "errors": []
+  }
+}

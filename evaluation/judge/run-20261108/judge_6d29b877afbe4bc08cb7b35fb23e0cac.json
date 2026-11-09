@@ -1,0 +1,118 @@
+{
+  "trial_id": "6d29b877afbe4bc08cb7b35fb23e0cac",
+  "case_id": "nanjing-3d-tighthours-negative",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 5,
+          "geographic_coherence": 3,
+          "time_realism": 5,
+          "completeness": 5,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 87.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "Most attractions align with historical and natural landscape preferences: G Jiming Temple, Sun Yat-sen Mausoleum, Bu Lao Village, Shuimo Danian Tourist Area, and Geological Park Museum all match user preferences. Happy Valley is a theme park that doesn't perfectly fit the stated preferences.",
+          "pacing": "Respects 'doesn't like to get up early' preference with 10:00 starts. Balanced morning (2 hours) and afternoon (3-4.5 hours) sessions with appropriate breaks between activities.",
+          "geographic_coherence": "Route appears organized by day but cannot fully assess geographic efficiency without specific location data. Potential for backtracking between unknown.",
+          "time_realism": "All activities have realistic start times (10:00, 13:30) and appropriate durations. Good weather forecast and no scheduling conflicts.",
+          "completeness": "Route includes specific times, locations, and periods for all activities within the defined scope. All required information is provided.",
+          "diversity_and_dining": "Good variety of attraction types: historical sites, natural landscapes, educational museum, and theme park. Dining not evaluated per scope."
+        },
+        "flags": [
+          "bad_weather_all_days",
+          "other"
+        ],
+        "overall_comment": "Well-structured itinerary that respects user preferences and habits. Most attractions align with historical and natural landscape preferences, with good pacing and time realism. Minor geographic coherence concerns due to lack of location data, and Happy Valley doesn't perfectly match stated preferences.\"",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 736,
+          "output_tokens": 845,
+          "total_tokens": 1581,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 76237.967,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 5,
+          "geographic_coherence": 4,
+          "time_realism": 5,
+          "completeness": 5,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 90.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "行程大部分符合历史古迹和自然景观偏好：Day1的古鸡鸣寺和中山陵景区都是历史古迹；Day2的不老村和水墨大埝旅游区都是自然景观；但Day3的南京欢乐谷是主题公园，与用户偏好不符。",
+          "pacing": "节奏安排合理，每天上午10:00开始，下午13:30开始，符合'不喜欢早起'的习惯；每个景点安排2.5-4.5小时，时间分配合理。",
+          "geographic_coherence": "各景点安排相对集中：Day1的两个景点都在南京市区；Day2的不老村和水墨大埝旅游区都在江宁区；Day3的汤山方山地质公园和欢乐谷也在江宁区域，减少了不必要的往返。",
+          "time_realism": "时间安排现实：每天上午10:00开始，下午13:30开始，符合用户习惯；每个景点2.5-4.5小时，足够游览；天气晴朗，无天气影响。",
+          "completeness": "路线信息完整：每天的具体景点、开始和结束时间都明确提供，可以直接执行。",
+          "diversity_and_dining": "体验多样：包含历史古迹、自然景观、地质博物馆、主题公园等多种类型；由于scope.meals=false，不评价餐饮安排。"
+        },
+        "flags": [
+          "preference_mismatch"
+        ],
+        "overall_comment": "整体行程安排合理，符合用户对历史古迹和自然景观的偏好，节奏适中，时间安排现实。主要问题是第三天的南京欢乐谷与用户偏好不符，建议替换为其他历史古迹或自然景观景点。",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 736,
+          "output_tokens": 393,
+          "total_tokens": 1129,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 46575.063,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      }
+    ],
+    "overall_mean": 88.5,
+    "dimension_mean": {
+      "preference_fit": 4.0,
+      "pacing": 5.0,
+      "geographic_coherence": 3.5,
+      "time_realism": 5.0,
+      "completeness": 5.0,
+      "diversity_and_dining": 4.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 5,
+      "within_one": 6,
+      "exact_rate": 0.8333,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.167,
+      "quadratic_weighted_kappa": 0.8
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "bad_weather_all_days",
+      "other",
+      "preference_mismatch"
+    ],
+    "judge_calls": 0,
+    "replayed_calls": 2,
+    "judge_tokens_est": 2710,
+    "cache_hits": 2,
+    "errors": []
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "trial_id": "269951e978604d69b736fbb76a6f393f",
+  "case_id": "sanya-1d-indooronly-empty-pool-negative",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": false,
+  "status": "FAILED",
+  "hard_pass": false,
+  "l0_codes": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "l1_codes": [],
+  "first_draft_l0": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 75.0,
+  "final_delivered_iteration": 4,
+  "planning_revision_rounds": 3,
+  "review_round": 4,
+  "reviewer_calls": 4,
+  "time_check_round": 0,
+  "snapshot_count": 4,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [
+        "route_structure",
+        "candidate_pool_preference_conflict"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 75.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "97d170e1550eee4a",
+      "spot_names": [],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [
+        "route_structure",
+        "candidate_pool_preference_conflict"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 75.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "97d170e1550eee4a",
+      "spot_names": [],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [
+        "route_structure",
+        "candidate_pool_preference_conflict"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 75.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "97d170e1550eee4a",
+      "spot_names": [],
+      "is_delivered": false
+    },
+    {
+      "iteration": 4,
+      "l0_codes": [
+        "route_structure",
+        "candidate_pool_preference_conflict"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 75.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "97d170e1550eee4a",
+      "spot_names": [],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": null,
+  "warnings": [],
+  "route_names": [],
+  "route_by_day": [],
+  "delivered_route_names": [],
+  "delivered_route_by_day": [],
+  "oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": false,
+  "infeasible_reason": "candidate_pool_preference_conflict：候选池无明确室内景点",
+  "must_avoid_ok": null,
+  "latency_s": 276.784,
+  "node_latency_ms": {
+    "planner": 132657.888,
+    "snapshot_gate": 1.883,
+    "reviewer": 144017.431,
+    "snapshot_reviewer": 0.388
+  },
+  "input_tokens_est": 9636,
+  "output_tokens_est": 2163,
+  "llm_calls": 8,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": false,
+  "delivered_plan": false,
+  "draft_soft_score": 75.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "expectations_evaluated": false,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "CORRECT_REJECT",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

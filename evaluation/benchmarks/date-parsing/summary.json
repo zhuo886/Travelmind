@@ -1,0 +1,290 @@
+{
+  "frozen_today": "2026-11-08",
+  "total": 33,
+  "passed": 33,
+  "accuracy": 1.0,
+  "by_kind": {
+    "explicit": {
+      "total": 12,
+      "passed": 12
+    },
+    "relative": {
+      "total": 12,
+      "passed": 12
+    },
+    "days": {
+      "total": 9,
+      "passed": 9
+    }
+  },
+  "failures": [],
+  "rows": [
+    {
+      "kind": "explicit",
+      "input": "11.18开始",
+      "expected": [
+        "2026-11-18"
+      ],
+      "actual": [
+        "2026-11-18"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "11/18",
+      "expected": [
+        "2026-11-18"
+      ],
+      "actual": [
+        "2026-11-18"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "11-18",
+      "expected": [
+        "2026-11-18"
+      ],
+      "actual": [
+        "2026-11-18"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "11月18日",
+      "expected": [
+        "2026-11-18"
+      ],
+      "actual": [
+        "2026-11-18"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "2026-11-18",
+      "expected": [
+        "2026-11-18"
+      ],
+      "actual": [
+        "2026-11-18"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "2026年11月18日住两天",
+      "expected": [
+        "2026-11-18"
+      ],
+      "actual": [
+        "2026-11-18"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "11.18 到 11.20",
+      "expected": [
+        "2026-11-18",
+        "2026-11-20"
+      ],
+      "actual": [
+        "2026-11-18",
+        "2026-11-20"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "从12.30到1.2",
+      "expected": [
+        "2026-12-30",
+        "2027-01-02"
+      ],
+      "actual": [
+        "2026-12-30",
+        "2027-01-02"
+      ],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "走1.5小时",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "3.5公里",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "明天出发",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "kind": "explicit",
+      "input": "周末两天",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "今天下午出发",
+      "expected": "2026-11-08",
+      "actual": "2026-11-08",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "明天中午开始",
+      "expected": "2026-11-09",
+      "actual": "2026-11-09",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "后天",
+      "expected": "2026-11-10",
+      "actual": "2026-11-10",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "大后天走",
+      "expected": "2026-11-11",
+      "actual": "2026-11-11",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "3天后出发",
+      "expected": "2026-11-11",
+      "actual": "2026-11-11",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "周末两天",
+      "expected": "2026-11-14",
+      "actual": "2026-11-14",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "本周末去",
+      "expected": "2026-11-14",
+      "actual": "2026-11-14",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "本周六",
+      "expected": "2026-11-14",
+      "actual": "2026-11-14",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "下周六",
+      "expected": "2026-11-14",
+      "actual": "2026-11-14",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "下周末",
+      "expected": "2026-11-14",
+      "actual": "2026-11-14",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "成都周末两天，想泡茶馆吃火锅，明天中午开始",
+      "expected": "2026-11-09",
+      "actual": "2026-11-09",
+      "pass": true
+    },
+    {
+      "kind": "relative",
+      "input": "没有日期信息",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "杭州一日",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "杭州一日游",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "三天两夜",
+      "expected": 3,
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "5日游",
+      "expected": 5,
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "南京两天",
+      "expected": 2,
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "周末两天",
+      "expected": 2,
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "11月18日",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "第3日去博物馆",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    },
+    {
+      "kind": "days",
+      "input": "没有天数",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    }
+  ]
+}

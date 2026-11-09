@@ -1,0 +1,44 @@
+{
+  "key": "b1d5fd64586dcc3d98c336aef7201673c60f1fbb51e4aa32cc7e35e97a1a3549",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": null,
+  "payload_hash": "bf36a5150252a233b60add0a7e59d2ad06d92a6a8f8a6c8e0de0d0a3e2e3f03e",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 4,
+    "geographic_coherence": 5,
+    "time_realism": 2,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Days 2-3 match seaside/natural preference (天涯海角, 三亚湾, 亚龙湾), but Day 1 focuses on cultural/religious sites (南山大小洞天, 南山文化旅游区, 海上观音) which don't align with '海滨自然' preference",
+    "pacing": "Each day has 3 spots with 3.5-4 hour intervals, providing reasonable pacing without being rushed or empty",
+    "geographic_coherence": "Excellent geographic coherence - each day is focused in one area: Day 1 in Nanshan, Day 2 in Tianya/Tianya Bay, Day 3 in Yalong Bay",
+    "time_realism": "Poor time realism due to moderate rain weather for all 3 days, which would make outdoor activities difficult and uncomfortable",
+    "completeness": "Missing essential details: transportation between spots, meal planning, weather contingency plans, specific activity details at each location",
+    "diversity_and_dining": "Some diversity with mix of cultural and natural attractions, but no dining planning and limited activity variety (mostly sightseeing)"
+  },
+  "flags": [
+    "bad_weather_not_accounted_for",
+    "missing_dining_planning",
+    "missing_transportation_details",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary has good geographic coherence and reasonable pacing, but fails to account for bad weather and lacks completeness in practical details. The preference fit is mixed with Day 1 not matching the user's seaside/natural preference.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 702,
+    "output_tokens": 714,
+    "total_tokens": 1416,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 45094.192,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

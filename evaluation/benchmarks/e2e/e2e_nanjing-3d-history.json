@@ -1,0 +1,55 @@
+{
+  "case_id": "nanjing-3d-history",
+  "query": "南京三天，想看历史建筑和博物馆，节奏慢一点，别太赶",
+  "focus": "多日 + 偏好约束 + 必去未点名",
+  "success": false,
+  "status": "FAILED",
+  "days": 0,
+  "spots": [],
+  "spot_count": 0,
+  "route_issues": [],
+  "missing_fields": [
+    "出行开始日期",
+    "出行结束日期"
+  ],
+  "plan_id": null,
+  "latency_s": 8.612,
+  "llm_calls": 1,
+  "input_tokens_est": 265,
+  "output_tokens_est": 134,
+  "node_ms": {
+    "intent": 7758.4,
+    "clarify": 0.6
+  },
+  "nodes_entered": [
+    "clarify",
+    "intent"
+  ],
+  "events": [
+    {
+      "node": "intent",
+      "event": "start",
+      "t": 0.851
+    },
+    {
+      "node": "intent",
+      "event": "end",
+      "t": 8.609,
+      "ms": 7758.4,
+      "summary": "已识别：南京，0 天行程。"
+    },
+    {
+      "node": "clarify",
+      "event": "start",
+      "t": 8.611
+    },
+    {
+      "node": "clarify",
+      "event": "end",
+      "t": 8.611,
+      "ms": 0.6,
+      "summary": "我还不能准确理解这次旅行请求，请补充：出发日期（或相对日期，如明天）、旅行天数/结束日期。"
+    }
+  ],
+  "error": null
+}

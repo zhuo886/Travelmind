@@ -1,0 +1,39 @@
+{
+  "key": "778aa1ae1c35084253f981aebb2cbd6afcf720da5348fc08a43707b095a587aa",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "8d9e1444e4f21641254032e0acf11b2988d77be60df3abdc96f99614af34cd4c",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 3,
+    "completeness": 3,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程包含束河古镇、丽江古城、白沙古镇等符合古镇文化和纳西民族风情的景点，每天10:00开始符合'不早起'的偏好，但缺少具体的手工艺体验安排。",
+    "pacing": "每天上午2.5小时+下午2.5小时的节奏相对合理，但上午和下午活动间有2小时空档，且缺乏缓冲时间。",
+    "geographic_coherence": "地理安排较为合理，如第3天将白沙古镇和拉市海湿地公园（均在丽江以北）安排在同一天，第4天将玉龙雪山和蓝月谷安排在一起，减少了折返。",
+    "time_realism": "活动时间安排（10:00-12:30/14:00-16:30）符合一般景区开放时间，但景点间交通时间未考虑。",
+    "completeness": "路线包含具体景点和时间安排，但缺少交通方式、景点内部游览路线等详细信息。",
+    "diversity_and_dining": "体验多样性良好，包含古镇文化（束河、丽江、白沙）、自然景观（拉市海、玉龙雪山、蓝月谷、中济海）和文化景点（狮子山），涵盖文化、自然、休闲等多种体验。"
+  },
+  "flags": [],
+  "overall_comment": "整体行程较好地匹配了用户对古镇文化和纳西民族风情的偏好，节奏适中，地理安排合理，但时间安排和行程完整性有提升空间。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 963,
+    "output_tokens": 349,
+    "total_tokens": 1312,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 75022.137,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

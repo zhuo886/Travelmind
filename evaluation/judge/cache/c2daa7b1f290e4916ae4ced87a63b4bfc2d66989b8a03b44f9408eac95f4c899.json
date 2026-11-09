@@ -1,0 +1,43 @@
+{
+  "key": "c2daa7b1f290e4916ae4ced87a63b4bfc2d66989b8a03b44f9408eac95f4c899",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "e1e293e7b2f42eb6bc066487d95af88e9b2e1d2def197d35c10f561c6e66938e",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 5,
+    "completeness": 5,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "完美契合用户偏好：古镇文化（束河古镇、白沙古镇、丽江古城）、纳西民族风情（白沙古镇、丽江古城）、手工艺（白沙古镇），且符合慢节奏、不早起的习惯（每天10:00开始）",
+    "pacing": "节奏合理，每天2个景点，上午下午各一个，时间充裕，但第4天玉龙雪山景点较多可能稍显紧凑",
+    "geographic_coherence": "地理顺序合理，古镇类景点集中在前两天，自然景观在后三天，避免了不必要的折返",
+    "time_realism": "时间安排现实，每天10:00开始符合不早起要求，每个景点3-3.5小时游览时间合理，景点间有1.5-2小时间隔",
+    "completeness": "路线信息完整，包含具体景点、精确时间、明确顺序，可直接执行",
+    "diversity_and_dining": "体验多样，涵盖古镇文化、自然风光、民族风情，但scope.meals=false不评价餐饮"
+  },
+  "flags": [
+    "geographic_inefficiency",
+    "other",
+    "preference_mismatch"
+  ],
+  "overall_comment": "这是一份非常优秀的丽江行程，完美契合用户对古镇文化和纳西民族风情的偏好，同时保持了慢节奏的旅行方式。地理安排合理，时间规划现实，体验多样性好。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 960,
+    "output_tokens": 342,
+    "total_tokens": 1302,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 181709.031,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "a857e039d87c086fae5d4d9a5bd51d3108cba49ef4283d19da61cf319f207a7e",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "59e2d86d2768136e954031152c4d2dcce895c0a2a15b5482a722df7deaf62dbc",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 4,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "All attractions match historical/natural preferences; no early starts (10:00) respecting habit",
+    "pacing": "Reasonable 2-hour morning and 3-4.5 hour afternoon sessions with 1.5-hour gaps",
+    "geographic_coherence": "Mixed coherence - Day 1 spots are urban, but Day 2-3 locations may require travel between districts",
+    "time_realism": "Respects 'no early mornings' with 10:00 starts; session lengths appropriate for sightseeing",
+    "completeness": "Missing transportation, dining, fees, opening hours - basic structure only",
+    "diversity_and_dining": "Good historical/natural mix but no dining planning and limited activity variety"
+  },
+  "flags": [
+    "no_dining_planning",
+    "missing_transportation_details",
+    "limited_activity_variety",
+    "evidence_missing"
+  ],
+  "overall_comment": "Well-structured itinerary respecting preferences and habits, but lacks practical details for execution.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 597,
+    "output_tokens": 496,
+    "total_tokens": 1093,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 42861.972,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

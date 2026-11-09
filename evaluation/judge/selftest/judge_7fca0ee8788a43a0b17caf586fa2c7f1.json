@@ -1,0 +1,143 @@
+{
+  "trial_id": "7fca0ee8788a43a0b17caf586fa2c7f1",
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "stub",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 4,
+          "geographic_coherence": 4,
+          "time_realism": 4,
+          "completeness": 5,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "pacing": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "geographic_coherence": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "time_realism": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "completeness": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "diversity_and_dining": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "stub judge 1 仅用于管线自测",
+          "pacing": "stub judge 1 仅用于管线自测",
+          "geographic_coherence": "stub judge 1 仅用于管线自测",
+          "time_realism": "stub judge 1 仅用于管线自测",
+          "completeness": "stub judge 1 仅用于管线自测",
+          "diversity_and_dining": "stub judge 1 仅用于管线自测"
+        },
+        "flags": [
+          "other"
+        ],
+        "overall_comment": "stub provider: never use as a quality result",
+        "usage": {},
+        "weighted_score": 80.0,
+        "cache_hit": false
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 5,
+          "geographic_coherence": 4,
+          "time_realism": 4,
+          "completeness": 5,
+          "diversity_and_dining": 3
+        },
+        "evidence": {
+          "preference_fit": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "pacing": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "geographic_coherence": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "time_realism": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "completeness": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ],
+          "diversity_and_dining": [
+            "上海失恋博物馆",
+            "上海海洋水族馆"
+          ]
+        },
+        "reasons": {
+          "preference_fit": "stub judge 2 仅用于管线自测",
+          "pacing": "stub judge 2 仅用于管线自测",
+          "geographic_coherence": "stub judge 2 仅用于管线自测",
+          "time_realism": "stub judge 2 仅用于管线自测",
+          "completeness": "stub judge 2 仅用于管线自测",
+          "diversity_and_dining": "stub judge 2 仅用于管线自测"
+        },
+        "flags": [
+          "other"
+        ],
+        "overall_comment": "stub provider: never use as a quality result",
+        "usage": {},
+        "weighted_score": 83.0,
+        "cache_hit": false
+      }
+    ],
+    "overall_mean": 81.5,
+    "dimension_mean": {
+      "preference_fit": 4.0,
+      "pacing": 4.5,
+      "geographic_coherence": 4.0,
+      "time_realism": 4.0,
+      "completeness": 5.0,
+      "diversity_and_dining": 3.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 5,
+      "within_one": 6,
+      "exact_rate": 0.8333,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.167,
+      "quadratic_weighted_kappa": 0.8
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "other"
+    ],
+    "judge_calls": 2,
+    "replayed_calls": 0,
+    "judge_tokens_est": 0,
+    "cache_hits": 0,
+    "errors": []
+  }
+}

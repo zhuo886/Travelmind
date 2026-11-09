@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-11-06T11:49:00.081082+00:00",
+  "model": "glm-4.5-flash",
+  "provider": "openai",
+  "modes": [
+    "planner_only",
+    "planner_reviewer",
+    "planner_reviewer_time_check"
+  ],
+  "cases": [
+    "nanjing-3d-tighthours-negative",
+    "sanya-3d-allrain-outdoor-negative"
+  ],
+  "k": 1,
+  "trials": 6
+}

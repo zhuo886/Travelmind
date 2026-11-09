@@ -1,0 +1,380 @@
+{
+  "benchmark": "modify_input_budget",
+  "kind": "offline_prompt_capture",
+  "instruction": "把第 1 天下午的景点换成室内的，其他天尽量保持不变。",
+  "cases": 5,
+  "rows": [
+    {
+      "case_id": "lijiang-5d-sunny-slowpace",
+      "a_calls": [
+        {
+          "schema": "IntentExtraction",
+          "task": "offline:intent",
+          "tokens": 264,
+          "chars": 537
+        },
+        {
+          "schema": "RewrittenQuery",
+          "task": "offline:query_rewrite",
+          "tokens": 259,
+          "chars": 529
+        },
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 2692,
+          "chars": 5394
+        }
+      ],
+      "b_calls": [
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 3263,
+          "chars": 6535
+        }
+      ],
+      "a_tokens": 3215,
+      "b_tokens": 3263,
+      "a_llm_calls": 3,
+      "b_llm_calls": 1,
+      "a_nodes": [
+        "IntentExtraction",
+        "RewrittenQuery",
+        "TravelRoute"
+      ],
+      "b_nodes": [
+        "TravelRoute"
+      ]
+    },
+    {
+      "case_id": "nanjing-3d-sunny-history",
+      "a_calls": [
+        {
+          "schema": "IntentExtraction",
+          "task": "offline:intent",
+          "tokens": 264,
+          "chars": 538
+        },
+        {
+          "schema": "RewrittenQuery",
+          "task": "offline:query_rewrite",
+          "tokens": 258,
+          "chars": 527
+        },
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 2435,
+          "chars": 4879
+        }
+      ],
+      "b_calls": [
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 2757,
+          "chars": 5523
+        }
+      ],
+      "a_tokens": 2957,
+      "b_tokens": 2757,
+      "a_llm_calls": 3,
+      "b_llm_calls": 1,
+      "a_nodes": [
+        "IntentExtraction",
+        "RewrittenQuery",
+        "TravelRoute"
+      ],
+      "b_nodes": [
+        "TravelRoute"
+      ]
+    },
+    {
+      "case_id": "shanghai-1d-sunny-nightlife",
+      "a_calls": [
+        {
+          "schema": "IntentExtraction",
+          "task": "offline:intent",
+          "tokens": 263,
+          "chars": 536
+        },
+        {
+          "schema": "RewrittenQuery",
+          "task": "offline:query_rewrite",
+          "tokens": 255,
+          "chars": 521
+        },
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 2701,
+          "chars": 5411
+        }
+      ],
+      "b_calls": [
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 2826,
+          "chars": 5662
+        }
+      ],
+      "a_tokens": 3219,
+      "b_tokens": 2826,
+      "a_llm_calls": 3,
+      "b_llm_calls": 1,
+      "a_nodes": [
+        "IntentExtraction",
+        "RewrittenQuery",
+        "TravelRoute"
+      ],
+      "b_nodes": [
+        "TravelRoute"
+      ]
+    },
+    {
+      "case_id": "nanjing-3d-tighthours-negative",
+      "a_calls": [
+        {
+          "schema": "IntentExtraction",
+          "task": "offline:intent",
+          "tokens": 264,
+          "chars": 538
+        },
+        {
+          "schema": "RewrittenQuery",
+          "task": "offline:query_rewrite",
+          "tokens": 253,
+          "chars": 516
+        },
+        {
+          "schema": "CandidateDecision",
+          "task": "offline:candidate_react",
+          "tokens": 685,
+          "chars": 1380
+        },
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 1664,
+          "chars": 3337
+        }
+      ],
+      "b_calls": [
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 1988,
+          "chars": 3986
+        }
+      ],
+      "a_tokens": 2866,
+      "b_tokens": 1988,
+      "a_llm_calls": 4,
+      "b_llm_calls": 1,
+      "a_nodes": [
+        "IntentExtraction",
+        "RewrittenQuery",
+        "CandidateDecision",
+        "TravelRoute"
+      ],
+      "b_nodes": [
+        "TravelRoute"
+      ]
+    },
+    {
+      "case_id": "sanya-3d-allrain-outdoor-negative",
+      "a_calls": [
+        {
+          "schema": "IntentExtraction",
+          "task": "offline:intent",
+          "tokens": 264,
+          "chars": 537
+        },
+        {
+          "schema": "RewrittenQuery",
+          "task": "offline:query_rewrite",
+          "tokens": 249,
+          "chars": 509
+        },
+        {
+          "schema": "CandidateDecision",
+          "task": "offline:candidate_react",
+          "tokens": 1070,
+          "chars": 2149
+        },
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 2894,
+          "chars": 5798
+        }
+      ],
+      "b_calls": [
+        {
+          "schema": "TravelRoute",
+          "task": "offline:joint_planner",
+          "tokens": 3349,
+          "chars": 6707
+        }
+      ],
+      "a_tokens": 4477,
+      "b_tokens": 3349,
+      "a_llm_calls": 4,
+      "b_llm_calls": 1,
+      "a_nodes": [
+        "IntentExtraction",
+        "RewrittenQuery",
+        "CandidateDecision",
+        "TravelRoute"
+      ],
+      "b_nodes": [
+        "TravelRoute"
+      ]
+    }
+  ],
+  "a_tokens_median": 3215,
+  "b_tokens_median": 2826,
+  "a_tokens_mean": 3346.8,
+  "b_tokens_mean": 2836.6,
+  "token_reduction": -0.1524,
+  "a_call_median": 3,
+  "b_call_median": 1,
+  "latency": {
+    "status": "partial_decomposition",
+    "full_chain_status": "not_measured",
+    "reason": "仓库内没有检索阶段（attraction_search/candidate_search）的实测耗时，补一个延迟即伪造；因此只给已测节点的拆解，全链路 P50 仍标 not_measured",
+    "decomposition": {
+      "sources": [
+        "evaluation\\trials\\run-20261106",
+        "evaluation\\trials\\run-20261107-v2"
+      ],
+      "node_medians_ms": {
+        "planner": 93695.8,
+        "reviewer": 96160.0,
+        "snapshot_gate": 2.9,
+        "snapshot_reviewer": 3.3,
+        "snapshot_time_check": 1.6,
+        "time_check": 61565.8
+      },
+      "arm_a": {
+        "nodes": [
+          "intent",
+          "query_rewrite",
+          "weather_search",
+          "attraction_search",
+          "candidate_react",
+          "candidate_search",
+          "candidate_validator",
+          "main_meal_search",
+          "planner",
+          "route_distance_check",
+          "risk_gate",
+          "reviewer",
+          "time_check",
+          "main_meal_output",
+          "spot_tips",
+          "finalize"
+        ],
+        "measured": {
+          "planner": 93695.8,
+          "reviewer": 96160.0,
+          "time_check": 61565.8
+        },
+        "unmeasured": [
+          "intent",
+          "query_rewrite",
+          "weather_search",
+          "attraction_search",
+          "candidate_react",
+          "candidate_search",
+          "candidate_validator",
+          "main_meal_search",
+          "route_distance_check",
+          "risk_gate",
+          "main_meal_output",
+          "spot_tips",
+          "finalize"
+        ],
+        "measured_p50_ms": 251421.6,
+        "coverage": 0.188
+      },
+      "arm_b": {
+        "nodes": [
+          "planner",
+          "route_distance_check",
+          "risk_gate",
+          "reviewer",
+          "time_check",
+          "main_meal_output",
+          "spot_tips",
+          "finalize"
+        ],
+        "measured": {
+          "planner": 93695.8,
+          "reviewer": 96160.0,
+          "time_check": 61565.8
+        },
+        "unmeasured": [
+          "route_distance_check",
+          "risk_gate",
+          "main_meal_output",
+          "spot_tips",
+          "finalize"
+        ],
+        "measured_p50_ms": 251421.6,
+        "coverage": 0.375
+      },
+      "stages": {
+        "intake": {
+          "nodes": 3,
+          "measured_nodes": 0,
+          "estimated_ms": 0,
+          "in_arm_b": false,
+          "share": null
+        },
+        "retrieval": {
+          "nodes": 5,
+          "measured_nodes": 0,
+          "estimated_ms": 0,
+          "in_arm_b": false,
+          "share": null
+        },
+        "planning": {
+          "nodes": 2,
+          "measured_nodes": 1,
+          "estimated_ms": 93695.8,
+          "in_arm_b": true,
+          "share": 0.3727
+        },
+        "review": {
+          "nodes": 3,
+          "measured_nodes": 2,
+          "estimated_ms": 157725.8,
+          "in_arm_b": true,
+          "share": 0.6273
+        },
+        "finishing": {
+          "nodes": 3,
+          "measured_nodes": 0,
+          "estimated_ms": 0,
+          "in_arm_b": true,
+          "share": null
+        }
+      },
+      "measured_total_ms": 251421.6
+    }
+  },
+  "e2_reference": {
+    "pairs": 27,
+    "mode": "planner_only",
+    "latency_reduction": 0.1168,
+    "token_reduction": -0.0659,
+    "retention": {
+      "A": 0.735,
+      "B": 0.9061
+    },
+    "note": "A/B 同为 planner 起跑的同子图配对；不跳过检索，因此只作下界参照"
+  }
+}

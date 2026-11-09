@@ -1,0 +1,61 @@
+{
+  "key": "9fcfdb23c2c6483faaec61ea552dd1567f4d7f1d3a06425a3b466b20409bcc6d",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "5e4e6f01a1d58c762936a316d5cf3be7a105d547711c8316f5871630e07f3040",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "南京欢乐谷"
+    ],
+    "pacing": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "南京欢乐谷"
+    ],
+    "geographic_coherence": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "南京欢乐谷"
+    ],
+    "time_realism": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "南京欢乐谷"
+    ],
+    "completeness": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "南京欢乐谷"
+    ],
+    "diversity_and_dining": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "南京欢乐谷"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

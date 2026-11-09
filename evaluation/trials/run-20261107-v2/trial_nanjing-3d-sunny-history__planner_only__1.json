@@ -1,0 +1,113 @@
+{
+  "trial_id": "e652424427874754bcedf492b73f9eb0",
+  "case_id": "nanjing-3d-sunny-history",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "soft_score": 87.0,
+  "warnings": [
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "南京夫子庙",
+    "中国科举博物馆(江南贡院)",
+    "玄武湖景区",
+    "中山陵景区",
+    "古鸡鸣寺",
+    "莲花广场"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "南京夫子庙",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "中山陵景区",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "古鸡鸣寺",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "莲花广场",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [
+    "玄武湖景区"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 110.935,
+  "node_latency_ms": {
+    "planner": 110869.282,
+    "snapshot_gate": 2.18
+  },
+  "input_tokens_est": 2055,
+  "output_tokens_est": 1188,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

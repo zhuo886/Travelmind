@@ -1,0 +1,51 @@
+{
+  "trial_id": "bfa35294e5464c3ea350d1fab637169e",
+  "case_id": "nanjing-3d-singlerain-history",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "time_check_round": 0,
+  "snapshot_count": 2,
+  "soft_score": 79.5,
+  "oor": {
+    "outside": 0,
+    "total": 8
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "must_avoid_ok": null,
+  "latency_s": 223.338,
+  "node_latency_ms": {
+    "planner": 123240.75,
+    "snapshot_gate": 2.913,
+    "reviewer": 100018.646,
+    "snapshot_reviewer": 2.874
+  },
+  "input_tokens_est": 9964,
+  "output_tokens_est": 3352,
+  "llm_calls": 4,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

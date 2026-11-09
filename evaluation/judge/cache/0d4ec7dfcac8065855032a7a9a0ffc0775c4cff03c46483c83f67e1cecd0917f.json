@@ -1,0 +1,42 @@
+{
+  "key": "0d4ec7dfcac8065855032a7a9a0ffc0775c4cff03c46483c83f67e1cecd0917f",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "398bf194310a950ae652bfb9b7ed57dad3ecaa2455c1cee4587395a9fb20e3a3",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 5,
+    "geographic_coherence": 3,
+    "time_realism": 5,
+    "completeness": 5,
+    "diversity_and_dining": 4
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Most attractions align with historical and natural landscape preferences: G Jiming Temple, Sun Yat-sen Mausoleum, Bu Lao Village, Shuimo Danian Tourist Area, and Geological Park Museum all match user preferences. Happy Valley is a theme park that doesn't perfectly fit the stated preferences.",
+    "pacing": "Respects 'doesn't like to get up early' preference with 10:00 starts. Balanced morning (2 hours) and afternoon (3-4.5 hours) sessions with appropriate breaks between activities.",
+    "geographic_coherence": "Route appears organized by day but cannot fully assess geographic efficiency without specific location data. Potential for backtracking between unknown.",
+    "time_realism": "All activities have realistic start times (10:00, 13:30) and appropriate durations. Good weather forecast and no scheduling conflicts.",
+    "completeness": "Route includes specific times, locations, and periods for all activities within the defined scope. All required information is provided.",
+    "diversity_and_dining": "Good variety of attraction types: historical sites, natural landscapes, educational museum, and theme park. Dining not evaluated per scope."
+  },
+  "flags": [
+    "bad_weather_all_days",
+    "other"
+  ],
+  "overall_comment": "Well-structured itinerary that respects user preferences and habits. Most attractions align with historical and natural landscape preferences, with good pacing and time realism. Minor geographic coherence concerns due to lack of location data, and Happy Valley doesn't perfectly match stated preferences.\"",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 736,
+    "output_tokens": 845,
+    "total_tokens": 1581,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 76237.967,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

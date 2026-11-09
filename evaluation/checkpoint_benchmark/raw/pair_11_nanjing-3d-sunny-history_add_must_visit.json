@@ -1,0 +1,177 @@
+{
+  "case_id": "nanjing-3d-sunny-history",
+  "edit_type": "add_must_visit",
+  "instruction": "第2天一定去“江苏江宁汤山方山国家地质公园博物馆”，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 96.436,
+    "input_tokens": 2114,
+    "output_tokens": 1247,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "玄武湖景区",
+      "古鸡鸣寺",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "南京牛首山文化旅游区",
+      "中国科举博物馆(江南贡院)",
+      "南京夫子庙"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "玄武湖景区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "古鸡鸣寺",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "玄武湖历史古迹游"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "江苏江宁汤山方山国家地质公园博物馆",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "南京牛首山文化旅游区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "地质博物馆与佛教文化"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "中国科举博物馆(江南贡院)",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "南京夫子庙",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "科举文化与夫子庙"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】第2天一定去“江苏江宁汤山方山国家地质公园博物馆”，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 67.181,
+    "input_tokens": 2408,
+    "output_tokens": 842,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "玄武湖景区",
+      "总统府",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "中国科举博物馆(江南贡院)",
+      "南京牛首山文化旅游区",
+      "南京长江大桥"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "玄武湖景区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "总统府",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "历史古迹与皇家园林"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "江苏江宁汤山方山国家地质公园博物馆",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "中国科举博物馆(江南贡院)",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "地质探索与科举文化"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "南京牛首山文化旅游区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "南京长江大桥",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "佛教文化与地标建筑"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】第2天一定去“江苏江宁汤山方山国家地质公园博物馆”，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.6667,
+    "B": 0.8333
+  }
+}

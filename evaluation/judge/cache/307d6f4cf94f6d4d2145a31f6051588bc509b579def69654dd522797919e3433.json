@@ -1,0 +1,44 @@
+{
+  "key": "307d6f4cf94f6d4d2145a31f6051588bc509b579def69654dd522797919e3433",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": null,
+  "payload_hash": "df4e7fd9942b361818d33b6474a6bf587d759a64862f2fde930341c1d80198ff",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 2,
+    "completeness": 2,
+    "diversity_and_dining": 1
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程符合'海滨自然'偏好，所有景点均为海滨或自然景观。但缺乏多样性，仅限于观光类活动。",
+    "pacing": "每天3个景点，每个景点2小时，时间分配基本合理。但缺乏弹性时间和休息安排。",
+    "geographic_coherence": "地理安排合理：第一天西部（天涯小镇、天涯海角、崖州古城），第二天北部（椰梦长廊、三亚湾、海月广场），第三天东部（后海村、亚龙湾、海棠河），减少折返。",
+    "time_realism": "严重问题：三天均为中雨天气，但行程全部安排户外活动，无室内替代方案。时间安排本身合理，但未考虑天气因素。",
+    "completeness": "信息严重缺失：无交通安排、无餐饮计划、无住宿信息、无门票费用、无天气应对方案。",
+    "diversity_and_dining": "缺乏多样性：所有景点均为观光类，无餐饮安排，无休闲活动，无文化体验。"
+  },
+  "flags": [
+    "weather_impact",
+    "missing_practical_details",
+    "lack_of_diversity",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程基本符合海滨自然偏好，地理安排合理，但严重缺乏实用信息和天气应对方案。建议增加室内备选方案、餐饮安排和交通信息。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 686,
+    "output_tokens": 347,
+    "total_tokens": 1033,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 36013.021,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

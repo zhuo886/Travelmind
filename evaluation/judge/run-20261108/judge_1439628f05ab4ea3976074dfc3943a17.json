@@ -1,0 +1,115 @@
+{
+  "trial_id": "1439628f05ab4ea3976074dfc3943a17",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "judge": {
+    "rubric_version": "judge-rubric-v2",
+    "prompt_version": "judge-prompt-v2",
+    "provider": "llm",
+    "model": "glm-4.5-flash",
+    "judges": [
+      {
+        "judge_id": 1,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 3,
+          "geographic_coherence": 4,
+          "time_realism": 3,
+          "completeness": 4,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 73.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "行程主要围绕海滨自然景观展开，天涯海角、三亚湾、亚龙湾海滩等符合用户偏好，但天涯小镇、崖州古城等文化景点占比略高",
+          "pacing": "每天安排3个景点，时间间隔2小时，节奏相对合理，但11:00-13:30和15:30-16:30存在空闲时段",
+          "geographic_coherence": "每天景点地理位置相对集中，天涯小镇-天涯海角-崖州古城；椰梦长廊-三亚湾-海月广场；后海村-亚龙湾海滩-海棠河生态公园，减少了不必要的往返",
+          "time_realism": "时间安排符合正常作息习惯，09:00开始，但连续3天中雨天气可能影响户外活动体验",
+          "completeness": "在给定scope下，路线信息完整，包含具体景点和时间安排",
+          "diversity_and_dining": "景点类型多样，涵盖自然景观、文化遗址和海滨活动，体验丰富"
+        },
+        "flags": [
+          "bad_weather_all_days"
+        ],
+        "overall_comment": "整体行程安排合理，符合海滨自然偏好，地理分布集中，但需注意中雨天气对户外活动的影响",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 825,
+          "output_tokens": 313,
+          "total_tokens": 1138,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 79832.623,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      },
+      {
+        "judge_id": 2,
+        "scores": {
+          "preference_fit": 4,
+          "pacing": 3,
+          "geographic_coherence": 4,
+          "time_realism": 4,
+          "completeness": 5,
+          "diversity_and_dining": 4
+        },
+        "weighted_score": 80.0,
+        "evidence": {},
+        "reasons": {
+          "preference_fit": "Most spots align with '海滨自然' preference: 天涯海角游览区, 三亚湾, 亚龙湾海滩, 椰梦长廊, 后海村, 海棠河生态公园 all fit seaside/natural theme. 天涯小镇 and 崖州古城 are more urban/historical, reducing perfect fit.",
+          "pacing": "Reasonable 2-hour sessions with 2-hour breaks between periods, but moderate rain all days (Oct 15-17) significantly impacts outdoor activity enjoyment and may cause delays.",
+          "geographic_coherence": "Spots within each day appear geographically clustered: Day 1 (Tianxia Town→Tianya Bay→Yazhou Ancient City), Day 2 (Dream Corridor→Sanya Bay→Haiyue Square), Day 3 (Houhai Village→Yalong Bay→Haitang Park), suggesting minimal backtracking.",
+          "time_realism": "Normal作息 timing (9-11am, 1:30-3:30pm, 4:30-6:30pm) is realistic, but moderate rain may extend travel times between outdoor spots.",
+          "completeness": "Route provides complete structure with specific spots and times for all 3 days. Within scope constraints (meals=false, transport_legs=false), all necessary information is provided.",
+          "diversity_and_dining": "Good diversity: natural attractions (beaches, parks), urban areas (towns, squares), and historical elements (ancient city). Dining not evaluated per scope.meals=false."
+        },
+        "flags": [
+          "bad_weather_all_days"
+        ],
+        "overall_comment": "Strong itinerary matching seaside/natural preferences with good geographic coherence and completeness. Moderate rain throughout the trip is the main challenge that may affect enjoyment and timing.",
+        "cache_hit": true,
+        "usage": {
+          "calls_total": 1,
+          "failed_total": 0,
+          "input_tokens": 825,
+          "output_tokens": 786,
+          "total_tokens": 1611,
+          "estimated_calls": 1,
+          "usage_exact_ratio": 0.0,
+          "latency_sum_ms": 58904.714,
+          "estimated_cost_usd": 0.0,
+          "cost_rates_configured": false
+        }
+      }
+    ],
+    "overall_mean": 76.5,
+    "dimension_mean": {
+      "preference_fit": 4.0,
+      "pacing": 3.0,
+      "geographic_coherence": 4.0,
+      "time_realism": 3.5,
+      "completeness": 4.5,
+      "diversity_and_dining": 4.0
+    },
+    "agreement": {
+      "dimensions": 6,
+      "exact": 4,
+      "within_one": 6,
+      "exact_rate": 0.6667,
+      "within_one_rate": 1.0,
+      "mean_abs_diff": 0.333,
+      "quadratic_weighted_kappa": 0.5
+    },
+    "low_score_dimensions": [],
+    "flags": [
+      "bad_weather_all_days"
+    ],
+    "judge_calls": 0,
+    "replayed_calls": 2,
+    "judge_tokens_est": 2749,
+    "cache_hits": 2,
+    "errors": []
+  }
+}

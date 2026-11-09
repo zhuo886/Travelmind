@@ -1,0 +1,104 @@
+{
+  "case_id": "shanghai-1d-sunny-nightlife",
+  "edit_type": "add_must_visit",
+  "instruction": "第1天一定去“上海朱家角古镇旅游区”，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 45.462,
+    "input_tokens": 2347,
+    "output_tokens": 561,
+    "llm_calls": 1,
+    "status": "PARTIAL_SUCCESS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "上海朱家角古镇旅游区",
+      "上海海洋水族馆",
+      "上海城隍庙"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海朱家角古镇旅游区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          },
+          {
+            "name": "上海海洋水族馆",
+            "period": "evening",
+            "start_time": "17:00",
+            "end_time": "19:30"
+          },
+          {
+            "name": "上海城隍庙",
+            "period": "evening",
+            "start_time": "20:00",
+            "end_time": "21:30"
+          }
+        ],
+        "theme": "古镇水族馆夜景之旅"
+      }
+    ],
+    "warnings": [
+      "当前时间窗口无法安排所选景点，存在开放时间或闭馆日冲突",
+      "【用户修改意见】第1天一定去“上海朱家角古镇旅游区”，其他安排尽量保持不变。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 34.657,
+    "input_tokens": 2444,
+    "output_tokens": 425,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "上海朱家角古镇旅游区",
+      "上海海洋水族馆"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "上海朱家角古镇旅游区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "17:00"
+          },
+          {
+            "name": "上海海洋水族馆",
+            "period": "evening",
+            "start_time": "17:30",
+            "end_time": "21:00"
+          }
+        ],
+        "theme": "古镇水族馆夜景之旅"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】第1天一定去“上海朱家角古镇旅游区”，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 0.5,
+    "B": 0.5
+  }
+}

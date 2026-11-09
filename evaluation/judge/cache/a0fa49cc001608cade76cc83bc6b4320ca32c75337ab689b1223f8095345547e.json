@@ -1,0 +1,61 @@
+{
+  "key": "a0fa49cc001608cade76cc83bc6b4320ca32c75337ab689b1223f8095345547e",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "c69774b89342a04bb9890f1841ae25f333a5f45d0044fb109b73845f4ce5cb9e",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "束河古镇",
+      "白沙古镇",
+      "丽江古城"
+    ],
+    "pacing": [
+      "束河古镇",
+      "白沙古镇",
+      "丽江古城"
+    ],
+    "geographic_coherence": [
+      "束河古镇",
+      "白沙古镇",
+      "丽江古城"
+    ],
+    "time_realism": [
+      "束河古镇",
+      "白沙古镇",
+      "丽江古城"
+    ],
+    "completeness": [
+      "束河古镇",
+      "白沙古镇",
+      "丽江古城"
+    ],
+    "diversity_and_dining": [
+      "束河古镇",
+      "白沙古镇",
+      "丽江古城"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "stub_provider"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

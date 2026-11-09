@@ -1,0 +1,108 @@
+{
+  "id": "sanya-1d-indooronly-empty-pool-negative",
+  "tier": "safety",
+  "destination": "三亚",
+  "query": "三亚1天游，只想去室内景点，不想去户外。",
+  "travel_start_date": "2026-10-15",
+  "travel_end_date": "2026-10-15",
+  "days": 1,
+  "attraction_preference": "室内展馆",
+  "habit_preference": "怕晒，不想去海滩",
+  "max_per_day": 3,
+  "min_rating": 4.5,
+  "max_review_rounds": 3,
+  "pois": [
+    {
+      "name": "三亚凤凰岭海誓山盟景区",
+      "rating": 4.6,
+      "open_time": "周一至周日 08:00-18:00",
+      "location": {
+        "lng": 109.545812,
+        "lat": 18.256983
+      },
+      "adname": "吉阳区",
+      "address": "凤凰岭路",
+      "indoor": false
+    },
+    {
+      "name": "亚龙湾海滩",
+      "rating": 4.8,
+      "open_time": "周一至周日 00:00-24:00",
+      "location": {
+        "lng": 109.646004,
+        "lat": 18.229188
+      },
+      "adname": "吉阳区",
+      "address": "亚龙湾国家旅游度假区",
+      "indoor": false
+    },
+    {
+      "name": "天涯海角游览区",
+      "rating": 4.7,
+      "open_time": "周一至周日 07:30-18:00",
+      "location": {
+        "lng": 109.348143,
+        "lat": 18.294988
+      },
+      "adname": "天涯区",
+      "address": "天涯镇",
+      "indoor": false
+    },
+    {
+      "name": "蜈支洲岛旅游风景区",
+      "rating": 4.8,
+      "open_time": "周一至周日 08:00-17:30",
+      "location": {
+        "lng": 109.765947,
+        "lat": 18.310381
+      },
+      "adname": "海棠区",
+      "address": "海棠湾镇",
+      "indoor": false
+    },
+    {
+      "name": "鹿回头风景区",
+      "rating": 4.6,
+      "open_time": "周一至周日 07:30-22:00",
+      "location": {
+        "lng": 109.50131,
+        "lat": 18.225639
+      },
+      "adname": "吉阳区",
+      "address": "鹿回头半岛",
+      "indoor": false
+    },
+    {
+      "name": "三亚湾",
+      "rating": 4.7,
+      "open_time": "周一至周日 00:00-24:00",
+      "location": {
+        "lng": 109.435993,
+        "lat": 18.287329
+      },
+      "adname": "天涯区",
+      "address": "三亚湾路",
+      "indoor": false
+    }
+  ],
+  "weather_forecast": [
+    {
+      "date": "2026-10-15",
+      "day_weather": "中雨",
+      "night_weather": "中雨",
+      "day_temp": "29",
+      "night_temp": "24",
+      "is_bad": true
+    }
+  ],
+  "expectations": {
+    "outdoor_on_bad_day_max": 0
+  },
+  "provenance": {
+    "derived_from": "sanya-3d-allrain-outdoor-negative",
+    "poi_source": "AMap Web Service Place Text API v3 (subset copied from v2 fixture)",
+    "weather_source": "synthetic frozen evaluation scenario",
+    "indoor_label_source": "deterministic name-keyword heuristic",
+    "feasibility_note": "候选池全部为明确室外景点，而用户要求只去室内；室内可行集为空，属于候选池偏好冲突。"
+  }
+}

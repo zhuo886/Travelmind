@@ -1,0 +1,55 @@
+{
+  "key": "b120482aa7635687e07640075f72faea64f1c99d0b6e8a9cf8ad44ae57920786",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "cb636f2a0d1fdde7082a62a8f6ecc5f6c7d4796a4d11fbc7d718b0c1f2a38cad",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 4,
+    "completeness": 5,
+    "diversity_and_dining": 3
+  },
+  "evidence": {
+    "preference_fit": [
+      "上海失恋博物馆",
+      "上海海洋水族馆"
+    ],
+    "pacing": [
+      "上海失恋博物馆",
+      "上海海洋水族馆"
+    ],
+    "geographic_coherence": [
+      "上海失恋博物馆",
+      "上海海洋水族馆"
+    ],
+    "time_realism": [
+      "上海失恋博物馆",
+      "上海海洋水族馆"
+    ],
+    "completeness": [
+      "上海失恋博物馆",
+      "上海海洋水族馆"
+    ],
+    "diversity_and_dining": [
+      "上海失恋博物馆",
+      "上海海洋水族馆"
+    ]
+  },
+  "reasons": {
+    "preference_fit": "stub judge 1 仅用于管线自测",
+    "pacing": "stub judge 1 仅用于管线自测",
+    "geographic_coherence": "stub judge 1 仅用于管线自测",
+    "time_realism": "stub judge 1 仅用于管线自测",
+    "completeness": "stub judge 1 仅用于管线自测",
+    "diversity_and_dining": "stub judge 1 仅用于管线自测"
+  },
+  "flags": [
+    "other"
+  ],
+  "overall_comment": "stub provider: never use as a quality result",
+  "usage": {}
+}

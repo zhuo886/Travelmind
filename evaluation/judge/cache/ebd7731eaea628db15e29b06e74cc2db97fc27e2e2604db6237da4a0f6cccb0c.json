@@ -1,0 +1,45 @@
+{
+  "key": "ebd7731eaea628db15e29b06e74cc2db97fc27e2e2604db6237da4a0f6cccb0c",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "00786b6e8e624c235c5a4fbdc2eb0e55372bdeb6fc14b4d87e0902cf7ed8e35e",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 3,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "行程大部分景点符合'海滨自然'偏好，包括三亚湾、椰梦长廊、亚龙湾海滩、蜈支洲岛等海滨景点。但南山文化旅游区更偏向文化而非自然，与核心偏好契合度稍低。",
+    "pacing": "每天安排3个景点，每个2.5-3小时，时间分配基本合理。但连续3天中雨天气下进行户外活动强度过大，缺乏天气应对方案，实际执行可能困难。",
+    "geographic_coherence": "每天景点地理分布相对集中：第1天南山和天涯海角区域；第2天三亚湾周边；第3天亚龙湾和蜈支洲岛。但第3天蜈支洲岛需要单独乘船前往，与其他景点地理分离较大。",
+    "time_realism": "时间安排看似合理，但未考虑实际因素：景点间交通时间（尤其第3天去蜈支洲岛的船程）、中雨天气对户外活动的影响、热门景点可能的排队时间。",
+    "completeness": "信息严重缺失：无交通安排、餐饮计划、住宿信息、门票预订、天气应对方案。中雨天气下缺乏室内备选方案，行程无法直接执行。",
+    "diversity_and_dining": "活动类型单一，以观光为主，缺乏体验多样性。完全没有提及餐饮安排，每天3个景点间无休息时间，未考虑用餐需求。"
+  },
+  "flags": [
+    "连续中雨天气无应对方案",
+    "缺乏餐饮安排",
+    "交通信息不完整",
+    "蜈支洲岛需单独交通",
+    "evidence_missing"
+  ],
+  "overall_comment": "行程基本符合海滨偏好，但严重缺乏执行细节和天气应对方案。中雨天气下进行户外活动不合理，需要增加室内备选方案和完整的后勤安排。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 698,
+    "output_tokens": 397,
+    "total_tokens": 1095,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 54560.533,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

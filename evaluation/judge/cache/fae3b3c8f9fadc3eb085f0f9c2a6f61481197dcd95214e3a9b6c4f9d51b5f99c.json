@@ -1,0 +1,44 @@
+{
+  "key": "fae3b3c8f9fadc3eb085f0f9c2a6f61481197dcd95214e3a9b6c4f9d51b5f99c",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "df4e7fd9942b361818d33b6474a6bf587d759a64862f2fde930341c1d80198ff",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 2,
+    "completeness": 2,
+    "diversity_and_dining": 2
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Most attractions align with '海滨自然' preference: 天涯海角游览区, 椰梦长廊, 三亚湾, 后海村, 亚龙湾海滩 are all seaside/natural. 崖州古城 is cultural rather than natural, slightly reducing fit.",
+    "pacing": "Reasonable daily rhythm with 2.5-3 hour intervals between spots (9:00-11:00, 13:30-15:30, 16:30-18:30). Not rushed but allows adequate time at each location.",
+    "geographic_coherence": "Day 1 and 2 have good geographic flow (western/northern coastal areas). Day 3 has inefficiency: 后海村 (northeast) → 亚龙湾海滩 (southeast) → 海棠河生态公园 (northeast) creates unnecessary backtracking.",
+    "time_realism": "Major issue: all 3 days forecast '中雨' (moderate rain), but itinerary shows outdoor activities without rain contingency. Beach activities like 亚龙湾海滩 and 后海村 would be severely impacted by moderate rain.",
+    "completeness": "Lacks essential details: transportation between spots, rain contingency plans, restaurant recommendations, accommodation info, and activity descriptions. Basic timing provided but insufficient for practical execution.",
+    "diversity_and_dining": "Limited variety - focuses heavily on seaside sightseeing with no cultural experiences, shopping, or indoor alternatives. No dining recommendations provided, and activities lack diversity beyond beach visits."
+  },
+  "flags": [
+    "rain_impact",
+    "geographic_inefficiency",
+    "missing_contingency_plans",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary aligns well with seaside/natural preferences but has significant issues with weather contingency planning and geographic efficiency on Day 3. The moderate rain forecast for all days requires urgent planning adjustments, and the lack of dining/transportation details makes the itinerary incomplete for practical use.\"",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 686,
+    "output_tokens": 911,
+    "total_tokens": 1597,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 44120.211,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

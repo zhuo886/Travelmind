@@ -1,0 +1,45 @@
+{
+  "key": "74dc03d7873fe979d9a01de1eea9801b461acf7fc470e16c61b5ccbeb2242a17",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 1,
+  "model": null,
+  "payload_hash": "59e2d86d2768136e954031152c4d2dcce895c0a2a15b5482a722df7deaf62dbc",
+  "scores": {
+    "preference_fit": 5,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 5,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "All attractions match user preferences for historical sites and natural landscapes. Gu Jiming Temple and Sun Yat-sen Mausoleum are historical sites, while Bu Lao Village, Shuimo Danian Tourism Area, and Geological Park Museum offer natural landscapes. All activities start at 10:00, respecting the user's preference for not waking up early.",
+    "pacing": "Each day has a balanced schedule with morning (10:00-12:00) and afternoon (13:30-16:30/18:00) sessions, providing 2.5-4.5 hours per attraction. The 1.5-hour lunch break between sessions allows for rest.",
+    "geographic_coherence": "Day 1 combines two urban Nanjing attractions (Gu Jiming Temple and Sun Yat-sen Mausoleum). Days 2-3 focus on Jiangning area attractions (Bu Lao Village, Shuimo Danian, Geological Park Museum, Happy Valley), minimizing travel time within each day.",
+    "time_realism": "All activities start at 10:00, respecting the user's preference for not waking up early. Morning sessions last 2 hours and afternoon sessions last 3-4.5 hours, which is reasonable for tourist attractions. The schedule includes proper meal breaks.",
+    "completeness": "Missing critical information including transportation between spots, dining recommendations, entrance fees, booking requirements, accommodation details, and emergency contacts. The route cannot be executed without additional research.",
+    "diversity_and_dining": "Good variety of attraction types: historical temples, mausoleums, natural villages, tourism areas, museums, and theme parks. However, no dining recommendations or rest time are explicitly included in the itinerary."
+  },
+  "flags": [
+    "missing_transportation",
+    "missing_dining",
+    "missing_accommodation",
+    "missing_fees",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary aligns well with user preferences for historical sites and natural landscapes, with reasonable pacing and geographic coherence. However, it lacks essential practical information needed for execution, including transportation, dining, accommodation, and fee details. The schedule respects the user's preference for not waking up early, but could benefit from more explicit rest time and dining recommendations.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 597,
+    "output_tokens": 1139,
+    "total_tokens": 1736,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 80590.344,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

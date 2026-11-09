@@ -1,0 +1,305 @@
+{
+  "trial_id": "3b6ebf902dae4750aa226d3466e0794d",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "PARTIAL_SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [
+    "weather_exposure_conflict",
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch"
+  ],
+  "first_draft_l0": [],
+  "first_draft_l1": [
+    "weather_exposure_conflict",
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch",
+    "weather_outdoor_mismatch"
+  ],
+  "first_draft_soft_score": 72.0,
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "reviewer_calls": 2,
+  "time_check_round": 1,
+  "snapshot_count": 2,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [
+        "weather_exposure_conflict",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch"
+      ],
+      "defect_count": 4,
+      "soft_score": 72.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 3,
+      "rework_requested": true,
+      "route_signature": "d38bd66673be0cdd",
+      "spot_names": [
+        "天涯小镇",
+        "三亚湾",
+        "椰梦长廊",
+        "海月广场",
+        "亚龙湾海滩",
+        "亚龙湾国家旅游度假区"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "weather_exposure_conflict",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch",
+        "weather_outdoor_mismatch"
+      ],
+      "defect_count": 4,
+      "soft_score": 72.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "d38bd66673be0cdd",
+      "spot_names": [
+        "天涯小镇",
+        "三亚湾",
+        "椰梦长廊",
+        "海月广场",
+        "亚龙湾海滩",
+        "亚龙湾国家旅游度假区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 72.0,
+  "warnings": [
+    "全程恶劣天气且所有已排景点均为室外，请补充室内替代或调整行程",
+    "Day1 为恶劣天气，仍安排了 2 个室外景点（天涯小镇、三亚湾），请替换为室内或调整顺序",
+    "Day2 为恶劣天气，仍安排了 2 个室外景点（椰梦长廊、海月广场），请替换为室内或调整顺序",
+    "Day3 为恶劣天气，仍安排了 2 个室外景点（亚龙湾海滩、亚龙湾国家旅游度假区），请替换为室内或调整顺序",
+    "连续三天雨天，建议携带雨具并优先选择有遮蔽的海滨景点",
+    "全程雨天，所有景点均为室外，违反天气约束。请将每天景点替换为室内景点或调整行程。"
+  ],
+  "route_names": [
+    "天涯小镇",
+    "三亚湾",
+    "椰梦长廊",
+    "海月广场",
+    "亚龙湾海滩",
+    "亚龙湾国家旅游度假区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "天涯小镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "三亚湾",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "椰梦长廊",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "海月广场",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "亚龙湾海滩",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "亚龙湾国家旅游度假区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "天涯小镇",
+    "三亚湾",
+    "椰梦长廊",
+    "海月广场",
+    "亚龙湾海滩",
+    "亚龙湾国家旅游度假区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "天涯小镇",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "三亚湾",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "椰梦长廊",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "海月广场",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "亚龙湾海滩",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "亚龙湾国家旅游度假区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 216.046,
+  "node_latency_ms": {
+    "planner": 155299.392,
+    "snapshot_gate": 5.333,
+    "reviewer": 48855.074,
+    "snapshot_reviewer": 3.806,
+    "time_check": 10617.409,
+    "snapshot_time_check": 1.219
+  },
+  "input_tokens_est": 12292,
+  "output_tokens_est": 1990,
+  "llm_calls": 5,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 72.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 1,
+      "date": "2026-10-15",
+      "limit": 1,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "天涯小镇",
+        "三亚湾"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 2,
+      "date": "2026-10-16",
+      "limit": 1,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "椰梦长廊",
+        "海月广场"
+      ]
+    },
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 3,
+      "date": "2026-10-17",
+      "limit": 1,
+      "outdoor_count": 2,
+      "outdoor_spots": [
+        "亚龙湾海滩",
+        "亚龙湾国家旅游度假区"
+      ]
+    }
+  ],
+  "actual_outcome": "PARTIAL",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

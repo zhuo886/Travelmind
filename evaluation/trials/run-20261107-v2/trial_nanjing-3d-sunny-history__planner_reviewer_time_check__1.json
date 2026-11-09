@@ -1,0 +1,124 @@
+{
+  "trial_id": "8c0652040dfb492488e2f4f9beb2899b",
+  "case_id": "nanjing-3d-sunny-history",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "time_check_round": 1,
+  "snapshot_count": 1,
+  "soft_score": 87.0,
+  "warnings": [
+    "Day3行程中南京牛首山文化旅游区和南京长江大桥地理位置相距较远，建议调整为地理位置相近的景点以减少交通时间",
+    "南京长江大桥更偏向现代工程景观，与您喜欢的历史古迹、博物馆偏好不太匹配，可考虑替换为其他历史景点",
+    "Day3存在地理跨度过大的问题，南京牛首山文化旅游区（江宁区）和南京长江大桥（浦口区）相距较远，造成不必要的折返路线。建议将Day3调整为地理位置相近的历史古迹景点，如中山陵景区（需注意周一闭馆风险）或其他玄武区、秦淮区的历史景点。同时，南京长江大桥更偏向现代工程景观，与用户\"历史古迹、博物馆\"的偏好匹配度较低，建议替换为更符合用户偏好的历史景点。",
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "玄武湖景区",
+    "总统府",
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "南京牛首山文化旅游区",
+    "南京长江大桥"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "总统府",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:30"
+        },
+        {
+          "name": "南京长江大桥",
+          "period": "afternoon",
+          "start": "14:00",
+          "end": "16:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [
+    "玄武湖景区"
+  ],
+  "must_visit_ok": true,
+  "must_avoid_ok": null,
+  "latency_s": 222.636,
+  "node_latency_ms": {
+    "planner": 95684.416,
+    "snapshot_gate": 4.654,
+    "reviewer": 67142.878,
+    "snapshot_reviewer": 3.715,
+    "time_check": 59688.428,
+    "snapshot_time_check": 2.205
+  },
+  "input_tokens_est": 5105,
+  "output_tokens_est": 2032,
+  "llm_calls": 3,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true
+}

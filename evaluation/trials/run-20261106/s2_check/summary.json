@@ -1,0 +1,411 @@
+{
+  "total_trials": 30,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 30,
+    "value": 0.0
+  },
+  "effective_trials": 30,
+  "outcome_counts": {
+    "PARTIAL": 6,
+    "SUCCESS": 6,
+    "SUCCESS_WITH_WARNINGS": 18
+  },
+  "label_counts": {
+    "MATCH": 20,
+    "MISMATCH": 9,
+    "WRONG_ACCEPT": 1
+  },
+  "fdr": {
+    "num": 24,
+    "den": 30,
+    "value": 0.8
+  },
+  "pdr": {
+    "num": 6,
+    "den": 30,
+    "value": 0.2
+  },
+  "omr": {
+    "num": 20,
+    "den": 30,
+    "value": 0.6667
+  },
+  "hpr": {
+    "num": 30,
+    "den": 30,
+    "value": 1.0
+  },
+  "fpr": {
+    "num": 30,
+    "den": 30,
+    "value": 1.0
+  },
+  "oor": {
+    "outside": 0,
+    "references": 201,
+    "value": 0.0
+  },
+  "msr": {
+    "num": 8,
+    "den": 9,
+    "value": 0.8889
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "rounds": {
+    "mean": 0.6,
+    "snapshot_count_mean": 1.6
+  },
+  "soft_score": {
+    "mean": 83.04,
+    "n": 30
+  },
+  "latency_s": {
+    "n": 30,
+    "median": 207.476,
+    "min": 55.195,
+    "max": 600.287,
+    "p95": 476.449,
+    "p95_note": null
+  },
+  "usage": {
+    "input_tokens_est_mean": 7272.4,
+    "output_tokens_est_mean": 2326.6,
+    "llm_calls_mean": 3.4
+  },
+  "by_case": {
+    "jingdezhen-3d-sunny-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 293.558,
+      "soft_score_mean": 94.67,
+      "input_tokens_est_mean": 4702.0,
+      "llm_calls_mean": 3.0
+    },
+    "lijiang-3d-allrain-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 206.27,
+      "soft_score_mean": 63.95,
+      "input_tokens_est_mean": 4293.0,
+      "llm_calls_mean": 2.0
+    },
+    "lijiang-5d-sunny-slowpace": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 2,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 3,
+        "value": 0.6667
+      },
+      "median_latency_s": 360.203,
+      "soft_score_mean": 92.33,
+      "input_tokens_est_mean": 8969.3,
+      "llm_calls_mean": 3.67
+    },
+    "nanjing-3d-singlerain-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 2,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 3,
+        "value": 0.6667
+      },
+      "median_latency_s": 223.338,
+      "soft_score_mean": 81.17,
+      "input_tokens_est_mean": 11250.3,
+      "llm_calls_mean": 4.67
+    },
+    "nanjing-3d-sunny-history": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 2,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 3,
+        "value": 0.6667
+      },
+      "median_latency_s": 198.858,
+      "soft_score_mean": 93.67,
+      "input_tokens_est_mean": 3821.7,
+      "llm_calls_mean": 2.0
+    },
+    "nanjing-3d-tighthours-negative": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 0,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 3,
+        "value": 0.0
+      },
+      "median_latency_s": 127.251,
+      "soft_score_mean": 88.67,
+      "input_tokens_est_mean": 2585.0,
+      "llm_calls_mean": 2.0
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 0,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 0,
+        "den": 3,
+        "value": 0.0
+      },
+      "median_latency_s": 225.787,
+      "soft_score_mean": 62.0,
+      "input_tokens_est_mean": 10948.3,
+      "llm_calls_mean": 4.0
+    },
+    "shanghai-1d-sunny-nightlife": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 161.315,
+      "soft_score_mean": 90.33,
+      "input_tokens_est_mean": 9422.3,
+      "llm_calls_mean": 4.0
+    },
+    "shanghai-3d-beyond-forecast": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 2,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 3,
+        "value": 0.6667
+      },
+      "median_latency_s": 169.876,
+      "soft_score_mean": 84.0,
+      "input_tokens_est_mean": 6141.0,
+      "llm_calls_mean": 2.67
+    },
+    "shanghai-3d-smallpool-negative": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 426.427,
+      "soft_score_mean": 79.67,
+      "input_tokens_est_mean": 10590.7,
+      "llm_calls_mean": 6.0
+    }
+  },
+  "by_mode": {
+    "planner_only": {
+      "trials": 10,
+      "generated": 10,
+      "hard_pass": 10,
+      "match": 4,
+      "hpr": {
+        "num": 10,
+        "den": 10,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 4,
+        "den": 10,
+        "value": 0.4
+      },
+      "median_latency_s": 62.687,
+      "soft_score_mean": 78.17,
+      "input_tokens_est_mean": 2005.6,
+      "llm_calls_mean": 1.0
+    },
+    "planner_reviewer": {
+      "trials": 10,
+      "generated": 10,
+      "hard_pass": 10,
+      "match": 8,
+      "hpr": {
+        "num": 10,
+        "den": 10,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 8,
+        "den": 10,
+        "value": 0.8
+      },
+      "median_latency_s": 258.448,
+      "soft_score_mean": 85.2,
+      "input_tokens_est_mean": 9610.7,
+      "llm_calls_mean": 4.1
+    },
+    "planner_reviewer_time_check": {
+      "trials": 10,
+      "generated": 10,
+      "hard_pass": 10,
+      "match": 8,
+      "hpr": {
+        "num": 10,
+        "den": 10,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 8,
+        "den": 10,
+        "value": 0.8
+      },
+      "median_latency_s": 300.595,
+      "soft_score_mean": 85.77,
+      "input_tokens_est_mean": 10200.8,
+      "llm_calls_mean": 5.1
+    }
+  },
+  "pass_at_k": {
+    "jingdezhen-3d-sunny-history": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "lijiang-3d-allrain-history": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "lijiang-5d-sunny-slowpace": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "nanjing-3d-singlerain-history": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "nanjing-3d-sunny-history": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "nanjing-3d-tighthours-negative": {
+      "k": 3,
+      "outcome_pass_at_k": false,
+      "outcome_pass_pow_k": false
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "k": 3,
+      "outcome_pass_at_k": false,
+      "outcome_pass_pow_k": false
+    },
+    "shanghai-1d-sunny-nightlife": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "shanghai-3d-beyond-forecast": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": false
+    },
+    "shanghai-3d-smallpool-negative": {
+      "k": 3,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 8,
+    "den": 10,
+    "value": 0.8
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 4,
+    "den": 10,
+    "value": 0.4
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "trial_id": "08cd965eda794233a56e86ad34ca1aa7",
+  "case_id": "nanjing-3d-singlerain-history",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 89.5,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 1,
+  "time_check_round": 1,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 89.5,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "f02edc195b4ae51b",
+      "spot_names": [
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "总统府",
+        "古鸡鸣寺",
+        "中山陵景区",
+        "玄武湖景区"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 89.5,
+  "warnings": [
+    "Day2有雨，古鸡鸣寺为室外景点，建议调整为室内博物馆或景点",
+    "Day2雨天安排了室外景点古鸡鸣寺，违反雨天优先室内要求，建议替换为室内景点。",
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "总统府",
+    "古鸡鸣寺",
+    "中山陵景区",
+    "玄武湖景区"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "12:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "总统府",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "14:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "中山陵景区",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "玄武湖景区",
+          "period": "afternoon",
+          "start": "12:00",
+          "end": "14:00"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "总统府",
+    "古鸡鸣寺",
+    "中山陵景区",
+    "玄武湖景区"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "12:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "总统府",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:00",
+          "end": "14:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "中山陵景区",
+          "period": "morning",
+          "start": "09:30",
+          "end": "11:30"
+        },
+        {
+          "name": "玄武湖景区",
+          "period": "afternoon",
+          "start": "12:00",
+          "end": "14:00"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 130.879,
+  "node_latency_ms": {
+    "planner": 49945.8,
+    "snapshot_gate": 1.723,
+    "reviewer": 61307.533,
+    "snapshot_reviewer": 0.839,
+    "time_check": 18601.008,
+    "snapshot_time_check": 0.805
+  },
+  "input_tokens_est": 5228,
+  "output_tokens_est": 1607,
+  "llm_calls": 3,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 89.5,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [
+    {
+      "rule": "outdoor_on_bad_day_max",
+      "day": 2,
+      "date": "2026-08-11",
+      "limit": 0,
+      "outdoor_count": 1,
+      "outdoor_spots": [
+        "古鸡鸣寺"
+      ]
+    }
+  ],
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

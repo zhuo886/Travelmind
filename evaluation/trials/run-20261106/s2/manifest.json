@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-11-06T09:18:00.704507+00:00",
+  "model": "glm-4.5-flash",
+  "provider": "openai",
+  "modes": [
+    "planner_only",
+    "planner_reviewer",
+    "planner_reviewer_time_check"
+  ],
+  "cases": [
+    "jingdezhen-3d-sunny-history",
+    "lijiang-3d-allrain-history",
+    "lijiang-5d-sunny-slowpace",
+    "nanjing-3d-singlerain-history",
+    "nanjing-3d-sunny-history",
+    "nanjing-3d-tighthours-negative",
+    "sanya-3d-allrain-outdoor-negative",
+    "shanghai-1d-sunny-nightlife",
+    "shanghai-3d-beyond-forecast",
+    "shanghai-3d-smallpool-negative"
+  ],
+  "k": 1,
+  "trials": 30
+}

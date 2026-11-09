@@ -1,0 +1,51 @@
+{
+  "trial_id": "168ecf8bd8bf4122ab290b7a6986b4a8",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 4,
+  "planning_revision_rounds": 3,
+  "review_round": 4,
+  "time_check_round": 0,
+  "snapshot_count": 4,
+  "soft_score": 57.0,
+  "oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "must_avoid_ok": null,
+  "latency_s": 476.449,
+  "node_latency_ms": {
+    "planner": 280632.591,
+    "snapshot_gate": 7.446,
+    "reviewer": 195701.014,
+    "snapshot_reviewer": 7.826
+  },
+  "input_tokens_est": 24155,
+  "output_tokens_est": 6544,
+  "llm_calls": 8,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

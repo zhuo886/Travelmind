@@ -1,0 +1,43 @@
+{
+  "key": "42242977271fcdab2e0d31f09ae215bb4bfe46d832ddb787edc0c52860b98e05",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "b87f21784da5f5d6fdc1ae817ef8426ae59f064fe7be706708684f55f2482242",
+  "scores": {
+    "preference_fit": 3,
+    "pacing": 3,
+    "geographic_coherence": 2,
+    "time_realism": 4,
+    "completeness": 3,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Day1的古鸡鸣寺和中山陵符合历史古迹偏好，Day3的不老村和水墨大埝符合自然景观偏好，但Day2的南京欢乐谷不符合用户的历史古迹、自然景观偏好。每天10点开始符合不喜欢早起的习惯。",
+    "pacing": "每天活动时间4-5小时，有午休时间，节奏相对合理但活动时间偏短。",
+    "geographic_coherence": "缺乏具体地理位置信息，无法准确判断景点间的地理顺序是否合理。",
+    "time_realism": "每天10点开始符合不喜欢早起的习惯，景点时间段安排合理，但缺乏交通时间信息。",
+    "completeness": "提供了景点名称和时间段，但缺乏具体地址、交通方式等详细信息。",
+    "diversity_and_dining": "景点类型相对单一，主要集中自然景观和历史古迹，缺乏文化体验等其他类型景点。"
+  },
+  "flags": [
+    "geographic_inefficiency",
+    "other",
+    "preference_mismatch"
+  ],
+  "overall_comment": "行程基本符合用户偏好和习惯，但Day2的南京欢乐谷不符合历史古迹、自然景观的偏好要求。整体节奏合理，但缺乏地理位置信息影响判断。",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 736,
+    "output_tokens": 324,
+    "total_tokens": 1060,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 37178.343,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

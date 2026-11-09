@@ -1,0 +1,311 @@
+{
+  "total_trials": 6,
+  "invalid_trials": 0,
+  "invalid_rate": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0
+  },
+  "effective_trials": 6,
+  "denominator_basis": "delivered_plan",
+  "outcome_counts": {
+    "PARTIAL": 4,
+    "SUCCESS_WITH_WARNINGS": 2
+  },
+  "label_counts": {
+    "MATCH": 6
+  },
+  "fdr": {
+    "num": 2,
+    "den": 6,
+    "value": 0.3333
+  },
+  "pdr": {
+    "num": 4,
+    "den": 6,
+    "value": 0.6667
+  },
+  "omr": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "hpr": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "fpr": {
+    "num": 6,
+    "den": 6,
+    "value": 1.0
+  },
+  "oor": {
+    "outside": 0,
+    "references": 37,
+    "value": 0.0
+  },
+  "msr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "mar": {
+    "value": null,
+    "note": "N/A：v1 未启用 must_avoid"
+  },
+  "rrr": {
+    "num": 0,
+    "den": 0,
+    "value": null
+  },
+  "rounds": {
+    "mean": 1.333,
+    "snapshot_count_mean": 2.333
+  },
+  "soft_score": {
+    "mean": 78.61,
+    "n": 6
+  },
+  "latency_s": {
+    "n": 6,
+    "median": 165.651,
+    "min": 52.391,
+    "max": 238.698,
+    "p95": null,
+    "p95_note": "样本不足（n<20）"
+  },
+  "node_latency_ms": {
+    "planner": {
+      "n": 6,
+      "median": 97335.822,
+      "max": 155299.4
+    },
+    "snapshot_gate": {
+      "n": 6,
+      "median": 5.314,
+      "max": 9.5
+    },
+    "reviewer": {
+      "n": 6,
+      "median": 55081.304,
+      "max": 88381.6
+    },
+    "snapshot_reviewer": {
+      "n": 6,
+      "median": 5.428,
+      "max": 8.4
+    },
+    "time_check": {
+      "n": 3,
+      "median": 18601.008,
+      "max": 24567.9
+    },
+    "snapshot_time_check": {
+      "n": 3,
+      "median": 1.219,
+      "max": 2.5
+    }
+  },
+  "tool_calls": {
+    "candidate_api_calls_mean": 0.0,
+    "route_leg_count_mean": 0.0
+  },
+  "usage": {
+    "input_tokens_est_mean": 13379.8,
+    "output_tokens_est_mean": 2287.2,
+    "llm_calls_mean": 5.17
+  },
+  "by_case": {
+    "lijiang-3d-allrain-history": {
+      "trials": 2,
+      "generated": 2,
+      "hard_pass": 2,
+      "match": 2,
+      "hpr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 218.156,
+      "soft_score_mean": 74.32,
+      "input_tokens_est_mean": 20091.5,
+      "output_tokens_est_mean": 3249.0,
+      "total_tokens_est_mean": 23340.5,
+      "llm_calls_mean": 7.5
+    },
+    "nanjing-3d-singlerain-history": {
+      "trials": 2,
+      "generated": 2,
+      "hard_pass": 2,
+      "match": 2,
+      "hpr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 91.635,
+      "soft_score_mean": 89.5,
+      "input_tokens_est_mean": 4884.0,
+      "output_tokens_est_mean": 1381.5,
+      "total_tokens_est_mean": 6265.5,
+      "llm_calls_mean": 2.5
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "trials": 2,
+      "generated": 2,
+      "hard_pass": 2,
+      "match": 2,
+      "hpr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 2,
+        "den": 2,
+        "value": 1.0
+      },
+      "median_latency_s": 174.867,
+      "soft_score_mean": 72.0,
+      "input_tokens_est_mean": 15164.0,
+      "output_tokens_est_mean": 2231.0,
+      "total_tokens_est_mean": 17395.0,
+      "llm_calls_mean": 5.5
+    }
+  },
+  "by_mode": {
+    "planner_reviewer": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 133.687,
+      "soft_score_mean": 80.33,
+      "input_tokens_est_mean": 15077.3,
+      "output_tokens_est_mean": 2351.3,
+      "total_tokens_est_mean": 17428.7,
+      "llm_calls_mean": 5.33
+    },
+    "planner_reviewer_time_check": {
+      "trials": 3,
+      "generated": 3,
+      "hard_pass": 3,
+      "match": 3,
+      "hpr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "omr": {
+        "num": 3,
+        "den": 3,
+        "value": 1.0
+      },
+      "median_latency_s": 197.614,
+      "soft_score_mean": 76.88,
+      "input_tokens_est_mean": 11682.3,
+      "output_tokens_est_mean": 2223.0,
+      "total_tokens_est_mean": 13905.3,
+      "llm_calls_mean": 5.0
+    }
+  },
+  "safety": {
+    "infeasible_trials": 0,
+    "correct_reject": 0,
+    "partial": 0,
+    "hard_fail": 0,
+    "wrong_accept": 0,
+    "srr": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "war": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "unsafe_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "partial_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "non_reject_delivery_rate": {
+      "num": 0,
+      "den": 0,
+      "value": null
+    },
+    "feasible_trials": 6,
+    "over_reject": 0,
+    "orr": {
+      "num": 0,
+      "den": 6,
+      "value": 0.0
+    },
+    "infeasible_outcomes": {},
+    "by_code": {}
+  },
+  "expectations": {
+    "evaluated_trials": 6,
+    "violations": 14,
+    "trials_with_violations": 6,
+    "by_rule": {
+      "outdoor_on_bad_day_max": 14
+    }
+  },
+  "judge": null,
+  "pass_at_k_by_case_mode": {},
+  "pass_at_k": {
+    "lijiang-3d-allrain-history": {
+      "k": 2,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "nanjing-3d-singlerain-history": {
+      "k": 2,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    },
+    "sanya-3d-allrain-outdoor-negative": {
+      "k": 2,
+      "outcome_pass_at_k": true,
+      "outcome_pass_pow_k": true
+    }
+  },
+  "outcome_pass_at_k_rate": {
+    "num": 3,
+    "den": 3,
+    "value": 1.0
+  },
+  "outcome_pass_pow_k_rate": {
+    "num": 3,
+    "den": 3,
+    "value": 1.0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "key": "eab0341cc24c3e1bc68935cf1536257f04514e5a3065bec9b57fc6f8cb1cbd41",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "428e7359e29d0812128875f49b922679cb29b5239cda8854b55951b8393421a5",
+  "scores": {
+    "preference_fit": 2,
+    "pacing": 4,
+    "geographic_coherence": 3,
+    "time_realism": 5,
+    "completeness": 4,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Timing matches preference for afternoon departure and evening tours, but attractions don't align with stated preferences for night views, Bund, and urban light shows",
+    "pacing": "Good pacing with reasonable 3-hour blocks for each attraction and 30-minute gap between activities",
+    "geographic_coherence": "Assuming reasonable geographic proximity between Shanghai Ocean Aquarium and Shanghai Heartbreak Museum, though specific locations not provided",
+    "time_realism": "All timing blocks (14:00-17:00 and 17:30-20:30) seem realistic for visiting these attractions in Shanghai",
+    "completeness": "Complete within scope constraints with specific attractions and times provided",
+    "diversity_and_dining": "Some diversity with two different attraction types (aquarium and museum), but limited to indoor experiences"
+  },
+  "flags": [],
+  "overall_comment": "The itinerary has good timing and pacing but doesn't align well with the user's specific preferences for night views, Bund, and urban light shows. The route includes interesting attractions but misses the core experiences the user is looking for in Shanghai.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 527,
+    "output_tokens": 624,
+    "total_tokens": 1151,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 43149.579,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

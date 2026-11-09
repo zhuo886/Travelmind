@@ -1,0 +1,108 @@
+{
+  "trial_id": "5b3d269d3619473e9854155cbacc178e",
+  "case_id": "sanya-1d-indooronly-empty-pool-negative",
+  "mode_requested": "planner_only",
+  "mode_effective": "planner_only",
+  "nodes_entered": [
+    "planner",
+    "snapshot_gate"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": false,
+  "status": "FAILED",
+  "hard_pass": false,
+  "l0_codes": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "l1_codes": [],
+  "first_draft_l0": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "first_draft_l1": [],
+  "first_draft_soft_score": 87.0,
+  "final_delivered_iteration": 1,
+  "planning_revision_rounds": 0,
+  "review_round": 1,
+  "reviewer_calls": 0,
+  "time_check_round": 0,
+  "snapshot_count": 1,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [
+        "route_structure",
+        "candidate_pool_preference_conflict"
+      ],
+      "l1_codes": [],
+      "defect_count": 2,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "9f3198d894878637",
+      "spot_names": [],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": null,
+  "warnings": [],
+  "route_names": [],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": []
+    }
+  ],
+  "delivered_route_names": [],
+  "delivered_route_by_day": [],
+  "oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "expected_feasible": false,
+  "infeasible_reason": "candidate_pool_preference_conflict：候选池无明确室内景点",
+  "must_avoid_ok": null,
+  "latency_s": 34.958,
+  "node_latency_ms": {
+    "planner": 34101.068,
+    "snapshot_gate": 1.187
+  },
+  "input_tokens_est": 1166,
+  "output_tokens_est": 112,
+  "llm_calls": 1,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [
+    "route_structure",
+    "candidate_pool_preference_conflict"
+  ],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": false,
+  "draft_soft_score": 87.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 0
+  },
+  "expectations_evaluated": false,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "CORRECT_REJECT",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

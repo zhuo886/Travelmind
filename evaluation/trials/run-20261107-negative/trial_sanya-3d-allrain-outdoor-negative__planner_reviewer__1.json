@@ -1,0 +1,140 @@
+{
+  "trial_id": "1439628f05ab4ea3976074dfc3943a17",
+  "case_id": "sanya-3d-allrain-outdoor-negative",
+  "mode_requested": "planner_reviewer",
+  "mode_effective": "planner_reviewer",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS_WITH_WARNINGS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "final_delivered_iteration": 2,
+  "planning_revision_rounds": 1,
+  "review_round": 2,
+  "time_check_round": 0,
+  "snapshot_count": 2,
+  "soft_score": 67.0,
+  "warnings": [
+    "全程3天均为中雨天气，但所有安排的景点都是室外海滨景点，建议重新规划行程，优先选择室内或有遮蔽的景点",
+    "雨天游览海滨景点请务必准备充足雨具和防水装备",
+    "建议考虑三亚市区内的室内景点作为雨天替代方案",
+    "严重违反天气合理性约束：全程3天均为中雨天气，但所有安排的景点均为明确室外海滨景点。必须重新规划，优先选择室内或有遮蔽的景点。建议考虑三亚市区内的室内景点如购物中心、博物馆等，或选择有遮蔽的海滨景点（如部分商业综合体内的海滨项目）。当前路线在雨天条件下完全不可行。",
+    "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+  ],
+  "route_names": [
+    "天涯小镇",
+    "天涯海角游览区",
+    "崖州古城",
+    "椰梦长廊",
+    "三亚湾",
+    "海月广场",
+    "后海村",
+    "亚龙湾海滩",
+    "海棠河生态公园"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "天涯小镇",
+          "period": "morning",
+          "start": "09:00",
+          "end": "11:00"
+        },
+        {
+          "name": "天涯海角游览区",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "崖州古城",
+          "period": "evening",
+          "start": "16:30",
+          "end": "18:30"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "椰梦长廊",
+          "period": "morning",
+          "start": "09:00",
+          "end": "11:00"
+        },
+        {
+          "name": "三亚湾",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "海月广场",
+          "period": "evening",
+          "start": "16:30",
+          "end": "18:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "后海村",
+          "period": "morning",
+          "start": "09:00",
+          "end": "11:00"
+        },
+        {
+          "name": "亚龙湾海滩",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        },
+        {
+          "name": "海棠河生态公园",
+          "period": "evening",
+          "start": "16:30",
+          "end": "18:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 9
+  },
+  "must_visit_expected": [],
+  "must_visit_ok": null,
+  "must_avoid_ok": null,
+  "latency_s": 298.717,
+  "node_latency_ms": {
+    "planner": 138116.885,
+    "snapshot_gate": 6.451,
+    "reviewer": 160506.538,
+    "snapshot_reviewer": 4.895
+  },
+  "input_tokens_est": 11764,
+  "output_tokens_est": 3110,
+  "llm_calls": 4,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "actual_outcome": "SUCCESS_WITH_WARNINGS",
+  "benchmark_label": "MISMATCH",
+  "expected_outcome_match": false
+}

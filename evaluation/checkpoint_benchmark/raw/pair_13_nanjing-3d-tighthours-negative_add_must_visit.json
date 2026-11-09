@@ -1,0 +1,184 @@
+{
+  "case_id": "nanjing-3d-tighthours-negative",
+  "edit_type": "add_must_visit",
+  "instruction": "第2天一定去“南京牛首山文化旅游区”，其他安排尽量保持不变。",
+  "A": {
+    "latency_s": 182.561,
+    "input_tokens": 1329,
+    "output_tokens": 1255,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "南京牛首山文化旅游区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "不老村",
+      "水墨大埝旅游区",
+      "南京欢乐谷"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "古鸡鸣寺",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "中山陵景区",
+            "period": "afternoon",
+            "start_time": "13:30",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "历史古迹之旅"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "南京牛首山文化旅游区",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:30"
+          },
+          {
+            "name": "江苏江宁汤山方山国家地质公园博物馆",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "自然与地质探索"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "不老村",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "水墨大埝旅游区",
+            "period": "afternoon",
+            "start_time": "13:30",
+            "end_time": "15:30"
+          },
+          {
+            "name": "南京欢乐谷",
+            "period": "evening",
+            "start_time": "16:30",
+            "end_time": "18:00"
+          }
+        ],
+        "theme": "休闲娱乐体验"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】第2天一定去“南京牛首山文化旅游区”，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "B": {
+    "latency_s": 46.985,
+    "input_tokens": 1623,
+    "output_tokens": 854,
+    "llm_calls": 1,
+    "status": "SUCCESS_WITH_WARNINGS",
+    "hard_pass": true,
+    "plan_generated": true,
+    "route_names": [
+      "古鸡鸣寺",
+      "中山陵景区",
+      "江苏江宁汤山方山国家地质公园博物馆",
+      "南京牛首山文化旅游区",
+      "不老村",
+      "水墨大埝旅游区"
+    ],
+    "route": [
+      {
+        "day": 1,
+        "spots": [
+          {
+            "name": "古鸡鸣寺",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "中山陵景区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "历史古迹之旅"
+      },
+      {
+        "day": 2,
+        "spots": [
+          {
+            "name": "江苏江宁汤山方山国家地质公园博物馆",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "南京牛首山文化旅游区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:30"
+          }
+        ],
+        "theme": "地质文化与自然景观"
+      },
+      {
+        "day": 3,
+        "spots": [
+          {
+            "name": "不老村",
+            "period": "morning",
+            "start_time": "10:00",
+            "end_time": "12:00"
+          },
+          {
+            "name": "水墨大埝旅游区",
+            "period": "afternoon",
+            "start_time": "14:00",
+            "end_time": "16:00"
+          }
+        ],
+        "theme": "自然风光体验"
+      }
+    ],
+    "warnings": [
+      "【用户修改意见】第2天一定去“南京牛首山文化旅游区”，其他安排尽量保持不变。",
+      "当前路线通过硬约束校验，审核提出的软性体验建议已作为提醒保留。"
+    ],
+    "failure_codes": [],
+    "nodes": [
+      "planner",
+      "snapshot_gate"
+    ]
+  },
+  "edit_satisfied": {
+    "A": true,
+    "B": true
+  },
+  "retention": {
+    "A": 1.0,
+    "B": 0.8333
+  }
+}

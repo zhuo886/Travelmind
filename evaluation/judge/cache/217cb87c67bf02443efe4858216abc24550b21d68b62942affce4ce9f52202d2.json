@@ -1,0 +1,44 @@
+{
+  "key": "217cb87c67bf02443efe4858216abc24550b21d68b62942affce4ce9f52202d2",
+  "rubric_version": "judge-rubric-v1",
+  "prompt_version": "judge-prompt-v1",
+  "judge_id": 2,
+  "model": "glm-4.5-flash",
+  "payload_hash": "6b8fd66e39fbc53944983955c5101b9c7fb80d7a64e6dd86c29f085daeeb380c",
+  "scores": {
+    "preference_fit": 4,
+    "pacing": 3,
+    "geographic_coherence": 4,
+    "time_realism": 2,
+    "completeness": 2,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "Good coverage of Naxi ancient towns (束河古镇, 丽江古城, 白沙古镇) matches cultural preference, but structured 10:00 starts contradict 'sleep until natural wake-up' preference and no specific handicraft activities included",
+    "pacing": "Regular 2.5-hour morning/afternoon blocks create predictable rhythm but lack flexibility and buffer time, not truly accommodating slow travel style",
+    "geographic_coherence": "Logical daily clustering (Day 1: Lijiang area, Day 3: north locations, Day 4: same mountain area) minimizes major backtracking",
+    "time_realism": "Fixed 10:00 starts conflict with sleep preference, no travel time between locations, no meal times or opening hour considerations",
+    "completeness": "Missing meal times, transportation details, accommodation info, and specific activity details prevent direct execution",
+    "diversity_and_dining": "Good variety of attraction types (ancient towns, nature, cultural sites) but no dining or rest considerations included"
+  },
+  "flags": [
+    "early_starts_conflict_with_preference",
+    "missing_meal_times",
+    "missing_transportation_info",
+    "evidence_missing"
+  ],
+  "overall_comment": "The itinerary covers preferred Naxi ancient town culture well but has structural issues with early starts and incomplete logistics. Geographic grouping is logical but the rigid schedule doesn't accommodate the desired slow pace.",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 824,
+    "output_tokens": 730,
+    "total_tokens": 1554,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 52602.879,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}

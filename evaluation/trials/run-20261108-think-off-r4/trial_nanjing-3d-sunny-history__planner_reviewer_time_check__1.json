@@ -1,0 +1,274 @@
+{
+  "trial_id": "580958c3e68847f4a618156e2d29d1c6",
+  "case_id": "nanjing-3d-sunny-history",
+  "mode_requested": "planner_reviewer_time_check",
+  "mode_effective": "planner_reviewer_time_check",
+  "nodes_entered": [
+    "planner",
+    "reviewer",
+    "snapshot_gate",
+    "snapshot_reviewer",
+    "snapshot_time_check",
+    "time_check"
+  ],
+  "invalid_trial": false,
+  "invalid_reason": null,
+  "plan_generated": true,
+  "status": "SUCCESS",
+  "hard_pass": true,
+  "l0_codes": [],
+  "l1_codes": [],
+  "first_draft_l0": [],
+  "first_draft_l1": [
+    "closed_on_visit_day",
+    "closed_on_visit_day"
+  ],
+  "first_draft_soft_score": 87.0,
+  "final_delivered_iteration": 3,
+  "planning_revision_rounds": 2,
+  "review_round": 3,
+  "reviewer_calls": 3,
+  "time_check_round": 1,
+  "snapshot_count": 3,
+  "snapshot_trace": [
+    {
+      "iteration": 1,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day",
+        "closed_on_visit_day"
+      ],
+      "defect_count": 2,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "b4d27f472776b12c",
+      "spot_names": [
+        "玄武湖景区",
+        "古鸡鸣寺",
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "总统府",
+        "中山陵景区"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 2,
+      "l0_codes": [],
+      "l1_codes": [
+        "closed_on_visit_day"
+      ],
+      "defect_count": 1,
+      "soft_score": 87.0,
+      "reviewer_approved": false,
+      "reviewer_warning_count": 2,
+      "rework_requested": true,
+      "route_signature": "fe56573a23bf4793",
+      "spot_names": [
+        "玄武湖景区",
+        "古鸡鸣寺",
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "南京牛首山文化旅游区",
+        "江苏江宁汤山方山国家地质公园博物馆"
+      ],
+      "is_delivered": false
+    },
+    {
+      "iteration": 3,
+      "l0_codes": [],
+      "l1_codes": [],
+      "defect_count": 0,
+      "soft_score": 97.0,
+      "reviewer_approved": true,
+      "reviewer_warning_count": 0,
+      "rework_requested": false,
+      "route_signature": "214885932bca6ba5",
+      "spot_names": [
+        "玄武湖景区",
+        "古鸡鸣寺",
+        "中国科举博物馆(江南贡院)",
+        "南京夫子庙",
+        "南京牛首山文化旅游区",
+        "南京长江大桥"
+      ],
+      "is_delivered": true
+    }
+  ],
+  "soft_score": 97.0,
+  "warnings": [],
+  "route_names": [
+    "玄武湖景区",
+    "古鸡鸣寺",
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "南京牛首山文化旅游区",
+    "南京长江大桥"
+  ],
+  "route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京长江大桥",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "delivered_route_names": [
+    "玄武湖景区",
+    "古鸡鸣寺",
+    "中国科举博物馆(江南贡院)",
+    "南京夫子庙",
+    "南京牛首山文化旅游区",
+    "南京长江大桥"
+  ],
+  "delivered_route_by_day": [
+    {
+      "day": 1,
+      "spots": [
+        {
+          "name": "玄武湖景区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "古鸡鸣寺",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "spots": [
+        {
+          "name": "中国科举博物馆(江南贡院)",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京夫子庙",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "spots": [
+        {
+          "name": "南京牛首山文化旅游区",
+          "period": "morning",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "name": "南京长江大桥",
+          "period": "afternoon",
+          "start": "13:30",
+          "end": "15:30"
+        }
+      ]
+    }
+  ],
+  "oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "must_visit_expected": [
+    "玄武湖景区"
+  ],
+  "must_visit_ok": true,
+  "expected_feasible": true,
+  "infeasible_reason": null,
+  "must_avoid_ok": null,
+  "latency_s": 134.316,
+  "node_latency_ms": {
+    "planner": 96432.633,
+    "snapshot_gate": 5.572,
+    "reviewer": 25134.727,
+    "snapshot_reviewer": 6.087,
+    "time_check": 12398.723,
+    "snapshot_time_check": 1.965
+  },
+  "input_tokens_est": 15828,
+  "output_tokens_est": 2985,
+  "llm_calls": 7,
+  "candidate_api_calls": 0,
+  "route_leg_count": 0,
+  "candidate_search_trace": [],
+  "failure_codes": [],
+  "error_kind": null,
+  "error": null,
+  "draft_generated": true,
+  "delivered_plan": true,
+  "draft_soft_score": 97.0,
+  "draft_oor": {
+    "outside": 0,
+    "total": 6
+  },
+  "expectations_evaluated": true,
+  "expectation_rule": "outdoor_on_bad_day_max",
+  "expectation_violations": [],
+  "actual_outcome": "SUCCESS",
+  "benchmark_label": "MATCH",
+  "expected_outcome_match": true,
+  "llm_config": {
+    "model": "glm-4.5-flash",
+    "provider": "openai",
+    "thinking_global": "disabled",
+    "thinking_planner": false,
+    "max_tokens": "8000",
+    "structured_method": "json_mode"
+  }
+}

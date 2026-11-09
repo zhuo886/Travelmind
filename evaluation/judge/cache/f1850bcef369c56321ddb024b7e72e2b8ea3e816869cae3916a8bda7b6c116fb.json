@@ -1,0 +1,41 @@
+{
+  "key": "f1850bcef369c56321ddb024b7e72e2b8ea3e816869cae3916a8bda7b6c116fb",
+  "rubric_version": "judge-rubric-v2",
+  "prompt_version": "judge-prompt-v2",
+  "judge_id": 1,
+  "model": "glm-4.5-flash",
+  "payload_hash": "428e7359e29d0812128875f49b922679cb29b5239cda8854b55951b8393421a5",
+  "scores": {
+    "preference_fit": 2,
+    "pacing": 4,
+    "geographic_coherence": 4,
+    "time_realism": 5,
+    "completeness": 4,
+    "diversity_and_dining": 3
+  },
+  "evidence": {},
+  "reasons": {
+    "preference_fit": "The route partially aligns with preferences for night tours but misses key attractions like the Bund and urban light shows mentioned in preferences.",
+    "pacing": "Good time allocation with 3-hour intervals for each activity and reasonable 30-minute gap.",
+    "geographic_coherence": "Both attractions are likely in central Shanghai with minimal backtracking.",
+    "time_realism": "Timing aligns perfectly with user's preference for afternoon departure and night tours.",
+    "completeness": "Route provides specific times and locations, complete for the evaluated scope.",
+    "diversity_and_dining": "Moderate diversity between aquarium and museum experiences, but both are indoor attractions."
+  },
+  "flags": [
+    "other"
+  ],
+  "overall_comment": "The itinerary has good timing and pacing but doesn't include the key attractions (Bund, urban light shows) that were specifically mentioned in the user's preferences. The route focuses on indoor attractions which may not provide the best night views experience the user is looking for.\"",
+  "usage": {
+    "calls_total": 1,
+    "failed_total": 0,
+    "input_tokens": 527,
+    "output_tokens": 600,
+    "total_tokens": 1127,
+    "estimated_calls": 1,
+    "usage_exact_ratio": 0.0,
+    "latency_sum_ms": 73152.955,
+    "estimated_cost_usd": 0.0,
+    "cost_rates_configured": false
+  }
+}
