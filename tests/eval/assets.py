@@ -18,8 +18,19 @@ from tests.eval import harness
 FROZEN_FILE = Path(__file__).resolve().parent / "frozen_assets_v1_v2.json"
 
 
+def _canonical_bytes(path: Path) -> bytes:
+    """取哈希前把文本换行统一成 LF。
+
+    冻结指纹是在 Windows（core.autocrlf=true，工作区为 CRLF）上生成的，直接对原始
+    字节取 sha256 会让 Linux / CI（检出为 LF）把同一份未改动的 fixture 判成「哈希已
+    变化」。这里按 git 的规范形式（LF）取哈希，两侧得到同一个值。
+    只用于 JSON 文本资产，不要用于二进制文件。
+    """
+    return path.read_bytes().replace(b"\r\n", b"\n")
+
+
 def sha256_file(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(_canonical_bytes(path)).hexdigest()
 
 
 def fixture_manifest(version: str) -> dict[str, dict[str, Any]]:
