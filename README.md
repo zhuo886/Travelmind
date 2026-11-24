@@ -4,7 +4,7 @@
 
 **LangGraph 单图多角色编排 · 高德核验候选池 · 分层约束审核闭环 · 可复现评测体系**
 
-<p align="center"><img src="https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB" alt="Python"> <img src="https://img.shields.io/badge/Agent-LangGraph%201.2-1C3C3C" alt="LangGraph"> <img src="https://img.shields.io/badge/API-FastAPI%20%2B%20SSE-009688" alt="FastAPI"> <img src="https://img.shields.io/badge/pytest-211%20passed-4E9A06" alt="Tests"></p>
+<p align="center"><img src="https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB" alt="Python"> <img src="https://img.shields.io/badge/Agent-LangGraph%201.2-1C3C3C" alt="LangGraph"> <img src="https://img.shields.io/badge/API-FastAPI%20%2B%20SSE-009688" alt="FastAPI"> <img src="https://img.shields.io/badge/pytest-211%20passed-4E9A06" alt="Tests"> <img src="https://github.com/zhuo886/Travelmind/actions/workflows/ci.yml/badge.svg" alt="CI"> <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></p>
 
 [项目简介](#项目简介) · [核心工作与结果](#核心工作与结果) · [功能与设计](#功能与设计) · [规划流程](#规划流程) · [快速开始](#快速开始) · [验证与评测](#验证与评测) · [代码与文档](#代码与文档)
 
