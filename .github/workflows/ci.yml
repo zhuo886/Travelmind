@@ -44,4 +44,9 @@ jobs:
           AMAP_API_KEY: ci-placeholder
           OPENAI_API_KEY: ci-placeholder
           SEMANTIC_MEMORY_ENABLED: "0"
-        run: python -m pytest -q tests
+        run: |
+          python -m pytest -q tests > pytest.log 2>&1 && { echo "ALL GREEN"; exit 0; }
+          echo "--- pytest tail ---"
+          tail -n 60 pytest.log
+          python -c "import pathlib;p=pathlib.Path('pytest.log').read_text(errors='replace').splitlines()[-60:];print('::error title=pytest::'+'%0A'.join(l.replace('%','%25') for l in p))"
+          exit 1
