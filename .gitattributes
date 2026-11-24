@@ -1,0 +1,8 @@
+# 容器与 CI 配置强制 LF：Windows 下 autocrlf=true 会把它们检出成 CRLF，
+# 导致 Dockerfile 指令在 Linux 构建阶段失效、YAML 解析异常。
+Dockerfile     text eol=lf
+.dockerignore  text eol=lf
+LICENSE        text eol=lf
+*.yml          text eol=lf
+*.yaml         text eol=lf
+*.sh           text eol=lf
