@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 900" width="1480" height="900">
+  <defs>
+    <style>
+      .t-sans { font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+      .sec-title { font-size: 16px; font-weight: 700; fill: #1F2937; }
+      .sub-title { font-size: 14px; font-weight: 700; fill: #1F2937; }
+      .card-title { font-size: 13.5px; font-weight: 700; fill: #111827; text-anchor: middle; }
+      .card-sub { font-size: 11.5px; font-weight: 500; fill: #4B5563; text-anchor: middle; }
+      .node-title { font-size: 12px; font-weight: 700; fill: #111827; text-anchor: middle; }
+      .node-sub { font-size: 10.5px; font-weight: 500; fill: #4B5563; text-anchor: middle; }
+      .edge-label { font-size: 10px; font-weight: 600; fill: #374151; text-anchor: middle; }
+      .legend-text { font-size: 10.5px; font-weight: 600; fill: #374151; }
+    </style>
+
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#1F2937" />
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 1 1.8 L 9 5 L 1 8.2 z" fill="#374151" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 1 1.8 L 9 5 L 1 8.2 z" fill="#B45309" />
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect x="0" y="0" width="1480" height="900" fill="#FFFFFF" class="t-sans" />
+
+  <!-- ================= 1. 外层容器：多角色规划与审核编排 ================= -->
+  <rect x="24" y="18" width="1432" height="696" rx="14" fill="#FFFDF7" stroke="#DCD8CE" stroke-width="1.5" />
+  <text x="44" y="45" class="t-sans sec-title">多角色规划与审核编排</text>
+
+  <!-- 左上：会话上下文与长期记忆 -->
+  <rect x="48" y="60" width="320" height="96" rx="10" fill="#E8E2FC" stroke="#1F2937" stroke-width="1.6" />
+  <text x="208" y="86" class="t-sans card-title">会话上下文与长期记忆</text>
+  <text x="208" y="110" class="t-sans card-sub">用户鉴权隔离 · 30 分钟追问续接</text>
+  <text x="208" y="130" class="t-sans card-sub">结构化用户画像 · 可选语义记忆</text>
+
+  <!-- 顶中：用户请求 -> 意图理解与约束抽取 -->
+  <rect x="448" y="34" width="204" height="36" rx="8" fill="#F3F4F6" stroke="#1F2937" stroke-width="1.6" />
+  <text x="550" y="57" class="t-sans card-title">用户自然语言需求</text>
+  <line x1="550" y1="70" x2="550" y2="87" stroke="#1F2937" stroke-width="1.6" marker-end="url(#arrow)" />
+
+  <rect x="408" y="90" width="284" height="58" rx="9" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.6" />
+  <text x="550" y="114" class="t-sans card-title">意图理解与约束抽取</text>
+  <text x="550" y="134" class="t-sans card-sub">目的地 / 天数 / 偏好 · 日期确定性兜底</text>
+
+  <!-- 缺关键信息 -> 多轮追问补全 -> 返回待补充 -->
+  <line x1="692" y1="119" x2="785" y2="119" stroke="#374151" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow-muted)" />
+  <rect x="702" y="100" width="74" height="17" rx="4" fill="#FFFDF7" stroke="#CBD5E1" stroke-width="0.9" />
+  <text x="739" y="112" class="t-sans edge-label">缺关键字段</text>
+
+  <rect x="788" y="96" width="144" height="46" rx="8" fill="#DBEAFE" stroke="#1F2937" stroke-width="1.5" />
+  <text x="860" y="116" class="t-sans node-title">多轮追问补全</text>
+  <text x="860" y="133" class="t-sans node-sub">引导补充缺失信息</text>
+  <line x1="932" y1="119" x2="961" y2="119" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <rect x="964" y="102" width="102" height="34" rx="7" fill="#F3F4F6" stroke="#1F2937" stroke-width="1.4" />
+  <text x="1015" y="123" class="t-sans node-title">返回待补充</text>
+
+  <!-- 上下文虚线连到意图理解 -->
+  <line x1="368" y1="116" x2="405" y2="116" stroke="#374151" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrow-muted)" />
+
+  <!-- 右上：增量修改与人工确认入口 -->
+  <rect x="1100" y="60" width="332" height="96" rx="10" fill="#DBEAFE" stroke="#1F2937" stroke-width="1.6" />
+  <text x="1266" y="86" class="t-sans card-title">增量修改与人工确认入口</text>
+  <text x="1266" y="110" class="t-sans card-sub">断点恢复需求、天气与候选池</text>
+  <text x="1266" y="130" class="t-sans card-sub">顾虑暂停确认 · 直入规划与审核</text>
+
+  <!-- ================= 2. 内嵌容器：主规划流水线 ================= -->
+  <rect x="46" y="180" width="1388" height="518" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.4" />
+  <text x="64" y="205" class="t-sans sub-title">主规划流水线</text>
+
+  <!-- 紧凑图例 -->
+  <rect x="910" y="191" width="14" height="12" rx="3" fill="#FEF3C7" stroke="#1F2937" stroke-width="1.1" />
+  <text x="930" y="201" class="t-sans legend-text">LLM 角色</text>
+  <rect x="1008" y="191" width="14" height="12" rx="3" fill="#FDE68A" stroke="#1F2937" stroke-width="1.1" />
+  <text x="1028" y="201" class="t-sans legend-text">确定性校验 / 门控</text>
+  <rect x="1146" y="191" width="14" height="12" rx="3" fill="#DBEAFE" stroke="#1F2937" stroke-width="1.1" />
+  <text x="1166" y="201" class="t-sans legend-text">人工交互</text>
+  <line x1="1232" y1="197" x2="1260" y2="197" stroke="#B45309" stroke-width="1.6" stroke-dasharray="4,3" marker-end="url(#arrow-amber)" />
+  <text x="1268" y="201" class="t-sans legend-text" style="fill:#92400E;">有界返工环</text>
+
+  <!-- 意图理解三路并行扇出总线 (y=164) -->
+  <path d="M 550 148 L 550 164 L 146 164 L 146 279" fill="none" stroke="#1F2937" stroke-width="1.5" marker-end="url(#arrow)" />
+  <path d="M 550 164 L 284 164 L 284 279" fill="none" stroke="#1F2937" stroke-width="1.5" marker-end="url(#arrow)" />
+  <path d="M 550 164 L 428 164 L 428 279" fill="none" stroke="#1F2937" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 增量修改入口直入阶段二 (避开阶段二标题) -->
+  <path d="M 1266 156 L 1266 170 L 872 170 L 872 296 L 854 296" fill="none" stroke="#374151" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arrow-muted)" />
+  <rect x="974" y="161" width="106" height="17" rx="4" fill="#FFFDF7" stroke="#CBD5E1" stroke-width="0.9" />
+  <text x="1027" y="173" class="t-sans edge-label">复用候选池重规划</text>
+
+  <!-- ========== 阶段一：并行检索与有界补查 ========== -->
+  <rect x="66" y="222" width="430" height="460" rx="10" fill="#EBF5EF" stroke="#C5DDD0" stroke-width="1.4" />
+  <text x="281" y="246" class="t-sans card-title">阶段一：并行检索与有界补查</text>
+  <text x="281" y="264" class="t-sans card-sub">城市级基线先行 · 结构化定向补齐缺口</text>
+
+  <!-- 三条并行入口 -->
+  <rect x="84" y="282" width="124" height="42" rx="8" fill="#FEF3C7" stroke="#1F2937" stroke-width="1.5" />
+  <text x="146" y="300" class="t-sans node-title">画像查询改写</text>
+  <text x="146" y="315" class="t-sans node-sub">结合偏好扩词 (LLM)</text>
+
+  <rect x="222" y="282" width="124" height="42" rx="8" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.5" />
+  <text x="284" y="300" class="t-sans node-title">出行天气查询</text>
+  <text x="284" y="315" class="t-sans node-sub">气象与室内优先级</text>
+
+  <rect x="372" y="282" width="112" height="42" rx="8" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.5" />
+  <text x="428" y="300" class="t-sans node-title">餐馆候选检索</text>
+  <text x="428" y="315" class="t-sans node-sub">独立并行召回</text>
+
+  <!-- 汇聚到城市级景点初筛池 -->
+  <path d="M 146 324 L 146 336 L 214 336 L 214 345" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <path d="M 284 324 L 284 336 L 214 336" fill="none" stroke="#1F2937" stroke-width="1.4" />
+
+  <rect x="84" y="348" width="260" height="42" rx="8" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.5" />
+  <text x="214" y="366" class="t-sans node-title">城市级景点初筛池</text>
+  <text x="214" y="382" class="t-sans node-sub">高德 POI 过滤与坐标补全</text>
+
+  <line x1="214" y1="390" x2="214" y2="411" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- 有界补查循环 -->
+  <rect x="84" y="414" width="260" height="40" rx="8" fill="#FEF3C7" stroke="#1F2937" stroke-width="1.5" />
+  <text x="214" y="432" class="t-sans node-title">缺口判定 (LLM)</text>
+  <text x="214" y="447" class="t-sans node-sub">输出结构化补查动作</text>
+
+  <line x1="214" y1="454" x2="214" y2="473" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <rect x="84" y="476" width="260" height="38" rx="8" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.5" />
+  <text x="214" y="494" class="t-sans node-title">定向补充检索</text>
+  <text x="214" y="508" class="t-sans node-sub">按缺口关键词精准扩池</text>
+
+  <line x1="214" y1="514" x2="214" y2="533" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <rect x="84" y="536" width="260" height="44" rx="8" fill="#FDE68A" stroke="#1F2937" stroke-width="1.5" />
+  <text x="214" y="555" class="t-sans node-title">覆盖与多样性校验</text>
+  <text x="214" y="571" class="t-sans node-sub">动作合法 · 查询去重 · 轮次与请求上限</text>
+
+  <!-- 有界补查琥珀回环 (沿 x=364，远离右侧餐馆竖线 x=428) -->
+  <path d="M 344 558 L 364 558 L 364 434 L 347 434" fill="none" stroke="#B45309" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrow-amber)" />
+  <rect x="348" y="488" width="60" height="17" rx="4" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.9" />
+  <text x="378" y="500" class="t-sans edge-label" style="fill:#92400E;">缺口补查</text>
+
+  <!-- 阶段一出口：无可行候选 & 候选就绪 -->
+  <path d="M 164 580 L 134 603" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <path d="M 264 580 L 292 603" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <rect x="84" y="606" width="104" height="36" rx="7" fill="#F3F4F6" stroke="#1F2937" stroke-width="1.4" />
+  <text x="136" y="628" class="t-sans node-title">无可行候选</text>
+
+  <rect x="210" y="606" width="150" height="36" rx="7" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.4" />
+  <text x="285" y="628" class="t-sans node-title">景点候选池就绪</text>
+
+  <!-- 餐馆候选 + 景点候选 汇合进入阶段二联合规划 -->
+  <path d="M 428 324 L 428 624 L 360 624" fill="none" stroke="#1F2937" stroke-width="1.4" />
+  <path d="M 428 624 L 484 624 L 484 308 L 578 308" fill="none" stroke="#1F2937" stroke-width="1.6" marker-end="url(#arrow)" />
+
+  <!-- ========== 阶段二：联合排期与三关审核闭环 ========== -->
+  <rect x="512" y="222" width="468" height="460" rx="10" fill="#EBF5EF" stroke="#C5DDD0" stroke-width="1.4" />
+  <text x="746" y="246" class="t-sans card-title">阶段二：联合排期与三关审核闭环</text>
+  <text x="746" y="264" class="t-sans card-sub">池内联合排期 · 确定性门控 + 双重核查</text>
+
+  <!-- 联合规划 -->
+  <rect x="581" y="286" width="270" height="44" rx="8" fill="#FEF3C7" stroke="#1F2937" stroke-width="1.5" />
+  <text x="716" y="305" class="t-sans node-title">景点与用餐联合规划 (LLM)</text>
+  <text x="716" y="321" class="t-sans node-sub">在已核验候选池内一次性联合排期</text>
+
+  <line x1="716" y1="330" x2="716" y2="351" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- 8 路并发路距核验 -->
+  <rect x="581" y="354" width="270" height="42" rx="8" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.5" />
+  <text x="716" y="372" class="t-sans node-title">8 路并发路距核验</text>
+  <text x="716" y="388" class="t-sans node-sub">展开相邻路段并发测算真实通勤</text>
+
+  <line x1="716" y1="396" x2="716" y2="417" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- 规则风险门控与分层快照 -->
+  <rect x="581" y="420" width="270" height="44" rx="8" fill="#FDE68A" stroke="#1F2937" stroke-width="1.5" />
+  <text x="716" y="439" class="t-sans node-title">规则风险门控与分层快照</text>
+  <text x="716" y="455" class="t-sans node-sub">零 LLM 毫秒评分 · L0 底线 / L1 可行性落档</text>
+
+  <!-- 门控到审核分支 -->
+  <path d="M 656 464 L 634 495" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <rect x="598" y="472" width="46" height="16" rx="4" fill="#EBF5EF" />
+  <text x="621" y="483.5" class="t-sans edge-label">高风险</text>
+
+  <path d="M 776 464 L 776 575" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <rect x="744" y="510" width="66" height="16" rx="4" fill="#EBF5EF" />
+  <text x="777" y="521.5" class="t-sans edge-label">需时间核查</text>
+
+  <!-- LLM 质量审核 -->
+  <rect x="542" y="498" width="184" height="46" rx="8" fill="#FEF3C7" stroke="#1F2937" stroke-width="1.5" />
+  <text x="634" y="518" class="t-sans node-title">LLM 质量审核</text>
+  <text x="634" y="534" class="t-sans node-sub">核查偏好、折返与节奏</text>
+
+  <!-- 审核通过 -> 开放时间核查 -->
+  <path d="M 658 544 L 716 575" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <rect x="652" y="553" width="36" height="15" rx="4" fill="#EBF5EF" />
+  <text x="670" y="564" class="t-sans edge-label">通过</text>
+
+  <!-- 开放时间与闭馆日核查 -->
+  <rect x="664" y="578" width="224" height="46" rx="8" fill="#FEF3C7" stroke="#1F2937" stroke-width="1.5" />
+  <text x="776" y="598" class="t-sans node-title">开放时间与闭馆日核查</text>
+  <text x="776" y="614" class="t-sans node-sub">校验营业时段与周闭馆冲突</text>
+
+  <!-- 琥珀虚线返工环 1：LLM 质量审核 -> 联合规划 (沿阶段二左侧 x=524) -->
+  <path d="M 542 521 L 524 521 L 524 304 L 578 304" fill="none" stroke="#B45309" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrow-amber)" />
+  <rect x="515" y="400" width="56" height="17" rx="4" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.9" />
+  <text x="543" y="412" class="t-sans edge-label" style="fill:#92400E;">打回返工</text>
+
+  <!-- 琥珀虚线返工环 2：开放时间核查 -> 联合规划 (沿阶段二右侧 x=934) -->
+  <path d="M 888 594 L 934 594 L 934 316 L 854 316" fill="none" stroke="#B45309" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrow-amber)" />
+  <rect x="892" y="388" width="84" height="17" rx="4" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.9" />
+  <text x="934" y="400" class="t-sans edge-label" style="fill:#92400E;">违约返工(有界)</text>
+
+  <!-- ========== 阶段三：收尾增强与四态交付 ========== -->
+  <rect x="996" y="222" width="420" height="460" rx="10" fill="#EBF5EF" stroke="#C5DDD0" stroke-width="1.4" />
+  <text x="1206" y="246" class="t-sans card-title">阶段三：收尾增强与四态交付</text>
+  <text x="1206" y="264" class="t-sans card-sub">并行补充餐点贴士 · 多版本择优后流式输出</text>
+
+  <!-- 并行增强节点 -->
+  <rect x="1016" y="294" width="176" height="44" rx="8" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.5" />
+  <text x="1104" y="313" class="t-sans node-title">用餐时间块合并</text>
+  <text x="1104" y="328" class="t-sans node-sub">嵌入午晚餐推荐时段</text>
+
+  <rect x="1220" y="294" width="176" height="44" rx="8" fill="#FEF3C7" stroke="#1F2937" stroke-width="1.5" />
+  <text x="1308" y="313" class="t-sans node-title">景点游玩贴士 (LLM)</text>
+  <text x="1308" y="328" class="t-sans node-sub">生成实用避坑与贴士</text>
+
+  <!-- 从阶段二进入阶段三的出口连线 -->
+  <!-- 1) 低风险直出 (门控 -> 收尾增强总线 y=362? 放到上方 y=276 更清晰!) -->
+  <path d="M 851 442 L 958 442 L 958 276 L 1104 276 L 1104 291" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <path d="M 1104 276 L 1308 276 L 1308 291" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <rect x="866" y="424" width="66" height="16" rx="4" fill="#EBF5EF" />
+  <text x="899" y="435.5" class="t-sans edge-label">低风险直出</text>
+
+  <!-- 2) 时间核查通过 -> 汇聚到收尾增强总线 y=276 -->
+  <path d="M 888 612 L 972 612 L 972 316 L 1013 316" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <rect x="920" y="616" width="60" height="16" rx="4" fill="#EBF5EF" />
+  <text x="950" y="627.5" class="t-sans edge-label">核查通过</text>
+
+  <!-- 3) 干净/无进展/不可行直出 -> 快照择优 (沿 y=650 下通道绕过节点框) -->
+  <path d="M 608 544 L 608 648 L 1004 648 L 1004 415 L 1029 415" fill="none" stroke="#374151" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrow-muted)" />
+  <path d="M 776 624 L 776 648" fill="none" stroke="#374151" stroke-width="1.3" stroke-dasharray="4,3" />
+  <rect x="652" y="639" width="114" height="17" rx="4" fill="#F1F5F9" stroke="#94A3B8" stroke-width="0.8" />
+  <text x="709" y="651" class="t-sans edge-label">直出 / 熔断 / 不可行</text>
+
+  <!-- 阶段一 无可行候选 -> 沿底部通道直达阶段三快照择优 -->
+  <path d="M 136 642 L 136 668 L 1012 668 L 1012 426 L 1029 426" fill="none" stroke="#374151" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrow-muted)" />
+  <rect x="260" y="659" width="126" height="17" rx="4" fill="#F1F5F9" stroke="#94A3B8" stroke-width="0.8" />
+  <text x="323" y="671" class="t-sans edge-label">候选空池直接解释拒绝</text>
+
+  <!-- 阶段三增强节点汇聚 -> 多版本快照择优与落库 -->
+  <path d="M 1104 338 L 1104 362 L 1206 362 L 1206 385" fill="none" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+  <path d="M 1308 338 L 1308 362 L 1206 362" fill="none" stroke="#1F2937" stroke-width="1.4" />
+
+  <rect x="1032" y="388" width="348" height="54" rx="8" fill="#FDE68A" stroke="#1F2937" stroke-width="1.5" />
+  <text x="1206" y="409" class="t-sans node-title">多版本快照择优与落库</text>
+  <text x="1206" y="427" class="t-sans node-sub">底线为空 → 告警最少 → 质量最高 → 轮次最新</text>
+
+  <line x1="1206" y1="442" x2="1206" y2="473" stroke="#1F2937" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <rect x="1066" y="476" width="280" height="42" rx="8" fill="#F3F4F6" stroke="#1F2937" stroke-width="1.5" />
+  <text x="1206" y="495" class="t-sans node-title">SSE 流式输出最终结果</text>
+  <text x="1206" y="511" class="t-sans node-sub">分阶段进度推送 · 节点级耗时轨迹</text>
+
+  <line x1="1206" y1="518" x2="1206" y2="545" stroke="#1F2937" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- 四态交付卡片 -->
+  <rect x="1024" y="548" width="172" height="46" rx="7" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.2" />
+  <text x="1110" y="567" class="t-sans node-title">完整交付</text>
+  <text x="1110" y="583" class="t-sans node-sub">底线与可执行性均通过</text>
+
+  <rect x="1216" y="548" width="172" height="46" rx="7" fill="#FEF9C3" stroke="#CA8A04" stroke-width="1.2" />
+  <text x="1302" y="567" class="t-sans node-title">带提醒交付</text>
+  <text x="1302" y="583" class="t-sans node-sub">通过但附松弛或提醒</text>
+
+  <rect x="1024" y="606" width="172" height="46" rx="7" fill="#FFEDD5" stroke="#EA580C" stroke-width="1.2" />
+  <text x="1110" y="625" class="t-sans node-title">降级交付</text>
+  <text x="1110" y="641" class="t-sans node-sub">底线通过 · 明确风险项</text>
+
+  <rect x="1216" y="606" width="172" height="46" rx="7" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.2" />
+  <text x="1302" y="625" class="t-sans node-title">明确拒绝</text>
+  <text x="1302" y="641" class="t-sans node-sub">客观不可行 · 附结构化原因</text>
+
+  <!-- ================= 3. 外层容器：事实源、引擎与基础设施层 ================= -->
+  <rect x="24" y="732" width="1432" height="150" rx="14" fill="#FFFFFF" stroke="#DCD8CE" stroke-width="1.5" />
+  <text x="44" y="759" class="t-sans sec-title">事实源、引擎与基础设施层</text>
+
+  <rect x="66" y="776" width="430" height="90" rx="10" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.6" />
+  <text x="281" y="801" class="t-sans card-title">高德地图事实源与交互服务</text>
+  <text x="281" y="823" class="t-sans card-sub">POI 检索与坐标 · 天气预报 · 步行 / 驾车路径</text>
+  <text x="281" y="843" class="t-sans card-sub">前端地图绘制 · 拖拽编辑落库 · 单日路线重排</text>
+
+  <rect x="512" y="776" width="468" height="90" rx="10" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.6" />
+  <text x="746" y="801" class="t-sans card-title">多模型适配与分层约束引擎</text>
+  <text x="746" y="823" class="t-sans card-sub">OpenAI 兼容（DeepSeek / 智谱 / Grok / 豆包）· 三级降级</text>
+  <text x="746" y="843" class="t-sans card-sub">6 类底线硬约束 + 11 类可执行性检查 + 轮次预算兜底</text>
+
+  <rect x="996" y="776" width="420" height="90" rx="10" fill="#EEF2FA" stroke="#1F2937" stroke-width="1.6" />
+  <text x="1206" y="801" class="t-sans card-title">持久化、记忆与可观测平台</text>
+  <text x="1206" y="823" class="t-sans card-sub">SQLite 业务与断点持久化 · 可选 Redis 缓存与 Chroma 记忆</text>
+  <text x="1206" y="843" class="t-sans card-sub">SSE 流式推送 · 节点级耗时追踪 · Prometheus 指标</text>
+
+  <!-- 上下层连接虚线 -->
+  <line x1="281" y1="682" x2="281" y2="773" stroke="#374151" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arrow-muted)" />
+  <line x1="746" y1="682" x2="746" y2="773" stroke="#374151" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arrow-muted)" />
+  <line x1="1206" y1="682" x2="1206" y2="773" stroke="#374151" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arrow-muted)" />
+</svg>
