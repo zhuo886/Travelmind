@@ -77,6 +77,120 @@ def test_indoor_priority_l0_suppresses_l1_duplicate():
     assert quality.weather_outdoor_mismatch(state) == []
 
 
+# ---------- 生产链路字段形态：室内核验在 indoor，室外推断在 indoor_hint ----------
+
+def test_outdoor_hint_counts_as_outdoor():
+    """生产 poi_to_spot 只把"已核实室内"写进 indoor，室外落在 indoor_hint。
+
+    若规则只认 `indoor is False`，真实链路永远不触发（评测 fixture 却写 indoor=False，
+    导致离线全绿、线上失明）。这里锁定"推断为室外"也算室外。
+    """
+    state = _state(
+        bad_days=["2026-08-02"],
+        route=[
+            {"day": 1, "spots": [{"name": "三亚凤凰岭海誓山盟景区"}]},
+            {"day": 2, "spots": [{"name": "三亚凤凰岭海誓山盟景区"}, {"name": "海月广场"}]},
+        ],
+        pois=[
+            {"name": "三亚凤凰岭海誓山盟景区", "indoor": None, "indoor_hint": False},
+            {"name": "海月广场", "indoor": None, "indoor_hint": False},
+        ],
+    )
+
+    violations = quality.weather_outdoor_mismatch(state)
+
+    assert [item["code"] for item in violations] == ["weather_outdoor_mismatch"]
+    assert "Day2" in violations[0]["message"]
+
+
+def test_indoor_hint_true_is_not_outdoor():
+    state = _state(
+        bad_days=["2026-08-02"],
+        route=[{"day": 2, "spots": [{"name": "南京博物院"}, {"name": "先锋书店"}]}],
+        pois=[
+            {"name": "南京博物院", "indoor": None, "indoor_hint": True},
+            {"name": "先锋书店", "indoor": None, "indoor_hint": True},
+        ],
+    )
+
+    assert quality.weather_outdoor_mismatch(state) == []
+
+
+def test_verified_indoor_overrides_outdoor_hint():
+    state = _state(
+        bad_days=["2026-08-01", "2026-08-02"],
+        route=[
+            {"day": 1, "spots": [{"name": "南京博物院"}]},
+            {"day": 2, "spots": [{"name": "南京博物院"}, {"name": "先锋书店"}]},
+        ],
+        pois=[
+            {"name": "南京博物院", "indoor": True, "indoor_hint": False},
+            {"name": "先锋书店", "indoor": True, "indoor_hint": False},
+        ],
+    )
+
+    assert quality.weather_outdoor_mismatch(state) == []
+    assert quality.weather_exposure_violations(state) == []
+
+
+def test_all_rain_exposure_conflict_uses_outdoor_hint():
+    state = _state(
+        bad_days=["2026-08-01", "2026-08-02"],
+        route=[
+            {"day": 1, "spots": [{"name": "三亚凤凰岭海誓山盟景区"}]},
+            {"day": 2, "spots": [{"name": "海月广场"}]},
+        ],
+        pois=[
+            {"name": "三亚凤凰岭海誓山盟景区", "indoor": None, "indoor_hint": False},
+            {"name": "海月广场", "indoor": None, "indoor_hint": False},
+        ],
+    )
+
+    codes = [item["code"] for item in quality.weather_exposure_violations(state)]
+
+    assert codes == ["weather_exposure_conflict"]
+
+
+def test_weather_l1_downgrades_delivery_to_partial():
+    """有 L1、无 L0 时应交付为 PARTIAL_SUCCESS，而不是 SUCCESS_WITH_WARNINGS。
+
+    负样本 allowed_outcomes=[PARTIAL, CORRECT_REJECT] 依赖这条降级路径。
+    """
+    route = [{"day": 1, "spots": [{"name": "三亚凤凰岭海誓山盟景区"}, {"name": "海月广场"}]}]
+    state = SimpleNamespace(
+        route=route,
+        query="三亚2天",
+        modification_notes=None,
+        destination="三亚",
+        days=1,
+        max_per_day=3,
+        pois=[
+            {"name": "三亚凤凰岭海誓山盟景区", "indoor": None, "indoor_hint": False},
+            {"name": "海月广场", "indoor": None, "indoor_hint": False},
+        ],
+        weather_forecast=[{"date": "2026-08-01", "is_bad": True, "day_weather": "中雨"}],
+        rain_indoor_priority=False,
+        relaxed_constraints={},
+        max_review_rounds=3,
+        travel_start_date=None,
+        meal_slots=[],
+        route_distance_legs=[],
+        route_history=[{
+            "iteration": 1,
+            "plan": {"route": route},
+            "l0_violations": [],
+            "l1_violations": [{"code": "weather_outdoor_mismatch", "message": "Day1 中雨仍排 2 个室外"}],
+            "soft_score": 72.0,
+            "reviewer_approved": True,
+            "reviewer_warnings": [],
+        }],
+    )
+
+    _, status, _, _ = quality.choose_snapshot(state)
+
+    assert status == "PARTIAL_SUCCESS"
+
+
 # ---------- LLM 调用墙钟上限 ----------
 
 class _SlowLLM:

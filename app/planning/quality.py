@@ -11,7 +11,14 @@ import re
 import math
 from typing import Any
 
-from app.planning.helpers import canonical_poi_name, open_time_violations, poi_name_matches, unknown_spots, weekday_closure_violations
+from app.planning.helpers import (
+    canonical_poi_name,
+    normalize_poi_name,
+    open_time_violations,
+    poi_name_matches,
+    unknown_spots,
+    weekday_closure_violations,
+)
 from app.planning.constraints import capacity_policy, capacity_warnings, effective_daily_limit
 
 # 产品政策（2026-11-07）：客观不可行的请求不做“带警告交付”。
@@ -155,10 +162,57 @@ def _relaxed(state: Any, key: str, name: str | None = None) -> bool:
     return name in value
 
 
+def _outdoor_by_label(poi: Any) -> bool:
+    """明确室外：高德类型核验为室外（``indoor is False``），或分类关键词推断为室外（``indoor_hint is False``）。
+
+    生产链路 ``poi_to_spot`` 只把「已核实室内」写进 ``indoor``（True / None），
+    室外推断落在 ``indoor_hint``；评测 fixture 则直接写 ``indoor=False``。
+    只认其中一个字段会让规则在真实链路里永不触发。
+    """
+    if not isinstance(poi, dict):
+        return False
+    if poi.get("indoor") is True:
+        return False
+    if poi.get("indoor") is False:
+        return True
+    return poi.get("indoor_hint") is False
+
+
+def _outdoor_map(state: Any) -> dict[str, bool]:
+    """候选池名字 → 是否明确室外；同时登记原名与去噪名，容忍 Planner 输出名漂移。"""
+    table: dict[str, bool] = {}
+    for item in (state.pois or []):
+        if not isinstance(item, dict):
+            continue
+        name = str(item.get("name") or "").strip()
+        if not name:
+            continue
+        flag = _outdoor_by_label(item)
+        table[name] = flag
+        key = normalize_poi_name(name)
+        if key:
+            table.setdefault(key, flag)
+    return table
+
+
+def _spot_is_outdoor(state: Any, spot: Any, table: dict[str, bool]) -> bool:
+    """原名 → 去噪名 → 候选池别名/模糊匹配，三级解析后再判室外。"""
+    name = str((spot or {}).get("name") or "").strip()
+    if not name:
+        return False
+    if name in table:
+        return table[name]
+    key = normalize_poi_name(name)
+    if key and key in table:
+        return table[key]
+    canonical = canonical_poi_name(name, state.pois or [], str(getattr(state, "destination", "") or ""))
+    return bool(canonical and table.get(canonical))
+
+
 def weather_exposure_violations(state: Any) -> list[dict[str, str]]:
     """全程恶劣天气且所有已排景点均室外时，交付应降级为部分成功。
 
-    只在“所有旅行日都恶劣”且“所有已排景点都确定是室外”时触发，
+    只在“所有旅行日都恶劣”且“所有已排景点都明确是室外”时触发，
     避免误伤单日降雨但当天已安排室内的行程；未知 indoor 标签不触发。
     """
     forecast = [item for item in (state.weather_forecast or []) if item.get("date")]
@@ -167,11 +221,11 @@ def weather_exposure_violations(state: Any) -> list[dict[str, str]]:
         return []
     if not all(bool(item.get("is_bad")) for item in forecast):
         return []
-    indoor_map = {str(item.get("name")): item.get("indoor") for item in (state.pois or [])}
+    outdoor_map = _outdoor_map(state)
     spots = [spot for day in route for spot in (day.get("spots") or [])]
     if not spots:
         return []
-    if any(indoor_map.get(str(spot.get("name"))) is not False for spot in spots):
+    if not all(_spot_is_outdoor(state, spot, outdoor_map) for spot in spots):
         return []
     return [{
         "code": "weather_exposure_conflict",
@@ -183,7 +237,7 @@ RAIN_OUTDOOR_L1_MIN_SPOTS = 2
 
 
 def weather_outdoor_mismatch(state: Any) -> list[dict[str, str]]:
-    """恶劣天气当天仍排了 ≥2 个确定室外景点 → L1。
+    """恶劣天气当天仍排了 ≥2 个明确室外景点 → L1。
 
     与 :func:`weather_exposure_violations` 的分工：后者只在"全程恶劣 + 全部室外"时把交付
     降级为部分成功（一个极端兜底）；这里逐日给出可执行的结构化提示（"Day2 中雨仍排 3 个
@@ -198,7 +252,7 @@ def weather_outdoor_mismatch(state: Any) -> list[dict[str, str]]:
         return []
     if _relaxed(state, "relaxed_indoor_only"):
         return []
-    indoor_map = {str(item.get("name")): item.get("indoor") for item in (state.pois or [])}
+    outdoor_map = _outdoor_map(state)
     date_by_day = {index + 1: str(item.get("date")) for index, item in enumerate(forecast)}
     bad_dates = {str(item.get("date")) for item in forecast if item.get("is_bad")}
     violations: list[dict[str, str]] = []
@@ -208,7 +262,7 @@ def weather_outdoor_mismatch(state: Any) -> list[dict[str, str]]:
         outdoor = [
             str(spot.get("name"))
             for spot in (day.get("spots") or [])
-            if indoor_map.get(str(spot.get("name"))) is False
+            if _spot_is_outdoor(state, spot, outdoor_map)
         ]
         if len(outdoor) >= RAIN_OUTDOOR_L1_MIN_SPOTS:
             preview = "、".join(outdoor[:3])
